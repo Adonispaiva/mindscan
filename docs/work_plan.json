@@ -1,0 +1,36 @@
+{
+  "version": "1.0",
+  "owner": "Leo Vinci",
+  "items": [
+    {
+      "path": "frontend\\src\\pages\\Dashboard.tsx",
+      "type": "Refactor+Feature",
+      "goal": "KPIs responsivos; skeleton; hooks de dados; manter widgets existentes.",
+      "nonBreaking": true
+    },
+    {
+      "path": "frontend\\src\\pages\\Home.tsx",
+      "type": "Refactor+Feature",
+      "goal": "Layout base/hero/CTA; melhorar semântica/A11y; manter conteúdo.",
+      "nonBreaking": true
+    },
+    {
+      "path": "frontend\\src\\pages\\Login.tsx",
+      "type": "Refactor+Feature",
+      "goal": "Autenticação robusta (form + validação + feedback A11y); preservar estrutura; adicionar testes e loading.",
+      "nonBreaking": true
+    },
+    {
+      "path": "frontend\\src\\pages\\NotFound.tsx",
+      "type": "Refactor+Feature",
+      "goal": "Página 404 com retorno; logs mínimos; integração com roteador.",
+      "nonBreaking": true
+    },
+    {
+      "path": "frontend\\src\\pages\\Status.tsx",
+      "type": "Refactor+Feature",
+      "goal": "Exibição de estado (ping/versão); loading; manter layout.",
+      "nonBreaking": true
+    }
+  ]
+}

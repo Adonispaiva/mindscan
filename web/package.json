@@ -1,0 +1,23 @@
+{
+  "name": "mindscan-frontend",
+  "version": "1.0.0",
+  "description": "Frontend do projeto MindScan com React + Vite",
+  "author": "Inovexa Software",
+  "license": "MIT",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "dependencies": {
+    "axios": "^1.12.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.22.3"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.0.4",
+    "typescript": "^5.2.2",
+    "vite": "^5.1.4"
+  }
+}

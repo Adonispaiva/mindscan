@@ -1,0 +1,8 @@
+# requirements-dev.txt — MindScan (dev tools)
+pytest
+httpx
+pytest-asyncio
+pytest-cov
+black
+isort
+flake8

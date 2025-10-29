@@ -1,0 +1,43 @@
+[2025-10-15 17:32:17.062447] Comparando 'projetos-inovexa' com 'D:\projetos-inovexa\mindscan'...
+
+Arquivos/pastas só na duplicata:
+  - mindscan
+
+Arquivos/pastas só na original:
+  - .github
+  - .gitignore
+  - .venv
+  - README.md
+  - apps
+  - backend
+  - backup_incremental_mindscan.py
+  - backup_restore
+  - criar_atalho_backup.vbs
+  - docker-compose.yml
+  - executar_backup_incremental.bat
+  - export
+  - frontend
+  - infra
+  - logs
+  - node_modules
+  - package.json
+  - packages
+  - pnpm-lock.yaml
+  - pnpm-workspace.yaml
+  - projetos-inovexa
+  - py-verificacao.txt
+  - readme_continuidade_synmind.md
+  - remover_duplicado_automacao.py
+  - remover_duplicado_mindscan.py
+  - render.yaml
+  - run-api.ps1
+  - run-web.ps1
+  - scripts
+  - services
+  - synmind-verificacao.txt
+  - ts-verificacao.txt
+  - verificar_duplicidade_mindscan.py
+  - verificação-pos-normalizacao.txt
+
+Remoção automatizada autorizada.
+[✔] Pasta 'projetos-inovexa' removida com sucesso.

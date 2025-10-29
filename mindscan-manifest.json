@@ -1,0 +1,12 @@
+{
+  "product": "MindScan",
+  "paths": {
+    "root": "frontend",
+    "src": "src"
+  },
+  "rules": {
+    "no_shrink_over_percent": 20,
+    "no_export_removal": true,
+    "pr_template_required": true
+  }
+}

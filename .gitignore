@@ -1,0 +1,22 @@
+﻿# root
+node_modules
+pnpm-lock.yaml
+.next
+dist
+build
+.DS_Store
+.env
+.env.*
+.venv
+__pycache__/
+# python
+*.pyc
+# docker
+infra/compose/.volumes/
+
+# Compliance/local artifacts
+.backup/
+mindscan-compliance-pack-*/
+*.zip
+*.log
+export_log_*

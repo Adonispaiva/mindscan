@@ -1,0 +1,31 @@
+{
+  "name": "mindscan-frontend",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^1.9.5",
+    "@vitejs/plugin-react": "^4.0.3",
+    "axios": "^1.4.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-redux": "^8.1.2",
+    "react-router-dom": "^6.14.2",
+    "redux": "^4.2.1",
+    "redux-thunk": "^2.4.2",
+    "zustand": "^4.4.1"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.9.1",
+    "@types/react": "^18.2.15",
+    "@types/react-dom": "^18.2.7",
+    "jest-environment-jsdom": "^30.2.0",
+    "msw": "^2.11.6",
+    "ts-jest": "^29.4.5",
+    "typescript": "^5.1.6",
+    "vite": "^4.4.9"
+  }
+}
