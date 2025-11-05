@@ -9,14 +9,26 @@ build
 .env.*
 .venv
 __pycache__/
+
 # python
 *.pyc
+
 # docker
 infra/compose/.volumes/
 
 # Compliance/local artifacts
 .backup/
 mindscan-compliance-pack-*/
-*.zip
 *.log
 export_log_*
+
+# blocos zipados gerados
+*.zip
+
+# === Inclusões essenciais do projeto ===
+!*.bat
+!*.md
+!.github/
+!.github/workflows/
+!.github/workflows/*.yml
+!mindscan_package.zip

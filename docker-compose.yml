@@ -6,35 +6,53 @@ services:
       context: ./backend
       dockerfile: Dockerfile
     container_name: mindscan-backend
-    command: bash -c "alembic upgrade head && uvicorn main:app --host 0.0.0.0 --port 3000"
     ports:
-      - "3000:3000"
-    env_file:
-      - ./backend/.env
+      - "5000:5000"
+    environment:
+      - FLASK_ENV=development
+      - BACKEND_PORT=5000
+      - DATABASE_URL=postgresql://usuario:senha@db:5432/mindscan
+      - JWT_SECRET=troque_esta_chave_agora
+      - CORS_ORIGINS=http://localhost:3000,http://localhost:4200
+      - DEBUG=True
     depends_on:
-      - db
+      db:
+        condition: service_healthy
     volumes:
       - ./backend:/app
-    working_dir: /app
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: mindscan-frontend
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      - API_URL=http://localhost:5000
+    volumes:
+      - ./frontend:/app
+    restart: unless-stopped
 
   db:
-    image: postgres:15
-    container_name: mindscan-postgres
-    restart: always
+    image: postgres:14
+    container_name: mindscan-db
     environment:
-      POSTGRES_DB: mindscan_db
-      POSTGRES_USER: mindscan_user
-      POSTGRES_PASSWORD: mindscan_pass
+      - POSTGRES_USER=usuario
+      - POSTGRES_PASSWORD=senha
+      - POSTGRES_DB=mindscan
     ports:
       - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U mindscan_user"]
+      test: ["CMD-SHELL", "pg_isready -U usuario"]
       interval: 10s
       timeout: 5s
       retries: 5
+    restart: unless-stopped
 
 volumes:
   postgres_data:
-    name: mindscan_postgres_data
