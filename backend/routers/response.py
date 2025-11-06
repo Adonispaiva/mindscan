@@ -3,25 +3,23 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.future import select
 from typing import List, Optional
 from pydantic import BaseModel
+
 from models.response import Response
-from models.base import Base
-from sqlalchemy.orm import sessionmaker
-from main import AsyncSessionLocal
+from database import AsyncSessionLocal  # ✅ desacoplado de main.py
 
-router = APIRouter()
+router = APIRouter(tags=["Response"])
 
-# Função de dependência do banco
+# Dependência de sessão assíncrona
 async def get_db():
     async with AsyncSessionLocal() as session:
         yield session
 
-# Pydantic para entrada
+# ── Schemas ──────────────────────────────────────────────────────────────────
 class ResponseCreate(BaseModel):
     user_id: int
     question_id: int
     answer: str
 
-# Pydantic para saída
 class ResponseRead(BaseModel):
     id: int
     user_id: int
@@ -31,18 +29,22 @@ class ResponseRead(BaseModel):
     class Config:
         orm_mode = True
 
-# Criar nova resposta
+# ── Endpoints ────────────────────────────────────────────────────────────────
 @router.post("/responses", response_model=ResponseRead)
 async def create_response(data: ResponseCreate, db: AsyncSession = Depends(get_db)):
-    response = Response(**data.dict())
-    db.add(response)
+    """Cria uma nova resposta associada a um usuário/questão."""
+    entity = Response(**data.dict())
+    db.add(entity)
     await db.commit()
-    await db.refresh(response)
-    return response
+    await db.refresh(entity)
+    return entity
 
-# Listar respostas (opcionalmente por usuário)
 @router.get("/responses", response_model=List[ResponseRead])
-async def list_responses(user_id: Optional[int] = Query(None), db: AsyncSession = Depends(get_db)):
+async def list_responses(
+    user_id: Optional[int] = Query(None, description="Filtra por usuário"),
+    db: AsyncSession = Depends(get_db),
+):
+    """Lista respostas; opcionalmente filtra por user_id."""
     stmt = select(Response)
     if user_id is not None:
         stmt = stmt.where(Response.user_id == user_id)

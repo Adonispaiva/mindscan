@@ -1,24 +1,30 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession
-from sqlalchemy.orm import sessionmaker, declarative_base
 import logging
 
-from .config import DATABASE_URL, ALLOWED_ORIGINS
-from routers import quiz, auth, admin, health, user, response
+from config import DATABASE_URL, ALLOWED_ORIGINS
+from database import engine, Base, init_db  # ✅ banco desacoplado
+from routers import quiz, auth, admin, health, user, response  # ✅ uso do diretório real
+from routes import diagnostic_router  # 🧠 nova rota de diagnóstico MI
 
-# Logging
+# -------------------------------------------------------------------------
+# LOGGING
+# -------------------------------------------------------------------------
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-# SQLAlchemy async
-engine = create_async_engine(DATABASE_URL, echo=True, future=True)
-AsyncSessionLocal = sessionmaker(bind=engine, class_=AsyncSession, expire_on_commit=False)
-Base = declarative_base()
+# -------------------------------------------------------------------------
+# APLICAÇÃO FASTAPI
+# -------------------------------------------------------------------------
+app = FastAPI(
+    title="MindScan API",
+    version="2.1.0",
+    description="API do sistema MindScan - Inovexa"
+)
 
-app = FastAPI(title="MindScan API", version="1.0")
-
-# CORS
+# -------------------------------------------------------------------------
+# CORS CONFIGURATION
+# -------------------------------------------------------------------------
 app.add_middleware(
     CORSMiddleware,
     allow_origins=ALLOWED_ORIGINS.split(","),
@@ -27,27 +33,50 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# -------------------------------------------------------------------------
+# EVENTOS DE STARTUP E SHUTDOWN
+# -------------------------------------------------------------------------
+@app.on_event("startup")
+async def on_startup():
+    """Inicializa banco e valida conexão."""
+    try:
+        await init_db()
+        logger.info("✅ Banco inicializado e tabelas validadas com sucesso.")
+    except Exception as e:
+        logger.error(f"❌ Erro ao inicializar o banco de dados: {e}")
+
+
+@app.on_event("shutdown")
+async def on_shutdown():
+    """Evento de desligamento do app."""
+    logger.info("🛑 Encerrando MindScan API...")
+
+# -------------------------------------------------------------------------
+# ROTAS PRINCIPAIS
+# -------------------------------------------------------------------------
+app.include_router(quiz.router, prefix="/quiz", tags=["Quiz"])
+app.include_router(auth.router, prefix="/auth", tags=["Auth"])
+app.include_router(admin.router, prefix="/admin", tags=["Admin"])
+app.include_router(health.router, prefix="/health", tags=["Health"])
+app.include_router(user.router, prefix="/user", tags=["User"])
+app.include_router(response.router, prefix="/response", tags=["Response"])
+app.include_router(diagnostic_router.router, prefix="/diagnostic", tags=["Diagnóstico"])
+
+# -------------------------------------------------------------------------
+# ENDPOINT RAIZ (INFORMATIVO)
+# -------------------------------------------------------------------------
 @app.get("/")
 async def root():
-    return {"message": "MindScan API rodando com PostgreSQL + asyncpg."}
+    """Endpoint de boas-vindas da API."""
+    return {
+        "message": "MindScan API operacional com backend assíncrono.",
+        "database": DATABASE_URL.split('/')[-1],
+        "version": "2.1.0"
+    }
 
-@app.get("/status")
-async def status_check():
-    return {"status": "ok", "db": DATABASE_URL.split('/')[-1]}
-
-@app.on_event("startup")
-async def startup_event():
-    try:
-        async with engine.begin() as conn:
-            await conn.run_sync(Base.metadata.create_all)
-            logger.info("✅ Conexão com banco e estrutura validadas com sucesso.")
-    except Exception as e:
-        logger.error(f"❌ Erro ao conectar com banco de dados: {e}")
-
-# Routers
-app.include_router(quiz.router)
-app.include_router(auth.router)
-app.include_router(admin.router)
-app.include_router(health.router)
-app.include_router(user.router)
-app.include_router(response.router)
+# -------------------------------------------------------------------------
+# EXECUÇÃO DIRETA (LOCAL)
+# -------------------------------------------------------------------------
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)

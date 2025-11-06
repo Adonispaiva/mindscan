@@ -1,82 +1,87 @@
-# D:\projetos-inovexa\mindscan\backend\routers\auth.py
-
 from fastapi import APIRouter, Depends, HTTPException, status
-from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
-from jose import JWTError, jwt
+from sqlalchemy.ext.asyncio import AsyncSession
+from sqlalchemy.future import select
+from pydantic import BaseModel, EmailStr
+from jose import jwt, JWTError
 from passlib.context import CryptContext
 from datetime import datetime, timedelta
-from pydantic import BaseModel
-from sqlalchemy.orm import Session
 
-from .. import models, database
+from models.user import User
+from database import AsyncSessionLocal  # ✅ desacoplado de main.py
 
-SECRET_KEY = "inovexa_super_secret_key"
+# ---------------------------------------------------------------------
+# CONFIGURAÇÕES DE SEGURANÇA
+# ---------------------------------------------------------------------
+SECRET_KEY = "inovexa_mindscan_secret_key"  # ⚠️ usar variável de ambiente em produção
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 60
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
-oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/auth/token")
 
-router = APIRouter(prefix="/auth", tags=["Auth"])
+router = APIRouter(tags=["Auth"])
 
-# --------------------- Models ---------------------
+# ---------------------------------------------------------------------
+# DEPENDÊNCIA DE SESSÃO
+# ---------------------------------------------------------------------
+async def get_db():
+    async with AsyncSessionLocal() as session:
+        yield session
+
+# ---------------------------------------------------------------------
+# SCHEMAS
+# ---------------------------------------------------------------------
+class UserLogin(BaseModel):
+    email: EmailStr
+    password: str
+
 class Token(BaseModel):
     access_token: str
     token_type: str
 
-class TokenData(BaseModel):
-    email: str | None = None
-
-class UserAuth(BaseModel):
-    email: str
-    password: str
-
-# --------------------- Helpers ---------------------
-def verify_password(plain_password, hashed_password):
+# ---------------------------------------------------------------------
+# FUNÇÕES AUXILIARES
+# ---------------------------------------------------------------------
+def verify_password(plain_password: str, hashed_password: str) -> bool:
     return pwd_context.verify(plain_password, hashed_password)
 
-def get_password_hash(password):
+def get_password_hash(password: str) -> str:
     return pwd_context.hash(password)
-
-def get_user(db: Session, email: str):
-    return db.query(models.User).filter(models.User.email == email).first()
-
-def authenticate_user(db: Session, email: str, password: str):
-    user = get_user(db, email)
-    if not user or not verify_password(password, user.password):
-        return False
-    return user
 
 def create_access_token(data: dict, expires_delta: timedelta | None = None):
     to_encode = data.copy()
-    expire = datetime.utcnow() + (expires_delta or timedelta(minutes=15))
+    expire = datetime.utcnow() + (expires_delta or timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES))
     to_encode.update({"exp": expire})
     return jwt.encode(to_encode, SECRET_KEY, algorithm=ALGORITHM)
 
-# --------------------- Routes ---------------------
-@router.post("/token", response_model=Token)
-def login_for_access_token(form_data: OAuth2PasswordRequestForm = Depends(), db: Session = Depends(database.get_db)):
-    user = authenticate_user(db, form_data.username, form_data.password)
-    if not user:
-        raise HTTPException(status_code=400, detail="Incorrect email or password")
-    access_token = create_access_token(data={"sub": user.email})
+# ---------------------------------------------------------------------
+# ENDPOINTS
+# ---------------------------------------------------------------------
+@router.post("/login", response_model=Token)
+async def login(credentials: UserLogin, db: AsyncSession = Depends(get_db)):
+    """Autentica um usuário e retorna um token JWT."""
+    result = await db.execute(select(User).where(User.email == credentials.email))
+    user = result.scalar_one_or_none()
+
+    if not user or not verify_password(credentials.password, user.password):
+        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Credenciais inválidas.")
+
+    access_token = create_access_token(data={"sub": str(user.id)})
     return {"access_token": access_token, "token_type": "bearer"}
 
-async def get_current_user(token: str = Depends(oauth2_scheme), db: Session = Depends(database.get_db)):
-    credentials_exception = HTTPException(status_code=401, detail="Could not validate credentials")
-    try:
-        payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
-        email: str = payload.get("sub")
-        if email is None:
-            raise credentials_exception
-        token_data = TokenData(email=email)
-    except JWTError:
-        raise credentials_exception
-    user = get_user(db, email=token_data.email)
-    if user is None:
-        raise credentials_exception
-    return user
+@router.post("/register", response_model=Token)
+async def register_user(credentials: UserLogin, db: AsyncSession = Depends(get_db)):
+    """Cria novo usuário com senha criptografada e retorna token de acesso."""
+    result = await db.execute(select(User).where(User.email == credentials.email))
+    existing = result.scalar_one_or_none()
 
-@router.get("/protected")
-def read_protected_data(current_user: models.User = Depends(get_current_user)):
-    return {"msg": f"Welcome, {current_user.email}. Access granted."}
+    if existing:
+        raise HTTPException(status_code=400, detail="Email já cadastrado.")
+
+    hashed_password = get_password_hash(credentials.password)
+    new_user = User(email=credentials.email, password=hashed_password)
+    db.add(new_user)
+    await db.commit()
+    await db.refresh(new_user)
+
+    access_token = create_access_token(data={"sub": str(new_user.id)})
+    return {"access_token": access_token, "token_type": "bearer"}

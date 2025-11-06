@@ -1,48 +1,63 @@
-# D:\projetos-inovexa\mindscan\backend\routers\quiz.py
-
 from fastapi import APIRouter, Depends, HTTPException
-from sqlalchemy.orm import Session
-from pydantic import BaseModel
-from datetime import datetime
+from sqlalchemy.ext.asyncio import AsyncSession
+from sqlalchemy.future import select
 from typing import List
+from pydantic import BaseModel
 
-from .. import models, database
-from ..services.analyzer import Analyzer
+from models.quiz import Quiz
+from database import AsyncSessionLocal  # ✅ desacoplado de main.py
 
-router = APIRouter(prefix="/quiz", tags=["Quiz"])
+router = APIRouter(tags=["Quiz"])
 
-class QuizRequest(BaseModel):
-    user_id: int
-    respostas: List[str]
+# ── Dependência de sessão ───────────────────────────────────────────────
+async def get_db():
+    async with AsyncSessionLocal() as session:
+        yield session
 
-class QuizResponse(BaseModel):
-    diagnostico: str
-    nivel: str
-    dicas: List[str]
+# ── Schemas ─────────────────────────────────────────────────────────────
+class QuizCreate(BaseModel):
+    title: str
+    description: str
 
-@router.post("", response_model=QuizResponse)
-def analisar_quiz(payload: QuizRequest, db: Session = Depends(database.get_db)):
-    user = db.query(models.User).filter(models.User.id == payload.user_id).first()
-    if not user:
-        raise HTTPException(status_code=404, detail="Usuário não encontrado")
+class QuizRead(BaseModel):
+    id: int
+    title: str
+    description: str
 
-    # Grava quiz
-    quiz = models.Quiz(user_id=payload.user_id, created_at=datetime.utcnow())
-    db.add(quiz)
-    db.commit()
-    db.refresh(quiz)
+    class Config:
+        orm_mode = True
 
-    # Grava respostas
-    for r in payload.respostas:
-        resp = models.Response(user_id=payload.user_id, quiz_id=quiz.id, content=r, created_at=datetime.utcnow())
-        db.add(resp)
-    db.commit()
+# ── Endpoints ───────────────────────────────────────────────────────────
+@router.post("/quizzes", response_model=QuizRead)
+async def create_quiz(data: QuizCreate, db: AsyncSession = Depends(get_db)):
+    """Cria um novo quiz."""
+    entity = Quiz(**data.dict())
+    db.add(entity)
+    await db.commit()
+    await db.refresh(entity)
+    return entity
 
-    # Executa análise
-    resultado = Analyzer(payload.respostas).diagnosticar()
+@router.get("/quizzes", response_model=List[QuizRead])
+async def list_quizzes(db: AsyncSession = Depends(get_db)):
+    """Retorna todos os quizzes."""
+    result = await db.execute(select(Quiz))
+    return result.scalars().all()
 
-    return {
-        "diagnostico": f"Risco {resultado['nivel']}",
-        "nivel": resultado['nivel'],
-        "dicas": resultado['dicas']
-    }
+@router.get("/quizzes/{quiz_id}", response_model=QuizRead)
+async def get_quiz(quiz_id: int, db: AsyncSession = Depends(get_db)):
+    """Obtém detalhes de um quiz pelo ID."""
+    result = await db.execute(select(Quiz).where(Quiz.id == quiz_id))
+    quiz = result.scalar_one_or_none()
+    if not quiz:
+        raise HTTPException(status_code=404, detail="Quiz não encontrado.")
+    return quiz
+
+@router.delete("/quizzes/{quiz_id}", status_code=204)
+async def delete_quiz(quiz_id: int, db: AsyncSession = Depends(get_db)):
+    """Remove um quiz existente."""
+    result = await db.execute(select(Quiz).where(Quiz.id == quiz_id))
+    quiz = result.scalar_one_or_none()
+    if not quiz:
+        raise HTTPException(status_code=404, detail="Quiz não encontrado.")
+    await db.delete(quiz)
+    await db.commit()

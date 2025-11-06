@@ -4,7 +4,7 @@ from sqlalchemy.future import select
 from typing import List
 from pydantic import BaseModel, EmailStr
 from models.user import User
-from main import AsyncSessionLocal
+from database import AsyncSessionLocal  # ✅ agora importado corretamente
 
 router = APIRouter()
 
@@ -28,7 +28,7 @@ class UserRead(BaseModel):
         orm_mode = True
 
 # Criar novo usuário
-@router.post("/users", response_model=UserRead)
+@router.post("/", response_model=UserRead)
 async def create_user(user_data: UserCreate, db: AsyncSession = Depends(get_db)):
     result = await db.execute(select(User).where(User.email == user_data.email))
     existing_user = result.scalar_one_or_none()
@@ -42,13 +42,13 @@ async def create_user(user_data: UserCreate, db: AsyncSession = Depends(get_db))
     return new_user
 
 # Listar todos os usuários
-@router.get("/users", response_model=List[UserRead])
+@router.get("/", response_model=List[UserRead])
 async def list_users(db: AsyncSession = Depends(get_db)):
     result = await db.execute(select(User))
     return result.scalars().all()
 
 # Buscar usuário por ID
-@router.get("/users/{user_id}", response_model=UserRead)
+@router.get("/{user_id}", response_model=UserRead)
 async def get_user(user_id: int, db: AsyncSession = Depends(get_db)):
     result = await db.execute(select(User).where(User.id == user_id))
     user = result.scalar_one_or_none()

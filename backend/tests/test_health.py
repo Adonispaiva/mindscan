@@ -1,12 +1,25 @@
-# D:\projetos-inovexa\mindscan\backend\tests\test_health.py
-
 import pytest
+import pytest_asyncio
 from httpx import AsyncClient
-from main import app
+from main import create_app
 
-@pytest.mark.asyncio
-async def test_health():
+# ------------------
+# 🔧 FIXTURE GLOBAL
+# ------------------
+@pytest_asyncio.fixture
+async def client():
+    app = create_app()
     async with AsyncClient(app=app, base_url="http://test") as ac:
-        response = await ac.get("/")
+        yield ac
+
+# ----------------------
+# ✅ TESTE: HEALTH CHECK
+# ----------------------
+@pytest.mark.asyncio
+async def test_health_check(client):
+    response = await client.get("/health")
     assert response.status_code == 200
-    assert response.json() == {"message": "MindScan API operando com PostgreSQL."}
+    data = response.json()
+    assert data.get("status") == "ok"
+    assert "uptime" in data
+    assert "timestamp" in data
