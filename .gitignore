@@ -1,34 +1,89 @@
-﻿# root
-node_modules
-pnpm-lock.yaml
-.next
-dist
-build
-.DS_Store
-.env
-.env.*
-.venv
+﻿# -------------------------
+# Python
+# -------------------------
 __pycache__/
-
-# python
+*.py[cod]
+*.pyo
+*.pyd
 *.pyc
+*.egg-info/
+.eggs/
+.env
+.venv/
+.env.local
+.env.*.local
+*.sqlite3
+*.db
+.DS_Store
 
-# docker
-infra/compose/.volumes/
+# -------------------------
+# Node / React / Frontend
+# -------------------------
+node_modules/
+build/
+dist/
+.cache/
+.npm/
+.vite/
+.next/
+out/
+coverage/
 
-# Compliance/local artifacts
-.backup/
-mindscan-compliance-pack-*/
+# -------------------------
+# VSCode / IDEs
+# -------------------------
+.vscode/
+.idea/
+*.code-workspace
+
+# -------------------------
+# Logs / OS
+# -------------------------
 *.log
-export_log_*
+*.pid
+*.seed
+*.swp
+*.swo
+*.swn
+Thumbs.db
+ehthumbs.db
+*.bak
+*.tmp
 
-# blocos zipados gerados
-*.zip
+# -------------------------
+# Docker / Render / DevOps
+# -------------------------
+docker-compose.override.yml
+*.env.*
+*.backup
+.Dockerfile.*
+*.tar
+*.gz
 
-# === Inclusões essenciais do projeto ===
-!*.bat
-!*.md
-!.github/
-!.github/workflows/
-!.github/workflows/*.yml
-!mindscan_package.zip
+# -------------------------
+# Tests / Coverage
+# -------------------------
+htmlcov/
+.tox/
+.nox/
+.pytest_cache/
+coverage.*
+*.cover
+*.coverage
+.cache
+junit*.xml
+
+# -------------------------
+# Exportações e automações
+# -------------------------
+export/
+*.export.json
+*.auto.json
+*_SAFE.py
+*_duplicado_*.py
+
+# -------------------------
+# Jupyter / Colab
+# -------------------------
+*.ipynb
+.ipynb_checkpoints/
