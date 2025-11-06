@@ -1,11 +1,15 @@
-FROM python:3.11-slim
+# Imagem base
+FROM python:3.10
 
-WORKDIR /app
+# Define o diretório de trabalho como /app/backend
+WORKDIR /app/backend
 
-COPY . .
+# Copia todos os arquivos do projeto
+COPY . /app
 
-# Instalar dependências específicas da pasta backend
-RUN pip install --no-cache-dir -r backend/requirements.txt
+# Instala as dependências
+RUN pip install --upgrade pip && \
+    pip install -r requirements.txt
 
-# Comando de inicialização correto
-CMD ["uvicorn", "backend.main:app", "--host=0.0.0.0", "--port=10000"]
+# Comando padrão para rodar o app
+CMD ["uvicorn", "main:app", "--host=0.0.0.0", "--port=10000"]
