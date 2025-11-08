@@ -1,37 +1,97 @@
 {
   "projeto": "MindScan",
   "cliente": "SynMind",
-  "diretor_tecnico": "Leo Vinci 2.0 (GPT Inovexa)",
+  "diretor_tecnico": "Leo Vinci 2.1 (GPT Inovexa)",
   "empresa_responsavel": "Inovexa Software",
-  "descricao": "Sistema de avaliação e gestão psicométrica desenvolvido para a SynMind. Projeto sob supervisão técnica da Inovexa, com foco em build automatizado, testes e auditoria de IA.",
+  "descricao": "Sistema de avaliação e gestão psicométrica desenvolvido para a SynMind. Ciclo atual: expansão cognitiva e governança administrativa (v2.1-dev).",
   "estrutura": {
     "raiz_projeto": "D:\\projetos-inovexa\\mindscan\\",
     "pasta_supervisor": "D:\\projetos-inovexa\\mindscan\\supervisor\\",
-    "pasta_relatorios": "D:\\projetos-inovexa\\mindscan\\supervisor\\relatorios\\"
+    "pasta_relatorios": "D:\\projetos-inovexa\\mindscan\\supervisor\\relatorios\\",
+    "pasta_planejamento": "D:\\projetos-inovexa\\mindscan\\docs\\planejamento\\",
+    "pasta_docs": "D:\\projetos-inovexa\\mindscan\\docs\\relatorios\\"
   },
+
   "relatorios": [
     {
-      "arquivo": "Relatorio_Tecnico_MindScan_T01.md",
+      "arquivo": "docs/relatorios/auditoria_git_mindscan_v2.0.md",
       "turno": "T01",
-      "data": "2025-11-07",
+      "data": "2025-11-08",
       "status": "Concluido",
-      "proximo_turno": "T02",
-      "descricao": "Validação inicial de ambiente técnico, build e automação de testes."
+      "descricao": "Auditoria Git v2.0 — conformidade repositório e estrutura."
+    },
+    {
+      "arquivo": "docs/relatorios/Relatorio_Final_Auditoria_MindScan_v2.0.md",
+      "turno": "T01",
+      "data": "2025-11-08",
+      "status": "Concluido",
+      "descricao": "Relatório Final de Auditoria Integrada — v2.0."
+    },
+    {
+      "arquivo": "supervisor/relatorios/Relatorio_Tecnico_Consolidado_MindScan_08-11-2025.md",
+      "turno": "T01",
+      "data": "2025-11-08",
+      "status": "Concluido",
+      "descricao": "Consolidação técnica da sessão de auditoria 08/11/2025."
+    },
+    {
+      "arquivo": "supervisor/relatorios/Registro_Institucional_Encerramento_Sessao_MindScan_08-11-2025.md",
+      "turno": "T01",
+      "data": "2025-11-08",
+      "status": "Concluido",
+      "descricao": "Encerramento institucional do ciclo MindScan v2.0."
+    },
+    {
+      "arquivo": "docs/planejamento/Planejamento_Estrategico_MindScan_v2-3_Conclusao_Final.md",
+      "turno": "T02",
+      "data": "2025-11-08",
+      "status": "Concluido",
+      "descricao": "Plano estratégico v2.1→v3.0 — macroetapas e cronograma."
+    },
+    {
+      "arquivo": "supervisor/relatorios/relatorio_inicial_mindscan_v2.1.md",
+      "turno": "T02",
+      "data": "2025-11-08",
+      "status": "Em desenvolvimento",
+      "descricao": "Abertura oficial do ciclo v2.1-dev (estrutura, scripts e supervisão)."
     }
   ],
+
   "status_atual": {
-    "turno": "T01",
-    "fase": "Encerrado",
-    "proximo": "Preparar módulo de automação de testes e integração SynFlow."
+    "turno": "T02",
+    "fase": "v2.1-dev",
+    "status": "Em desenvolvimento",
+    "proximo": "Implantar módulo Insight Engine (backend/modules/insight_engine) e consolidar AdminDashboard como painel central."
   },
+
+  "auditoria": {
+    "tag_estavel_anterior": "v2.0-auditoria",
+    "commits_chave": [
+      { "hash": "a54d30b647cf074e1efd62cb535c70114dc4be4", "descricao": "Auditoria Técnica Inovexa v2.0 — conformidade total" },
+      { "hash": "3bf5961", "descricao": "Relatório Final de Auditoria Integrada v2.0" },
+      { "hash": "e4e15c1", "descricao": "Relatório Técnico Consolidado — Sessão 08/11/2025" },
+      { "hash": "4423b6d", "descricao": "Registro Institucional de Encerramento — Sessão 08/11/2025" },
+      { "hash": "b9a31e7", "descricao": "Planejamento Estratégico v2.1 → v3.0 — Ciclo Final" }
+    ]
+  },
+
   "integracao_command_center": {
     "habilitado": true,
     "ultimo_sync": null,
-    "auto_registro": true
+    "auto_registro": true,
+    "observacoes": "Estrutura compatível com leitura futura pelo Inovexa Command Center."
   },
+
   "meta": {
-    "proxima_entrega": "Relatorio_Tecnico_MindScan_T02.md",
-    "data_prevista": "2025-11-10"
+    "data_prevista_entrega_v2_1": "2025-11-15",
+    "responsavel": "Adonis Paiva",
+    "indicadores": {
+      "frontend_admin": "ativo",
+      "insight_engine": "pendente",
+      "ci_cd": "ajustes em curso",
+      "supervisao": "ativa"
+    }
   },
-  "assinatura": "Inovexa Supervisor Framework · v2.0 · © 2025 Inovexa Software"
+
+  "assinatura": "Inovexa Supervisor Framework — v2.1 © 2025 Inovexa Software"
 }
