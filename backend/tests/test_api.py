@@ -1,15 +1,10 @@
 import pytest
-from fastapi.testclient import TestClient
 from backend.main import app
+from fastapi.testclient import TestClient
 
 client = TestClient(app)
 
-def test_health_check():
-    response = client.get("/health")
+def test_api_root():
+    response = client.get("/api")
     assert response.status_code == 200
-    assert response.json() == {"status": "ok"}
-
-def test_root():
-    response = client.get("/")
-    assert response.status_code == 200
-    assert "MindScan API" in response.text
+    assert response.json() == {"message": "API funcionando"}

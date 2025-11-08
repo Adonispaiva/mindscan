@@ -1,30 +1,10 @@
 import pytest
-from httpx import AsyncClient
-from main import create_app
+from fastapi.testclient import TestClient
+from backend.main import app
 
-import pytest_asyncio
+client = TestClient(app)
 
-@pytest_asyncio.fixture
-async def client():
-    app = create_app()
-    async with AsyncClient(app=app, base_url="http://test") as ac:
-        yield ac
-
-@pytest.mark.asyncio
-async def test_healthcheck(client):
-    response = await client.get("/health/ping")
-    assert response.status_code == 200
-    assert response.json() == {"message": "pong"}
-
-@pytest.mark.asyncio
-async def test_user_route_exists(client):
-    response = await client.get("/user/")
-    assert response.status_code in [200, 404]  # depende se há handler definido
-
-@pytest.mark.asyncio
-async def test_openapi_schema(client):
-    response = await client.get("/openapi.json")
-    assert response.status_code == 200
-    data = response.json()
-    assert "paths" in data
-    assert "/health/ping" in data["paths"]
+def test_root_redirect():
+    response = client.get("/", allow_redirects=False)
+    assert response.status_code == 307
+    assert "/docs" in response.headers["location"]

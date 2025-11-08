@@ -1,13 +1,21 @@
-# 🧠 MindScan
+# MindScan — Backend API
 
-**MindScan** é uma plataforma inteligente para análise de perfil emocional, psicológico e comportamental com base em questionários estruturados e interpretação via IA.
+API assíncrona construída com FastAPI para o projeto MindScan (Inovexa).
 
 ---
 
-## 🚀 Como executar o projeto
+## 🚀 Execução Local
 
-### 1. Clone o repositório
+### Requisitos
+- Python 3.11.6
+- Virtualenv (opcional)
 
+### Passos
 ```bash
-git clone https://github.com/Adonispaiva/mindscan.git
-cd mindscan
+cd backend
+python -m venv .venv
+source .venv/bin/activate  # Linux/macOS
+.venv\Scripts\activate     # Windows
+
+pip install -r requirements.deploy.txt
+uvicorn main:app --reload

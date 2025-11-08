@@ -1,3 +1,127 @@
+/* ===============================================================
+   ESTILOS GLOBAIS — MINDSCAN SYNMIND MI v2.0
+   Autor: Leo Vinci (GPT Inovexa)
+   Data: 07/11/2025
+   Função: Estilos base + Tailwind + tema Inovexa/SynMind
+   =============================================================== */
+
+/* ------------------------------
+   IMPORTAÇÕES BASE
+--------------------------------*/
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* ------------------------------
+   RESET & NORMALIZAÇÃO
+--------------------------------*/
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: "Inter", system-ui, sans-serif;
+  background-color: #0a0a12;
+  color: #e4e6ef;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ------------------------------
+   TEMA VISUAL PADRÃO
+--------------------------------*/
+:root {
+  --inovexa-primary: #5b63ff;
+  --inovexa-dark: #0a0a12;
+  --synmind-blue: #1d84e6;
+  --text-light: #e4e6ef;
+  --text-muted: #8b8fa3;
+}
+
+/* ------------------------------
+   ESTILOS DE TÍTULOS
+--------------------------------*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Poppins", "Inter", sans-serif;
+  font-weight: 600;
+  color: var(--text-light);
+  letter-spacing: -0.02em;
+}
+
+/* ------------------------------
+   COMPONENTES GLOBAIS
+--------------------------------*/
+button {
+  transition: all 0.2s ease-in-out;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+a {
+  color: var(--synmind-blue);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--inovexa-primary);
+  text-decoration: underline;
+}
+
+/* ------------------------------
+   SCROLLBAR CUSTOMIZADA
+--------------------------------*/
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a12;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #2b2f4d;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #444a70;
+}
+
+/* ------------------------------
+   EFEITOS GERAIS
+--------------------------------*/
+.glow {
+  box-shadow: 0 0 12px rgba(93, 63, 211, 0.4);
+}
+
+.text-gradient {
+  background: linear-gradient(to right, #7d82ff, #1d84e6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ------------------------------
+   ANIMAÇÕES
+--------------------------------*/
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.6s ease-in-out;
+}

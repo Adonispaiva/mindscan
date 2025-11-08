@@ -1,0 +1,37 @@
+{
+  "projeto": "MindScan",
+  "cliente": "SynMind",
+  "diretor_tecnico": "Leo Vinci 2.0 (GPT Inovexa)",
+  "empresa_responsavel": "Inovexa Software",
+  "descricao": "Sistema de avaliação e gestão psicométrica desenvolvido para a SynMind. Projeto sob supervisão técnica da Inovexa, com foco em build automatizado, testes e auditoria de IA.",
+  "estrutura": {
+    "raiz_projeto": "D:\\projetos-inovexa\\mindscan\\",
+    "pasta_supervisor": "D:\\projetos-inovexa\\mindscan\\supervisor\\",
+    "pasta_relatorios": "D:\\projetos-inovexa\\mindscan\\supervisor\\relatorios\\"
+  },
+  "relatorios": [
+    {
+      "arquivo": "Relatorio_Tecnico_MindScan_T01.md",
+      "turno": "T01",
+      "data": "2025-11-07",
+      "status": "Concluido",
+      "proximo_turno": "T02",
+      "descricao": "Validação inicial de ambiente técnico, build e automação de testes."
+    }
+  ],
+  "status_atual": {
+    "turno": "T01",
+    "fase": "Encerrado",
+    "proximo": "Preparar módulo de automação de testes e integração SynFlow."
+  },
+  "integracao_command_center": {
+    "habilitado": true,
+    "ultimo_sync": null,
+    "auto_registro": true
+  },
+  "meta": {
+    "proxima_entrega": "Relatorio_Tecnico_MindScan_T02.md",
+    "data_prevista": "2025-11-10"
+  },
+  "assinatura": "Inovexa Supervisor Framework · v2.0 · © 2025 Inovexa Software"
+}

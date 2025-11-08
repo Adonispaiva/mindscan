@@ -1,0 +1,90 @@
+# ===============================================================
+#  WORKFLOW: TEST AND DEPLOY
+#  Projeto: MindScan — SynMind MI v2.0
+#  Autor: Leo Vinci (GPT Inovexa)
+#  Data: 07/11/2025
+#  Função: Pipeline CI/CD para build, testes e deploy Docker
+# ===============================================================
+
+name: Test and Deploy
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  build-test:
+    name: 🧪 Run Tests and Build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r backend/requirements.txt
+          pip install pytest pytest-cov fpdf matplotlib fastapi uvicorn
+
+      - name: Run tests
+        run: |
+          pytest backend/tests --maxfail=1 --disable-warnings -q --cov=backend --cov-report=term-missing
+
+      - name: Upload coverage report
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-report
+          path: .coverage
+
+  docker-build:
+    name: 🐳 Build and Publish Docker Image
+    runs-on: ubuntu-latest
+    needs: build-test
+    if: github.ref == 'refs/heads/main'
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Log in to DockerHub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Build and Push Image
+        uses: docker/build-push-action@v6
+        with:
+          context: ./backend
+          push: true
+          tags: inovexa/mindscan-synmind:latest
+
+  deploy:
+    name: 🚀 Deploy Application
+    runs-on: ubuntu-latest
+    needs: docker-build
+    if: github.ref == 'refs/heads/main'
+
+    steps:
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v1.1.0
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SERVER_SSH_KEY }}
+          script: |
+            docker pull inovexa/mindscan-synmind:latest
+            docker stop mindscan || true
+            docker rm mindscan || true
+            docker run -d --name mindscan -p 8000:8000 inovexa/mindscan-synmind:latest

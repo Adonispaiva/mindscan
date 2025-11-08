@@ -1,0 +1,20 @@
+{
+  "versao_framework": "2.0",
+  "projeto": "MindScan",
+  "cliente": "SynMind",
+  "modo_operacao": "automatico",
+  "diretor_tecnico": "Leo Vinci 2.0 (GPT Inovexa)",
+  "usar_template_relatorio": true,
+  "template_path": "D:\\projetos-inovexa\\mindscan\\supervisor\\template_relatorio.md",
+  "relatorios_path": "D:\\projetos-inovexa\\mindscan\\supervisor\\relatorios\\",
+  "manifest_path": "D:\\projetos-inovexa\\mindscan\\supervisor\\manifest_supervisao.json",
+  "format_data": "yyyy-MM-dd",
+  "nomenclatura_relatorio": "Relatorio_Tecnico_{projeto}_T{turno}.md",
+  "auto_incrementar_turno": true,
+  "atualizar_manifest": true,
+  "sincronizar_command_center": true,
+  "logs": {
+    "gerar_log_execucao": true,
+    "arquivo_log": "D:\\projetos-inovexa\\mindscan\\supervisor\\log_supervisao.txt"
+  }
+}

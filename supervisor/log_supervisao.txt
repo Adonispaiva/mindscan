@@ -1,0 +1,5 @@
+[2025-11-07 14:10] Sistema de Supervisão Inovexa iniciado.
+[2025-11-07 14:10] Template detectado: template_relatorio.md
+[2025-11-07 14:10] Manifesto carregado: manifest_supervisao.json
+[2025-11-07 14:10] Turno Técnico 01 reconhecido como concluído.
+[2025-11-07 14:11] Sistema pronto para iniciar Turno Técnico 02 (geração automática habilitada).
