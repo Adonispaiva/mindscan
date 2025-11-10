@@ -1,0 +1,18 @@
+import pandas as pd
+
+# Criando um exemplo de dados para o arquivo dados_entrada.csv
+data = {
+    "id_usuario": [1, 2, 3],
+    "nome": ["Alice", "Bruno", "Carla"],
+    "idade": [29, 35, 42],
+    "sexo": ["F", "M", "F"],
+    "email": ["alice@example.com", "bruno@example.com", "carla@example.com"]
+}
+
+df = pd.DataFrame(data)
+
+# Salvando como CSV
+csv_path = "/mnt/data/dados_entrada.csv"
+df.to_csv(csv_path, index=False, encoding="utf-8")
+
+csv_path

@@ -1,0 +1,4 @@
+
+# Ignorar backups grandes
+/scripts/backup/*.zip
+ts-verificacao.txt

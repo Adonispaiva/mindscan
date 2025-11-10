@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Relatório de Push — Inovexa MindScan</title>
+    <style>
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background-color: #0d1117;
+            color: #c9d1d9;
+            margin: 30px;
+        }
+        h1, h2 { color: #58a6ff; }
+        .container {
+            background: #161b22;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px #000;
+        }
+        .ok { color: #3fb950; font-weight: bold; }
+        .fail { color: #f85149; font-weight: bold; }
+        code {
+            background: #0d1117;
+            padding: 3px 6px;
+            border-radius: 5px;
+            color: #79c0ff;
+        }
+        pre {
+            background: #0d1117;
+            border: 1px solid #30363d;
+            border-radius: 6px;
+            padding: 10px;
+            overflow-x: auto;
+            white-space: pre-wrap;
+        }
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #8b949e;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <h1>🧠 Inovexa Fábrica — Relatório de Push MindScan</h1>
+    <div class="container">
+        <p><b>Data:</b> {{timestamp}}</p>
+        <p><b>Repositório:</b> {{repository}}</p>
+        <p><b>Branch:</b> {{branch}}</p>
+        <p><b>Status:</b> <span class="{{status_class}}">{{status}}</span></p>
+        <p><b>Backup ZIP:</b> {{backup_zip}}</p>
+        <p><b>Checksum (SHA256):</b> <code>{{checksum}}</code></p>
+    </div>
+
+    <h2>📜 Log do Push</h2>
+    <pre>{{log_content}}</pre>
+
+    <footer>
+        Inovexa Software © 2025 — Fábrica Automatizada v3.0  
+        <br>Relatório gerado automaticamente pelo sistema de sincronização.
+    </footer>
+</body>
+</html>

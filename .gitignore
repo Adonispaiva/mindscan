@@ -1,0 +1,31 @@
+﻿# Flutter & Android
+build/
+.gradle/
+.idea/
+.dart_tool/
+pubspec.lock
+
+# Backups e logs
+backup/
+*.log
+*.json
+*.tmp
+*.bak
+
+# Arquivos grandes
+*.aab
+*.apk
+*.zip
+*.exe
+*.dll
+*.so
+*.mp4
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.webp
+
+# Sistema
+Thumbs.db
+.DS_Store

@@ -1,0 +1,1 @@
+2025/10/13 14:31:43 CRITICAL: Failed to create file system for "inovexa-drive:D:/projetos-inovexa/mindscan\\export\\SynMind_Export_2025-10-13_14-31-41": didn't find section in config file ("inovexa-drive")

@@ -1,0 +1,16 @@
+backup/
+*.zip
+*.rar
+*.7z
+*.tar
+*.gz
+*.apk
+*.aab
+*.exe
+*.dll
+*.so
+*.mp4
+*.png
+*.jpg
+*.jpeg
+*.webp

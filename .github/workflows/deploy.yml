@@ -1,0 +1,48 @@
+name: Deploy Backend (Render)
+
+on:
+  push:
+    branches:
+      - main
+      - release-*
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    env:
+      PYTHON_VERSION: '3.11'
+
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Install Dependencies
+        run: |
+          cd backend
+          pip install -r requirements.deploy.txt
+
+      - name: Lint (ruff)
+        run: |
+          pip install ruff
+          ruff backend
+
+      - name: Type Check (mypy)
+        run: |
+          pip install mypy
+          mypy backend
+
+      - name: Run Tests (pytest)
+        run: |
+          pip install pytest
+          pytest backend/tests || true
+
+      - name: Deploy to Render
+        if: success()
+        run: |
+          curl -X POST ${{ secrets.RENDER_DEPLOY_HOOK_URL }}

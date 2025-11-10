@@ -1,0 +1,11 @@
+fastapi==0.110.0
+uvicorn==0.29.0
+sqlalchemy==2.0.30
+pydantic==2.7.1
+python-jose==3.3.0
+passlib[bcrypt]==1.7.4
+aiofiles==23.2.1
+python-dotenv==1.0.1
+asyncpg
+httptools==0.6.1
+watchfiles==0.21.0
