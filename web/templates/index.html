@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MindScan Web Console</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h1>🧠 MindScan <span>Web Console</span></h1>
+      <div id="statusContainer">
+        <strong>Status:</strong> <span id="statusLabel">Desconectado</span>
+      </div>
+    </header>
+
+    <section id="controls">
+      <button id="btnStart" class="control-btn">Iniciar</button>
+      <button id="btnStop" class="control-btn disabled">Encerrar</button>
+    </section>
+
+    <section id="consoleSection">
+      <h2>Console de Execução</h2>
+      <div id="console" class="console-panel"></div>
+    </section>
+
+    <footer>
+      <p>© 2025 Inovexa Software — MindScan v3.3 Neon Build</p>
+    </footer>
+  </div>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>

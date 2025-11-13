@@ -1,0 +1,28 @@
+{
+    "start_time": "2025-11-12 16:17:35.251705",
+    "removed": [
+        "D:\\projetos-inovexa\\mindscan\\remover_duplicado_automacao.py",
+        "D:\\projetos-inovexa\\mindscan\\remover_duplicado_mindscan.py",
+        "D:\\projetos-inovexa\\mindscan\\.github\\pull_request_template.md",
+        "D:\\projetos-inovexa\\mindscan\\backend\\manifest_push_template.html",
+        "D:\\projetos-inovexa\\mindscan\\backend\\.venv\\Lib\\site-packages\\fastapi\\templating.py",
+        "D:\\projetos-inovexa\\mindscan\\backend\\.venv\\Lib\\site-packages\\fastapi\\__pycache__\\templating.cpython-312.pyc",
+        "D:\\projetos-inovexa\\mindscan\\backend\\.venv\\Lib\\site-packages\\mako\\template.py",
+        "D:\\projetos-inovexa\\mindscan\\backend\\.venv\\Lib\\site-packages\\mako\\__pycache__\\template.cpython-312.pyc",
+        "D:\\projetos-inovexa\\mindscan\\backend\\.venv\\Lib\\site-packages\\pip\\_internal\\utils\\temp_dir.py",
+        "D:\\projetos-inovexa\\mindscan\\backend\\.venv\\Lib\\site-packages\\pip\\_internal\\utils\\__pycache__\\temp_dir.cpython-312.pyc",
+        "D:\\projetos-inovexa\\mindscan\\backend\\.venv\\Lib\\site-packages\\starlette\\templating.py",
+        "D:\\projetos-inovexa\\mindscan\\backend\\.venv\\Lib\\site-packages\\starlette\\__pycache__\\templating.cpython-312.pyc",
+        "D:\\projetos-inovexa\\mindscan\\backend\\.venv\\Lib\\site-packages\\_pytest\\tmpdir.py",
+        "D:\\projetos-inovexa\\mindscan\\backend\\.venv\\Lib\\site-packages\\_pytest\\__pycache__\\tmpdir.cpython-312.pyc",
+        "D:\\projetos-inovexa\\mindscan\\supervisor\\template_relatorio.md",
+        "D:\\projetos-inovexa\\mindscan\\venv\\Lib\\site-packages\\aiofiles\\tempfile\\temptypes.py",
+        "D:\\projetos-inovexa\\mindscan\\venv\\Lib\\site-packages\\anyio\\_core\\_tempfile.py",
+        "D:\\projetos-inovexa\\mindscan\\venv\\Lib\\site-packages\\fastapi\\templating.py",
+        "D:\\projetos-inovexa\\mindscan\\venv\\Lib\\site-packages\\pip\\_internal\\utils\\temp_dir.py",
+        "D:\\projetos-inovexa\\mindscan\\venv\\Lib\\site-packages\\starlette\\templating.py"
+    ],
+    "backed_up": [],
+    "normalized": [],
+    "end_time": "2025-11-12 16:17:36.218465"
+}

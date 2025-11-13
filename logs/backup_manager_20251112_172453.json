@@ -1,0 +1,35 @@
+{
+  "started_at": "2025-11-12T17:24:53.671299",
+  "policy": {
+    "keep_last": 2,
+    "retention_days": 15,
+    "max_backup_dir_gb": 5,
+    "purge_archive_after_days": 7,
+    "force_purge_when_single_file_over_gb": 20,
+    "dry_run": false,
+    "progressive_hash": true
+  },
+  "kept": [
+    "D:\\projetos-inovexa\\mindscan\\backup\\push_runtime.log",
+    "D:\\projetos-inovexa\\mindscan\\backup\\last_push_hash.txt"
+  ],
+  "archived": [
+    "D:\\projetos-inovexa\\mindscan\\backup\\manifest_push_20251110_110643.html",
+    "D:\\projetos-inovexa\\mindscan\\backup\\manifest_push_20251110_110643.json",
+    "D:\\projetos-inovexa\\mindscan\\backup\\manifest_push_20251110_104857.html",
+    "D:\\projetos-inovexa\\mindscan\\backup\\manifest_push_20251110_104857.json",
+    "D:\\projetos-inovexa\\mindscan\\backup\\manifest_push_20251110_105157.html",
+    "D:\\projetos-inovexa\\mindscan\\backup\\manifest_push_20251110_105157.json",
+    "D:\\projetos-inovexa\\mindscan\\backup\\manifest_push_template.html"
+  ],
+  "purged": [
+    {
+      "file": "D:\\projetos-inovexa\\mindscan\\backup\\_archive\\mindscan_backup_20251110_070356.zip",
+      "deleted": true,
+      "error": null,
+      "hash": "f842f1058b7b6e45f18b185445f25b3b149d694a2d863b4b6c980e83f9065e08"
+    }
+  ],
+  "errors": [],
+  "finished_at": "2025-11-12T17:33:20.093497"
+}

@@ -1,0 +1,61 @@
+# =========================================================
+# MindScan Monitoring Stack — Versão Definitiva Inovexa
+# Prometheus + Grafana com auto-provisionamento
+# Compatível com Docker Desktop (Windows)
+# =========================================================
+
+version: "3.9"
+
+services:
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: mindscan-prometheus
+    restart: unless-stopped
+    ports:
+      - "9090:9090"
+    volumes:
+      - /d/projetos-inovexa/mindscan/infra/monitoring/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - /d/projetos-inovexa/mindscan/infra/monitoring/data/prometheus:/prometheus
+    command:
+      - "--config.file=/etc/prometheus/prometheus.yml"
+      - "--storage.tsdb.path=/prometheus"
+      - "--web.enable-lifecycle"
+    networks:
+      - monitor-net
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: mindscan-grafana
+    restart: unless-stopped
+    depends_on:
+      - prometheus
+    ports:
+      - "3000:3000"
+    environment:
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=inovexa123
+      - GF_PATHS_PROVISIONING=/etc/grafana/provisioning
+      - GF_INSTALL_PLUGINS=marcusolsson-json-datasource
+    volumes:
+      - grafana-data:/var/lib/grafana
+      - /d/projetos-inovexa/mindscan/infra/monitoring/grafana_config.yml:/etc/grafana/provisioning/datasources/grafana_config.yml:ro
+      - /d/projetos-inovexa/mindscan/infra/monitoring/synmind_grafana_dashboard.json:/var/lib/grafana/dashboards/synmind_grafana_dashboard.json:ro
+      - /d/projetos-inovexa/mindscan/infra/monitoring/grafana_provision.sh:/grafana_provision.sh:ro
+    entrypoint:
+      - sh
+      - -c
+      - |
+        /run.sh &
+        echo "⏳ Aguardando Grafana iniciar..."
+        sleep 15
+        echo "🚀 Executando script de provisionamento..."
+        bash /grafana_provision.sh
+    networks:
+      - monitor-net
+
+networks:
+  monitor-net:
+    driver: bridge
+
+volumes:
+  grafana-data:

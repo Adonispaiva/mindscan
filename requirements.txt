@@ -9,3 +9,5 @@ python-dotenv==1.0.1
 asyncpg
 httptools==0.6.1
 watchfiles==0.21.0
+psutil
+pydantic[email]

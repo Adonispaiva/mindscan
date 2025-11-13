@@ -1,0 +1,9 @@
+{
+  "keep_last": 2,
+  "retention_days": 15,
+  "max_backup_dir_gb": 5,
+  "purge_archive_after_days": 7,
+  "force_purge_when_single_file_over_gb": 20,
+  "dry_run": false,
+  "progressive_hash": true
+}

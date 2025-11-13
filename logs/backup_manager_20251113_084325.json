@@ -1,0 +1,20 @@
+{
+  "started_at": "2025-11-13T08:43:25.323411",
+  "policy": {
+    "keep_last": 2,
+    "retention_days": 15,
+    "max_backup_dir_gb": 5,
+    "purge_archive_after_days": 7,
+    "force_purge_when_single_file_over_gb": 20,
+    "dry_run": false,
+    "progressive_hash": true
+  },
+  "kept": [
+    "D:\\projetos-inovexa\\mindscan\\backup\\push_runtime.log",
+    "D:\\projetos-inovexa\\mindscan\\backup\\last_push_hash.txt"
+  ],
+  "archived": [],
+  "purged": [],
+  "errors": [],
+  "finished_at": "2025-11-13T08:43:25.339037"
+}

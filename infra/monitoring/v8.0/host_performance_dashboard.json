@@ -1,0 +1,87 @@
+{
+  "id": null,
+  "uid": "inovexa-host-performance",
+  "title": "Inovexa MindScan - Host Performance",
+  "tags": ["inovexa", "mindscan", "monitoring"],
+  "timezone": "browser",
+  "schemaVersion": 39,
+  "version": 5,
+  "refresh": "10s",
+  "style": "dark",
+  "panels": [
+    {
+      "type": "gauge",
+      "title": "CPU Usage (%)",
+      "targets": [
+        {
+          "expr": "mindscan_host_cpu",
+          "legendFormat": "CPU"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "percent",
+          "min": 0,
+          "max": 100,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              { "color": "green", "value": null },
+              { "color": "orange", "value": 70 },
+              { "color": "red", "value": 90 }
+            ]
+          }
+        }
+      },
+      "gridPos": { "x": 0, "y": 0, "w": 12, "h": 8 }
+    },
+    {
+      "type": "gauge",
+      "title": "Memory Usage (%)",
+      "targets": [
+        {
+          "expr": "mindscan_host_memory",
+          "legendFormat": "Memory"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "percent",
+          "min": 0,
+          "max": 100,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              { "color": "green", "value": null },
+              { "color": "orange", "value": 75 },
+              { "color": "red", "value": 90 }
+            ]
+          }
+        }
+      },
+      "gridPos": { "x": 12, "y": 0, "w": 12, "h": 8 }
+    },
+    {
+      "type": "stat",
+      "title": "Uptime (seconds)",
+      "targets": [
+        {
+          "expr": "mindscan_host_uptime_seconds",
+          "legendFormat": "Uptime"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "s",
+          "color": { "mode": "thresholds" }
+        }
+      },
+      "gridPos": { "x": 0, "y": 8, "w": 24, "h": 5 }
+    }
+  ],
+  "templating": { "list": [] },
+  "annotations": { "list": [] },
+  "time": { "from": "now-15m", "to": "now" },
+  "timepicker": { "refresh_intervals": ["5s", "10s", "30s"] },
+  "editable": true
+}

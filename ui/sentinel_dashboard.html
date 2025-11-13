@@ -1,0 +1,53 @@
+<!-- 🌐 MindScan Sentinel Dashboard — Template v5.8 -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MindScan Sentinel</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        <h1>🧠 MindScan Sentinel Dashboard</h1>
+        <p>Monitoramento em tempo real do núcleo local</p>
+    </header>
+
+    <section class="status">
+        <div class="card">
+            <h2>Uso de CPU</h2>
+            <p id="cpu">{{ info.cpu }}%</p>
+        </div>
+        <div class="card">
+            <h2>Uso de Memória</h2>
+            <p id="mem">{{ info.memory }}%</p>
+        </div>
+        <div class="card">
+            <h2>Sistema</h2>
+            <p>{{ info.system }}</p>
+        </div>
+        <div class="card">
+            <h2>Horário Atual</h2>
+            <p>{{ info.time }}</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>Inovexa Software © 2025 — MindScan v5.8</p>
+    </footer>
+
+    <script>
+        async function refreshStatus() {
+            try {
+                const r = await fetch("/status");
+                const data = await r.json();
+                document.getElementById("cpu").textContent = data.cpu + "%";
+                document.getElementById("mem").textContent = data.memory + "%";
+            } catch (e) {
+                console.warn("Falha ao atualizar status", e);
+            }
+        }
+        setInterval(refreshStatus, 5000);
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+name: Build and Deploy MindScan
+
+on:
+  push:
+    branches: [ "main", "v2.1-dev" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Instalar dependências backend
+        run: |
+          pip install -r backend/requirements.txt
+
+      - name: Instalar dependências frontend
+        run: |
+          cd frontend && npm install && npm run build
+
+      - name: Testar backend
+        run: |
+          pytest tests/
+
+      - name: Build Docker
+        run: docker build -t mindscan:ci .
+
+      - name: Upload de artefato
+        uses: actions/upload-artifact@v4
+        with:
+          name: mindscan-ci
+          path: .

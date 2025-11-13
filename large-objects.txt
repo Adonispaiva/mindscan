@@ -1,0 +1,3 @@
+# MindScan - Large Objects Registry
+# Liste aqui manualmente arquivos grandes que não devem ir para o controle de versão
+# ou que exigem atenção especial em rotinas de backup.

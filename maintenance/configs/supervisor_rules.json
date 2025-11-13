@@ -1,0 +1,78 @@
+{
+  "version": "1.0",
+  "last_update": "2025-11-11T17:55:00Z",
+  "author": "Inovexa Software",
+  "director": "Leo Vinci",
+  "description": "Regras operacionais e políticas de supervisão para o ecossistema MindScan — utilizadas pelo Watchdog e Recovery Daemon.",
+
+  "watchdog_policies": {
+    "scan_interval_seconds": 5,
+    "max_retries": 3,
+    "restart_cooldown_seconds": 10,
+    "allowed_failures_per_hour": 2,
+    "restart_conditions": [
+      "crash_detected",
+      "timeout_exceeded",
+      "event_loop_stuck"
+    ],
+    "ignore_patterns": [
+      "temporary_cache_error",
+      "user_interrupt"
+    ],
+    "event_handling": {
+      "on_script_start": "log_only",
+      "on_script_end": "log_and_notify",
+      "on_failure": "restart_if_retries_left",
+      "on_success": "noop"
+    },
+    "priority_scripts": [
+      "mindscan_daily_runner.py",
+      "mindscan_autorecover.py"
+    ]
+  },
+
+  "recovery_policies": {
+    "heartbeat_interval_minutes": 5,
+    "heartbeat_log": "maintenance/logs/recovery_daemon.log",
+    "max_restarts_per_day": 10,
+    "restart_wait_seconds": 15,
+    "reboot_on_persistent_failure": true,
+    "persistent_failure_threshold": 5,
+    "auto_restart_components": [
+      "watchdog",
+      "command_center"
+    ],
+    "self_check_rules": {
+      "cpu_threshold_percent": 90,
+      "memory_threshold_percent": 85,
+      "disk_space_min_gb": 2
+    }
+  },
+
+  "diagnostics_policies": {
+    "safe_check_interval_minutes": 30,
+    "include_system_metrics": true,
+    "include_log_integrity": true,
+    "report_target": "command_center/notifier_events.json",
+    "alert_rules": {
+      "memory_leak_detected": "notify_admin",
+      "file_corruption": "restart_watchdog",
+      "unresponsive_thread": "restart_component"
+    }
+  },
+
+  "notifications": {
+    "send_email_on_critical_failure": true,
+    "email_recipient": "admin@inovexa.com",
+    "cooldown_minutes": 60,
+    "log_notifications": true
+  },
+
+  "global_failsafe": {
+    "enabled": true,
+    "trigger_on_total_crash": true,
+    "action": "invoke_recovery_daemon",
+    "minimum_uptime_seconds": 300,
+    "alert_on_trigger": true
+  }
+}

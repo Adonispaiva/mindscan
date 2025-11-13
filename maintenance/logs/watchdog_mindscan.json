@@ -1,0 +1,1002 @@
+[
+  {
+    "timestamp": "2025-11-11T19:14:18.973975",
+    "event": "Script ausente: mindscan_daily_runner.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:14:18.980117",
+    "event": "Script ausente: mindscan_autorecover.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:14:19.850465",
+    "event": "Script ausente: mindscan_daily_runner.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:14:19.859338",
+    "event": "Script ausente: mindscan_autorecover.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:14:21.050285",
+    "event": "Script ausente: mindscan_daily_runner.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:14:21.055249",
+    "event": "Script ausente: mindscan_autorecover.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:14:23.987555",
+    "event": "Script ausente: mindscan_daily_runner.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:14:23.987555",
+    "event": "Script ausente: mindscan_autorecover.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:14:24.867839",
+    "event": "Script ausente: mindscan_daily_runner.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:14:24.867839",
+    "event": "Script ausente: mindscan_autorecover.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:14:26.059718",
+    "event": "Script ausente: mindscan_daily_runner.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:14:26.072495",
+    "event": "Script ausente: mindscan_autorecover.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:14:28.999531",
+    "event": "Script ausente: mindscan_daily_runner.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:14:29.005517",
+    "event": "Script ausente: mindscan_autorecover.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:14:29.881465",
+    "event": "Script ausente: mindscan_daily_runner.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:14:29.910474",
+    "event": "Script ausente: mindscan_autorecover.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:14:31.081189",
+    "event": "Script ausente: mindscan_daily_runner.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:14:31.088185",
+    "event": "Script ausente: mindscan_autorecover.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:14:34.012973",
+    "event": "Script ausente: mindscan_daily_runner.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:14:34.012973",
+    "event": "Script ausente: mindscan_autorecover.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:14:34.949973",
+    "event": "Script ausente: mindscan_daily_runner.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:14:34.949973",
+    "event": "Script ausente: mindscan_autorecover.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:14:36.098323",
+    "event": "Script ausente: mindscan_daily_runner.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:14:36.098323",
+    "event": "Script ausente: mindscan_autorecover.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:14:39.025719",
+    "event": "Script ausente: mindscan_daily_runner.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:14:39.028297",
+    "event": "Script ausente: mindscan_autorecover.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:14:39.961908",
+    "event": "Script ausente: mindscan_daily_runner.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:14:39.970896",
+    "event": "Script ausente: mindscan_autorecover.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:14:41.109612",
+    "event": "Script ausente: mindscan_daily_runner.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:14:41.117863",
+    "event": "Script ausente: mindscan_autorecover.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:14:44.038200",
+    "event": "Script ausente: mindscan_daily_runner.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:14:44.043140",
+    "event": "Script ausente: mindscan_autorecover.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:14:44.979493",
+    "event": "Script ausente: mindscan_daily_runner.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:14:44.986503",
+    "event": "Script ausente: mindscan_autorecover.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:14:46.124894",
+    "event": "Script ausente: mindscan_daily_runner.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:14:46.130886",
+    "event": "Script ausente: mindscan_autorecover.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:14:49.051695",
+    "event": "Script ausente: mindscan_daily_runner.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:14:49.057696",
+    "event": "Script ausente: mindscan_autorecover.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:14:49.992959",
+    "event": "Script ausente: mindscan_daily_runner.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:14:49.998982",
+    "event": "Script ausente: mindscan_autorecover.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:14:51.138005",
+    "event": "Script ausente: mindscan_daily_runner.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:14:51.148694",
+    "event": "Script ausente: mindscan_autorecover.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:14:54.067249",
+    "event": "Script ausente: mindscan_daily_runner.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:14:54.075250",
+    "event": "Script ausente: mindscan_autorecover.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:14:55.035706",
+    "event": "Script ausente: mindscan_daily_runner.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:14:55.041705",
+    "event": "Script ausente: mindscan_autorecover.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:14:56.162711",
+    "event": "Script ausente: mindscan_daily_runner.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:14:56.168714",
+    "event": "Script ausente: mindscan_autorecover.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:14:59.082249",
+    "event": "Script ausente: mindscan_daily_runner.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:14:59.082249",
+    "event": "Script ausente: mindscan_autorecover.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:15:00.048629",
+    "event": "Script ausente: mindscan_daily_runner.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:15:00.054622",
+    "event": "Script ausente: mindscan_autorecover.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:15:01.175507",
+    "event": "Script ausente: mindscan_daily_runner.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:15:01.175507",
+    "event": "Script ausente: mindscan_autorecover.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:15:04.094822",
+    "event": "Script ausente: mindscan_daily_runner.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:15:04.094822",
+    "event": "Script ausente: mindscan_autorecover.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:15:05.061265",
+    "event": "Script ausente: mindscan_daily_runner.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:15:05.073275",
+    "event": "Script ausente: mindscan_autorecover.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:15:06.192574",
+    "event": "Script ausente: mindscan_daily_runner.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:15:06.200573",
+    "event": "Script ausente: mindscan_autorecover.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:15:09.106212",
+    "event": "Script ausente: mindscan_daily_runner.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:15:09.106212",
+    "event": "Script ausente: mindscan_autorecover.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:15:10.084137",
+    "event": "Script ausente: mindscan_daily_runner.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:15:10.084137",
+    "event": "Script ausente: mindscan_autorecover.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:15:11.207385",
+    "event": "Script ausente: mindscan_daily_runner.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:15:11.207385",
+    "event": "Script ausente: mindscan_autorecover.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:15:14.115908",
+    "event": "Script ausente: mindscan_daily_runner.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:15:14.115908",
+    "event": "Script ausente: mindscan_autorecover.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:15:15.093849",
+    "event": "Script ausente: mindscan_daily_runner.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:15:15.103690",
+    "event": "Script ausente: mindscan_autorecover.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:15:16.219334",
+    "event": "Script ausente: mindscan_daily_runner.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:15:16.225332",
+    "event": "Script ausente: mindscan_autorecover.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:15:19.130370",
+    "event": "Script ausente: mindscan_daily_runner.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:15:19.136443",
+    "event": "Script ausente: mindscan_autorecover.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:15:20.115275",
+    "event": "Script ausente: mindscan_daily_runner.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:15:20.121250",
+    "event": "Script ausente: mindscan_autorecover.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:15:21.233304",
+    "event": "Script ausente: mindscan_daily_runner.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:15:21.239299",
+    "event": "Script ausente: mindscan_autorecover.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:15:24.143017",
+    "event": "Script ausente: mindscan_daily_runner.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:15:24.149552",
+    "event": "Script ausente: mindscan_autorecover.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:15:25.130595",
+    "event": "Script ausente: mindscan_daily_runner.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:15:25.147594",
+    "event": "Script ausente: mindscan_autorecover.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:15:26.289350",
+    "event": "Script ausente: mindscan_daily_runner.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:15:26.339327",
+    "event": "Script ausente: mindscan_autorecover.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:15:29.159384",
+    "event": "Script ausente: mindscan_daily_runner.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:15:29.165939",
+    "event": "Script ausente: mindscan_autorecover.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:15:30.170891",
+    "event": "Script ausente: mindscan_daily_runner.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:15:30.176893",
+    "event": "Script ausente: mindscan_autorecover.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:15:31.365151",
+    "event": "Script ausente: mindscan_daily_runner.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:15:31.371157",
+    "event": "Script ausente: mindscan_autorecover.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:15:34.172640",
+    "event": "Script ausente: mindscan_daily_runner.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:15:34.179056",
+    "event": "Script ausente: mindscan_autorecover.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:15:35.184419",
+    "event": "Script ausente: mindscan_daily_runner.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:15:35.190622",
+    "event": "Script ausente: mindscan_autorecover.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:15:36.378024",
+    "event": "Script ausente: mindscan_daily_runner.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:15:36.385023",
+    "event": "Script ausente: mindscan_autorecover.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:15:39.186147",
+    "event": "Script ausente: mindscan_daily_runner.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:15:39.186147",
+    "event": "Script ausente: mindscan_autorecover.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:15:40.197335",
+    "event": "Script ausente: mindscan_daily_runner.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:15:40.197335",
+    "event": "Script ausente: mindscan_autorecover.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:15:41.391532",
+    "event": "Script ausente: mindscan_daily_runner.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:15:41.391532",
+    "event": "Script ausente: mindscan_autorecover.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:15:44.195688",
+    "event": "Script ausente: mindscan_daily_runner.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:15:44.195688",
+    "event": "Script ausente: mindscan_autorecover.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:15:45.222485",
+    "event": "Script ausente: mindscan_daily_runner.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:15:45.238133",
+    "event": "Script ausente: mindscan_autorecover.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:15:46.403546",
+    "event": "Script ausente: mindscan_daily_runner.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:15:46.403546",
+    "event": "Script ausente: mindscan_autorecover.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:15:49.205598",
+    "event": "Script ausente: mindscan_daily_runner.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:15:49.205598",
+    "event": "Script ausente: mindscan_autorecover.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:15:50.263710",
+    "event": "Script ausente: mindscan_daily_runner.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:15:50.263710",
+    "event": "Script ausente: mindscan_autorecover.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:15:51.417168",
+    "event": "Script ausente: mindscan_daily_runner.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:15:51.417168",
+    "event": "Script ausente: mindscan_autorecover.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:15:54.218024",
+    "event": "Script ausente: mindscan_daily_runner.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:15:54.224021",
+    "event": "Script ausente: mindscan_autorecover.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:15:55.276122",
+    "event": "Script ausente: mindscan_daily_runner.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:15:55.276122",
+    "event": "Script ausente: mindscan_autorecover.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:15:56.426920",
+    "event": "Script ausente: mindscan_daily_runner.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:15:56.432445",
+    "event": "Script ausente: mindscan_autorecover.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:15:59.231743",
+    "event": "Script ausente: mindscan_daily_runner.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:15:59.231743",
+    "event": "Script ausente: mindscan_autorecover.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:16:00.288318",
+    "event": "Script ausente: mindscan_daily_runner.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:16:00.288318",
+    "event": "Script ausente: mindscan_autorecover.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:16:01.437441",
+    "event": "Script ausente: mindscan_daily_runner.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:16:01.437441",
+    "event": "Script ausente: mindscan_autorecover.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:16:04.244292",
+    "event": "Script ausente: mindscan_daily_runner.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:16:04.250252",
+    "event": "Script ausente: mindscan_autorecover.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:16:05.300113",
+    "event": "Script ausente: mindscan_daily_runner.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:16:05.300113",
+    "event": "Script ausente: mindscan_autorecover.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:16:06.449784",
+    "event": "Script ausente: mindscan_daily_runner.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:16:06.459828",
+    "event": "Script ausente: mindscan_autorecover.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:16:09.257873",
+    "event": "Script ausente: mindscan_daily_runner.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:16:09.257873",
+    "event": "Script ausente: mindscan_autorecover.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:16:10.311940",
+    "event": "Script ausente: mindscan_daily_runner.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:16:10.311940",
+    "event": "Script ausente: mindscan_autorecover.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:16:11.471609",
+    "event": "Script ausente: mindscan_daily_runner.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:16:11.471609",
+    "event": "Script ausente: mindscan_autorecover.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:16:14.270890",
+    "event": "Script ausente: mindscan_daily_runner.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:16:14.270890",
+    "event": "Script ausente: mindscan_autorecover.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:16:15.324663",
+    "event": "Script ausente: mindscan_daily_runner.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:16:15.326678",
+    "event": "Script ausente: mindscan_autorecover.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:16:16.481162",
+    "event": "Script ausente: mindscan_daily_runner.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:16:16.485258",
+    "event": "Script ausente: mindscan_autorecover.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:16:19.291492",
+    "event": "Script ausente: mindscan_daily_runner.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:16:19.296957",
+    "event": "Script ausente: mindscan_autorecover.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:16:20.337304",
+    "event": "Script ausente: mindscan_daily_runner.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:16:20.337304",
+    "event": "Script ausente: mindscan_autorecover.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:16:21.495457",
+    "event": "Script ausente: mindscan_daily_runner.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:16:21.495457",
+    "event": "Script ausente: mindscan_autorecover.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:16:24.302031",
+    "event": "Script ausente: mindscan_daily_runner.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:16:24.307033",
+    "event": "Script ausente: mindscan_autorecover.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:16:25.368532",
+    "event": "Script ausente: mindscan_daily_runner.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:16:25.384188",
+    "event": "Script ausente: mindscan_autorecover.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:16:26.507938",
+    "event": "Script ausente: mindscan_daily_runner.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:16:26.517611",
+    "event": "Script ausente: mindscan_autorecover.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:16:29.314252",
+    "event": "Script ausente: mindscan_daily_runner.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:16:29.318264",
+    "event": "Script ausente: mindscan_autorecover.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:16:30.390943",
+    "event": "Script ausente: mindscan_daily_runner.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:16:30.390943",
+    "event": "Script ausente: mindscan_autorecover.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:16:31.524356",
+    "event": "Script ausente: mindscan_daily_runner.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:16:31.524356",
+    "event": "Script ausente: mindscan_autorecover.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:16:34.324596",
+    "event": "Script ausente: mindscan_daily_runner.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:16:34.331615",
+    "event": "Script ausente: mindscan_autorecover.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:16:35.399804",
+    "event": "Script ausente: mindscan_daily_runner.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:16:35.399804",
+    "event": "Script ausente: mindscan_autorecover.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:16:36.536249",
+    "event": "Script ausente: mindscan_daily_runner.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:16:36.545732",
+    "event": "Script ausente: mindscan_autorecover.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:16:39.337691",
+    "event": "Script ausente: mindscan_daily_runner.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:16:39.337691",
+    "event": "Script ausente: mindscan_autorecover.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:16:40.414500",
+    "event": "Script ausente: mindscan_daily_runner.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:16:40.415782",
+    "event": "Script ausente: mindscan_autorecover.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:16:41.556390",
+    "event": "Script ausente: mindscan_daily_runner.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:16:41.564657",
+    "event": "Script ausente: mindscan_autorecover.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:16:44.347262",
+    "event": "Script ausente: mindscan_daily_runner.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:16:44.351272",
+    "event": "Script ausente: mindscan_autorecover.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:16:45.429636",
+    "event": "Script ausente: mindscan_daily_runner.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:16:45.429636",
+    "event": "Script ausente: mindscan_autorecover.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:16:46.573181",
+    "event": "Script ausente: mindscan_daily_runner.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:16:46.573181",
+    "event": "Script ausente: mindscan_autorecover.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:16:49.357461",
+    "event": "Script ausente: mindscan_daily_runner.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:16:49.369201",
+    "event": "Script ausente: mindscan_autorecover.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:16:50.438379",
+    "event": "Script ausente: mindscan_daily_runner.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:16:50.449096",
+    "event": "Script ausente: mindscan_autorecover.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:16:51.584171",
+    "event": "Script ausente: mindscan_daily_runner.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:16:51.591169",
+    "event": "Script ausente: mindscan_autorecover.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:16:54.380221",
+    "event": "Script ausente: mindscan_daily_runner.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:16:54.380221",
+    "event": "Script ausente: mindscan_autorecover.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:16:55.457035",
+    "event": "Script ausente: mindscan_daily_runner.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:16:55.457035",
+    "event": "Script ausente: mindscan_autorecover.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:16:56.599054",
+    "event": "Script ausente: mindscan_daily_runner.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:16:56.604128",
+    "event": "Script ausente: mindscan_autorecover.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:16:59.389304",
+    "event": "Script ausente: mindscan_daily_runner.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:16:59.389304",
+    "event": "Script ausente: mindscan_autorecover.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:17:00.481352",
+    "event": "Script ausente: mindscan_daily_runner.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:17:00.492484",
+    "event": "Script ausente: mindscan_autorecover.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:17:01.608569",
+    "event": "Script ausente: mindscan_daily_runner.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:17:01.613781",
+    "event": "Script ausente: mindscan_autorecover.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:17:04.379740",
+    "event": "Script ausente: mindscan_daily_runner.py",
+    "status": "WARNING"
+  },
+  {
+    "timestamp": "2025-11-11T19:17:04.397878",
+    "event": "Script ausente: mindscan_autorecover.py",
+    "status": "WARNING"
+  }
+]]

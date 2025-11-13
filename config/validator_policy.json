@@ -1,0 +1,75 @@
+{
+  "version": "1.0",
+  "environment": "MindScan-SynMind",
+  "description": "Política de validação de integridade, estrutura e espaço em disco do ecossistema MindScan (SynMind).",
+  "last_update": "2025-11-13T00:00:00",
+
+  "paths": {
+    "root": "D:/projetos-inovexa/mindscan",
+    "backup_dir": "D:/projetos-inovexa/mindscan/backup",
+    "logs_dir": "D:/projetos-inovexa/mindscan/logs",
+    "alerts_dir": "D:/projetos-inovexa/mindscan/alerts",
+    "scripts_dir": "D:/projetos-inovexa/mindscan/scripts"
+  },
+
+  "disk_min_free_percent": 25.0,
+  "disk_warning_percent": 30.0,
+
+  "directories_required": [
+    "backup",
+    "backup/_archive",
+    "config",
+    "core",
+    "backend",
+    "frontend",
+    "web",
+    "web_interface",
+    "infra",
+    "deploy",
+    "logs",
+    "alerts",
+    "data",
+    "tests",
+    "tools",
+    "services",
+    "scripts",
+    "mindscan_logs"
+  ],
+
+  "scripts_required": [
+    "backup_manager.py",
+    "backup_purger_progressive.py",
+    "backup_mindscan_rclone.py",
+    "structure_manager.py",
+    "recovery_manager.py",
+    "post_purge_validator.py",
+    "integrity_scanner.py",
+    "system_health_monitor.py",
+    "maintenance_reporter.py",
+    "alert_dispatcher.py",
+    "alert_watcher.py",
+    "auto_orchestrator_v2.py",
+    "policy_loader.py",
+    "weight_auditor.py",
+    "manifest_registrar.py",
+    "verificar_ambiente_mindscan.py"
+  ],
+
+  "recovery": {
+    "auto_create_missing_directories": true,
+    "auto_recreate_missing_scripts": true,
+    "log_only_when_changes": true
+  },
+
+  "alerts": {
+    "disk_warning": "MindScan/SynMind — Atenção: espaço em disco no volume D: abaixo do limite de segurança. Revise backups e arquivos de log.",
+    "disk_critical": "MindScan/SynMind — CRÍTICO: espaço em disco insuficiente no volume D:. Execute imediatamente a rotina de manutenção para evitar falhas e perda de dados.",
+    "recovery_directory_created": "MindScan — Diretório ausente recriado automaticamente pela política de recuperação.",
+    "recovery_script_recreated": "MindScan — Script essencial ausente foi recriado automaticamente pela política de recuperação."
+  },
+
+  "logging": {
+    "enable_verbose": true,
+    "include_policy_snapshot_in_logs": true
+  }
+}

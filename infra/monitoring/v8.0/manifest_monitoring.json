@@ -1,0 +1,44 @@
+{
+  "project": "Inovexa Mindscan - Monitoring Stack",
+  "version": "8.0.5",
+  "build_date": "2025-11-09",
+  "environment": "local",
+  "maintainer": "Inovexa Software / Leo Vinci",
+  "encoding": "UTF-8",
+  "description": "Stack de monitoramento com Prometheus, Grafana e monitor-agent Flask integrado.",
+  "components": {
+    "prometheus": {
+      "image": "prom/prometheus:latest",
+      "port": 9090,
+      "config": "prometheus.yml"
+    },
+    "grafana": {
+      "image": "grafana/grafana:latest",
+      "port": 3000,
+      "dashboards": [
+        "dashboards/host_performance_dashboard.json",
+        "dashboards/synmind_grafana_dashboard.json"
+      ]
+    },
+    "monitor_agent": {
+      "language": "Python 3.12",
+      "framework": "Flask",
+      "port": 8000,
+      "script": "grafana_provision_omni.py"
+    }
+  },
+  "network": "v80_monitor_net",
+  "hash_algorithm": "SHA-256",
+  "files": [
+    ".env",
+    "docker-compose.monitor.yml",
+    "Dockerfile",
+    "grafana_provision_omni.py",
+    "prometheus.yml",
+    "manifest_monitoring.json"
+  ],
+  "integrity": {
+    "validated": true,
+    "status": "clean"
+  }
+}

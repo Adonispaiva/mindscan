@@ -1,0 +1,2 @@
+MindScan verificado para integração com SynMind.
+Este arquivo é apenas um marcador lógico usado por rotinas de auditoria.

@@ -1,0 +1,26 @@
+[
+  {
+    "timestamp": "2025-11-09T06:00:00",
+    "latency_ms": 120,
+    "cpu": 42.5,
+    "memory": 68.3
+  },
+  {
+    "timestamp": "2025-11-09T06:10:00",
+    "latency_ms": 135,
+    "cpu": 45.2,
+    "memory": 69.0
+  },
+  {
+    "timestamp": "2025-11-09T06:20:00",
+    "latency_ms": 180,
+    "cpu": 61.1,
+    "memory": 72.8
+  },
+  {
+    "timestamp": "2025-11-09T06:30:00",
+    "latency_ms": 195,
+    "cpu": 64.9,
+    "memory": 75.2
+  }
+]

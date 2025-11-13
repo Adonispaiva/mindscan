@@ -1,0 +1,165 @@
+/* ==============================================
+   MindScan Web Style — Neon Inovexa (v3.4)
+   ============================================== */
+
+:root {
+  --bg: #0d0d0f;
+  --panel: #121217;
+  --accent: #00e0ff;
+  --accent-dim: #007b9e;
+  --text: #e5e5e5;
+  --error: #ff4d4d;
+  --warn: #ffaa00;
+  --ok: #00ff88;
+  --font-body: "Segoe UI", sans-serif;
+  --font-mono: "Consolas", monospace;
+  --glow: 0 0 10px var(--accent);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.container {
+  width: 90%;
+  max-width: 900px;
+  background: var(--panel);
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 224, 255, 0.1);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--accent-dim);
+  padding-bottom: 0.8rem;
+}
+
+h1 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+h1 span {
+  color: var(--text);
+  font-weight: 400;
+}
+
+#statusContainer {
+  font-size: 0.95rem;
+}
+
+#statusLabel {
+  margin-left: 0.5rem;
+  color: var(--error);
+  font-weight: bold;
+}
+
+#controls {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.control-btn {
+  padding: 0.8rem 1.8rem;
+  background: var(--accent-dim);
+  border: none;
+  color: #fff;
+  border-radius: 8px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 0 10px rgba(0, 224, 255, 0.3);
+}
+
+.control-btn:hover:not(.disabled) {
+  background: var(--accent);
+  box-shadow: 0 0 20px rgba(0, 224, 255, 0.5);
+  transform: translateY(-2px);
+}
+
+.control-btn.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+#consoleSection {
+  flex: 1;
+  background: #0b0b0d;
+  border: 1px solid var(--accent-dim);
+  border-radius: 8px;
+  padding: 1rem;
+  overflow-y: auto;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  max-height: 400px;
+  line-height: 1.3;
+  box-shadow: inset 0 0 15px rgba(0, 224, 255, 0.05);
+}
+
+#console div {
+  margin-bottom: 4px;
+  animation: fadeIn 0.2s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+footer {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #666;
+  margin-top: 1rem;
+  border-top: 1px solid var(--accent-dim);
+  padding-top: 0.5rem;
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  h1 {
+    font-size: 1.3rem;
+  }
+
+  .control-btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+
+  #consoleSection {
+    font-size: 0.8rem;
+    max-height: 300px;
+  }
+}

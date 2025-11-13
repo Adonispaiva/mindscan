@@ -1,0 +1,101 @@
+{
+    "timestamp": "2025-11-13T08:43:42.869629",
+    "files": [
+        {
+            "name": "audit_clean_report_20251112_161735.json",
+            "lines": 1
+        },
+        {
+            "name": "audit_clean_report_20251112_162125.json",
+            "lines": 1
+        },
+        {
+            "name": "audit_clean_report_20251113_083545.json",
+            "lines": 1
+        },
+        {
+            "name": "audit_clean_report_20251113_084324.json",
+            "lines": 1
+        },
+        {
+            "name": "backup_cleaner_20251112_163418.json",
+            "lines": 1
+        },
+        {
+            "name": "backup_manager_20251112_172453.json",
+            "lines": 1
+        },
+        {
+            "name": "backup_manager_20251112_173320.json",
+            "lines": 1
+        },
+        {
+            "name": "backup_manager_20251113_063000.json",
+            "lines": 1
+        },
+        {
+            "name": "backup_manager_20251113_083546.json",
+            "lines": 1
+        },
+        {
+            "name": "backup_manager_20251113_084325.json",
+            "lines": 1
+        },
+        {
+            "name": "deploy_integrity_20251112_161748.json",
+            "lines": 1
+        },
+        {
+            "name": "deploy_integrity_20251112_162134.json",
+            "lines": 1
+        },
+        {
+            "name": "deploy_integrity_20251113_083555.json",
+            "lines": 1
+        },
+        {
+            "name": "deploy_integrity_20251113_084333.json",
+            "lines": 1
+        },
+        {
+            "name": "deploy_saver_log_20251112_161736.json",
+            "lines": 1
+        },
+        {
+            "name": "deploy_saver_log_20251112_162126.json",
+            "lines": 1
+        },
+        {
+            "name": "deploy_saver_log_20251113_083546.json",
+            "lines": 1
+        },
+        {
+            "name": "deploy_saver_log_20251113_084325.json",
+            "lines": 1
+        },
+        {
+            "name": "integrity_scan_20251113_083604.json",
+            "lines": 1
+        },
+        {
+            "name": "integrity_scan_20251113_084341.json",
+            "lines": 1
+        },
+        {
+            "name": "maintenance_summary_2025-11-13.json",
+            "lines": 1
+        },
+        {
+            "name": "post_purge_validator_20251112_172925.json",
+            "lines": 1
+        },
+        {
+            "name": "recovery_manager_20251113_083603.json",
+            "lines": 1
+        },
+        {
+            "name": "recovery_manager_20251113_084341.json",
+            "lines": 1
+        }
+    ]
+}

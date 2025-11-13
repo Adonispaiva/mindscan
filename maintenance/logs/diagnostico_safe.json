@@ -1,0 +1,90 @@
+[
+  {
+    "summary": "Todos os par\u00e2metros dentro do normal",
+    "status": "OK",
+    "metrics": {
+      "cpu_usage_percent": 15.0,
+      "memory_usage_percent": 36.7,
+      "disk_free_gb": 712.55
+    },
+    "alerts": [],
+    "timestamp": "2025-11-11T18:36:07.097674"
+  },
+  {
+    "summary": "Todos os par\u00e2metros dentro do normal",
+    "status": "OK",
+    "metrics": {
+      "cpu_usage_percent": 7.1,
+      "memory_usage_percent": 36.9,
+      "disk_free_gb": 712.55
+    },
+    "alerts": [],
+    "timestamp": "2025-11-11T18:41:17.958955"
+  },
+  {
+    "summary": "Todos os par\u00e2metros dentro do normal",
+    "status": "OK",
+    "metrics": {
+      "cpu_usage_percent": 6.7,
+      "memory_usage_percent": 35.3,
+      "disk_free_gb": 712.55
+    },
+    "alerts": [],
+    "timestamp": "2025-11-11T18:56:26.619262"
+  },
+  {
+    "summary": "Todos os par\u00e2metros dentro do normal",
+    "status": "OK",
+    "metrics": {
+      "cpu_usage_percent": 5.5,
+      "memory_usage_percent": 36.7,
+      "disk_free_gb": 712.55
+    },
+    "alerts": [],
+    "timestamp": "2025-11-11T19:04:23.259308"
+  },
+  {
+    "summary": "Todos os par\u00e2metros dentro do normal",
+    "status": "OK",
+    "metrics": {
+      "cpu_usage_percent": 22.6,
+      "memory_usage_percent": 36.6,
+      "disk_free_gb": 712.55
+    },
+    "alerts": [],
+    "timestamp": "2025-11-11T19:09:58.164138"
+  },
+  {
+    "summary": "Todos os par\u00e2metros dentro do normal",
+    "status": "OK",
+    "metrics": {
+      "cpu_usage_percent": 9.1,
+      "memory_usage_percent": 37.2,
+      "disk_free_gb": 712.55
+    },
+    "alerts": [],
+    "timestamp": "2025-11-11T19:10:25.267617"
+  },
+  {
+    "summary": "Todos os par\u00e2metros dentro do normal",
+    "status": "OK",
+    "metrics": {
+      "cpu_usage_percent": 61.5,
+      "memory_usage_percent": 37.0,
+      "disk_free_gb": 712.55
+    },
+    "alerts": [],
+    "timestamp": "2025-11-11T19:17:05.164621"
+  },
+  {
+    "summary": "Todos os par\u00e2metros dentro do normal",
+    "status": "OK",
+    "metrics": {
+      "cpu_usage_percent": 71.4,
+      "memory_usage_percent": 23.1,
+      "disk_free_gb": 758.22
+    },
+    "alerts": [],
+    "timestamp": "2025-11-13T09:11:25.774711"
+  }
+]

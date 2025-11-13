@@ -1,0 +1,96 @@
+{
+  "system": "MindScan Web",
+  "framework_version": "4.5",
+  "managed_by": "Leo Vinci — GPT Inovexa v2.0 (12.11.2025)",
+  "superprompt_checksum": "7f9b12b8e4e3a1e6a62dfb1b39f57b4e7a9a37c8",
+  "manifest_created": "2025-11-12T11:58:00-03:00",
+  "manifest_schema_version": "1.0",
+
+  "current_build": {
+    "version_tag": "v4.5-stable",
+    "release_date": "2025-11-12",
+    "source": "https://github.com/InovexaSoftware/MindScan/releases/tag/v4.5-stable",
+    "integrity_hash": "c89da7ff9f5118b9db3afc93cb0ad5ae14dcf76b93efc37b2b9e6a8f1d1f6ed3",
+    "compatibility": {
+      "python": ">=3.9",
+      "os": "Windows 10/11",
+      "architecture": "x64",
+      "superprompt_version": "2.0"
+    },
+    "services": [
+      {
+        "name": "SystemManager",
+        "path": "D:\\MindScan\\core\\system_manager.py",
+        "status": "active",
+        "autostart": true
+      },
+      {
+        "name": "AutoSync",
+        "path": "D:\\MindScan\\core\\supervisao_diretor_auto_sync.py",
+        "status": "active",
+        "autostart": true
+      },
+      {
+        "name": "CommandCenter",
+        "path": "D:\\MindScan\\core\\command_center_integration.py",
+        "status": "active",
+        "autostart": true
+      },
+      {
+        "name": "UpdateAgent",
+        "path": "D:\\MindScan\\core\\MindScan_UpdateAgent.py",
+        "status": "active",
+        "autostart": false
+      }
+    ]
+  },
+
+  "rollback": {
+    "enabled": true,
+    "previous_build": {
+      "version_tag": "v4.3",
+      "backup_path": "D:\\MindScan\\backups\\v4.3.zip",
+      "timestamp": "2025-11-12T08:15:00-03:00",
+      "reason": "pre-update snapshot"
+    }
+  },
+
+  "update_history": [
+    {
+      "version": "v4.0",
+      "applied_at": "2025-11-10T10:12:00-03:00",
+      "hash": "f482b8db723a6b3da85e9a76cf9be07f75a7a1d7f5b41edfd49ef8e15a2d3a6f",
+      "source": "manual",
+      "result": "success"
+    },
+    {
+      "version": "v4.1",
+      "applied_at": "2025-11-10T15:47:00-03:00",
+      "hash": "5ae9d2d2fcd15f972b3b6b91b841a67b89daed22d13fa8a4d3c8b1c548be3b4b",
+      "source": "GitHub API",
+      "result": "success"
+    },
+    {
+      "version": "v4.3",
+      "applied_at": "2025-11-12T09:10:00-03:00",
+      "hash": "9b7caa1fdde4f25c3b5a3b1e72cf4a021fdb2a7ef8ef3f9e3d31a4b3fae15bdc",
+      "source": "local deployment",
+      "result": "success"
+    },
+    {
+      "version": "v4.5",
+      "applied_at": "2025-11-12T11:58:00-03:00",
+      "hash": "c89da7ff9f5118b9db3afc93cb0ad5ae14dcf76b93efc37b2b9e6a8f1d1f6ed3",
+      "source": "GitHub API",
+      "result": "success"
+    }
+  ],
+
+  "verification": {
+    "last_check": "2025-11-12T11:57:58-03:00",
+    "last_result": "pass",
+    "integrity_verified": true,
+    "services_checked": 4,
+    "hash_mismatch_detected": false
+  }
+}

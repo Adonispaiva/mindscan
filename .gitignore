@@ -87,3 +87,24 @@ export/
 # -------------------------
 *.ipynb
 .ipynb_checkpoints/
+
+# Ambientes virtuais
+venv/
+venv_*/
+venv_broken_*/
+.env
+.env_*/
+
+# Cache Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Pastas temporarias / logs locais
+*.log
+*.tmp
+*.bak
+
+# Metadados locais
+.git_old/
+

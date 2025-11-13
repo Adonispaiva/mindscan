@@ -1,0 +1,34 @@
+# ================================================
+# Inovexa Monitoring v8.0.5 - Prometheus Config
+# ================================================
+# Codificação: UTF-8 (sem BOM)
+# Criado em: 2025-11-09
+# -----------------------------------------------
+
+global:
+  scrape_interval: 5s
+  evaluation_interval: 10s
+
+scrape_configs:
+  # --- Coleta do agente de monitoramento do Mindscan ---
+  - job_name: 'mindscan_host'
+    static_configs:
+      - targets: ['monitor-agent:8000']
+        labels:
+          instance: 'monitor-agent:8000'
+          job: 'mindscan_host'
+
+  # --- Coleta do agente de escaneamento mental (SynMind) ---
+  - job_name: 'mindscan_monitor_agent'
+    static_configs:
+      - targets: ['monitor-agent:8000']
+        labels:
+          instance: 'monitor-agent:8000'
+          job: 'mindscan_monitor_agent'
+
+  # --- Autocoleta do Prometheus ---
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']
+        labels:
+          job: 'Prometheus'

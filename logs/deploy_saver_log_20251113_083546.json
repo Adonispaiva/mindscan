@@ -1,0 +1,22 @@
+{
+    "start_time": "2025-11-13 08:35:46.964100",
+    "deployed": [
+        {
+            "from": "D:\\projetos-inovexa\\mindscan\\backend",
+            "to": "D:\\SynMind\\deploy\\MindScan\\backend"
+        },
+        {
+            "from": "D:\\projetos-inovexa\\mindscan\\frontend",
+            "to": "D:\\SynMind\\deploy\\MindScan\\frontend"
+        },
+        {
+            "from": "D:\\projetos-inovexa\\mindscan\\MI",
+            "to": "D:\\SynMind\\deploy\\MindScan\\MI"
+        },
+        {
+            "from": "D:\\projetos-inovexa\\mindscan\\docs",
+            "to": "D:\\SynMind\\deploy\\MindScan\\docs"
+        }
+    ],
+    "end_time": "2025-11-13 08:35:55.457592"
+}

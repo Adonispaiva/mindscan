@@ -1,0 +1,26 @@
+{
+  "timestamp": "2025-11-09T08:45:47.824730",
+  "results": {
+    "latency_ms": {
+      "mean": 157.5,
+      "stdev": 35.71,
+      "last": 195,
+      "trend": 1.05,
+      "status": "warning"
+    },
+    "cpu": {
+      "mean": 53.43,
+      "stdev": 11.22,
+      "last": 64.9,
+      "trend": 1.02,
+      "status": "warning"
+    },
+    "memory": {
+      "mean": 71.33,
+      "stdev": 3.25,
+      "last": 75.2,
+      "trend": 1.19,
+      "status": "warning"
+    }
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "project_name": "MindScan",
+  "version": "3.1.0",
+  "release_date": "2025-11-11T17:15:00Z",
+  "author": "Inovexa Software",
+  "supervisor": "Leo Vinci",
+  "repository": "https://github.com/Adonispaiva/mindscan",
+  "description": "Sistema de Avaliação e Gestão Psicométrica com supervisão automática, manutenção autônoma e integração visual ao Command Center Inovexa.",
+  "modules": {
+    "core": [
+      "backend/app.py",
+      "backend/api/assessment_engine.py",
+      "backend/api/analyzer.py"
+    ],
+    "tools": [
+      "tools/data_cleaner.py",
+      "tools/report_generator.py",
+      "tools/metric_exporter.py"
+    ],
+    "scripts": [
+      "scripts/mindscan_daily_runner.py",
+      "scripts/automatizar_push_results.py",
+      "scripts/mindscan_autorecover.py"
+    ],
+    "supervisor": [
+      "supervisor/mindscan_watcher.py"
+    ],
+    "maintenance": [
+      "maintenance/watchdog/mindscan_task_watcher_auto.py",
+      "maintenance/logs/watchdog_mindscan.json",
+      "maintenance/configs/supervisor_rules.json"
+    ],
+    "command_center": [
+      "command_center/notifier_events.json",
+      "command_center/command_center_interface.py"
+    ]
+  },
+  "integrations": {
+    "notifications": {
+      "email": {
+        "provider": "Outlook SMTP",
+        "status": "active",
+        "sender": "noreply@inovexa.com",
+        "recipient": "admin@inovexa.com"
+      },
+      "command_center": {
+        "status": "linked",
+        "events_source": "command_center/notifier_events.json"
+      }
+    },
+    "logging": {
+      "realtime_console": true,
+      "file_output": "maintenance/logs/watchdog_mindscan.json"
+    },
+    "schedule": {
+      "operational_hours": {
+        "start": "07:00",
+        "end": "17:00",
+        "timezone": "America/Sao_Paulo"
+      }
+    }
+  },
+  "watchdog": {
+    "mode": "auto_discovery",
+    "prefixes": ["mindscan_", "push_", "automatizar_"],
+    "auto_restart": true,
+    "debug": true,
+    "log_level": "INFO",
+    "supervised_paths": [
+      "scripts/",
+      "tools/",
+      "services/",
+      "maintenance/watchdog/"
+    ]
+  },
+  "security": {
+    "integrity_check": true,
+    "checksum": "auto",
+    "anti_regression": "active"
+  },
+  "status": "operational",
+  "validated": true
+}

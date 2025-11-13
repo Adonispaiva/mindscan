@@ -1,0 +1,13 @@
+{
+    "timestamp": "20251110_104857",
+    "repository": "mindscan",
+    "branch": "v2.1-dev",
+    "status": "FALHA",
+    "zip_backup": "mindscan_backup_20251110_104857.zip",
+    "zip_checksum": "9854b8b08aa456b01405cf4835893da4469e01bb34db06fda0271acc2822d3be",
+    "git_head": "45bc19063fe03ee837d36c9694fe5861b53e82cf",
+    "encoding_mode": "utf-8",
+    "os_info": "Windows 10 (10.0.19045)",
+    "stdout_tail": "",
+    "stderr_tail": "error: RPC failed; HTTP 500 curl 22 The requested URL returned error: 500\nsend-pack: unexpected disconnect while reading sideband packet\nfatal: the remote end hung up unexpectedly\nEverything up-to-date"
+}
