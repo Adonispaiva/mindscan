@@ -1,0 +1,18 @@
+[2025-11-25 10:18:24.023941]
+=== SINCRONIZAÇÃO AVANÇADA — 2025-11-25 10:18:24.023941 ===
+
+[2025-11-25 10:18:24.256290]
+Branch atual detectado: main
+
+[2025-11-25 10:18:24.486849]
+⚠️ Divergências encontradas entre local e GitHub.
+O script está em modo SEGURO (sem pull automático).
+Execute manualmente: git pull origin {branch}
+
+
+[2025-11-25 10:18:24.739357]
+Backup criado: D:\projetos-inovexa\mindscan_rebuild\backups\backup_20251125_101824.zip
+
+[2025-11-25 10:18:24.741360]
+Executando auditoria automática...
+

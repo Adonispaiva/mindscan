@@ -1,0 +1,148 @@
+{
+    "estrutura": {
+        "novos": [
+            [
+                "novo arquivo",
+                "instalador_mindscan.py"
+            ],
+            [
+                "novo arquivo",
+                "log_sincronizacao.txt"
+            ],
+            [
+                "novo arquivo",
+                "relatorio_auditoria.json"
+            ],
+            [
+                "novo arquivo",
+                "sincronizar_github.py"
+            ],
+            [
+                "novo arquivo",
+                "tree_atual.json"
+            ],
+            [
+                "novo arquivo",
+                "tree_referencia.json"
+            ],
+            [
+                "nova pasta",
+                "backend\\algorithms\\__pycache__"
+            ],
+            [
+                "nova pasta",
+                "backend\\core\\__pycache__"
+            ],
+            [
+                "nova pasta",
+                "backend\\mi\\__pycache__"
+            ],
+            [
+                "nova pasta",
+                "backend\\models\\__pycache__"
+            ],
+            [
+                "nova pasta",
+                "backend\\providers\\__pycache__"
+            ],
+            [
+                "nova pasta",
+                "backend\\reports\\__pycache__"
+            ],
+            [
+                "novo arquivo",
+                "backend\\routers\\__pycache__\\api_router.cpython-312.pyc"
+            ],
+            [
+                "novo arquivo",
+                "backend\\routers\\__pycache__\\candidates_router.cpython-312.pyc"
+            ],
+            [
+                "novo arquivo",
+                "backend\\routers\\__pycache__\\health_router.cpython-312.pyc"
+            ],
+            [
+                "novo arquivo",
+                "backend\\routers\\__pycache__\\tests_router.cpython-312.pyc"
+            ],
+            [
+                "novo arquivo",
+                "backend\\services\\__pycache__\\report_service.cpython-312.pyc"
+            ],
+            [
+                "novo arquivo",
+                "backend\\services\\__pycache__\\runtime_interface.cpython-312.pyc"
+            ],
+            [
+                "nova pasta",
+                "backend\\utils\\__pycache__"
+            ],
+            [
+                "nova pasta",
+                "backups"
+            ],
+            [
+                "nova pasta",
+                "maintenance\\__pycache__"
+            ],
+            [
+                "nova pasta",
+                "modules\\__pycache__"
+            ],
+            [
+                "nova pasta",
+                "tests\\__pycache__"
+            ],
+            [
+                "nova pasta",
+                "tools\\__pycache__"
+            ],
+            [
+                "nova pasta",
+                "__pycache__"
+            ]
+        ],
+        "removidos": []
+    },
+    "integridade": {
+        "arquivos_vazios": [],
+        "arquivos_duplicados": {
+            "b5df7db8960aeaf9f9f03969324510e6637a4eb731ee36a199ac0b2adb38efd6": [
+                "D:\\projetos-inovexa\\mindscan_rebuild\\README.md",
+                "D:\\projetos-inovexa\\mindscan_rebuild\\data\\sample_input.json",
+                "D:\\projetos-inovexa\\mindscan_rebuild\\data\\sample_output.json",
+                "D:\\projetos-inovexa\\mindscan_rebuild\\logs\\.gitkeep",
+                "D:\\projetos-inovexa\\mindscan_rebuild\\maintenance\\backup.py",
+                "D:\\projetos-inovexa\\mindscan_rebuild\\maintenance\\healthcheck.py",
+                "D:\\projetos-inovexa\\mindscan_rebuild\\modules\\predictor.py",
+                "D:\\projetos-inovexa\\mindscan_rebuild\\modules\\synmind_ai_engine.py",
+                "D:\\projetos-inovexa\\mindscan_rebuild\\modules\\synmind_kernel.py",
+                "D:\\projetos-inovexa\\mindscan_rebuild\\tests\\test_app.py",
+                "D:\\projetos-inovexa\\mindscan_rebuild\\tests\\test_engine.py",
+                "D:\\projetos-inovexa\\mindscan_rebuild\\tests\\test_frontend.py",
+                "D:\\projetos-inovexa\\mindscan_rebuild\\tools\\build.py",
+                "D:\\projetos-inovexa\\mindscan_rebuild\\tools\\cleanup.py",
+                "D:\\projetos-inovexa\\mindscan_rebuild\\tools\\exporter.py"
+            ],
+            "3596fd937ce02694f95b5eebd0b9b68dcd4b80629d547dd8d4ec397cc7efc5d5": [
+                "D:\\projetos-inovexa\\mindscan_rebuild\\frontend\\cadastro.html",
+                "D:\\projetos-inovexa\\mindscan_rebuild\\frontend\\entrada_dados.html",
+                "D:\\projetos-inovexa\\mindscan_rebuild\\frontend\\index.html",
+                "D:\\projetos-inovexa\\mindscan_rebuild\\frontend\\login.html",
+                "D:\\projetos-inovexa\\mindscan_rebuild\\frontend\\resultado.html"
+            ]
+        }
+    },
+    "codigo": {
+        "imports_quebrados": [],
+        "modulos_inexistentes": [],
+        "rotas_sem_servico": [],
+        "servicos_sem_provider": []
+    },
+    "github": {
+        "github_online": true,
+        "status": "",
+        "branch": "",
+        "pendencias": ""
+    }
+}
