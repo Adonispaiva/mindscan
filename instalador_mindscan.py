@@ -1,61 +1,76 @@
+# instalador_mindscan.py
 import os
 import shutil
-import subprocess
-from datetime import datetime
+import json
+import datetime
 
-# Instalador Automático MindScan
-# Copia arquivos essenciais, cria ambientes e gera scripts auxiliares
+ROOT = os.path.dirname(os.path.abspath(__file__))
+INSTALL_DIR = "C:/MindScan"
+LOG_DIR = os.path.join(ROOT, "logs", "instalador")
+VERSION_FILE = os.path.join(INSTALL_DIR, "versao_instalada.json")
+TREE_FILE = os.path.join(INSTALL_DIR, "estrutura_instalada.json")
 
-PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
-INSTALL_DIR = "C:/MindScan"  # Caminho final da instalação
-BACKUP_DIR = os.path.join(INSTALL_DIR, "backup_instalador")
-
-
-def criar_diretorios():
-    os.makedirs(INSTALL_DIR, exist_ok=True)
-    os.makedirs(BACKUP_DIR, exist_ok=True)
+BACKUP_DIR = os.path.join(ROOT, "backups", "instalador")
 
 
-def copiar_arquivos():
-    for item in os.listdir(PROJECT_ROOT):
-        origem = os.path.join(PROJECT_ROOT, item)
-        destino = os.path.join(INSTALL_DIR, item)
-        if item in {"__pycache__", "venv", "env", "build", "dist"}:
-            continue
-        if os.path.isdir(origem):
-            shutil.copytree(origem, destino, dirs_exist_ok=True)
-        else:
-            shutil.copy2(origem, destino)
+def log(msg):
+    os.makedirs(LOG_DIR, exist_ok=True)
+    fpath = os.path.join(LOG_DIR, "instalador.log")
+    ts = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    with open(fpath, "a", encoding="utf-8") as f:
+        f.write(f"[{ts}] {msg}\n")
+    print(msg)
 
 
-def criar_backup():
-    arquivo = os.path.join(BACKUP_DIR, f"backup_{datetime.now().strftime('%Y%m%d_%H%M%S')}.zip")
-    shutil.make_archive(arquivo.replace('.zip', ''), 'zip', INSTALL_DIR)
+def gerar_arvore(caminho):
+    estrutura = []
+    for raiz, dirs, files in os.walk(caminho):
+        for f in files:
+            estrutura.append(os.path.join(raiz, f))
+    return estrutura
 
 
-def criar_launcher():
-    launcher_path = os.path.join(INSTALL_DIR, "executar_mindscan.bat")
-    with open(launcher_path, "w") as f:
-        f.write(f"@echo off\n")
-        f.write(f"cd /d {INSTALL_DIR}\n")
-        f.write(f"python main.py\n")
+def backup():
+    if os.path.exists(BACKUP_DIR):
+        shutil.rmtree(BACKUP_DIR)
+    if os.path.exists(INSTALL_DIR):
+        shutil.copytree(INSTALL_DIR, BACKUP_DIR)
+        log("📦 Backup criado antes da atualização.")
 
 
-def instalar_dependencias():
-    req_path = os.path.join(INSTALL_DIR, "requirements.txt")
-    if os.path.exists(req_path):
-        subprocess.run(["pip", "install", "-r", req_path])
+def rollback():
+    if os.path.exists(BACKUP_DIR):
+        if os.path.exists(INSTALL_DIR):
+            shutil.rmtree(INSTALL_DIR)
+        shutil.copytree(BACKUP_DIR, INSTALL_DIR)
+        log("⚠ Rollback realizado devido a falha.")
 
 
-def executar_instalacao():
-    print("Iniciando instalador automático MindScan...")
-    criar_diretorios()
-    copiar_arquivos()
-    criar_backup()
-    criar_launcher()
-    instalar_dependencias()
-    print("Instalação concluída com sucesso!")
+def instalar():
+    log("🛠 Iniciando instalador avançado MindScan...")
+
+    backup()
+
+    try:
+        if os.path.exists(INSTALL_DIR):
+            shutil.rmtree(INSTALL_DIR)
+
+        shutil.copytree(ROOT, INSTALL_DIR, dirs_exist_ok=True)
+
+        with open(VERSION_FILE, "w", encoding="utf-8") as f:
+            json.dump({
+                "versao": datetime.datetime.now().isoformat(),
+            }, f, indent=4)
+
+        with open(TREE_FILE, "w", encoding="utf-8") as f:
+            json.dump(gerar_arvore(INSTALL_DIR), f, indent=4)
+
+        log("✔ Instalação concluída com sucesso!")
+
+    except Exception as e:
+        log(f"❌ Erro durante a instalação: {e}")
+        rollback()
 
 
 if __name__ == "__main__":
-    executar_instalacao()
+    instalar()

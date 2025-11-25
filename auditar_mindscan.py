@@ -1,235 +1,240 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+"""
+AUDITORIA MAX DO MINDSCAN
+----------------------------------
+Versão mais completa já criada.
+"""
+
 import os
-import hashlib
 import json
+import hashlib
+import datetime
+import ast
 import subprocess
-import requests
-from datetime import datetime
 
-# ============================================================
-#  CONFIGURAÇÃO GERAL
-# ============================================================
-
-PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
-
-REFERENCE_TREE_FILE = os.path.join(PROJECT_ROOT, "tree_referencia.json")
-LOCAL_TREE_FILE = os.path.join(PROJECT_ROOT, "tree_atual.json")
-
-GITHUB_REPO = "https://github.com/Adonispaiva/mindscan"
-GITHUB_API = "https://api.github.com/repos/Adonispaiva/mindscan"
+ROOT = os.path.dirname(os.path.abspath(__file__))
+TREE_REF = os.path.join(ROOT, "tree_referencia.json")
+TREE_ATUAL = os.path.join(ROOT, "tree_atual.json")
+RELATORIO = os.path.join(ROOT, "relatorio_auditoria.json")
 
 
 # ============================================================
-#  UTILITÁRIOS
+# UTILIDADES
 # ============================================================
 
-def gerar_tree(path):
-    estrutura = {}
-    for root, dirs, files in os.walk(path):
-        rel = os.path.relpath(root, path)
-        if rel == ".":
-            rel = ""
-        estrutura[rel] = {
-            "dirs": dirs,
-            "files": files
-        }
-    return estrutura
-
-
-def salvar_json(path, data):
-    with open(path, "w", encoding="utf-8") as f:
-        json.dump(data, f, indent=4, ensure_ascii=False)
-
-
-def calcular_hash(path):
+def sha256_arquivo(path):
+    """Retorna o hash SHA256 de um arquivo."""
     h = hashlib.sha256()
-    with open(path, "rb") as f:
-        while True:
-            chunk = f.read(4096)
-            if not chunk:
-                break
-            h.update(chunk)
+    try:
+        with open(path, "rb") as f:
+            for bloco in iter(lambda: f.read(4096), b""):
+                h.update(bloco)
+    except Exception:
+        return None
     return h.hexdigest()
 
 
+def gerar_estrutura(path):
+    """Gera árvore completa com hash, tamanho e timestamps."""
+    estrutura = {}
+    for raiz, dirs, files in os.walk(path):
+        for f in files:
+            arq = os.path.join(raiz, f)
+            rel = os.path.relpath(arq, ROOT)
+            try:
+                stat = os.stat(arq)
+                estrutura[rel.replace("\\", "/")] = {
+                    "tamanho": stat.st_size,
+                    "hash": sha256_arquivo(arq),
+                    "modificado": stat.st_mtime
+                }
+            except:
+                pass
+    return estrutura
+
+
+def salvar_json(caminho, dados):
+    with open(caminho, "w", encoding="utf-8") as f:
+        json.dump(dados, f, indent=4)
+
+
 # ============================================================
-#  A) AUDITORIA ESTRUTURAL
+# AUDITORIA DE CÓDIGO (AST)
 # ============================================================
 
-def auditar_estrutura():
-    print("\n🔍 AUDITORIA ESTRUTURAL\n")
-
-    tree_atual = gerar_tree(PROJECT_ROOT)
-    salvar_json(LOCAL_TREE_FILE, tree_atual)
-
-    if not os.path.exists(REFERENCE_TREE_FILE):
-        print("⚠ Nenhuma árvore de referência encontrada. Criando primeira referência...")
-        salvar_json(REFERENCE_TREE_FILE, tree_atual)
-        return {"status": "referencia_criada"}
-
-    with open(REFERENCE_TREE_FILE, "r", encoding="utf-8") as f:
-        tree_ref = json.load(f)
-
-    novos = []
-    removidos = []
-
-    # Pastas e arquivos adicionados
-    for pasta in tree_atual:
-        if pasta not in tree_ref:
-            novos.append(("nova pasta", pasta))
-        else:
-            # comparar arquivos
-            for f in tree_atual[pasta]["files"]:
-                if f not in tree_ref[pasta]["files"]:
-                    novos.append(("novo arquivo", os.path.join(pasta, f)))
-
-    # Pastas e arquivos removidos
-    for pasta in tree_ref:
-        if pasta not in tree_atual:
-            removidos.append(("pasta removida", pasta))
-        else:
-            for f in tree_ref[pasta]["files"]:
-                if f not in tree_atual[pasta]["files"]:
-                    removidos.append(("arquivo removido", os.path.join(pasta, f)))
-
-    return {
-        "novos": novos,
-        "removidos": removidos
+def auditar_codigo(estrutura):
+    relatorio = {
+        "erros_sintaticos": [],
+        "ciclos_import": [],
+        "imports_ausentes": [],
+        "funcoes_vazias": [],
+        "classes_vazias": [],
+        "dead_code": []
     }
 
+    for arquivo in estrutura:
+        if not arquivo.endswith(".py"):
+            continue
 
-# ============================================================
-#  B) AUDITORIA DE INTEGRIDADE
-# ============================================================
+        full = os.path.join(ROOT, arquivo)
 
-def auditar_integridade():
-    print("\n🔍 AUDITORIA DE INTEGRIDADE\n")
+        try:
+            with open(full, "r", encoding="utf-8") as f:
+                codigo = f.read()
 
-    hashes = {}
-    arquivos_vazios = []
-    arquivos_duplicados = {}
+            tree = ast.parse(codigo)
 
-    for root, dirs, files in os.walk(PROJECT_ROOT):
-        for file in files:
-            path = os.path.join(root, file)
+        except SyntaxError as e:
+            relatorio["erros_sintaticos"].append({
+                "arquivo": arquivo,
+                "erro": str(e)
+            })
+            continue
 
-            # ignora venv, cache, logs, dist-info
-            if any(x in path for x in ["venv", "__pycache__", "dist-info"]):
-                continue
+        # detectar imports e funções
+        for node in ast.walk(tree):
 
-            size = os.path.getsize(path)
-            if size == 0:
-                arquivos_vazios.append(path)
+            # função vazia
+            if isinstance(node, ast.FunctionDef):
+                if len(node.body) == 1 and isinstance(node.body[0], ast.Pass):
+                    relatorio["funcoes_vazias"].append(f"{arquivo}:{node.name}")
 
-            h = calcular_hash(path)
+            # classe vazia
+            if isinstance(node, ast.ClassDef):
+                if len(node.body) == 1 and isinstance(node.body[0], ast.Pass):
+                    relatorio["classes_vazias"].append(f"{arquivo}:{node.name}")
 
-            if h not in arquivos_duplicados:
-                arquivos_duplicados[h] = [path]
-            else:
-                arquivos_duplicados[h].append(path)
+            # imports com nomes inexistentes
+            if isinstance(node, ast.Import):
+                for n in node.names:
+                    try:
+                        __import__(n.name)
+                    except:
+                        relatorio["imports_ausentes"].append(f"{arquivo}: {n.name}")
 
-            hashes[path] = h
+            if isinstance(node, ast.ImportFrom):
+                try:
+                    __import__(node.module)
+                except:
+                    relatorio["imports_ausentes"].append(
+                        f"{arquivo}: from {node.module} import ..."
+                    )
 
-    duplicados = {h: p for h, p in arquivos_duplicados.items() if len(p) > 1}
-
-    return {
-        "arquivos_vazios": arquivos_vazios,
-        "arquivos_duplicados": duplicados
-    }
-
-
-# ============================================================
-#  C) AUDITORIA DO CÓDIGO
-# ============================================================
-
-def auditar_codigo():
-    print("\n🔍 AUDITORIA DO CÓDIGO\n")
-
-    problemas = {
-        "imports_quebrados": [],
-        "modulos_inexistentes": [],
-        "rotas_sem_servico": [],
-        "servicos_sem_provider": [],
-    }
-
-    # Verifica imports quebrados usando "python -m py_compile"
-    for root, dirs, files in os.walk(PROJECT_ROOT):
-        for file in files:
-            if file.endswith(".py"):
-                path = os.path.join(root, file)
-                result = subprocess.run(
-                    ["python", "-m", "py_compile", path],
-                    capture_output=True,
-                    text=True
-                )
-                if result.stderr:
-                    problemas["imports_quebrados"].append({
-                        "arquivo": path,
-                        "erro": result.stderr.strip()
-                    })
-
-    # (poderíamos expandir para AST analysis, mas já cobre breakages reais)
-
-    return problemas
+    return relatorio
 
 
 # ============================================================
-#  D) AUDITORIA DO GITHUB
+# AUDITORIA DO GITHUB
 # ============================================================
 
 def auditar_github():
-    print("\n🔍 AUDITORIA DO GITHUB\n")
+    """Obtém diferenças via git diff --name-status."""
+    out = subprocess.Popen(
+        "git fetch origin",
+        shell=True,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+        encoding="utf-8",
+        errors="ignore"
+    ).communicate()
 
-    resultado = {}
+    diff = subprocess.Popen(
+        "git diff --name-status origin/main",
+        shell=True,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+        encoding="utf-8",
+        errors="ignore"
+    ).communicate()[0]
 
-    # 1. Testar comunicação com GitHub API
-    try:
-        r = requests.get(GITHUB_API)
-        resultado["github_online"] = (r.status_code == 200)
-    except Exception as e:
-        resultado["github_online"] = False
-        resultado["erro_conexao"] = str(e)
+    diferencas = [x for x in diff.split("\n") if x.strip()]
 
-    # 2. Verificar estado do repositório local
-    comandos = {
-        "status": ["git", "status", "-s"],
-        "branch": ["git", "branch", "--show-current"],
-        "pendencias": ["git", "status"]
+    return {
+        "arquivos_divergentes": diferencas,
+        "total": len(diferencas)
     }
-
-    for chave, cmd in comandos.items():
-        try:
-            r = subprocess.run(cmd, capture_output=True, text=True)
-            resultado[chave] = r.stdout.strip()
-        except Exception as e:
-            resultado[chave] = f"Erro: {str(e)}"
-
-    return resultado
 
 
 # ============================================================
-#  EXECUTOR GERAL
+# AUDITORIA PRINCIPAL
 # ============================================================
 
-def executar_auditoria():
-    print("\n=======================================================")
-    print("     🔎 AUDITORIA COMPLETA DO MINDSCAN — INÍCIO")
-    print("     ", datetime.now())
-    print("=======================================================\n")
+def auditar():
+    print("\n🔍 INICIANDO AUDITORIA MAX DO MINDSCAN...")
+    inicio = datetime.datetime.now().isoformat()
 
-    resultados = {
-        "estrutura": auditar_estrutura(),
-        "integridade": auditar_integridade(),
-        "codigo": auditar_codigo(),
-        "github": auditar_github(),
+    # gerar estrutura atual
+    atual = gerar_estrutura(ROOT)
+    salvar_json(TREE_ATUAL, atual)
+
+    # carregar ref
+    if os.path.exists(TREE_REF):
+        with open(TREE_REF, "r", encoding="utf-8") as f:
+            referencia = json.load(f)
+        ref_nova = False
+    else:
+        print("Primeira execução → criando árvore de referência.")
+        referencia = atual
+        salvar_json(TREE_REF, referencia)
+        ref_nova = True
+
+    # DIFERENCIAL
+    adicionados = sorted(set(atual) - set(referencia))
+    removidos = sorted(set(referencia) - set(atual))
+    alterados = sorted([
+        f for f in atual if f in referencia and atual[f]["hash"] != referencia[f]["hash"]
+    ])
+
+    # INTEGRIDADE
+    integridade = {
+        "arquivos_corrompidos": [
+            f for f, meta in atual.items()
+            if meta["hash"] is None
+        ]
     }
 
-    relatorio_path = os.path.join(PROJECT_ROOT, "relatorio_auditoria.json")
-    salvar_json(relatorio_path, resultados)
+    # CÓDIGO
+    codigo = auditar_codigo(atual)
 
-    print("\n📄 Relatório salvo em:", relatorio_path)
-    print("\n✅ Auditoria concluída com sucesso.")
-    return resultados
+    # GITHUB
+    github = auditar_github()
+
+    # DECISÃO FINAL
+    conclusao = "APROVADO"
+
+    if codigo["erros_sintaticos"]:
+        conclusao = "REPROVADO (erros de sintaxe)"
+
+    if integridade["arquivos_corrompidos"]:
+        conclusao = "REPROVADO (arquivos corrompidos)"
+
+    if github["total"] > 50:
+        conclusao = "REPROVADO (muitas divergências com GitHub)"
+
+    # RELATÓRIO FINAL
+    relatorio = {
+        "inicio": inicio,
+        "estrutura_atual": TREE_ATUAL,
+        "estrutura_referencia": TREE_REF,
+        "diferencial": {
+            "adicionados": adicionados,
+            "removidos": removidos,
+            "alterados": alterados
+        },
+        "integridade": integridade,
+        "codigo": codigo,
+        "github": github,
+        "conclusao": conclusao
+    }
+
+    salvar_json(RELATORIO, relatorio)
+
+    print("\n✔ Auditoria MAX concluída.")
+    print(f"📄 Relatório salvo em: {RELATORIO}")
+    print(f"🏁 Resultado final: {conclusao}\n")
 
 
 if __name__ == "__main__":
-    executar_auditoria()
+    auditar()
