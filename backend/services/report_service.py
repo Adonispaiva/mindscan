@@ -1,44 +1,50 @@
-# Caminho completo do arquivo:
-# D:\projetos-inovexa\mindscan_rebuild\backend\services\report_service.py
+# Caminho: D:\backend\services\report_service.py
+# MindScan — ReportService v2.0 (com Renderers Integrados)
+# Diretor Técnico: Leo Vinci — Inovexa Software
 
-import os
+from reportlab.platypus import SimpleDocTemplate
+from reportlab.lib.pagesizes import A4
 from datetime import datetime
-from typing import Dict, Any
+import os
+
+from .report_templates.technical_renderer import TechnicalRenderer
+from .report_templates.executive_renderer import ExecutiveRenderer
+from .report_templates.psychodynamic_renderer import PsychodynamicRenderer
+from .report_templates.premium_renderer import PremiumRenderer
+
+RENDERER_MAP = {
+    "technical": TechnicalRenderer,
+    "executive": ExecutiveRenderer,
+    "psychodynamic": PsychodynamicRenderer,
+    "premium": PremiumRenderer,
+}
 
 class ReportService:
-    """
-    Serviço responsável pela geração de relatórios PDF finais do MindScan.
-    A versão 2.0 é preparada para integração com motores de PDF externos
-    e exportações profissionais.
-    """
-
-    BASE_OUTPUT_DIR = "D:/projetos-inovexa/mindscan_rebuild/output/reports"  # Ajustável
-
     @staticmethod
-    def _ensure_output_dir() -> None:
-        if not os.path.exists(ReportService.BASE_OUTPUT_DIR):
-            os.makedirs(ReportService.BASE_OUTPUT_DIR, exist_ok=True)
+    def generate_pdf(test_id: str, results: list, report_type: str = "technical"):
+        if report_type not in RENDERER_MAP:
+            raise ValueError(f"Tipo de relatório inválido: {report_type}")
 
-    @staticmethod
-    def generate_pdf(user: Dict[str, Any], diagnostic_data: Dict[str, Any]) -> str:
-        """
-        Gera um relatório PDF. Implementação simplificada (stub) até a
-        integração com o pipeline final de geração.
-        """
+        RendererClass = RENDERER_MAP[report_type]
+        renderer = RendererClass(test_id, results)
 
-        ReportService._ensure_output_dir()
+        output_dir = "D:/backend/reports"
+        os.makedirs(output_dir, exist_ok=True)
 
-        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-        username = user.get("name", "usuario")
+        filename = f"mindscan_report_{test_id}_{report_type}.pdf"
+        filepath = os.path.join(output_dir, filename)
 
-        filename = f"diagnostic_{username}_{timestamp}.pdf"
-        filepath = os.path.join(ReportService.BASE_OUTPUT_DIR, filename)
+        doc = SimpleDocTemplate(filepath, pagesize=A4)
+        story = []
 
-        # --------------------------------------------------------
-        # FUTURO: substituir stub por PDF real gerado pelo engine
-        # --------------------------------------------------------
-        with open(filepath, "w", encoding="utf-8") as f:
-            f.write("MIND_SCAN_REPORT_PDF_VERSION_2.0\n\n")
-            f.write(str(diagnostic_data))
+        renderer.build(story)
+        doc.build(story)
 
-        return filepath
+        metadata = {
+            "test_id": test_id,
+            "report_type": report_type,
+            "generated_at": datetime.utcnow().isoformat() + "Z",
+            "path": filepath
+        }
+
+        return filepath, metadata

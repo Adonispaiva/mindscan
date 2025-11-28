@@ -1,0 +1,123 @@
+"""
+task_manager.py
+Controlador Profissional de Tasks do MindScan Automator
+Versão Profissional Completa (A)
+
+Funções:
+    • Carregar tasks do tasks.json
+    • Validar estrutura
+    • Verificar se tasks existem nos módulos
+    • Ordenação e limpeza
+    • Suporte a pipelines personalizadas
+    • Fornecer tasks para o main.py com segurança
+"""
+
+import os
+import json
+
+
+class TaskManager:
+
+    def __init__(self, logger):
+        self.log = logger
+        self.root_path = r"D:\projetos-inovexa\mindscan_rebuild"
+        self.tasks_file = os.path.join(self.root_path, "tools", "automator", "tasks.json")
+
+        self.valid_tasks = {
+            "core",
+            "audit",
+            "backend",
+            "cleanup",
+            "sync",
+            "release",
+            "validate",
+            "report"
+        }
+
+    # ============================================================
+    # Carregar tasks.json
+    # ============================================================
+
+    def load_tasks(self):
+        if not os.path.exists(self.tasks_file):
+            self.log.error(f"Arquivo tasks.json não encontrado: {self.tasks_file}")
+            return []
+
+        try:
+            with open(self.tasks_file, "r", encoding="utf-8") as f:
+                data = json.load(f)
+
+            if "tasks" not in data:
+                self.log.error("tasks.json inválido: campo 'tasks' ausente.")
+                return []
+
+            tasks = data["tasks"]
+            self.log.info(f"{len(tasks)} tasks carregadas do arquivo.")
+
+            return tasks
+
+        except Exception as e:
+            self.log.error(f"Erro ao carregar tasks.json: {e}")
+            return []
+
+    # ============================================================
+    # Validar tasks carregadas
+    # ============================================================
+
+    def validate_tasks(self, tasks):
+        validated = []
+
+        for task in tasks:
+            name = task.get("name")
+            enabled = task.get("enabled", False)
+
+            if name not in self.valid_tasks:
+                self.log.warn(f"Task desconhecida ignorada: {name}")
+                continue
+
+            if not isinstance(enabled, bool):
+                self.log.warn(f"Campo 'enabled' inválido para task {name}, ajustando para False.")
+                enabled = False
+
+            validated.append({"name": name, "enabled": enabled})
+
+        self.log.info(f"Total de tasks válidas: {len(validated)}")
+        return validated
+
+    # ============================================================
+    # Ordenar tasks – ordem correta para o pipeline
+    # ============================================================
+
+    def order_tasks(self, tasks):
+        pipeline_order = [
+            "core",
+            "audit",
+            "backend",
+            "validate",
+            "cleanup",
+            "release",
+            "report",
+            "sync"
+        ]
+
+        ordered = sorted(
+            tasks,
+            key=lambda t: pipeline_order.index(t["name"]) if t["name"] in pipeline_order else 999
+        )
+
+        self.log.info("Tasks ordenadas de acordo com o pipeline padrão.")
+        return ordered
+
+    # ============================================================
+    # Fornecer tasks ao Automator
+    # ============================================================
+
+    def get_tasks(self):
+        self.log.header("TASK MANAGER – CARREGANDO TASKS")
+
+        tasks = self.load_tasks()
+        tasks = self.validate_tasks(tasks)
+        tasks = self.order_tasks(tasks)
+
+        self.log.success("Tasks preparadas para execução.")
+        return tasks

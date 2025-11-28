@@ -1,0 +1,54 @@
+[
+  {
+    "block_id": "B1",
+    "title": "Cognitive Processing",
+    "dimension": "Rationality",
+    "score": 0.75,
+    "percentile": 78,
+    "classification": "High",
+    "descriptor": "Strong analytical and problem-solving capacity.",
+    "strengths": [
+      "Processes information quickly",
+      "Identifies patterns efficiently",
+      "High logical reasoning"
+    ],
+    "risks": [
+      "May overlook emotional cues",
+      "Can be overly analytical under stress"
+    ]
+  },
+  {
+    "block_id": "B2",
+    "title": "Emotional Regulation",
+    "dimension": "Affect",
+    "score": 0.55,
+    "percentile": 52,
+    "classification": "Average",
+    "descriptor": "Moderate emotional stability with occasional fluctuations.",
+    "strengths": [
+      "Maintains balance in most situations",
+      "Shows empathy when needed"
+    ],
+    "risks": [
+      "Sometimes reactive under pressure",
+      "May internalize stress"
+    ]
+  },
+  {
+    "block_id": "B3",
+    "title": "Interpersonal Dynamics",
+    "dimension": "Social",
+    "score": 0.63,
+    "percentile": 61,
+    "classification": "Above Average",
+    "descriptor": "Good social perception and communication.",
+    "strengths": [
+      "Communicates clearly",
+      "Understands social cues"
+    ],
+    "risks": [
+      "May over-extend in social commitments",
+      "Occasional difficulty asserting boundaries"
+    ]
+  }
+]

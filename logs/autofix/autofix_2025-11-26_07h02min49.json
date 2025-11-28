@@ -1,0 +1,33 @@
+{
+    "timestamp": "2025-11-26_07h02min49",
+    "root": "D:\\projetos-inovexa\\mindscan",
+    "modified_files": [
+        "D:\\projetos-inovexa\\mindscan\\log_sincronizacao.txt",
+        "D:\\projetos-inovexa\\mindscan\\relatorio_auditoria.json",
+        "D:\\projetos-inovexa\\mindscan\\start_backend.bat",
+        "D:\\projetos-inovexa\\mindscan\\backend\\services\\report_service.py",
+        "D:\\projetos-inovexa\\mindscan\\backend\\utils\\logger.py",
+        "D:\\projetos-inovexa\\mindscan\\backend\\venv\\Scripts\\activate.bat",
+        "D:\\projetos-inovexa\\mindscan\\logs\\audit_push_2025-11-25_12h01m18s.txt",
+        "D:\\projetos-inovexa\\mindscan\\logs\\audit\\audit_2025-11-26_06-43-36.json",
+        "D:\\projetos-inovexa\\mindscan\\logs\\backend\\backend_report_2025-11-26_06-43-36.json",
+        "D:\\projetos-inovexa\\mindscan\\logs\\core_rebuilder\\rebuild_report_2025-11-26_06-43-36.json",
+        "D:\\projetos-inovexa\\mindscan\\logs\\estrutura\\audit_mindscan.txt",
+        "D:\\projetos-inovexa\\mindscan\\tools\\generate_tree.bat",
+        "D:\\projetos-inovexa\\mindscan\\tools\\scan_project_file_sizes.bat",
+        "D:\\projetos-inovexa\\mindscan\\tools\\scan_project_file_sizes.py",
+        "D:\\projetos-inovexa\\mindscan\\tools\\automator\\audit_manager.py",
+        "D:\\projetos-inovexa\\mindscan\\tools\\automator\\backend_manager.py",
+        "D:\\projetos-inovexa\\mindscan\\tools\\automator\\cleanup_manager.py",
+        "D:\\projetos-inovexa\\mindscan\\tools\\automator\\core_manager.py",
+        "D:\\projetos-inovexa\\mindscan\\tools\\automator\\data_validator.py",
+        "D:\\projetos-inovexa\\mindscan\\tools\\automator\\executar_automator.bat",
+        "D:\\projetos-inovexa\\mindscan\\tools\\automator\\fix_paths_manager.py",
+        "D:\\projetos-inovexa\\mindscan\\tools\\automator\\github_manager.py",
+        "D:\\projetos-inovexa\\mindscan\\tools\\automator\\release_manager.py",
+        "D:\\projetos-inovexa\\mindscan\\tools\\automator\\report_manager.py",
+        "D:\\projetos-inovexa\\mindscan\\tools\\automator\\task_manager.py",
+        "D:\\projetos-inovexa\\mindscan\\tools\\automator\\logs\\automator_log.txt"
+    ],
+    "total_modified": 26
+}

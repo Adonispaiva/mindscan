@@ -1,0 +1,51 @@
+{
+    "exists": true,
+    "structure": [
+        {
+            "path": "main.py",
+            "exists": true
+        },
+        {
+            "path": "api_router.py",
+            "exists": false
+        },
+        {
+            "path": "models.py",
+            "exists": true
+        },
+        {
+            "path": "services",
+            "exists": true
+        },
+        {
+            "path": "algorithms",
+            "exists": true
+        }
+    ],
+    "services": [
+        "D:\\projetos-inovexa\\mindscan_rebuild\\backend\\services\\auth_service.py",
+        "D:\\projetos-inovexa\\mindscan_rebuild\\backend\\services\\data_service.py",
+        "D:\\projetos-inovexa\\mindscan_rebuild\\backend\\services\\report_service.py",
+        "D:\\projetos-inovexa\\mindscan_rebuild\\backend\\services\\runtime_interface.py"
+    ],
+    "algorithms": [
+        "D:\\projetos-inovexa\\mindscan_rebuild\\backend\\algorithms\\big5.py",
+        "D:\\projetos-inovexa\\mindscan_rebuild\\backend\\algorithms\\bussola.py",
+        "D:\\projetos-inovexa\\mindscan_rebuild\\backend\\algorithms\\cruzamentos.py",
+        "D:\\projetos-inovexa\\mindscan_rebuild\\backend\\algorithms\\dass21.py",
+        "D:\\projetos-inovexa\\mindscan_rebuild\\backend\\algorithms\\esquemas.py",
+        "D:\\projetos-inovexa\\mindscan_rebuild\\backend\\algorithms\\ocai.py",
+        "D:\\projetos-inovexa\\mindscan_rebuild\\backend\\algorithms\\performance.py",
+        "D:\\projetos-inovexa\\mindscan_rebuild\\backend\\algorithms\\teique.py"
+    ],
+    "api_router": [],
+    "models": [
+        "D:\\projetos-inovexa\\mindscan_rebuild\\backend\\models.py"
+    ],
+    "import_issues": [],
+    "summary": {
+        "ok": 4,
+        "warnings": 0,
+        "critical": 2
+    }
+}

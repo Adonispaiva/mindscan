@@ -1,0 +1,35 @@
+name: MindScan CI
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  audit-sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install deps
+        run: pip install -r backend/requirements.txt || echo "Nenhum requirements encontrado"
+
+      - name: Executar Auditoria MAX
+        run: python auditar_mindscan.py
+
+      - name: Commit Auditoria
+        run: |
+          git config --global user.email "github-actions@bot.com"
+          git config --global user.name "GitHub Actions"
+          git add .
+          git commit -m "Auditoria MAX automática [GitHub Actions]" || echo "Nada para commitar"
+
+      - name: Push de volta
+        run: git push

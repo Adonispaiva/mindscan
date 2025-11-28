@@ -1,73 +1,99 @@
-# ============================================================
-# MindScan — PDF Generator
-# ============================================================
-# Converte o relatório textual do ReportEngine em um PDF
-# profissional, com formatação padronizada.
-#
-# Este módulo usa a biblioteca "reportlab" como backend padrão.
-# ============================================================
+# Caminho: D:\projetos-inovexa\mindscan\backend\reports\pdf_generator.py
+"""
+Gerador REAL de PDF do MindScan®
+Inovexa Software | SynMind | MindScan®
+
+Objetivo:
+- Gerar PDF final do MindScan com narrativa, perfil, cruzamentos e layout oficial.
+- Produzir arquivo físico .pdf para posterior publicação e envio via WhatsApp.
+
+IMPORTANTE:
+- Este módulo NÃO contém a lógica psicométrica.
+- Ele recebe dados já calculados e apenas renderiza o PDF.
+- Totalmente compatível com o pipeline e com a integração WhatsApp.
+
+Tecnologia: ReportLab (renderização profissional)
+"""
 
 from reportlab.lib.pagesizes import A4
 from reportlab.lib.styles import getSampleStyleSheet
-from reportlab.lib.units import cm
 from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer
-from typing import Dict, Any
-import datetime
+from reportlab.lib.units import cm
+import logging
+import os
 
+logger = logging.getLogger("pdf_generator")
+logger.setLevel(logging.INFO)
 
-class PDFGenerator:
+# ---------------------------------------------------------
+# Função principal
+# ---------------------------------------------------------
+def generate_mindscan_pdf(user_id: str, data: dict, output_dir: str = "D:/projetos-inovexa/mindscan/output/") -> str:
     """
-    Gera PDFs do relatório MindScan.
+    Gera o PDF final do MindScan.
+
+    Parâmetros:
+    - user_id: ID do usuário avaliado
+    - data: dict contendo a narrativa final, perfil, cruzamentos e elementos textuais
+    - output_dir: diretório onde o PDF será salvo
+
+    Retorna:
+    - caminho completo do PDF gerado
     """
 
-    def __init__(self):
-        self.styles = getSampleStyleSheet()
+    try:
+        if not os.path.exists(output_dir):
+            os.makedirs(output_dir)
 
-    # ------------------------------------------------------------
-    # SALVAR EM PDF
-    # ------------------------------------------------------------
-    def generate_pdf(self, output_path: str, report_text: str, subject_name: str):
-        """
-        Gera o PDF final do relatório.
-        """
+        pdf_path = os.path.join(output_dir, f"{user_id}.pdf")
 
-        doc = SimpleDocTemplate(
-            output_path,
-            pagesize=A4,
-            title=f"Relatório MindScan — {subject_name}",
-            author="Inovexa Software",
-            leftMargin=2 * cm,
-            rightMargin=2 * cm,
-            topMargin=2 * cm,
-            bottomMargin=2 * cm
-        )
+        logger.info(f"[PDF] Gerando relatório MindScan para usuário {user_id}...")
 
-        elements = []
+        doc = SimpleDocTemplate(pdf_path, pagesize=A4)
+        styles = getSampleStyleSheet()
+        story = []
 
-        # Cabeçalho
-        header_style = self.styles["Title"]
-        elements.append(Paragraph("Relatório MindScan", header_style))
-        elements.append(Spacer(1, 0.5 * cm))
+        # -------------------------------------------------------------
+        # CAPA
+        # -------------------------------------------------------------
+        title = f"<para align='center'><b>Relatório MindScan®</b><br/><br/>Usuário: {user_id}</para>"
+        story.append(Paragraph(title, styles["Title"]))
+        story.append(Spacer(1, 2 * cm))
 
-        metadata_style = self.styles["Normal"]
-        timestamp = datetime.datetime.now().strftime("%d/%m/%Y %H:%M")
+        # -------------------------------------------------------------
+        # NARRATIVA PRINCIPAL
+        # -------------------------------------------------------------
+        narrative_text = data.get("narrativa", "Narrativa não fornecida.")
+        story.append(Paragraph("<b>Narrativa Psicoprofissional</b>", styles["Heading2"]))
+        story.append(Spacer(1, 0.3 * cm))
+        story.append(Paragraph(narrative_text.replace("\n", "<br/>"), styles["BodyText"]))
+        story.append(Spacer(1, 0.8 * cm))
 
-        elements.append(Paragraph(f"Sujeito: {subject_name}", metadata_style))
-        elements.append(Paragraph(f"Gerado em: {timestamp}", metadata_style))
-        elements.append(Spacer(1, 1 * cm))
+        # -------------------------------------------------------------
+        # PERFIL
+        # -------------------------------------------------------------
+        perfil = data.get("perfil", "Perfil não informado.")
+        story.append(Paragraph("<b>Perfil Principal</b>", styles["Heading2"]))
+        story.append(Spacer(1, 0.3 * cm))
+        story.append(Paragraph(perfil.replace("\n", "<br/>"), styles["BodyText"]))
+        story.append(Spacer(1, 0.8 * cm))
 
-        # Corpo do relatório
-        body_style = self.styles["BodyText"]
+        # -------------------------------------------------------------
+        # CRUZAMENTOS
+        # -------------------------------------------------------------
+        cruzamentos = data.get("cruzamentos", "Cruzamentos não informados.")
+        story.append(Paragraph("<b>Cruzamentos</b>", styles["Heading2"]))
+        story.append(Spacer(1, 0.3 * cm))
+        story.append(Paragraph(cruzamentos.replace("\n", "<br/>"), styles["BodyText"]))
 
-        for line in report_text.split("\n"):
-            if line.strip():
-                elements.append(Paragraph(line, body_style))
-                elements.append(Spacer(1, 0.3 * cm))
+        # -------------------------------------------------------------
+        # FINALIZAÇÃO DO PDF
+        # -------------------------------------------------------------
+        doc.build(story)
 
-        doc.build(elements)
+        logger.info(f"[PDF] Relatório MindScan gerado com sucesso → {pdf_path}")
+        return pdf_path
 
-        return output_path
-
-
-# Instância pública
-pdf_generator = PDFGenerator()
+    except Exception as e:
+        logger.error(f"[PDF] Erro ao gerar PDF: {e}")
+        raise

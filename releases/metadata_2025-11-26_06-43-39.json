@@ -1,0 +1,13 @@
+{
+    "project": "MindScan",
+    "version": "2025-11-26_06-43-39",
+    "generated_at": "2025-11-26 06:43:39",
+    "paths_included": [
+        "backend",
+        "core",
+        "modules",
+        "tools/automator",
+        "logs"
+    ],
+    "generator": "MindScan Automator – ReleaseManager"
+}

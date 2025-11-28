@@ -1,0 +1,19 @@
+====================================================
+           RELATÓRIO DE ESTRUTURA - MINDSCAN         
+====================================================
+Data/Hora: 2025-11-24 14:35:10.882148
+Diretório auditado: D:\projetos-inovexa\mindscan_rebuild
+
+Total de arquivos: 147
+Tamanho total: 366.87 KB
+Pastas vazias: 0
+Arquivos vazios: 1
+----------------------------------------------------
+
+⚠ ARQUIVOS VAZIOS:
+ - D:\projetos-inovexa\mindscan_rebuild\data\database.sqlite
+
+====================================================
+Arquivo CSV detalhado gerado em:
+D:\projetos-inovexa\mindscan_rebuild\logs\estrutura\audit_mindscan.csv
+====================================================

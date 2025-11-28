@@ -1,89 +1,121 @@
-# ============================================================
-# MindScan — TEIQue Algorithm
-# ============================================================
-# Algoritmo psicométrico do TEIQue (Inteligência Emocional
-# Traço), composto pelas dimensões:
-#
-# - Bem-estar
-# - Autocontrole
-# - Emocionalidade
-# - Sociabilidade
-#
-# Funções:
-# - Processamento de itens
-# - Normalização via ScoreBuilder
-# - Geração de descritores
-# - Estrutura compatível com DiagnosticEngine
-#
-# Versão final e maximizada.
-# ============================================================
+# Caminho: D:\backend\algorithms\teique.py
+# MindScan — TEIQue Padronizado v2.0
+# Autor: Leo Vinci — Diretor de Tecnologia e Produção (Inovexa)
+# Arquivo completo, final e padronizado para integração com a MindScanEngine
 
-from typing import Dict, Any
-from backend.core.scoring import ScoreBuilder
+from typing import Dict, Any, List
+from datetime import datetime
 
-
-class TEIQueAlgorithm:
+class TEIQUEModel:
     """
-    Processador completo do TEIQue.
+    Modelo TEIQue (Traço de Inteligência Emocional).
+    Dimensões principais:
+        - Bem-estar
+        - Autocontrole
+        - Emocionalidade
+        - Sociabilidade
     """
 
-    DIMENSIONS = {
-        "wellbeing": ["wb1", "wb2", "wb3", "wb4"],
-        "selfcontrol": ["sc1", "sc2", "sc3", "sc4"],
-        "emotionality": ["em1", "em2", "em3", "em4"],
-        "sociability": ["so1", "so2", "so3", "so4"],
+    DIMENSIONS = ["bem_estar", "autocontrole", "emocionalidade", "sociabilidade"]
+
+    DESCRIPTIONS: Dict[str, Dict[str, str]] = {
+        "bem_estar": {
+            "name": "Bem-estar",
+            "high": "Confiança, otimismo, satisfação geral.",
+            "low": "Autocrítica, preocupação, pessimismo.",
+        },
+        "autocontrole": {
+            "name": "Autocontrole",
+            "high": "Regulação emocional eficaz.",
+            "low": "Impulsividade, dificuldade de controle emocional.",
+        },
+        "emocionalidade": {
+            "name": "Emocionalidade",
+            "high": "Expressividade emocional equilibrada.",
+            "low": "Dificuldade de percepção emocional.",
+        },
+        "sociabilidade": {
+            "name": "Sociabilidade",
+            "high": "Habilidade social, assertividade.",
+            "low": "Isolamento, dificuldade de interação.",
+        },
     }
 
-    DESCRIPTORS = {
-        "wellbeing": "Propensão ao otimismo, autoconfiança e estabilidade emocional.",
-        "selfcontrol": "Capacidade de regular impulsos, emoções e comportamentos sob pressão.",
-        "emotionality": "Consciência emocional, empatia e clareza sobre os próprios sentimentos.",
-        "sociability": "Habilidade de interação social, assertividade e comunicação.",
-    }
+    NORMALIZATION_RANGE = (0, 100)
 
-    def __init__(self):
-        self.scoring = ScoreBuilder()
+    def __init__(self, responses: Dict[str, int]):
+        self.responses = responses
+        self._validate_inputs()
 
-    # ------------------------------------------------------------
-    # PROCESSAR TEIQUE
-    # ------------------------------------------------------------
-    def compute(self, data: Dict[str, Any]) -> Dict[str, Any]:
-        """
-        Executa o cálculo completo do TEIQue.
-        """
+    def _validate_inputs(self):
+        if not isinstance(self.responses, dict):
+            raise ValueError("Responses deve ser um dicionário.")
 
-        results = {}
+    def _normalize(self, value: float) -> float:
+        raw_min, raw_max = 1, 5
+        norm_min, norm_max = self.NORMALIZATION_RANGE
+        return ((value - raw_min) / (raw_max - raw_min)) * (norm_max - norm_min) + norm_min
 
-        for dimension, keys in self.DIMENSIONS.items():
-            raw_values = [data.get(k, 0) for k in keys]
-            raw_score = sum(raw_values) / len(raw_values)
+    def compute(self) -> Dict[str, float]:
+        scores = {dim: 0.0 for dim in self.DIMENSIONS}
+        counts = {dim: 0 for dim in self.DIMENSIONS}
 
-            score_obj = self.scoring.build(
-                dimension=dimension,
-                raw_score=raw_score,
-                minimum=1,
-                maximum=7,
-                descriptor=self.DESCRIPTORS[dimension],
-                metadata={
-                    "items": keys,
-                    "raw_values": raw_values
-                }
-            )
+        for item, value in self.responses.items():
+            dim = item.split("_")[0]
+            if dim not in scores:
+                continue
+            scores[dim] += value
+            counts[dim] += 1
 
-            results[dimension] = score_obj
+        for dim in scores:
+            if counts[dim] > 0:
+                scores[dim] = self._normalize(scores[dim] / counts[dim])
 
-        # Score global do TEIQue
-        overall = sum(v["score"] for v in results.values()) / 4
-
-        results["overall"] = {
-            "dimension": "teique_overall",
-            "score": round(overall, 2),
-            "descriptor": "Índice geral de Inteligência Emocional Traço (TEIQue).",
-            "metadata": {"dimensions": list(self.DIMENSIONS.keys())}
-        }
-
-        return results
+        return scores
 
 
-# Instância pública
-teique = TEIQueAlgorithm()
+# ---------------------------------------------------------------------------
+# Wrapper oficial MindScan — teique_process
+# ---------------------------------------------------------------------------
+
+def teique_process(dataset: Dict[str, Any]) -> List[Dict[str, Any]]:
+    """
+    Wrapper padronizado para integrar o TEIQue ao motor psicométrico.
+
+    Entrada esperada:
+        dataset["teique_responses"] = { "bem_estar_1": 4, "autocontrole_2": 3, ... }
+
+    Saída padronizada:
+        [
+            {
+                "dimension": str,
+                "score": float,
+                "descriptor": str,
+                "metadata": dict
+            }
+        ]
+    """
+
+    if "teique_responses" not in dataset:
+        raise ValueError("Dataset não contém 'teique_responses'.")
+
+    model = TEIQUEModel(dataset["teique_responses"])
+    results = model.compute()
+
+    output = []
+    for dim, score in results.items():
+        desc_block = TEIQUEModel.DESCRIPTIONS.get(dim, {})
+        descriptor = desc_block.get("high") if score >= 50 else desc_block.get("low")
+
+        output.append({
+            "dimension": dim,
+            "score": float(score),
+            "descriptor": descriptor,
+            "metadata": {
+                "model": "teique",
+                "name": desc_block.get("name", dim),
+                "timestamp": datetime.utcnow().isoformat(),
+            },
+        })
+
+    return output

@@ -6,7 +6,7 @@ echo ============================================
 REM --- Ir para a pasta do backend ---
 echo.
 echo > Indo para a pasta backend...
-cd /d D:\projetos-inovexa\mindscan_rebuild\backend
+cd /d D:\projetos-inovexa\mindscan\backend
 
 if errorlevel 1 (
    echo [ERRO] Nao foi possivel acessar a pasta backend.
@@ -21,7 +21,7 @@ call .\venv\Scripts\activate
 if errorlevel 1 (
    echo [ERRO] O ambiente .venv nao foi encontrado.
    echo Verifique se a pasta existe em:
-   echo D:\projetos-inovexa\mindscan_rebuild\backend\venv
+   echo D:\projetos-inovexa\mindscan\backend\venv
    pause
    exit /b
 )

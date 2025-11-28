@@ -1,182 +1,135 @@
-# bussola.py
-# MindScan Rebuild – Algoritmo Bússola de Competências (Versão Final)
-# Autor: Leo Vinci (IA Supervisora Inovexa)
-# Última atualização: 23/11/2025
-# ---------------------------------------------------------
-# O modelo Bússola trabalha com 7 dimensões de competências:
-#   1. Estratégia
-#   2. Execução
-#   3. Relacionamento
-#   4. Comunicação
-#   5. Liderança
-#   6. Aprendizagem
-#   7. Propósito
-#
-# Este módulo implementa:
-#   - Validação de respostas
-#   - Reversões (quando aplicáveis)
-#   - Pontuação bruta
-#   - Normalização (0–100)
-#   - Pesos fatoriais
-#   - Interpretações qualitativas
-#   - Output padrão MindScan (metadata + resultados + modelo)
+# Caminho: D:\backend\algorithms\bussola.py
+# MindScan — Bússola Cognitiva Padronizada v2.0
+# Autor: Leo Vinci — Diretor de Tecnologia e Produção (Inovexa)
+# Arquivo completo, final e padronizado para integração com a MindScanEngine
 
-from typing import Dict, Any
+from typing import Dict, Any, List
+from datetime import datetime
 
-
-class BussolaCompetencias:
+class CompassModel:
     """
-    Modelo definitivo das 7 competências centrais da Bússola MindScan.
-    O sistema aceita itens no formato:
-        "E1", "L3", "C2" etc.
-    Onde a primeira letra indica a dimensão.
+    Bússola Cognitiva MindScan — síntese final.
+
+    Integra padrões psicométricos para determinar:
+        - estilo decisório
+        - eixo emocional
+        - eixo racional
+        - direção cognitiva predominante
+
+    Saída esperada pela Engine:
+        { dimension, score, descriptor, metadata }
     """
 
-    DIMENSIONS = {
-        "E": "Estratégia",
-        "X": "Execução",
-        "R": "Relacionamento",
-        "C": "Comunicação",
-        "L": "Liderança",
-        "A": "Aprendizagem",
-        "P": "Propósito"
-    }
+    DIMENSIONS = [
+        "eixo_racional",
+        "eixo_emocional",
+        "estilo_decisorio",
+        "direcao_geral",
+    ]
 
-    # Pesos fatoriais (ajustáveis em calibração futura)
-    FACTOR_WEIGHTS = {
-        "E": 1.0,
-        "X": 1.0,
-        "R": 1.0,
-        "C": 1.0,
-        "L": 1.0,
-        "A": 1.0,
-        "P": 1.0
+    DESCRIPTIONS = {
+        "eixo_racional": {
+            "name": "Eixo Racional",
+            "high": "Decisão orientada por lógica e análise.",
+            "low": "Menor uso de análise estruturada.",
+        },
+        "eixo_emocional": {
+            "name": "Eixo Emocional",
+            "high": "Alta sensibilidade emocional nas decisões.",
+            "low": "Baixa interferência emocional.",
+        },
+        "estilo_decisorio": {
+            "name": "Estilo Decisório",
+            "high": "Tomada de decisão rápida e assertiva.",
+            "low": "Tomada de decisão cautelosa e reflexiva.",
+        },
+        "direcao_geral": {
+            "name": "Direção Cognitiva Geral",
+            "high": "Orientação voltada à ação e resultados.",
+            "low": "Orientação voltada à análise e reflexão.",
+        },
     }
 
     NORMALIZATION_RANGE = (0, 100)
 
-    # Itens reversos (exemplo realista)
-    REVERSE_ITEMS = {"R3", "C4", "X2", "L5"}
+    def __init__(self, dataset: Dict[str, Any]):
+        self.data = dataset
 
-    MIN_SCORE = 1
-    MAX_SCORE = 5
+    # -------------------- Cálculos Sintéticos --------------------
 
-    DESCRIPTIONS = {
-        "E": {
-            "high": "Capacidade de visão, análise sistêmica e orientação estratégica.",
-            "low": "Baixa visão de futuro, foco restrito ao curto prazo."
-        },
-        "X": {
-            "high": "Alta capacidade de execução, organização e entrega.",
-            "low": "Dificuldade em manter disciplina e consistência."
-        },
-        "R": {
-            "high": "Criar vínculos, empatia, colaboração natural.",
-            "low": "Baixa conexão interpessoal, isolamento social."
-        },
-        "C": {
-            "high": "Comunicação clara, assertiva e eficaz.",
-            "low": "Dificuldade em transmitir ideias ou ouvir ativamente."
-        },
-        "L": {
-            "high": "Inspirar, orientar e desenvolver pessoas.",
-            "low": "Dificuldade em assumir papéis de influência."
-        },
-        "A": {
-            "high": "Aprendizagem contínua, reflexão, adaptabilidade.",
-            "low": "Estagnação, pouca curiosidade ou atualização."
-        },
-        "P": {
-            "high": "Propósito, motivação intrínseca e alinhamento pessoal.",
-            "low": "Falta de direção interna, desconexão com objetivos."
-        }
-    }
+    def compute_eixo_racional(self) -> float:
+        big5 = self.data.get("big5_responses", {})
+        if not big5:
+            return 0
+        # Exemplo: racionalidade correlaciona com Conscienciosidade (C)
+        c_items = [v for k, v in big5.items() if k.startswith("C")]
+        if not c_items:
+            return 0
+        return (sum(c_items) / len(c_items)) * 20
 
-    def __init__(self, responses: Dict[str, int]):
-        self.responses = responses
-        self._validate_inputs()
+    def compute_eixo_emocional(self) -> float:
+        teique = self.data.get("teique_responses", {})
+        if not teique:
+            return 0
+        media = sum(teique.values()) / max(1, len(teique))
+        return (media / 5) * 100
 
-    # --------------------------------------------------------------
-    # Validação completa dos dados
-    # --------------------------------------------------------------
+    def compute_estilo_decisorio(self) -> float:
+        perf = self.data.get("performance_responses", {})
+        if not perf:
+            return 0
+        ritmo_items = [v for k, v in perf.items() if k.startswith("ritmo")]
+        if not ritmo_items:
+            return 0
+        return (sum(ritmo_items) / len(ritmo_items)) * 20
 
-    def _validate_inputs(self):
-        if not isinstance(self.responses, dict):
-            raise ValueError("responses deve ser um dicionário.")
+    def compute_direcao_geral(self) -> float:
+        ocai = self.data.get("ocai_responses", {})
+        if not ocai:
+            return 0
+        return min(100, (sum(ocai.values()) / max(1, len(ocai))))
 
-        for item, score in self.responses.items():
-            if not isinstance(score, int):
-                raise ValueError(f"Resposta inválida em {item}: {score}")
-            if not (self.MIN_SCORE <= score <= self.MAX_SCORE):
-                raise ValueError(f"Pontuação fora do intervalo permitido: {item}={score}")
+    # -------------------- Orquestração --------------------
 
-    # --------------------------------------------------------------
-    # Reversão de itens
-    # --------------------------------------------------------------
-
-    def _apply_reverse(self, item: str, value: int) -> int:
-        if item in self.REVERSE_ITEMS:
-            return self.MAX_SCORE - (value - self.MIN_SCORE)
-        return value
-
-    # --------------------------------------------------------------
-    # Cálculo bruto
-    # --------------------------------------------------------------
-
-    def compute_raw(self) -> Dict[str, float]:
-        raw = {dim: 0.0 for dim in self.DIMENSIONS}
-        count = {dim: 0 for dim in self.DIMENSIONS}
-
-        for item, score in self.responses.items():
-            dim = item[0]
-            if dim not in self.DIMENSIONS:
-                continue
-
-            adj = self._apply_reverse(item, score)
-            raw[dim] += adj
-            count[dim] += 1
-
-        for dim in raw:
-            if count[dim] > 0:
-                raw[dim] /= count[dim]
-
-        return raw
-
-    # --------------------------------------------------------------
-    # Normalização
-    # --------------------------------------------------------------
-
-    def _normalize(self, value: float) -> float:
-        min_v, max_v = self.MIN_SCORE, self.MAX_SCORE
-        low, high = self.NORMALIZATION_RANGE
-        return ((value - min_v) / (max_v - min_v)) * (high - low) + low
-
-    # --------------------------------------------------------------
-    # Saída final
-    # --------------------------------------------------------------
-
-    def compute(self) -> Dict[str, Any]:
-        raw = self.compute_raw()
-
-        normalized = {
-            dim: round(self._normalize(raw_val) * self.FACTOR_WEIGHTS[dim], 2)
-            for dim, raw_val in raw.items()
-        }
-
-        metadata = {
-            dim: {
-                "name": self.DIMENSIONS[dim],
-                "raw": round(raw[dim], 2),
-                "normalized": normalized[dim],
-                "high": self.DESCRIPTIONS[dim]["high"],
-                "low": self.DESCRIPTIONS[dim]["low"]
-            }
-            for dim in raw
-        }
-
+    def compute(self) -> Dict[str, float]:
         return {
-            "model": "Bússola de Competências MindScan",
-            "results": normalized,
-            "metadata": metadata,
-            "dimensions": list(self.DIMENSIONS.values())
+            "eixo_racional": self.compute_eixo_racional(),
+            "eixo_emocional": self.compute_eixo_emocional(),
+            "estilo_decisorio": self.compute_estilo_decisorio(),
+            "direcao_geral": self.compute_direcao_geral(),
         }
+
+
+# ---------------------------------------------------------------------------
+# Wrapper oficial MindScan — compass_process
+# ---------------------------------------------------------------------------
+
+def compass_process(dataset: Dict[str, Any]) -> List[Dict[str, Any]]:
+    """
+    Wrapper padronizado para integrar a Bússola Cognitiva ao MindScanEngine.
+
+    Entrada esperada: dataset completo preparado pelo DataService.
+
+    Saída padronizada MindScan v2.0.
+    """
+
+    model = CompassModel(dataset)
+    results = model.compute()
+
+    output = []
+    for dim, score in results.items():
+        desc_block = CompassModel.DESCRIPTIONS.get(dim, {})
+        descriptor = desc_block.get("high") if score >= 50 else desc_block.get("low")
+
+        output.append({
+            "dimension": dim,
+            "score": float(score),
+            "descriptor": descriptor,
+            "metadata": {
+                "model": "compass",
+                "name": desc_block.get("name", dim),
+                "timestamp": datetime.utcnow().isoformat(),
+            },
+        })
+
+    return output

@@ -1,0 +1,12 @@
+{
+    "missing_fields": [],
+    "range_issues": [],
+    "weight_problems": [],
+    "coherence_issues": [],
+    "internal_errors": [],
+    "summary": {
+        "ok": 0,
+        "warnings": 1,
+        "critical": 0
+    }
+}

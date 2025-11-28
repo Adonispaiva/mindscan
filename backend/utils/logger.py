@@ -1,4 +1,4 @@
-# D:\projetos-inovexa\mindscan_rebuild\backend\utils\logger.py
+# D:\projetos-inovexa\mindscan\backend\utils\logger.py
 
 import logging
 from logging.handlers import RotatingFileHandler

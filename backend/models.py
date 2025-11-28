@@ -1,7 +1,6 @@
-# backend/models.py
-# ===========================================
-# MindScan — MODELOS ORM (SQLAlchemy Async)
-# ===========================================
+# Caminho: backend/models.py
+# MindScan — MODELOS ORM (SQLAlchemy 2.0+)
+# Diretor Técnico: Leo Vinci — Inovexa Software
 
 from datetime import datetime
 from sqlalchemy import (
@@ -19,10 +18,9 @@ from sqlalchemy.orm import relationship
 
 from backend.database import Base
 
-
-# -----------------------------------------------------------
+# =============================
 # 1) USUÁRIOS / PROFISSIONAIS
-# -----------------------------------------------------------
+# =============================
 class User(Base):
     __tablename__ = "users"
 
@@ -39,9 +37,9 @@ class User(Base):
         return f"<User {self.email}>"
 
 
-# -----------------------------------------------------------
+# =============================
 # 2) PESSOA AVALIADA (CANDIDATO)
-# -----------------------------------------------------------
+# =============================
 class Candidate(Base):
     __tablename__ = "candidates"
 
@@ -59,9 +57,9 @@ class Candidate(Base):
         return f"<Candidate {self.full_name}>"
 
 
-# -----------------------------------------------------------
-# 3) TESTE MINDSCAN (Sessão do teste)
-# -----------------------------------------------------------
+# =============================
+# 3) TESTE MINDSCAN (SESSÃO)
+# =============================
 class MindscanTest(Base):
     __tablename__ = "mindscan_tests"
 
@@ -73,7 +71,6 @@ class MindscanTest(Base):
     started_at = Column(DateTime, default=datetime.utcnow)
     completed_at = Column(DateTime)
 
-    # resultado final sintetizado
     final_score = Column(Float)
     dominant_profile = Column(String(200))
 
@@ -87,16 +84,16 @@ class MindscanTest(Base):
         return f"<MindscanTest ID={self.id}>"
 
 
-# -----------------------------------------------------------
-# 4) RESPOSTAS DO TESTE (brutas)
-# -----------------------------------------------------------
+# =============================
+# 4) RESPOSTAS DO TESTE (BRUTAS)
+# =============================
 class MindscanAnswers(Base):
     __tablename__ = "mindscan_answers"
 
     id = Column(Integer, primary_key=True)
     test_id = Column(Integer, ForeignKey("mindscan_tests.id"), nullable=False)
 
-    answers_json = Column(JSON, nullable=False)  # todas as respostas
+    answers_json = Column(JSON, nullable=False)
     created_at = Column(DateTime, default=datetime.utcnow)
 
     test = relationship("MindscanTest", back_populates="answers")
@@ -105,20 +102,19 @@ class MindscanAnswers(Base):
         return f"<MindscanAnswers Test={self.test_id}>"
 
 
-# -----------------------------------------------------------
-# 5) RESULTADOS INTERMEDIÁRIOS / PERFIS
-# -----------------------------------------------------------
+# =============================
+# 5) RESULTADOS INTERMEDIÁRIOS
+# =============================
 class MindscanResult(Base):
     __tablename__ = "mindscan_results"
 
     id = Column(Integer, primary_key=True)
     test_id = Column(Integer, ForeignKey("mindscan_tests.id"), nullable=False)
 
-    # Ex.: Big Five, fatores cognitivos, perfis emocionais, etc.
     dimension = Column(String(200), nullable=False)
     score = Column(Float, nullable=False)
-    descriptor = Column(Text)  # texto gerado pelo modelo
-    metadata = Column(JSON)    # pesos, cálculos, logs
+    descriptor = Column(Text)
+    metadata = Column(JSON)
 
     created_at = Column(DateTime, default=datetime.utcnow)
 
@@ -128,16 +124,16 @@ class MindscanResult(Base):
         return f"<MindscanResult {self.dimension}={self.score}>"
 
 
-# -----------------------------------------------------------
-# 6) RELATÓRIO FINAL (PDF gerado)
-# -----------------------------------------------------------
+# =============================
+# 6) RELATÓRIO FINAL (PDF)
+# =============================
 class MindscanReport(Base):
     __tablename__ = "mindscan_reports"
 
     id = Column(Integer, primary_key=True)
     test_id = Column(Integer, ForeignKey("mindscan_tests.id"), nullable=False)
 
-    pdf_path = Column(String(500), nullable=False)   # caminho do PDF
+    pdf_path = Column(String(500), nullable=False)
     metadata = Column(JSON)
 
     created_at = Column(DateTime, default=datetime.utcnow)
@@ -148,9 +144,9 @@ class MindscanReport(Base):
         return f"<MindscanReport Test={self.test_id}>"
 
 
-# -----------------------------------------------------------
+# =============================
 # 7) AUDITORIA / LOGS
-# -----------------------------------------------------------
+# =============================
 class AuditLog(Base):
     __tablename__ = "audit_logs"
 

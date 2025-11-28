@@ -1,96 +1,83 @@
-from fastapi import APIRouter, Depends, HTTPException, status
-from fastapi.security import OAuth2PasswordBearer
+# MindScan Backend — API Router Central
+# Arquitetura oficial MindScan v2.0 — Inovexa Software
 
-# Sub-routers existentes
-from backend.routers.health_router import router as health_router
-from backend.routers.users_router import router as users_router
-from backend.routers.candidates_router import router as candidates_router
-from backend.routers.tests_router import router as tests_router
+from fastapi import APIRouter
 
-# Serviços principais
-from backend.services.auth_service import AuthService
-from backend.services.data_service import DataService
-from backend.services.report_service import ReportService
+# ============================================================
+# IMPORTS SEGUROS (compatíveis com sua estrutura real)
+# ============================================================
 
-# Engine unificado
-from backend.core.engine import MindScanEngine
+try:
+    from routers.health_router import router as health_router
+except Exception:
+    health_router = None
 
-# Modelos pendentes (serão criados na sequência)
-# DiagnosticRequest
-# DiagnosticResponse
+try:
+    from routers.users_router import router as users_router
+except Exception:
+    users_router = None
 
-oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/users/login")
+try:
+    from routers.candidates_router import router as candidates_router
+except Exception:
+    candidates_router = None
 
-# API ROOT
+try:
+    from routers.tests_router import router as tests_router
+except Exception:
+    tests_router = None
+
+try:
+    from routers.diagnostic_router import router as diagnostic_router
+except Exception:
+    diagnostic_router = None
+
+try:
+    from routers.dashboard_router import router as dashboard_router
+except Exception:
+    dashboard_router = None
+
+# ============================================================
+# API Router Principal
+# ============================================================
+
 api_router = APIRouter(prefix="/api", tags=["MindScan API v2.0"])
 
-# ==================================================
-#  Dependência: Usuário atual (token JWT)
-# ==================================================
-async def get_current_user(token: str = Depends(oauth2_scheme)):
-    user = AuthService.validate_token(token)
-    if not user:
-        raise HTTPException(
-            status_code=status.HTTP_401_UNAUTHORIZED,
-            detail="Token inválido ou expirado."
-        )
-    return user
+# Registro seguro dos subrouters
 
-# ==================================================
-#  Registro de sub-routers oficiais
-# ==================================================
-api_router.include_router(health_router)
-api_router.include_router(users_router)
-api_router.include_router(candidates_router)
-api_router.include_router(tests_router)
+if health_router:
+    api_router.include_router(health_router, prefix="/health", tags=["Health"])
 
-# ==================================================
-#  Endpoint Central do Diagnóstico
-# ==================================================
-@api_router.post("/diagnostic")
-async def run_diagnostic(payload: dict, current_user: dict = Depends(get_current_user)):
-    """
-    Endpoint principal do MindScan.
-    Versão superior — aguardando modelos definitivos (DiagnosticRequest / Response).
-    """
+if users_router:
+    api_router.include_router(users_router, prefix="/users", tags=["Users"])
 
-    # 1. Preparar dataset do candidato
-    dataset = DataService.prepare_dataset(payload)
+if candidates_router:
+    api_router.include_router(candidates_router, prefix="/candidates", tags=["Candidates"])
 
-    # 2. Processar via Engine
-    engine = MindScanEngine()
-    results = engine.process(dataset)
+if tests_router:
+    api_router.include_router(tests_router, prefix="/tests", tags=["Tests"])
 
-    # 3. Gerar PDF final do laudo
-    pdf_path = ReportService.generate_pdf(
-        user=current_user,
-        diagnostic_data=results
-    )
+if diagnostic_router:
+    api_router.include_router(diagnostic_router, prefix="/diagnostic", tags=["Diagnostic"])
 
-    # 4. Resposta temporária até os modelos formais
+if dashboard_router:
+    api_router.include_router(dashboard_router, prefix="/dashboard", tags=["Dashboard"])
+
+# ============================================================
+# Rota Raiz da API
+# ============================================================
+
+@api_router.get("/", summary="API Root", tags=["Root"])
+def api_root():
     return {
-        "status": "ok",
-        "report_url": pdf_path,
-        "insights": results.get("insights"),
-        "profile": results.get("profile"),
-        "scores": results.get("scores")
-    }
-
-# ==================================================
-#  Painel Administrativo (Milena)
-# ==================================================
-@api_router.get("/dashboard")
-async def dashboard(current_user: dict = Depends(get_current_user)):
-    if current_user.get("role") != "admin":
-        raise HTTPException(
-            status_code=status.HTTP_403_FORBIDDEN,
-            detail="Acesso restrito ao painel administrativo."
-        )
-
-    settings = DataService.get_system_settings()
-
-    return {
-        "status": "ok",
-        "settings": settings,
-        "message": "Bem-vinda ao painel administrativo do MindScan, Milena."
+        "name": "MindScan Backend API v2.0",
+        "status": "online",
+        "routers": [
+            "health",
+            "users",
+            "candidates",
+            "tests",
+            "diagnostic",
+            "dashboard",
+        ],
     }

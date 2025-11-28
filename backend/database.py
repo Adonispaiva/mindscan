@@ -1,33 +1,55 @@
+# Caminho: backend/database.py
+# MindScan Backend — Núcleo de Banco de Dados
+# Diretor Técnico: Leo Vinci (Inovexa Software)
+#
+# Versão Final — Integrado ao sistema oficial de settings (pysettings)
+# Compatível com SQLAlchemy 2.0 e execução via módulo
+
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, declarative_base
-from config import get_settings
+from pysettings import get_settings
+
+# ============================================================
+# 1) SETTINGS OFICIAIS
+# ============================================================
 
 settings = get_settings()
+DATABASE_URL = settings.DATABASE_URL
 
-# Build database URL
-DATABASE_URL = (
-    f"postgresql+asyncpg://{settings.DB_USER}:{settings.DB_PASSWORD}"
-    f"@{settings.DB_HOST}:{settings.DB_PORT}/{settings.DB_NAME}"
-)
+# ============================================================
+# 2) BASE DO ORM
+# ============================================================
 
-# SQLAlchemy Base
 Base = declarative_base()
 
-# Synchronous engine (for migrations / utilities)
+# ============================================================
+# 3) ENGINE (sincrono) — compatível com migrações
+# ============================================================
+
 engine = create_engine(
-    DATABASE_URL.replace("+asyncpg", ""), echo=False, future=True
+    DATABASE_URL.replace("+asyncpg", ""),  # fallback seguro para sync
+    echo=False,
+    future=True
 )
 
-# Session factory
+# ============================================================
+# 4) SESSION FACTORY
+# ============================================================
+
 SessionLocal = sessionmaker(
     autocommit=False,
     autoflush=False,
     bind=engine,
 )
 
+# ============================================================
+# 5) DEPENDÊNCIA FASTAPI
+# ============================================================
+
 def get_db():
     """
-    FastAPI dependency that yields a SQLAlchemy session.
+    Dependência FastAPI que gera e encerra uma sessão SQLAlchemy
+    de maneira segura.
     """
     db = SessionLocal()
     try:

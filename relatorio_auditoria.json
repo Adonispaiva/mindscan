@@ -108,28 +108,28 @@
         "arquivos_vazios": [],
         "arquivos_duplicados": {
             "b5df7db8960aeaf9f9f03969324510e6637a4eb731ee36a199ac0b2adb38efd6": [
-                "D:\\projetos-inovexa\\mindscan_rebuild\\README.md",
-                "D:\\projetos-inovexa\\mindscan_rebuild\\data\\sample_input.json",
-                "D:\\projetos-inovexa\\mindscan_rebuild\\data\\sample_output.json",
-                "D:\\projetos-inovexa\\mindscan_rebuild\\logs\\.gitkeep",
-                "D:\\projetos-inovexa\\mindscan_rebuild\\maintenance\\backup.py",
-                "D:\\projetos-inovexa\\mindscan_rebuild\\maintenance\\healthcheck.py",
-                "D:\\projetos-inovexa\\mindscan_rebuild\\modules\\predictor.py",
-                "D:\\projetos-inovexa\\mindscan_rebuild\\modules\\synmind_ai_engine.py",
-                "D:\\projetos-inovexa\\mindscan_rebuild\\modules\\synmind_kernel.py",
-                "D:\\projetos-inovexa\\mindscan_rebuild\\tests\\test_app.py",
-                "D:\\projetos-inovexa\\mindscan_rebuild\\tests\\test_engine.py",
-                "D:\\projetos-inovexa\\mindscan_rebuild\\tests\\test_frontend.py",
-                "D:\\projetos-inovexa\\mindscan_rebuild\\tools\\build.py",
-                "D:\\projetos-inovexa\\mindscan_rebuild\\tools\\cleanup.py",
-                "D:\\projetos-inovexa\\mindscan_rebuild\\tools\\exporter.py"
+                "D:\\projetos-inovexa\\mindscan\\README.md",
+                "D:\\projetos-inovexa\\mindscan\\data\\sample_input.json",
+                "D:\\projetos-inovexa\\mindscan\\data\\sample_output.json",
+                "D:\\projetos-inovexa\\mindscan\\logs\\.gitkeep",
+                "D:\\projetos-inovexa\\mindscan\\maintenance\\backup.py",
+                "D:\\projetos-inovexa\\mindscan\\maintenance\\healthcheck.py",
+                "D:\\projetos-inovexa\\mindscan\\modules\\predictor.py",
+                "D:\\projetos-inovexa\\mindscan\\modules\\synmind_ai_engine.py",
+                "D:\\projetos-inovexa\\mindscan\\modules\\synmind_kernel.py",
+                "D:\\projetos-inovexa\\mindscan\\tests\\test_app.py",
+                "D:\\projetos-inovexa\\mindscan\\tests\\test_engine.py",
+                "D:\\projetos-inovexa\\mindscan\\tests\\test_frontend.py",
+                "D:\\projetos-inovexa\\mindscan\\tools\\build.py",
+                "D:\\projetos-inovexa\\mindscan\\tools\\cleanup.py",
+                "D:\\projetos-inovexa\\mindscan\\tools\\exporter.py"
             ],
             "3596fd937ce02694f95b5eebd0b9b68dcd4b80629d547dd8d4ec397cc7efc5d5": [
-                "D:\\projetos-inovexa\\mindscan_rebuild\\frontend\\cadastro.html",
-                "D:\\projetos-inovexa\\mindscan_rebuild\\frontend\\entrada_dados.html",
-                "D:\\projetos-inovexa\\mindscan_rebuild\\frontend\\index.html",
-                "D:\\projetos-inovexa\\mindscan_rebuild\\frontend\\login.html",
-                "D:\\projetos-inovexa\\mindscan_rebuild\\frontend\\resultado.html"
+                "D:\\projetos-inovexa\\mindscan\\frontend\\cadastro.html",
+                "D:\\projetos-inovexa\\mindscan\\frontend\\entrada_dados.html",
+                "D:\\projetos-inovexa\\mindscan\\frontend\\index.html",
+                "D:\\projetos-inovexa\\mindscan\\frontend\\login.html",
+                "D:\\projetos-inovexa\\mindscan\\frontend\\resultado.html"
             ]
         }
     },

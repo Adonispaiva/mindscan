@@ -1,186 +1,201 @@
-# esquemas.py
-# MindScan Rebuild – Algoritmo de Esquemas (Schema Model – Young)
-# Versão Final e Definitiva
-# Autor: Leo Vinci – IA Supervisora Inovexa
-# Última atualização: 23/11/2025
-# ------------------------------------------------------------------------
-# Este módulo implementa a estrutura completa dos 18 esquemas iniciais
-# desadaptativos (Young Schema Questionnaire – versão compactada MindScan):
-#
-# Domínio 1 — Desconexão e Rejeição
-#   - Abandono
-#   - Desconfiança/Abuso
-#   - Privação Emocional
-#   - Defectividade/Vergonha
-#   - Isolamento Social
-#
-# Domínio 2 — Autonomia e Desempenho Prejudicados
-#   - Dependência/Incompetência
-#   - Vulnerabilidade
-#   - Emaranhamento
-#   - Fracasso
-#
-# Domínio 3 — Limites Prejudicados
-#   - Grandiosidade
-#   - Autocontrole/Autodisciplina Insuficientes
-#
-# Domínio 4 — Direcionamento para o Outro
-#   - Subjugação
-#   - Autossacrifício
-#   - Busca de Aprovação
-#
-# Domínio 5 — Supervigília e Inibição
-#   - Negatividade/Pessimismo
-#   - Inibição Emocional
-#   - Padrões Inflexíveis
-#   - Postura Punitiva
-#
-# Pontuação:
-#   Likert 1–6
-# Normalização final: 0–100
-#
-# Saída padronizada: Modelo MindScan – Esquemas
-# ------------------------------------------------------------------------
+# Caminho: D:\backend\algorithms\esquemas.py
+# MindScan — Esquemas Desadaptativos (EMS) Padronizado v2.0
+# Autor: Leo Vinci — Diretor de Tecnologia e Produção (Inovexa)
+# Arquivo completo, final e padronizado para integração com a MindScanEngine
 
-from typing import Dict, Any
+from typing import Dict, Any, List
+from datetime import datetime
 
+class EMSModel:
+    """
+    Modelo oficial de Esquemas Desadaptativos Precoces (Young).
 
-class SchemaModel:
-    SCHEMAS = {
-        # Domínio 1 — Desconexão e Rejeição
-        "AB": "Abandono",
-        "DA": "Desconfiança/Abuso",
-        "PE": "Privação Emocional",
-        "DV": "Defectividade/Vergonha",
-        "IS": "Isolamento Social",
+    Esta implementação padronizada converte respostas individuais
+    (1 a 6) em médias por esquema, normaliza para 0–100 e gera
+    descritores de intensidade.
 
-        # Domínio 2 — Autonomia e Desempenho Prejudicados
-        "DI": "Dependência/Incompetência",
-        "VU": "Vulnerabilidade",
-        "EM": "Emaranhamento",
-        "FR": "Fracasso",
-
-        # Domínio 3 — Limites Prejudicados
-        "GR": "Grandiosidade",
-        "AI": "Autocontrole/Autodisciplina Insuficientes",
-
-        # Domínio 4 — Direcionamento para o Outro
-        "SU": "Subjugação",
-        "AS": "Autossacrifício",
-        "BA": "Busca de Aprovação",
-
-        # Domínio 5 — Supervigília e Inibição
-        "NP": "Negatividade/Pessimismo",
-        "IE": "Inibição Emocional",
-        "PI": "Padrões Inflexíveis",
-        "PU": "Postura Punitiva"
-    }
-
-    DOMAINS = {
-        "DesconexaoRejeicao": ["AB", "DA", "PE", "DV", "IS"],
-        "AutonomiaPrejudicada": ["DI", "VU", "EM", "FR"],
-        "LimitesPrejudicados": ["GR", "AI"],
-        "DirecionamentoOutro": ["SU", "AS", "BA"],
-        "SupervigilanciaInibicao": ["NP", "IE", "PI", "PU"]
-    }
-
-    MIN_SCORE = 1
-    MAX_SCORE = 6
+    Exemplos de esquemas:
+    - abandono
+    - desconfiança
+    - privacao
+    - defeito
+    - fracasso
+    - dependência
+    - vulnerabilidade
+    - emaranhamento
+    - subjugação
+    - autosacrificio
+    - padroes
+    - punicao
+    """
 
     NORMALIZATION_RANGE = (0, 100)
 
+    # Mapeamento de prefixos → Esquemas
+    SCHEMA_MAP = {
+        "aba": "abandono",
+        "des": "desconfianca",
+        "pri": "privacao",
+        "def": "defeito",
+        "fra": "fracasso",
+        "dep": "dependencia",
+        "vul": "vulnerabilidade",
+        "ema": "emaranhamento",
+        "sub": "subjugacao",
+        "aut": "autosacrificio",
+        "pad": "padroes",
+        "pun": "punicao",
+    }
+
     DESCRIPTIONS = {
-        "AB": "Medo de abandono e instabilidade nos vínculos.",
-        "DA": "Expectativa de abuso, engano ou danos.",
-        "PE": "Percepção de falta de carinho, apoio ou empatia.",
-        "DV": "Sentimentos de vergonha, inferioridade e inadequação.",
-        "IS": "Sentir-se diferente, isolado ou não pertencente.",
-        "DI": "Dependência excessiva, sensação de incapacidade.",
-        "VU": "Medo intenso de desastres, doenças e perda de controle.",
-        "EM": "Fusão emocional, perda de identidade individual.",
-        "FR": "Convicção de fracasso ou incompetência.",
-        "GR": "Sensação de superioridade, regras não aplicáveis.",
-        "AI": "Dificuldade em autocontrole e autodisciplina.",
-        "SU": "Submissão, medo de retaliação e supressão da autonomia.",
-        "AS": "Excesso de altruísmo e autocancelamento.",
-        "BA": "Busca constante de aprovação e validação.",
-        "NP": "Foco no negativo, medo excessivo do futuro.",
-        "IE": "Supressão emocional significativa.",
-        "PI": "Perfeccionismo rígido e padrões impossíveis.",
-        "PU": "Autocrítica punitiva e intolerância."
+        "abandono": {
+            "name": "Abandono",
+            "high": "Medo intenso de perda, instabilidade emocional.",
+            "low": "Segurança emocional consistente.",
+        },
+        "desconfianca": {
+            "name": "Desconfiança",
+            "high": "Expectativa de dano, suspeita constante.",
+            "low": "Abertura saudável e confiança.",
+        },
+        "privacao": {
+            "name": "Privação",
+            "high": "Sensação de não receber apoio ou cuidado.",
+            "low": "Satisfação emocional adequada.",
+        },
+        "defeito": {
+            "name": "Defeito",
+            "high": "Autodepreciação, vergonha, autocrítica.",
+            "low": "Autoaceitação e autovalor.",
+        },
+        "fracasso": {
+            "name": "Fracasso",
+            "high": "Sentimento persistente de incapacidade.",
+            "low": "Competência percebida elevada.",
+        },
+        "dependencia": {
+            "name": "Dependência",
+            "high": "Dificuldade de autonomia.",
+            "low": "Autonomia consistente.",
+        },
+        "vulnerabilidade": {
+            "name": "Vulnerabilidade",
+            "high": "Medo de catástrofes, insegurança.",
+            "low": "Senso de segurança.",
+        },
+        "emaranhamento": {
+            "name": "Emaranhamento",
+            "high": "Fusão emocional, autoidentidade frágil.",
+            "low": "Independência emocional.",
+        },
+        "subjugacao": {
+            "name": "Subjugação",
+            "high": "Supressão de necessidades em favor de outros.",
+            "low": "Assertividade equilibrada.",
+        },
+        "autosacrificio": {
+            "name": "Autosacrifício",
+            "high": "Doação excessiva, exaustão.",
+            "low": "Equilíbrio entre si e outros.",
+        },
+        "padroes": {
+            "name": "Padrões Inflexíveis",
+            "high": "Perfecionismo rígido, autocobrança.",
+            "low": "Flexibilidade emocional.",
+        },
+        "punicao": {
+            "name": "Punição",
+            "high": "Autopunição, rigidez moral.",
+            "low": "Autocompaixão e tolerância.",
+        },
     }
 
     def __init__(self, responses: Dict[str, int]):
         self.responses = responses
         self._validate_inputs()
 
-    # ---------------------------------------------------------
-    # Validação completa
-    # ---------------------------------------------------------
-
     def _validate_inputs(self):
         if not isinstance(self.responses, dict):
-            raise ValueError("responses deve ser um dicionário.")
-
-        for code, score in self.responses.items():
-            if code not in self.SCHEMAS:
-                raise ValueError(f"Esquema inválido: {code}")
-            if not isinstance(score, int):
-                raise ValueError(f"Pontuação inválida em {code}: {score}")
-            if not (self.MIN_SCORE <= score <= self.MAX_SCORE):
-                raise ValueError(f"Pontuação fora do permitido: {code}={score}")
-
-    # ---------------------------------------------------------
-    # Cálculo bruto
-    # ---------------------------------------------------------
-
-    def compute_raw(self) -> Dict[str, float]:
-        return {
-            schema: float(score)
-            for schema, score in self.responses.items()
-        }
-
-    # ---------------------------------------------------------
-    # Normalização
-    # ---------------------------------------------------------
+            raise ValueError("EMS responses deve ser um dicionário.")
+        for item, val in self.responses.items():
+            if not isinstance(val, int):
+                raise ValueError(f"Valor inválido em {item}: {val}")
+            if val < 1 or val > 6:
+                raise ValueError(f"Pontuação fora do intervalo (1–6): {item}={val}")
 
     def _normalize(self, value: float) -> float:
-        low, high = self.NORMALIZATION_RANGE
-        return ((value - self.MIN_SCORE) / (self.MAX_SCORE - self.MIN_SCORE)) * (high - low) + low
+        raw_min, raw_max = 1, 6
+        norm_min, norm_max = self.NORMALIZATION_RANGE
+        return ((value - raw_min) / (raw_max - raw_min)) * (norm_max - norm_min) + norm_min
 
-    # ---------------------------------------------------------
-    # Saída final
-    # ---------------------------------------------------------
+    def compute(self) -> Dict[str, float]:
+        scores = {}
+        counts = {}
 
-    def compute(self) -> Dict[str, Any]:
-        raw = self.compute_raw()
+        for item, val in self.responses.items():
+            prefix = item[:3].lower()
+            if prefix not in self.SCHEMA_MAP:
+                continue
+            schema = self.SCHEMA_MAP[prefix]
+            if schema not in scores:
+                scores[schema] = 0
+                counts[schema] = 0
+            scores[schema] += val
+            counts[schema] += 1
 
-        normalized = {
-            code: round(self._normalize(score), 2)
-            for code, score in raw.items()
+        for schema in scores:
+            avg = scores[schema] / counts[schema]
+            scores[schema] = self._normalize(avg)
+
+        return scores
+
+
+# ---------------------------------------------------------------------------
+# Wrapper oficial MindScan — schema_process
+# ---------------------------------------------------------------------------
+
+def schema_process(dataset: Dict[str, Any]) -> List[Dict[str, Any]]:
+    """
+    Wrapper padronizado para integrar Esquemas Desadaptativos ao motor.
+
+    Entrada esperada:
+        dataset["schema_responses"] = {
+            "aba1": 5, "aba2": 4,
+            "def1": 6, "def2": 5,
+            ...
         }
 
-        metadata = {
-            code: {
-                "name": self.SCHEMAS[code],
-                "domain": next(domain for domain, items in self.DOMAINS.items() if code in items),
-                "description": self.DESCRIPTIONS[code],
-                "raw": raw[code],
-                "normalized": normalized[code]
+    Saída padronizada conforme MindScan v2.0:
+        [
+            {
+                "dimension": str,
+                "score": float,
+                "descriptor": str,
+                "metadata": dict
             }
-            for code in raw
-        }
+        ]
+    """
 
-        # Cálculo dos domínios
-        domains = {}
-        for domain, items in self.DOMAINS.items():
-            domain_scores = [normalized[i] for i in items]
-            domains[domain] = round(sum(domain_scores) / len(domain_scores), 2)
+    if "schema_responses" not in dataset:
+        raise ValueError("Dataset não contém 'schema_responses'.")
 
-        return {
-            "model": "Esquemas Iniciais Desadaptativos (Young)",
-            "results": normalized,
-            "metadata": metadata,
-            "domains": domains,
-            "schema_list": list(self.SCHEMAS.values())
-        }
+    model = EMSModel(dataset["schema_responses"])
+    results = model.compute()
+
+    output = []
+    for schema, score in results.items():
+        desc_block = EMSModel.DESCRIPTIONS.get(schema, {})
+        descriptor = desc_block.get("high") if score >= 50 else desc_block.get("low")
+
+        output.append({
+            "dimension": schema,
+            "score": float(score),
+            "descriptor": descriptor,
+            "metadata": {
+                "model": "esquemas",
+                "name": desc_block.get("name", schema),
+                "timestamp": datetime.utcnow().isoformat(),
+            },
+        })
+
+    return output

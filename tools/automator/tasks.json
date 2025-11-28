@@ -1,0 +1,49 @@
+{
+    "tasks": [
+        {
+            "name": "fix_paths",
+            "enabled": true,
+            "description": "Corrigir automaticamente caminhos e referências antigas"
+        },
+        {
+            "name": "core",
+            "enabled": true,
+            "description": "Reconstruir núcleo do sistema"
+        },
+        {
+            "name": "audit",
+            "enabled": true,
+            "description": "Executar auditoria completa"
+        },
+        {
+            "name": "backend",
+            "enabled": true,
+            "description": "Validar backend e serviços"
+        },
+        {
+            "name": "validate",
+            "enabled": true,
+            "description": "Validar dados e estruturas internas"
+        },
+        {
+            "name": "cleanup",
+            "enabled": true,
+            "description": "Executar limpeza inteligente"
+        },
+        {
+            "name": "report",
+            "enabled": true,
+            "description": "Gerar relatório final"
+        },
+        {
+            "name": "release",
+            "enabled": true,
+            "description": "Gerar release final"
+        },
+        {
+            "name": "sync",
+            "enabled": false,
+            "description": "Sincronização com GitHub (opcional)"
+        }
+    ]
+}

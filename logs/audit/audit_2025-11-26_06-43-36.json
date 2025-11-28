@@ -1,0 +1,92 @@
+{
+    "directory_structure": [
+        {
+            "path": "backend",
+            "exists": true
+        },
+        {
+            "path": "backend/services",
+            "exists": true
+        },
+        {
+            "path": "backend/algorithms",
+            "exists": true
+        },
+        {
+            "path": "core",
+            "exists": true
+        },
+        {
+            "path": "core/engine",
+            "exists": true
+        },
+        {
+            "path": "core/diagnostics",
+            "exists": true
+        },
+        {
+            "path": "core/scoring",
+            "exists": true
+        },
+        {
+            "path": "core/profiles",
+            "exists": true
+        },
+        {
+            "path": "core/metrics",
+            "exists": true
+        },
+        {
+            "path": "modules",
+            "exists": true
+        },
+        {
+            "path": "tools",
+            "exists": true
+        },
+        {
+            "path": "tools/automator",
+            "exists": true
+        },
+        {
+            "path": "logs",
+            "exists": true
+        }
+    ],
+    "missing_files": [
+        "backend/api_router.py"
+    ],
+    "module_integrity": [
+        "D:\\projetos-inovexa\\mindscan\\backend/services\\auth_service.py",
+        "D:\\projetos-inovexa\\mindscan\\backend/services\\data_service.py",
+        "D:\\projetos-inovexa\\mindscan\\backend/services\\report_service.py",
+        "D:\\projetos-inovexa\\mindscan\\backend/services\\runtime_interface.py",
+        "D:\\projetos-inovexa\\mindscan\\backend/algorithms\\big5.py",
+        "D:\\projetos-inovexa\\mindscan\\backend/algorithms\\bussola.py",
+        "D:\\projetos-inovexa\\mindscan\\backend/algorithms\\cruzamentos.py",
+        "D:\\projetos-inovexa\\mindscan\\backend/algorithms\\dass21.py",
+        "D:\\projetos-inovexa\\mindscan\\backend/algorithms\\esquemas.py",
+        "D:\\projetos-inovexa\\mindscan\\backend/algorithms\\ocai.py",
+        "D:\\projetos-inovexa\\mindscan\\backend/algorithms\\performance.py",
+        "D:\\projetos-inovexa\\mindscan\\backend/algorithms\\teique.py",
+        "D:\\projetos-inovexa\\mindscan\\modules\\predictor.py",
+        "D:\\projetos-inovexa\\mindscan\\modules\\synmind_ai_engine.py",
+        "D:\\projetos-inovexa\\mindscan\\modules\\synmind_kernel.py"
+    ],
+    "import_issues": [],
+    "schemas": [
+        "D:\\projetos-inovexa\\mindscan\\backend\\models.py"
+    ],
+    "backend": [],
+    "algorithms": [
+        "D:\\projetos-inovexa\\mindscan\\backend\\algorithms"
+    ],
+    "tests": [
+        "D:\\projetos-inovexa\\mindscan\\tests"
+    ],
+    "summary": {
+        "critical": 2,
+        "warnings": 0,
+        "ok": 33
+    }
+}

@@ -1,136 +1,139 @@
-# dass21.py
-# MindScan Rebuild – Algoritmo DASS-21 (Versão Final)
-# Autor: Leo Vinci – IA Supervisora Inovexa
-# Última atualização: 23/11/2025
-# --------------------------------------------------------------------
-# Escala DASS-21:
-#   7 itens Depressão
-#   7 itens Ansiedade
-#   7 itens Estresse
-#
-# Pontuação original: 0 a 3 (Likert)
-# Conversão para escala completa: soma * 2
-# Normalização final MindScan: 0–100
-#
-# Este módulo entrega um modelo clínico funcional,
-# definitivo e pronto para produção.
+# Caminho: D:\backend\algorithms\dass21.py
+# MindScan — DASS-21 Padronizado v2.0
+# Autor: Leo Vinci — Diretor de Tecnologia e Produção (Inovexa)
+# Arquivo completo, final e padronizado para integração com a MindScanEngine
 
-from typing import Dict, Any
+from typing import Dict, Any, List
+from datetime import datetime
 
+class DASS21Model:
+    """
+    Modelo oficial DASS-21 (Depressão, Ansiedade, Estresse).
 
-class DASS21:
-    DIMENSIONS = {
-        "D": "Depressão",
-        "A": "Ansiedade",
-        "E": "Estresse"
+    Cada subescala possui 7 itens.
+    O score final = (soma dos itens) * 2
+    """
+
+    DIMENSIONS = ["depressao", "ansiedade", "estresse"]
+
+    DESCRIPTIONS = {
+        "depressao": {
+            "name": "Depressão",
+            "high": "Indicadores elevados de humor deprimido, anedonia e baixa energia.",
+            "low": "Indicadores reduzidos de humor deprimido.",
+        },
+        "ansiedade": {
+            "name": "Ansiedade",
+            "high": "Tensão elevada, hiperativação fisiológica, preocupação constante.",
+            "low": "Indicadores reduzidos de ansiedade.",
+        },
+        "estresse": {
+            "name": "Estresse",
+            "high": "Sobrecarga emocional, irritabilidade, tensão persistente.",
+            "low": "Baixa sobrecarga e boa regulação emocional.",
+        },
     }
-
-    # Itens por dimensão conforme instrumento oficial
-    ITEMS = {
-        "D": ["D1", "D2", "D3", "D4", "D5", "D6", "D7"],
-        "A": ["A1", "A2", "A3", "A4", "A5", "A6", "A7"],
-        "E": ["E1", "E2", "E3", "E4", "E5", "E6", "E7"]
-    }
-
-    MIN_SCORE = 0
-    MAX_SCORE = 3
 
     NORMALIZATION_RANGE = (0, 100)
 
-    DESCRIPTIONS = {
-        "D": {
-            "high": "Sintomas compatíveis com tristeza profunda, baixa energia, pessimismo.",
-            "low": "Humor estável, resiliência emocional."
-        },
-        "A": {
-            "high": "Sintomas compatíveis com ansiedade, tensão e hiperativação.",
-            "low": "Tranquilidade, controle emocional situacional."
-        },
-        "E": {
-            "high": "Sintomas compatíveis com estresse, irritabilidade e sobrecarga.",
-            "low": "Boa adaptação frente a pressões externas."
-        }
-    }
-
-    FACTOR_WEIGHTS = {
-        "D": 1.0,
-        "A": 1.0,
-        "E": 1.0
+    # Mapeamento dos itens → subescala
+    ITEM_MAP = {
+        # Depressão
+        "d1": "depressao", "d2": "depressao", "d3": "depressao",
+        "d4": "depressao", "d5": "depressao", "d6": "depressao", "d7": "depressao",
+        # Ansiedade
+        "a1": "ansiedade", "a2": "ansiedade", "a3": "ansiedade",
+        "a4": "ansiedade", "a5": "ansiedade", "a6": "ansiedade", "a7": "ansiedade",
+        # Estresse
+        "s1": "estresse", "s2": "estresse", "s3": "estresse",
+        "s4": "estresse", "s5": "estresse", "s6": "estresse", "s7": "estresse",
     }
 
     def __init__(self, responses: Dict[str, int]):
         self.responses = responses
         self._validate_inputs()
 
-    # ------------------------------------------------------
-    # Validações
-    # ------------------------------------------------------
-
     def _validate_inputs(self):
         if not isinstance(self.responses, dict):
-            raise ValueError("responses deve ser um dicionário.")
+            raise ValueError("DASS-21 responses deve ser um dicionário.")
 
-        for item, score in self.responses.items():
-            if not isinstance(score, int):
-                raise ValueError(f"Resposta inválida em {item}: {score}")
-
-            if not (self.MIN_SCORE <= score <= self.MAX_SCORE):
-                raise ValueError(
-                    f"Pontuação fora do permitido (0–3): {item}={score}"
-                )
-
-    # ------------------------------------------------------
-    # Cálculo bruto
-    # ------------------------------------------------------
+        for item, val in self.responses.items():
+            if not isinstance(val, int):
+                raise ValueError(f"Valor inválido em {item}: {val}")
+            if val < 0 or val > 3:
+                raise ValueError(f"Pontuação fora do intervalo permitido (0-3): {item}={val}")
 
     def compute_raw(self) -> Dict[str, float]:
-        raw_scores = {dim: 0 for dim in self.DIMENSIONS}
+        scores = {dim: 0 for dim in self.DIMENSIONS}
 
-        for dim, items in self.ITEMS.items():
-            for item in items:
-                value = self.responses.get(item, 0)
-                raw_scores[dim] += value
+        for item, val in self.responses.items():
+            key = item.lower()
+            if key not in self.ITEM_MAP:
+                continue
+            dim = self.ITEM_MAP[key]
+            scores[dim] += val
 
-            raw_scores[dim] *= 2  # regra original DASS-21
+        # Score final oficial DASS-21
+        for dim in scores:
+            scores[dim] *= 2
 
-        return raw_scores
-
-    # ------------------------------------------------------
-    # Normalização final
-    # ------------------------------------------------------
+        return scores
 
     def _normalize(self, value: float) -> float:
-        # 0–42 (máximo possível em cada subescala)
-        max_raw = 42
-        low, high = self.NORMALIZATION_RANGE
-        return (value / max_raw) * (high - low) + low
+        raw_min, raw_max = 0, 42  # máximo da escala: 7 itens * 3 * 2
+        norm_min, norm_max = self.NORMALIZATION_RANGE
+        return ((value - raw_min) / (raw_max - raw_min)) * (norm_max - norm_min) + norm_min
 
-    # ------------------------------------------------------
-    # Saída final
-    # ------------------------------------------------------
-
-    def compute(self) -> Dict[str, Any]:
+    def compute(self) -> Dict[str, float]:
         raw = self.compute_raw()
+        normalized = {dim: self._normalize(value) for dim, value in raw.items()}
+        return normalized
 
-        normalized = {
-            dim: round(self._normalize(value) * self.FACTOR_WEIGHTS[dim], 2)
-            for dim, value in raw.items()
+
+# ---------------------------------------------------------------------------
+# Wrapper oficial MindScan — dass21_process
+# ---------------------------------------------------------------------------
+
+def dass21_process(dataset: Dict[str, Any]) -> List[Dict[str, Any]]:
+    """
+    Wrapper padronizado para integrar o DASS-21 ao motor psicométrico.
+
+    Entrada esperada:
+        dataset["dass21_responses"] = {
+            "d1": 2, "d2": 1, ..., "a1": 3, ..., "s7": 2
         }
 
-        metadata = {
-            dim: {
-                "name": self.DIMENSIONS[dim],
-                "raw": raw[dim],
-                "normalized": normalized[dim],
-                "interpretation_high": self.DESCRIPTIONS[dim]["high"],
-                "interpretation_low": self.DESCRIPTIONS[dim]["low"]
+    Saída padronizada:
+        [
+            {
+                "dimension": str,
+                "score": float,
+                "descriptor": str,
+                "metadata": dict
             }
-            for dim in raw
-        }
+        ]
+    """
 
-        return {
-            "model": "DASS-21 (Depressão · Ansiedade · Estresse)",
-            "results": normalized,
-            "metadata": metadata,
-            "dimensions": list(self.DIMENSIONS.values())
-        }
+    if "dass21_responses" not in dataset:
+        raise ValueError("Dataset não contém 'dass21_responses'.")
+
+    model = DASS21Model(dataset["dass21_responses"])
+    results = model.compute()
+
+    output = []
+    for dim, score in results.items():
+        desc_block = DASS21Model.DESCRIPTIONS.get(dim, {})
+        descriptor = desc_block.get("high") if score >= 50 else desc_block.get("low")
+
+        output.append({
+            "dimension": dim,
+            "score": float(score),
+            "descriptor": descriptor,
+            "metadata": {
+                "model": "dass21",
+                "name": desc_block.get("name", dim),
+                "timestamp": datetime.utcnow().isoformat(),
+            },
+        })
+
+    return output

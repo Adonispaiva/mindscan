@@ -1,155 +1,136 @@
-# ocai.py
-# MindScan Rebuild – Algoritmo OCAI (Organizational Culture Assessment Instrument)
-# Versão Final e Definitiva — Inovexa / MindScan
-# Autor: Leo Vinci – IA Supervisora Inovexa
-# Última atualização: 23/11/2025
-# -------------------------------------------------------------------------
-# OCAI avalia 6 dimensões culturais, cada uma distribuída entre 4 perfis:
-#   - Clan (C)
-#   - Adhocracia (A)
-#   - Mercado (M)
-#   - Hierarquia (H)
-#
-# O respondente distribui 100 pontos entre os 4 perfis em cada dimensão.
-#
-# Dimensões:
-#   1. Características Dominantes
-#   2. Liderança Organizacional
-#   3. Gestão de Pessoas
-#   4. Coesão Organizacional
-#   5. Ênfase Estratégica
-#   6. Critérios de Sucesso
-#
-# Resultado:
-#   - Perfil cultural agregado
-#   - Normalização 0–100
-#   - Metadados completos
-# -------------------------------------------------------------------------
+# Caminho: D:\backend\algorithms\ocai.py
+# MindScan — OCAI Padronizado v2.0
+# Autor: Leo Vinci — Diretor de Tecnologia e Produção (Inovexa)
+# Arquivo completo, final e padronizado para integração com a MindScanEngine
 
-from typing import Dict, Any
-
+from typing import Dict, Any, List
+from datetime import datetime
 
 class OCAIModel:
-    DIMENSIONS = {
-        "D1": "Características Dominantes",
-        "D2": "Liderança Organizacional",
-        "D3": "Gestão de Pessoas",
-        "D4": "Coesão Organizacional",
-        "D5": "Ênfase Estratégica",
-        "D6": "Critérios de Sucesso"
-    }
+    """
+    Modelo OCAI (Organizational Culture Assessment Instrument).
 
-    PROFILES = {
-        "C": "Clan",
-        "A": "Adhocracia",
-        "M": "Mercado",
-        "H": "Hierarquia"
+    Dimensões:
+        - clan
+        - adhocracy
+        - market
+        - hierarchy
+
+    Cada dimensão é derivada da soma das alocações em seus respectivos itens.
+    """
+
+    DIMENSIONS = ["clan", "adhocracy", "market", "hierarchy"]
+
+    DESCRIPTIONS = {
+        "clan": {
+            "name": "Cultura Clan",
+            "high": "Ambiente colaborativo, suporte, senso de família.",
+            "low": "Baixa coesão, pouca colaboração.",
+        },
+        "adhocracy": {
+            "name": "Cultura Adhocracia",
+            "high": "Inovação, experimentação, autonomia.",
+            "low": "Rigidez, baixa criatividade.",
+        },
+        "market": {
+            "name": "Cultura de Mercado",
+            "high": "Competitividade, metas, performance.",
+            "low": "Baixa orientação a resultados.",
+        },
+        "hierarchy": {
+            "name": "Cultura Hierárquica",
+            "high": "Estrutura, controle, estabilidade.",
+            "low": "Desorganização, baixa previsibilidade.",
+        },
     }
 
     NORMALIZATION_RANGE = (0, 100)
 
-    PROFILE_DESCRIPTIONS = {
-        "C": "Ambiente colaborativo, relações próximas, foco em pessoas.",
-        "A": "Inovação, criatividade, flexibilidade organizacional.",
-        "M": "Competitividade, metas agressivas, foco em resultados.",
-        "H": "Estrutura, estabilidade, procedimentos e processos claros."
-    }
-
-    def __init__(self, responses: Dict[str, Dict[str, int]]):
-        """
-        responses exemplo:
-        {
-            "D1": {"C": 25, "A": 25, "M": 25, "H": 25},
-            "D2": {"C": 40, "A": 20, "M": 20, "H": 20},
-            ...
-        }
-        """
+    def __init__(self, responses: Dict[str, int]):
         self.responses = responses
         self._validate_inputs()
 
-    # -------------------------------------------------------------
-    # Validação
-    # -------------------------------------------------------------
-
     def _validate_inputs(self):
         if not isinstance(self.responses, dict):
-            raise ValueError("responses deve ser um dicionário.")
+            raise ValueError("OCAI responses deve ser um dicionário.")
+        for item, val in self.responses.items():
+            if not isinstance(val, (int, float)):
+                raise ValueError(f"Valor inválido em {item}: {val}")
 
-        for dim, dist in self.responses.items():
-            if dim not in self.DIMENSIONS:
-                raise ValueError(f"Dimensão inválida: {dim}")
-            if not isinstance(dist, dict):
-                raise ValueError(f"Distribuição inválida em {dim}")
+    def compute_raw(self) -> Dict[str, float]:
+        scores = {dim: 0.0 for dim in self.DIMENSIONS}
+        counts = {dim: 0 for dim in self.DIMENSIONS}
 
-            total = 0
-            for profile, value in dist.items():
-                if profile not in self.PROFILES:
-                    raise ValueError(f"Perfil inválido: {profile}")
-                if not isinstance(value, int):
-                    raise ValueError(f"Pontuação inválida em {dim}/{profile}: {value}")
-                if value < 0:
-                    raise ValueError("Pontuações não podem ser negativas.")
-                total += value
+        for item, val in self.responses.items():
+            dim = item.split("_")[0]
+            if dim not in scores:
+                continue
+            scores[dim] += float(val)
+            counts[dim] += 1
 
-            if total != 100:
-                raise ValueError(
-                    f"A soma da dimensão {dim} deve ser 100. Soma atual: {total}"
-                )
+        for dim in scores:
+            if counts[dim] > 0:
+                scores[dim] /= counts[dim]
 
-    # -------------------------------------------------------------
-    # Normalização
-    # -------------------------------------------------------------
+        return scores
 
     def _normalize(self, value: float) -> float:
-        low, high = self.NORMALIZATION_RANGE
-        return (value / 100) * (high - low) + low
+        raw_min, raw_max = 0, 100
+        norm_min, norm_max = self.NORMALIZATION_RANGE
+        if raw_max - raw_min == 0:
+            return 0
+        return ((value - raw_min) / (raw_max - raw_min)) * (norm_max - norm_min) + norm_min
 
-    # -------------------------------------------------------------
-    # Cálculo final
-    # -------------------------------------------------------------
-
-    def compute(self) -> Dict[str, Any]:
-        # Soma agregada por perfil cultural
-        aggregated = {p: 0 for p in self.PROFILES}
-
-        for dim, dist in self.responses.items():
-            for profile, value in dist.items():
-                aggregated[profile] += value
-
-        # Média por perfil (6 dimensões → divide por 6)
-        averaged = {
-            p: aggregated[p] / len(self.DIMENSIONS)
-            for p in aggregated
-        }
-
-        # Normalização 0–100
+    def compute(self) -> Dict[str, float]:
+        raw_scores = self.compute_raw()
         normalized = {
-            p: round(self._normalize(v), 2)
-            for p, v in averaged.items()
+            dim: self._normalize(score) for dim, score in raw_scores.items()
         }
+        return normalized
 
-        # Metadados completos
-        metadata = {
-            p: {
-                "name": self.PROFILES[p],
-                "raw": averaged[p],
-                "normalized": normalized[p],
-                "description": self.PROFILE_DESCRIPTIONS[p]
+
+# ---------------------------------------------------------------------------
+# Wrapper oficial MindScan — ocai_process
+# ---------------------------------------------------------------------------
+
+def ocai_process(dataset: Dict[str, Any]) -> List[Dict[str, Any]]:
+    """
+    Wrapper padronizado para integrar o OCAI ao motor psicométrico.
+
+    Entrada esperada:
+        dataset["ocai_responses"] = { "clan_1": 25, "market_2": 40, ... }
+
+    Saída padronizada:
+        [
+            {
+                "dimension": str,
+                "score": float,
+                "descriptor": str,
+                "metadata": dict
             }
-            for p in averaged
-        }
+        ]
+    """
 
-        # Perfil dominante
-        dominant_profile = max(normalized, key=lambda k: normalized[k])
+    if "ocai_responses" not in dataset:
+        raise ValueError("Dataset não contém 'ocai_responses'.")
 
-        return {
-            "model": "OCAI – Perfil Cultural Organizacional",
-            "profiles": normalized,
-            "metadata": metadata,
-            "dominant_profile": {
-                "code": dominant_profile,
-                "name": self.PROFILES[dominant_profile],
-                "score": normalized[dominant_profile],
-                "description": self.PROFILE_DESCRIPTIONS[dominant_profile]
-            }
-        }
+    model = OCAIModel(dataset["ocai_responses"])
+    results = model.compute()
+
+    output = []
+    for dim, score in results.items():
+        desc_block = OCAIModel.DESCRIPTIONS.get(dim, {})
+        descriptor = desc_block.get("high") if score >= 50 else desc_block.get("low")
+
+        output.append({
+            "dimension": dim,
+            "score": float(score),
+            "descriptor": descriptor,
+            "metadata": {
+                "model": "ocai",
+                "name": desc_block.get("name", dim),
+                "timestamp": datetime.utcnow().isoformat(),
+            },
+        })
+
+    return output

@@ -11,7 +11,7 @@ Execute manualmente: git pull origin {branch}
 
 
 [2025-11-25 10:18:24.739357]
-Backup criado: D:\projetos-inovexa\mindscan_rebuild\backups\backup_20251125_101824.zip
+Backup criado: D:\projetos-inovexa\mindscan\backups\backup_20251125_101824.zip
 
 [2025-11-25 10:18:24.741360]
 Executando auditoria automática...

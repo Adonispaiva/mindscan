@@ -1,0 +1,17 @@
+============================================
+       RELATÓRIO DO MINDSCAN AUTOMATOR      
+============================================
+
+Data/Hora: 2025-11-26_06-43-39
+Módulos Executados: core_manager, audit_manager, backend_manager, cleanup_manager, release_manager, data_validator
+Erros: 0
+Avisos: 0
+
+---- Detalhes ----
+- Execução padrão do automator concluída.
+- Logs armazenados em logs/automator/.
+- Relatórios separados gerados por módulo.
+
+---- Erros ----
+
+---- Avisos ----

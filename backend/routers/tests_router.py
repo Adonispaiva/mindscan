@@ -1,121 +1,87 @@
-# ============================================================
-# MindScan — Tests Router
-# ============================================================
-# Controle das sessões de teste MindScan
-# ============================================================
+# Caminho: backend/routers/tests_router.py
+# MindScan Backend — Tests Router (Sessões de Teste)
+# Diretor Técnico: Leo Vinci — Inovexa Software
+# Versão Final — MindScan v2.0
 
 from fastapi import APIRouter, Depends, HTTPException
-from sqlalchemy.ext.asyncio import AsyncSession
-from sqlalchemy import select
+from sqlalchemy.orm import Session
+from datetime import datetime
 
-from backend.database import get_session
-from backend import models
+from backend.database import get_db
+from backend.models import MindscanTest, Candidate, User
 
 router = APIRouter()
 
+# ============================================================
+# CRIAÇÃO DE UMA NOVA SESSÃO DO MINDSCAN
+# ============================================================
 
-# ------------------------------------------------------------
-# CREATE TEST SESSION
-# ------------------------------------------------------------
-@router.post("/create")
-async def create_test(
-        user_id: int,
-        candidate_id: int,
-        session: AsyncSession = Depends(get_session)
-):
-    # Verifica se usuário existe
-    user_result = await session.execute(
-        select(models.User).where(models.User.id == user_id)
-    )
-    if not user_result.scalar_one_or_none():
-        raise HTTPException(status_code=404, detail="User not found")
+@router.post("/create", summary="Criar uma nova sessão de teste MindScan")
+def create_test(user_id: int, candidate_id: int, db: Session = Depends(get_db)):
+    # Verifica se o usuário existe
+    user = db.query(User).filter(User.id == user_id).first()
+    if not user:
+        raise HTTPException(status_code=404, detail="Usuário não encontrado.")
 
-    # Verifica se candidato existe
-    cand_result = await session.execute(
-        select(models.Candidate).where(models.Candidate.id == candidate_id)
-    )
-    if not cand_result.scalar_one_or_none():
-        raise HTTPException(status_code=404, detail="Candidate not found")
+    # Verifica se o candidato existe
+    candidate = db.query(Candidate).filter(Candidate.id == candidate_id).first()
+    if not candidate:
+        raise HTTPException(status_code=404, detail="Candidato não encontrado.")
 
-    # Criação do teste
-    test = models.MindscanTest(
+    test = MindscanTest(
         user_id=user_id,
-        candidate_id=candidate_id
+        candidate_id=candidate_id,
+        started_at=datetime.utcnow(),
+        status="pending",
     )
 
-    session.add(test)
-    await session.commit()
-    await session.refresh(test)
+    db.add(test)
+    db.commit()
+    db.refresh(test)
 
     return {
         "status": "created",
-        "test_id": test.id
+        "test_id": test.id,
+        "user_id": test.user_id,
+        "candidate_id": test.candidate_id,
     }
 
 
-# ------------------------------------------------------------
-# LIST ALL TESTS
-# ------------------------------------------------------------
-@router.get("/")
-async def list_tests(session: AsyncSession = Depends(get_session)):
-    result = await session.execute(select(models.MindscanTest))
-    return result.scalars().all()
+# ============================================================
+# LISTAR SESSÕES
+# ============================================================
+
+@router.get("/", summary="Listar sessões de teste")
+def list_tests(db: Session = Depends(get_db)):
+    rows = db.query(MindscanTest).all()
+    return [
+        {
+            "id": t.id,
+            "user_id": t.user_id,
+            "candidate_id": t.candidate_id,
+            "status": t.status,
+            "started_at": t.started_at.isoformat() + "Z",
+            "completed_at": t.completed_at.isoformat() + "Z" if t.completed_at else None,
+        }
+        for t in rows
+    ]
 
 
-# ------------------------------------------------------------
-# GET TEST BY ID
-# ------------------------------------------------------------
-@router.get("/{test_id}")
-async def get_test(test_id: int, session: AsyncSession = Depends(get_session)):
-    result = await session.execute(
-        select(models.MindscanTest).where(models.MindscanTest.id == test_id)
-    )
-    test = result.scalar_one_or_none()
+# ============================================================
+# OBTER UMA SESSÃO PELO ID
+# ============================================================
 
+@router.get("/{test_id}", summary="Obter sessão por ID")
+def get_test(test_id: int, db: Session = Depends(get_db)):
+    test = db.query(MindscanTest).filter(MindscanTest.id == test_id).first()
     if not test:
-        raise HTTPException(status_code=404, detail="Test not found")
+        raise HTTPException(status_code=404, detail="Sessão não encontrada.")
 
-    return test
-
-
-# ------------------------------------------------------------
-# UPDATE STATUS OF TEST
-# ------------------------------------------------------------
-@router.patch("/{test_id}/status")
-async def update_status(
-        test_id: int,
-        status: str,
-        session: AsyncSession = Depends(get_session)
-):
-    result = await session.execute(
-        select(models.MindscanTest).where(models.MindscanTest.id == test_id)
-    )
-    test = result.scalar_one_or_none()
-
-    if not test:
-        raise HTTPException(status_code=404, detail="Test not found")
-
-    test.status = status
-    await session.commit()
-    await session.refresh(test)
-
-    return {"status": "updated", "test_id": test_id, "new_status": status}
-
-
-# ------------------------------------------------------------
-# DELETE TEST
-# ------------------------------------------------------------
-@router.delete("/{test_id}")
-async def delete_test(test_id: int, session: AsyncSession = Depends(get_session)):
-    result = await session.execute(
-        select(models.MindscanTest).where(models.MindscanTest.id == test_id)
-    )
-    test = result.scalar_one_or_none()
-
-    if not test:
-        raise HTTPException(status_code=404, detail="Test not found")
-
-    await session.delete(test)
-    await session.commit()
-
-    return {"status": "deleted", "test_id": test_id}
+    return {
+        "id": test.id,
+        "user_id": test.user_id,
+        "candidate_id": test.candidate_id,
+        "status": test.status,
+        "started_at": test.started_at.isoformat() + "Z",
+        "completed_at": test.completed_at.isoformat() + "Z" if test.completed_at else None,
+    }

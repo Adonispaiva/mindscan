@@ -1,24 +1,35 @@
-from pydantic import BaseSettings
-from functools import lru_cache
+# Caminho: backend/config.py
+# Status: LEGACY (DESCONTINUADO)
+# Diretor Técnico: Leo Vinci — Inovexa Software
+#
+# Este arquivo pertence ao antigo sistema de configuração do MindScan.
+# A partir do MindScan Backend v2.0 (SynMind), todo o backend utiliza
+# exclusivamente o módulo "pysettings.py" como fonte única de configuração.
+#
+# Este arquivo é mantido apenas para:
+#   - preservação histórica
+#   - compatibilidade com repositórios legados
+#   - consulta técnica e auditoria
+#
+# Ele NÃO é mais utilizado pelo backend.
+# Qualquer tentativa de import irá lançar uma exceção controlada,
+# evitando usos acidentais e garantindo integridade do sistema.
 
-class Settings(BaseSettings):
-    APP_NAME: str = "MindScan Backend"
-    VERSION: str = "2.0"
+class _ConfigLegacyError(Exception):
+    """Erro lançado se alguém tentar usar o módulo legacy."""
+    pass
 
-    # CORS
-    ALLOWED_ORIGINS: list[str] = ["*"]
 
-    # Database
-    DB_HOST: str = "localhost"
-    DB_PORT: int = 5432
-    DB_USER: str = "mindscan"
-    DB_PASSWORD: str = "password"
-    DB_NAME: str = "mindscan_db"
+def __getattr__(name):
+    raise _ConfigLegacyError(
+        f"O módulo 'config.py' foi descontinuado. "
+        f"Use 'pysettings.py' e 'get_settings()'. "
+        f"Tentativa de acessar atributo: {name}"
+    )
 
-    class Config:
-        env_file = ".env"
-        env_file_encoding = "utf-8"
 
-@lru_cache()
-def get_settings() -> "Settings":
-    return Settings()
+def __call__(*args, **kwargs):
+    raise _ConfigLegacyError(
+        "O módulo 'config.py' não pode mais ser utilizado. "
+        "A configuração oficial está em 'pysettings.py'."
+    )

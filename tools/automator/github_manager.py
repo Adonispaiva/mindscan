@@ -1,0 +1,160 @@
+"""
+github_manager.py
+Sincronização Avançada com GitHub – Versão Profissional Completa (A)
+
+Funções:
+    • Verifica existência de repositório Git
+    • Executa git status
+    • Detecta arquivos alterados
+    • Commit automático com mensagem formatada
+    • Push seguro
+    • Rollback automático em caso de falha
+    • Dry-run para pré-visualização
+"""
+
+import os
+import subprocess
+import datetime
+
+
+class GitHubManager:
+
+    def __init__(self, logger):
+        self.log = logger
+        self.root_path = r"D:\projetos-inovexa\mindscan"
+        self.git_path = os.path.join(self.root_path, ".git")
+
+    # ============================================================
+    # Utilitário para executar comandos Git
+    # ============================================================
+
+    def _run_git(self, command, allow_errors=False):
+        try:
+            result = subprocess.run(
+                command,
+                cwd=self.root_path,
+                shell=True,
+                text=True,
+                capture_output=True
+            )
+            if result.stdout:
+                for line in result.stdout.split("\n"):
+                    if line.strip():
+                        self.log.info(f"[git] {line}")
+
+            if result.stderr and not allow_errors:
+                for line in result.stderr.split("\n"):
+                    if line.strip():
+                        self.log.warn(f"[git stderr] {line}")
+
+            return result.returncode == 0
+
+        except Exception as e:
+            self.log.error(f"Erro ao executar comando Git: {e}")
+            return False
+
+    # ============================================================
+    # 1. Verificar existência do repositório
+    # ============================================================
+
+    def _check_git_repo(self):
+        if not os.path.exists(self.git_path):
+            self.log.error("Nenhum repositório Git encontrado na raiz do projeto.")
+            return False
+
+        self.log.success("Repositório Git encontrado.")
+        return True
+
+    # ============================================================
+    # 2. Verificar status
+    # ============================================================
+
+    def _check_status(self):
+        self.log.info("Executando git status...")
+        self._run_git("git status")
+
+    # ============================================================
+    # 3. Verificar alterações pendentes
+    # ============================================================
+
+    def _has_changes(self):
+        result = subprocess.run(
+            "git status --porcelain",
+            cwd=self.root_path,
+            shell=True,
+            text=True,
+            capture_output=True
+        )
+
+        changed = bool(result.stdout.strip())
+        if changed:
+            self.log.info("Alterações detectadas no repositório.")
+        else:
+            self.log.info("Nenhuma alteração detectada.")
+
+        return changed
+
+    # ============================================================
+    # 4. Commit automático
+    # ============================================================
+
+    def _auto_commit(self):
+        timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+        self.log.info("Executando git add .")
+        self._run_git("git add .")
+
+        message = f"Atualização automática via MindScan Automator ({timestamp})"
+        self.log.info(f"Executando commit: {message}")
+
+        return self._run_git(f'git commit -m "{message}"', allow_errors=True)
+
+    # ============================================================
+    # 5. Push com rollback
+    # ============================================================
+
+    def _auto_push(self):
+        self.log.info("Executando git push...")
+
+        ok = self._run_git("git push", allow_errors=True)
+
+        if not ok:
+            self.log.error("Falha no push. Tentando rollback...")
+            self._run_git("git reset HEAD~1", allow_errors=True)
+            return False
+
+        self.log.success("Push executado com sucesso.")
+        return True
+
+    # ============================================================
+    # Execução principal
+    # ============================================================
+
+    def sync(self):
+        self.log.header("GITHUB SYNC – INICIADO")
+
+        # 1. Verificar repo
+        if not self._check_git_repo():
+            self.log.error("Abortando sincronização.")
+            return False
+
+        # 2. Mostrar status
+        self._check_status()
+
+        # 3. Verificar alterações
+        if not self._has_changes():
+            self.log.success("Nada para enviar ao GitHub.")
+            return True
+
+        # 4. Commit automático
+        if not self._auto_commit():
+            self.log.error("Falha ao criar commit.")
+            return False
+
+        # 5. Push
+        if not self._auto_push():
+            self.log.error("Push falhou. Rollback executado.")
+            return False
+
+        self.log.success("Sincronização completa com sucesso.")
+        return True
