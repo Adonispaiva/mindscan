@@ -1,0 +1,197 @@
+/* ============================================================
+   MindScan — Estilo PDF Premium (SynMind · Inovexa Software)
+   ============================================================ */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Helvetica", "Arial", sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: 15px;
+    color: #222;
+}
+
+/* ---------------------------
+   Estrutura de página
+---------------------------- */
+
+.page {
+    page-break-after: always;
+    padding: 40px 60px;
+}
+
+/* ---------------------------
+   Títulos e Identidade
+---------------------------- */
+
+h1, h2, h3 {
+    font-weight: 600;
+    margin: 0;
+}
+
+h2.secao-titulo {
+    font-size: 26px;
+    margin-bottom: 18px;
+    color: #304FFE;
+    border-bottom: 2px solid #304FFE;
+    padding-bottom: 6px;
+}
+
+h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+/* ---------------------------
+   Textos
+---------------------------- */
+
+p {
+    margin: 12px 0;
+    line-height: 1.55;
+}
+
+.mi-texto {
+    margin: 14px 0 25px;
+    font-style: italic;
+}
+
+/* ---------------------------
+   Tabelas
+---------------------------- */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 18px 0;
+}
+
+table thead {
+    background: #304FFE;
+    color: #fff;
+}
+
+table th, table td {
+    border: 1px solid #ccc;
+    padding: 8px 12px;
+    font-size: 14px;
+}
+
+table tbody tr:nth-child(even) {
+    background: #f4f4f4;
+}
+
+/* ---------------------------
+   Blocos e Containers
+---------------------------- */
+
+.bloco {
+    margin: 24px 0;
+}
+
+.bloco h3 {
+    margin-bottom: 10px;
+    color: #263238;
+}
+
+.alertas {
+    color: #D50000;
+}
+
+.lista-recomendacoes li {
+    margin-bottom: 8px;
+}
+
+/* ---------------------------
+   Capa Premium
+---------------------------- */
+
+.capa {
+    text-align: center;
+    padding: 140px 20px;
+    page-break-after: always;
+}
+
+.capa .logo h1 {
+    font-size: 52px;
+    font-weight: 800;
+    margin-bottom: 0;
+    color: #304FFE;
+}
+
+.capa .logo span {
+    color: #1A237E;
+}
+
+.capa .tagline {
+    font-size: 18px;
+    margin-bottom: 50px;
+    color: #444;
+}
+
+.capa .box-identidade h2 {
+    font-size: 34px;
+    margin: 0;
+}
+
+.capa .box-identidade h3 {
+    font-size: 22px;
+    color: #666;
+    margin-top: 5px;
+}
+
+.capa .data {
+    font-size: 16px;
+    margin-top: 14px;
+}
+
+.footer {
+    margin-top: 80px;
+    font-size: 14px;
+    color: #777;
+}
+
+/* ---------------------------
+   Identidade Profissional
+---------------------------- */
+
+.identidade-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.identidade-bloco {
+    width: 48%;
+    background: #F5F7FF;
+    padding: 14px 18px;
+    border-left: 4px solid #304FFE;
+    border-radius: 4px;
+}
+
+/* ---------------------------
+   PDI
+---------------------------- */
+
+.container-pdi {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.bloco-pdi ul li {
+    margin-bottom: 6px;
+}
+
+/* ---------------------------
+   Anexos
+---------------------------- */
+
+.anexos ul li {
+    margin-bottom: 8px;
+}
+
+/* FIM DO ARQUIVO */

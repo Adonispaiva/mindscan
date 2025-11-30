@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+
+[project]
+name = "mindscan-pdf"
+version = "1.0.0"
+description = "MindScan PDF Engine - Relatórios psicoprofissionais Premium."
+authors = [
+    { name="Inovexa Software", email="contato@inovexa.com" }
+]
+license = { text = "Proprietary - All rights reserved to Inovexa Software" }
+readme = "README.md"
+requires-python = ">=3.9"
+
+# Dependências principais do motor
+dependencies = [
+    "weasyprint>=60.0",
+    "reportlab>=4.0.0",
+    "matplotlib>=3.8.0",
+    "argparse; python_version < '3.10'"
+]
+
+# EntryPoint da CLI
+[project.scripts]
+mindscan-pdf = "mindscan_pdf.cli:main"
+
+# Classificações opcionais para PyPI (profissional)
+[project.urls]
+homepage = "https://inovexa.com"
+documentation = "https://inovexa.com/mindscan"
+source = "https://github.com/inovexa/mindscan"

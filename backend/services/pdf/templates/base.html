@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Relatório MindScan</title>
+
+    <!-- CSS principal -->
+    <link rel="stylesheet" href="estilo.css">
+
+    <style>
+        /* Garantia de compatibilidade com renderizadores HTML → PDF */
+        body {
+            font-family: "Helvetica", "Arial", sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #222;
+        }
+
+        .page {
+            page-break-after: always;
+            padding: 40px 60px;
+        }
+
+        h1, h2, h3 {
+            font-weight: 600;
+        }
+
+        h2.secao-titulo {
+            font-size: 26px;
+            margin-bottom: 18px;
+            color: #304FFE;
+            border-bottom: 2px solid #304FFE;
+            padding-bottom: 6px;
+        }
+
+        p, li {
+            font-size: 15px;
+            line-height: 1.55;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 18px 0;
+        }
+
+        table thead {
+            background: #304FFE;
+            color: #fff;
+        }
+
+        table td, table th {
+            padding: 8px 12px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+        }
+
+        /* Seções visuais */
+        .mi-texto {
+            margin: 14px 0 25px;
+            font-size: 15px;
+            font-style: italic;
+        }
+
+        /* Blocos auxiliares do template */
+        .bloco {
+            margin-bottom: 24px;
+        }
+
+        .bloco h3 {
+            margin-bottom: 10px;
+            font-size: 18px;
+            color: #263238;
+        }
+
+        .alertas {
+            color: #D50000;
+        }
+
+        /* Identidade visual MindScan */
+        .capa {
+            text-align: center;
+            padding: 140px 20px;
+        }
+
+        .capa .logo h1 {
+            font-size: 52px;
+            font-weight: 800;
+            margin-bottom: 0;
+            color: #304FFE;
+        }
+
+        .capa .logo span {
+            color: #1A237E;
+        }
+
+        .capa .tagline {
+            font-size: 18px;
+            margin-bottom: 50px;
+            color: #444;
+        }
+
+        .capa .box-identidade h2 {
+            font-size: 34px;
+            margin: 0;
+        }
+
+        .capa .box-identidade h3 {
+            font-size: 22px;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        .capa .data {
+            font-size: 16px;
+            margin-top: 14px;
+        }
+
+        .footer {
+            margin-top: 80px;
+            font-size: 14px;
+            color: #777;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!--
+        O PDFEngine irá inserir automaticamente o HTML das seções
+        aqui dentro, concatenando cada uma como <section> ... </section>.
+    -->
+
+    {{conteudo}}
+
+</body>
+</html>
