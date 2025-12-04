@@ -1,0 +1,68 @@
+[2025-12-01 12:14:18.261445] === Iniciando ForceGit v3 (Blindado) ===
+[2025-12-01 12:14:18.261445] Backup criado: D:\projetos-inovexa\mindscan\forcegit_backups\activate.bat.20251126_070249.bak.backup_20251201_121418
+[2025-12-01 12:14:18.277036] Arquivo .bak removido: backups_autofix\activate.bat.20251126_070249.bak
+[2025-12-01 12:14:18.277036] Backup criado: D:\projetos-inovexa\mindscan\forcegit_backups\audit_2025-11-26_06-43-36.json.20251126_070249.bak.backup_20251201_121418
+[2025-12-01 12:14:18.277036] Arquivo .bak removido: backups_autofix\audit_2025-11-26_06-43-36.json.20251126_070249.bak
+[2025-12-01 12:14:18.277036] Backup criado: D:\projetos-inovexa\mindscan\forcegit_backups\audit_manager.py.20251126_070249.bak.backup_20251201_121418
+[2025-12-01 12:14:18.277036] Arquivo .bak removido: backups_autofix\audit_manager.py.20251126_070249.bak
+[2025-12-01 12:14:18.277036] Backup criado: D:\projetos-inovexa\mindscan\forcegit_backups\audit_mindscan.txt.20251126_070249.bak.backup_20251201_121418
+[2025-12-01 12:14:18.277036] Arquivo .bak removido: backups_autofix\audit_mindscan.txt.20251126_070249.bak
+[2025-12-01 12:14:18.292701] Backup criado: D:\projetos-inovexa\mindscan\forcegit_backups\audit_push_2025-11-25_12h01m18s.txt.20251126_070249.bak.backup_20251201_121418
+[2025-12-01 12:14:18.292701] Arquivo .bak removido: backups_autofix\audit_push_2025-11-25_12h01m18s.txt.20251126_070249.bak
+[2025-12-01 12:14:18.292701] Backup criado: D:\projetos-inovexa\mindscan\forcegit_backups\automator_log.txt.20251126_070249.bak.backup_20251201_121418
+[2025-12-01 12:14:18.292701] Arquivo .bak removido: backups_autofix\automator_log.txt.20251126_070249.bak
+[2025-12-01 12:14:18.292701] Backup criado: D:\projetos-inovexa\mindscan\forcegit_backups\backend_manager.py.20251126_070249.bak.backup_20251201_121418
+[2025-12-01 12:14:18.292701] Arquivo .bak removido: backups_autofix\backend_manager.py.20251126_070249.bak
+[2025-12-01 12:14:18.292701] Backup criado: D:\projetos-inovexa\mindscan\forcegit_backups\backend_report_2025-11-26_06-43-36.json.20251126_070249.bak.backup_20251201_121418
+[2025-12-01 12:14:18.292701] Arquivo .bak removido: backups_autofix\backend_report_2025-11-26_06-43-36.json.20251126_070249.bak
+[2025-12-01 12:14:18.292701] Backup criado: D:\projetos-inovexa\mindscan\forcegit_backups\cleanup_manager.py.20251126_070249.bak.backup_20251201_121418
+[2025-12-01 12:14:18.310593] Arquivo .bak removido: backups_autofix\cleanup_manager.py.20251126_070249.bak
+[2025-12-01 12:14:18.312615] Backup criado: D:\projetos-inovexa\mindscan\forcegit_backups\core_manager.py.20251126_070249.bak.backup_20251201_121418
+[2025-12-01 12:14:18.313593] Arquivo .bak removido: backups_autofix\core_manager.py.20251126_070249.bak
+[2025-12-01 12:14:18.316591] Backup criado: D:\projetos-inovexa\mindscan\forcegit_backups\data_validator.py.20251126_070249.bak.backup_20251201_121418
+[2025-12-01 12:14:18.317589] Arquivo .bak removido: backups_autofix\data_validator.py.20251126_070249.bak
+[2025-12-01 12:14:18.320648] Backup criado: D:\projetos-inovexa\mindscan\forcegit_backups\executar_automator.bat.20251126_070249.bak.backup_20251201_121418
+[2025-12-01 12:14:18.321589] Arquivo .bak removido: backups_autofix\executar_automator.bat.20251126_070249.bak
+[2025-12-01 12:14:18.325591] Backup criado: D:\projetos-inovexa\mindscan\forcegit_backups\fix_paths_manager.py.20251126_070249.bak.backup_20251201_121418
+[2025-12-01 12:14:18.326590] Arquivo .bak removido: backups_autofix\fix_paths_manager.py.20251126_070249.bak
+[2025-12-01 12:14:18.329588] Backup criado: D:\projetos-inovexa\mindscan\forcegit_backups\generate_tree.bat.20251126_070249.bak.backup_20251201_121418
+[2025-12-01 12:14:18.330589] Arquivo .bak removido: backups_autofix\generate_tree.bat.20251126_070249.bak
+[2025-12-01 12:14:18.332640] Backup criado: D:\projetos-inovexa\mindscan\forcegit_backups\github_manager.py.20251126_070249.bak.backup_20251201_121418
+[2025-12-01 12:14:18.333589] Arquivo .bak removido: backups_autofix\github_manager.py.20251126_070249.bak
+[2025-12-01 12:14:18.336635] Backup criado: D:\projetos-inovexa\mindscan\forcegit_backups\logger.py.20251126_070248.bak.backup_20251201_121418
+[2025-12-01 12:14:18.337588] Arquivo .bak removido: backups_autofix\logger.py.20251126_070248.bak
+[2025-12-01 12:14:18.339811] Backup criado: D:\projetos-inovexa\mindscan\forcegit_backups\log_sincronizacao.txt.20251126_070248.bak.backup_20251201_121418
+[2025-12-01 12:14:18.339811] Arquivo .bak removido: backups_autofix\log_sincronizacao.txt.20251126_070248.bak
+[2025-12-01 12:14:18.339811] Backup criado: D:\projetos-inovexa\mindscan\forcegit_backups\rebuild_report_2025-11-26_06-43-36.json.20251126_070249.bak.backup_20251201_121418
+[2025-12-01 12:14:18.339811] Arquivo .bak removido: backups_autofix\rebuild_report_2025-11-26_06-43-36.json.20251126_070249.bak
+[2025-12-01 12:14:18.339811] Backup criado: D:\projetos-inovexa\mindscan\forcegit_backups\relatorio_auditoria.json.20251126_070248.bak.backup_20251201_121418
+[2025-12-01 12:14:18.355452] Arquivo .bak removido: backups_autofix\relatorio_auditoria.json.20251126_070248.bak
+[2025-12-01 12:14:18.355452] Backup criado: D:\projetos-inovexa\mindscan\forcegit_backups\release_manager.py.20251126_070249.bak.backup_20251201_121418
+[2025-12-01 12:14:18.355452] Arquivo .bak removido: backups_autofix\release_manager.py.20251126_070249.bak
+[2025-12-01 12:14:18.355452] Backup criado: D:\projetos-inovexa\mindscan\forcegit_backups\report_manager.py.20251126_070249.bak.backup_20251201_121418
+[2025-12-01 12:14:18.355452] Arquivo .bak removido: backups_autofix\report_manager.py.20251126_070249.bak
+[2025-12-01 12:14:18.355452] Backup criado: D:\projetos-inovexa\mindscan\forcegit_backups\report_service.py.20251126_070248.bak.backup_20251201_121418
+[2025-12-01 12:14:18.355452] Arquivo .bak removido: backups_autofix\report_service.py.20251126_070248.bak
+[2025-12-01 12:14:18.371127] Backup criado: D:\projetos-inovexa\mindscan\forcegit_backups\scan_project_file_sizes.bat.20251126_070249.bak.backup_20251201_121418
+[2025-12-01 12:14:18.371127] Arquivo .bak removido: backups_autofix\scan_project_file_sizes.bat.20251126_070249.bak
+[2025-12-01 12:14:18.371127] Backup criado: D:\projetos-inovexa\mindscan\forcegit_backups\scan_project_file_sizes.py.20251126_070249.bak.backup_20251201_121418
+[2025-12-01 12:14:18.371127] Arquivo .bak removido: backups_autofix\scan_project_file_sizes.py.20251126_070249.bak
+[2025-12-01 12:14:18.371127] Backup criado: D:\projetos-inovexa\mindscan\forcegit_backups\start_backend.bat.20251126_070248.bak.backup_20251201_121418
+[2025-12-01 12:14:18.371127] Arquivo .bak removido: backups_autofix\start_backend.bat.20251126_070248.bak
+[2025-12-01 12:14:18.371127] Backup criado: D:\projetos-inovexa\mindscan\forcegit_backups\task_manager.py.20251126_070249.bak.backup_20251201_121418
+[2025-12-01 12:14:18.371127] Arquivo .bak removido: backups_autofix\task_manager.py.20251126_070249.bak
+[2025-12-01 12:14:19.886738] Backup criado: D:\projetos-inovexa\mindscan\forcegit_backups\backups_autofix.backup_20251201_121419
+[2025-12-01 12:14:19.886738] Diretório removido: D:\projetos-inovexa\mindscan\backups_autofix
+[2025-12-01 12:14:19.886738] Backup criado: D:\projetos-inovexa\mindscan\forcegit_backups\trash.backup_20251201_121419
+[2025-12-01 12:14:19.886738] Diretório removido: D:\projetos-inovexa\mindscan\trash
+[2025-12-01 12:14:19.902375] Backup criado: D:\projetos-inovexa\mindscan\forcegit_backups\Indo.backup_20251201_121419
+[2025-12-01 12:14:19.902375] Arquivo removido: D:\projetos-inovexa\mindscan\Indo
+[2025-12-01 12:14:19.902375] Backup criado: D:\projetos-inovexa\mindscan\forcegit_backups\cleanup_audit_blindado.log.backup_20251201_121419
+[2025-12-01 12:14:19.902375] Arquivo removido: D:\projetos-inovexa\mindscan\cleanup_audit_blindado.log
+[2025-12-01 12:14:19.902375] Backup criado: D:\projetos-inovexa\mindscan\forcegit_backups\cleanup_audit_blindado_forcegit.log.backup_20251201_121419
+[2025-12-01 12:14:19.902375] Arquivo removido: D:\projetos-inovexa\mindscan\cleanup_audit_blindado_forcegit.log
+[2025-12-01 12:14:19.917998] Backup criado: D:\projetos-inovexa\mindscan\forcegit_backups\cleanup_audit_blindado_forcegit_v2.log.backup_20251201_121419
+[2025-12-01 12:14:19.917998] Arquivo removido: D:\projetos-inovexa\mindscan\cleanup_audit_blindado_forcegit_v2.log
+[2025-12-01 12:14:19.917998] Backup criado: D:\projetos-inovexa\mindscan\forcegit_backups\log_sincronizacao.txt.backup_20251201_121419
+[2025-12-01 12:14:19.917998] Arquivo removido: D:\projetos-inovexa\mindscan\log_sincronizacao.txt
+[2025-12-01 12:14:19.917998] === ForceGit v3 concluído com segurança ===

@@ -1,162 +1,121 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-async_pipeline.py — AsyncPipeline (Pipeline 100% Assíncrona do MindScan)
-------------------------------------------------------------------------
+async_pipeline.py — AsyncPDFPipeline (MindScan SynMind v2.0)
+Autor: Leo Vinci (Inovexa)
+----------------------------------------------------------------------------
+Função:
+    Pipeline ASSÍNCRONA completa do MindScan v2.0.
+    Integra:
+        - DataPreProcessorEngine (pré-processamento)
+        - PDFBuilder (montagem das seções)
+        - ReportEngine (HTML final)
+        - PDFEngine (renderização PDF)
+        - Telemetria Avançada
 
-Objetivo:
-- Transformar a pipeline completa do MindScan em um fluxo assíncrono real.
-- Eliminar bloqueios durante as etapas de geração.
-- Integrar com WeasyRendererAsync.
-- Integrar SectionEngine (modo paralelo inteligente).
-- Integrar Telemetria Avançada (async-safe).
-- Integrar Logger corporativo.
-
-Requisitos:
-- Python 3.10+
-- WeasyRendererAsync (renderer assíncrono)
-- SectionEngine (gerenciamento modular das seções)
+Este módulo não monta HTML manualmente.
+Todo HTML é gerado exclusivamente pelo ReportEngine.
 """
 
 import asyncio
 from pathlib import Path
+from typing import Dict, Any, Optional, List
 
-from backend.services.pdf.engine.section_engine import SectionEngine
-from backend.services.pdf.renderers.weasy_renderer_async import WeasyRendererAsync
+from backend.services.pdf.engine.section_engine import DataPreProcessorEngine
+from backend.services.pdf.pdf_builder import PDFBuilder
+from backend.services.pdf.engine.report_engine import ReportEngine
+from backend.services.pdf.engine.pdf_engine import PDFEngine
+
 from backend.services.pdf.telemetry.telemetry_advanced import TelemetryAdvanced
+from backend.services.pdf.telemetry.logger import PDFLogger
+from backend.services.pdf.telemetry.resource_monitor import ResourceMonitor
 
 
-class AsyncPipeline:
+class AsyncPDFPipeline:
+    """
+    Pipeline assíncrona de ponta a ponta (MindScan v2.0).
+    """
 
     def __init__(
         self,
-        secoes,
-        templates_dir: Path,
-        logger=None,
-        telemetry: TelemetryAdvanced = None,
-        turbo: bool = False,
-        max_workers: int = 6,
+        preprocess_pipelines: Optional[List] = None,
+        telemetry: Optional[TelemetryAdvanced] = None,
+        logger: Optional[PDFLogger] = None,
+        workers: int = 6,
     ):
-        """
-        secoes: lista de seções da pipeline (instâncias)
-        templates_dir: pasta com templates HTML/CSS do PDF
-        turbo: ativa paralelização inteligente no SectionEngine
-        """
-        self.secoes = secoes
-        self.templates_dir = Path(templates_dir)
-        self.logger = logger
-        self.telemetry = telemetry
-        self.turbo = turbo
-        self.max_workers = max_workers
 
-        if self.logger:
-            self.logger.info(
-                f"AsyncPipeline inicializado. TURBO={self.turbo}, workers={self.max_workers}"
-            )
+        self.preprocess_pipelines = preprocess_pipelines or []
+        self.telemetry = telemetry or TelemetryAdvanced()
+        self.logger = logger or PDFLogger()
+        self.workers = workers
 
-        # Engines internos
-        self.section_engine = SectionEngine(
-            secoes=self.secoes,
+        self.pre_processor = DataPreProcessorEngine(
+            max_workers=workers,
             logger=self.logger,
-            telemetry=self.telemetry,
-            turbo=self.turbo,
-            max_workers=self.max_workers,
+            telemetry=self.telemetry
         )
 
-        self.renderer = WeasyRendererAsync(
-            self.templates_dir,
-            logger=self.logger,
-            max_workers=self.max_workers
+        self.logger.info(
+            f"AsyncPDFPipeline v2.0 inicializado (workers={workers}). "
+            f"Pré-processadores: {len(self.preprocess_pipelines)}"
         )
 
-    # ===================================================================
-    # Construção do HTML (async)
-    # ===================================================================
-    async def _montar_html_async(self, ctx):
-        """
-        Usa o SectionEngine (que pode ser paralelo) e retorna HTML final.
-        """
-
-        if self.logger:
-            self.logger.info("[AsyncPipeline] Montando HTML (async).")
-
-        if self.telemetry:
-            self.telemetry.iniciar("montagem_html_async")
-
-        # SectionEngine executa seções (sync), então rodamos em executor
-        loop = asyncio.get_event_loop()
-        secoes_chunks = await loop.run_in_executor(
-            None,
-            self.section_engine.executar,
-            ctx
-        )
-
-        # Concatenar HTML
-        html_final = "".join(secoes_chunks)
-
-        if self.telemetry:
-            self.telemetry.finalizar("montagem_html_async")
-
-        return html_final
-
-    # ===================================================================
-    # Pipeline completa
-    # ===================================================================
-    async def gerar_relatorio_async(
+    # ----------------------------------------------------------------------
+    # Execução assíncrona do pipeline completo
+    # ----------------------------------------------------------------------
+    async def run_async(
         self,
-        usuario,
-        resultados,
-        mi,
-        output_path: Path = None
-    ):
+        payload: Dict[str, Any],
+        output_path: Optional[str] = None,
+        template: str = "executive",
+        renderer: str = "weasy",
+    ) -> str:
         """
-        Executa toda a pipeline de forma assíncrona:
-
-        1. Montagem do HTML (async)
-        2. Renderização do PDF (async)
-        3. Telemetria final
+        Executa:
+            1. Pré-processamento (paralelo)
+            2. Montagem das seções (PDFBuilder)
+            3. Geração do HTML final (ReportEngine)
+            4. Render PDF (PDFEngine)
         """
 
-        nome_usuario = usuario.get("nome", "Usuário")
+        self.telemetry.iniciar("pipeline_async_total")
+        self.logger.evento_pdf_iniciado(payload.get("usuario", {}).get("nome", "Usuário"))
 
-        if self.logger:
-            self.logger.evento_pdf_iniciado(nome_usuario)
+        # 1. Pré-processamento (sync → rodado em executor)
+        loop = asyncio.get_event_loop()
+        processed_payload = await loop.run_in_executor(
+            None,
+            self.pre_processor.run,
+            payload,
+            self.preprocess_pipelines
+        )
 
-        if not output_path:
-            ROOT = Path(__file__).resolve().parent
-            output_path = ROOT / "relatorio_mindscan_async.pdf"
+        # 2. Construção das seções
+        builder = PDFBuilder(processed_payload, template=template)
+        builder.validate()
+        sections = builder.build_sections()
 
-        # Início da telemetria total
-        if self.telemetry:
-            self.telemetry.iniciar("pipeline_total_async")
-            self.telemetry.registrar_renderer("WeasyRendererAsync")
+        # 3. HTML final
+        engine = ReportEngine(template=template)
+        css_text = builder.payload.get("css_text") or ""  # futuro: inject via CSS loader
+        html_final = engine.combine(sections, css_text).decode("utf-8")
 
-        # Criar contexto
-        ctx = {"usuario": usuario, "resultados": resultados, "mi": mi}
+        # 4. Renderização PDF
+        pdf_engine = PDFEngine(renderer=renderer)
+        output_path = output_path or "relatorio_mindscan_async.pdf"
 
-        # 1. HTML (async)
-        if self.telemetry:
-            self.telemetry.iniciar("html_async")
+        pdf_file = await loop.run_in_executor(
+            None,
+            pdf_engine.render_pdf,
+            html_final,
+            css_text,
+            output_path
+        )
 
-        html = await self._montar_html_async(ctx)
+        # Telemetria final
+        self.telemetry.registrar_tamanho_pdf(pdf_file)
+        self.telemetry.finalizar("pipeline_async_total")
+        self.telemetry.exportar()
+        self.logger.evento_pdf_finalizado(pdf_file)
 
-        if self.telemetry:
-            self.telemetry.finalizar("html_async")
-
-        # 2. Renderização (async real)
-        if self.telemetry:
-            self.telemetry.iniciar("render_pdf_async")
-
-        pdf_path = await self.renderer.render_html_to_pdf(html, output_path)
-
-        if self.telemetry:
-            self.telemetry.finalizar("render_pdf_async")
-            self.telemetry.registrar_tamanho_pdf(pdf_path)
-            self.telemetry.finalizar("pipeline_total_async")
-            self.telemetry.exportar()
-
-        if self.logger:
-            self.logger.evento_pdf_finalizado(pdf_path)
-
-        return pdf_path
-
+        return pdf_file

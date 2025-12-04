@@ -1,72 +1,72 @@
 /* ============================================================
-   MindScan — Estilo PDF Premium (SynMind · Inovexa Software)
-   ============================================================ */
+   MindScan — Estilo PDF Premium Consolidado
+   Versão Leo Vinci v2.0 — Inovexa Software
+   Compatível com HTML → PDF (Weasy, ReportLab, Distributed)
+============================================================ */
 
 * {
     box-sizing: border-box;
 }
 
+/* ------------------------------------------------------------
+   Estrutura Global
+------------------------------------------------------------- */
 body {
     font-family: "Helvetica", "Arial", sans-serif;
     margin: 0;
     padding: 0;
     font-size: 15px;
-    color: #222;
+    line-height: 1.55;
+    color: #1d1d1f;
+    background: #ffffff;
 }
-
-/* ---------------------------
-   Estrutura de página
----------------------------- */
 
 .page {
     page-break-after: always;
-    padding: 40px 60px;
+    padding: 60px 70px;
 }
 
-/* ---------------------------
-   Títulos e Identidade
----------------------------- */
-
-h1, h2, h3 {
+/* ------------------------------------------------------------
+   Títulos e Identidade Visual
+------------------------------------------------------------- */
+h1, h2, h3, h4 {
     font-weight: 600;
-    margin: 0;
+    margin: 0 0 12px 0;
 }
 
 h2.secao-titulo {
-    font-size: 26px;
-    margin-bottom: 18px;
+    font-size: 28px;
+    margin-bottom: 20px;
     color: #304FFE;
     border-bottom: 2px solid #304FFE;
     padding-bottom: 6px;
 }
 
 h3 {
-    font-size: 18px;
-    margin-bottom: 8px;
+    font-size: 20px;
+    color: #263238;
 }
 
-/* ---------------------------
-   Textos
----------------------------- */
-
+/* ------------------------------------------------------------
+   Parágrafos e MI
+------------------------------------------------------------- */
 p {
-    margin: 12px 0;
-    line-height: 1.55;
+    margin: 14px 0;
 }
 
 .mi-texto {
     margin: 14px 0 25px;
     font-style: italic;
+    color: #444;
 }
 
-/* ---------------------------
-   Tabelas
----------------------------- */
-
+/* ------------------------------------------------------------
+   Tabelas Premium
+------------------------------------------------------------- */
 table {
     width: 100%;
     border-collapse: collapse;
-    margin: 18px 0;
+    margin: 24px 0;
 }
 
 table thead {
@@ -76,47 +76,84 @@ table thead {
 
 table th, table td {
     border: 1px solid #ccc;
-    padding: 8px 12px;
+    padding: 10px 12px;
     font-size: 14px;
 }
 
 table tbody tr:nth-child(even) {
-    background: #f4f4f4;
+    background: #F4F6FF;
 }
 
-/* ---------------------------
-   Blocos e Containers
----------------------------- */
-
+/* ------------------------------------------------------------
+   Blocos Estruturais
+------------------------------------------------------------- */
 .bloco {
-    margin: 24px 0;
+    margin: 28px 0;
 }
 
-.bloco h3 {
-    margin-bottom: 10px;
-    color: #263238;
+/* Alertas e avisos */
+.alerta-premium {
+    background: #FFE6E6;
+    padding: 14px 18px;
+    border-left: 4px solid #D50000;
+    border-radius: 4px;
+    font-size: 14px;
 }
 
-.alertas {
-    color: #D50000;
+/* Grid visual reforçado */
+.grid-dinamico {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 14px;
 }
 
-.lista-recomendacoes li {
-    margin-bottom: 8px;
+.grid-item {
+    background: #F5F7FF;
+    padding: 12px 14px;
+    border-radius: 4px;
 }
 
-/* ---------------------------
+/* Duas colunas */
+.duas-colunas {
+    display: flex;
+    gap: 25px;
+}
+
+.duas-colunas .coluna-esquerda,
+.duas-colunas .coluna-direita {
+    width: 50%;
+}
+
+/* Métrica horizontal */
+.metrica-horizontal {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.metrica-barra {
+    width: 100%;
+    background: #E8EAF6;
+    height: 12px;
+    border-radius: 6px;
+}
+
+.metrica-progresso {
+    height: 12px;
+    background: #304FFE;
+    border-radius: 6px;
+}
+
+/* ------------------------------------------------------------
    Capa Premium
----------------------------- */
-
+------------------------------------------------------------- */
 .capa {
     text-align: center;
-    padding: 140px 20px;
-    page-break-after: always;
+    padding: 160px 20px;
 }
 
 .capa .logo h1 {
-    font-size: 52px;
+    font-size: 62px;
     font-weight: 800;
     margin-bottom: 0;
     color: #304FFE;
@@ -127,25 +164,23 @@ table tbody tr:nth-child(even) {
 }
 
 .capa .tagline {
-    font-size: 18px;
+    font-size: 20px;
     margin-bottom: 50px;
     color: #444;
 }
 
 .capa .box-identidade h2 {
-    font-size: 34px;
-    margin: 0;
+    font-size: 36px;
 }
 
 .capa .box-identidade h3 {
-    font-size: 22px;
+    font-size: 24px;
     color: #666;
-    margin-top: 5px;
 }
 
 .capa .data {
     font-size: 16px;
-    margin-top: 14px;
+    margin-top: 16px;
 }
 
 .footer {
@@ -154,10 +189,9 @@ table tbody tr:nth-child(even) {
     color: #777;
 }
 
-/* ---------------------------
+/* ------------------------------------------------------------
    Identidade Profissional
----------------------------- */
-
+------------------------------------------------------------- */
 .identidade-container {
     display: flex;
     justify-content: space-between;
@@ -167,31 +201,32 @@ table tbody tr:nth-child(even) {
 .identidade-bloco {
     width: 48%;
     background: #F5F7FF;
-    padding: 14px 18px;
+    padding: 16px 20px;
     border-left: 4px solid #304FFE;
     border-radius: 4px;
 }
 
-/* ---------------------------
-   PDI
----------------------------- */
-
+/* ------------------------------------------------------------
+   PDI e Anexos
+------------------------------------------------------------- */
 .container-pdi {
     display: flex;
     flex-direction: column;
     gap: 28px;
 }
 
-.bloco-pdi ul li {
-    margin-bottom: 6px;
+.anexos ul li,
+.lista-recomendacoes li {
+    margin-bottom: 8px;
 }
 
-/* ---------------------------
-   Anexos
----------------------------- */
-
-.anexos ul li {
-    margin-bottom: 8px;
+/* ------------------------------------------------------------
+   Separadores
+------------------------------------------------------------- */
+.separador {
+    margin: 25px 0;
+    border: none;
+    border-top: 2px solid #E0E0E0;
 }
 
 /* FIM DO ARQUIVO */

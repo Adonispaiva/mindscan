@@ -2,58 +2,54 @@
 # -*- coding: utf-8 -*-
 """
 resumo_executivo.py — Seção de Resumo Executivo (MindScan PDF Premium)
------------------------------------------------------------------------
-
-Resumo oficial e estratégico do relatório MindScan.
-Inclui:
-
-- Síntese geral das avaliações
-- Macrodiagnóstico psicoprofissional
-- Destaques positivos
-- Pontos de atenção
-- Diretrizes claras para tomada de decisão
-- Texto moldado pelo MI para manter consistência editorial
+Versão consolidada — Leo Vinci v2.0
+-----------------------------------------------------------
+Resumo estratégico do diagnóstico, unificando:
+- síntese geral,
+- destaques positivos,
+- pontos de atenção,
+- diretrizes de decisão.
 """
 
-class ResumoExecutivoSection:
-    def render(self, context: dict) -> str:
+from typing import Dict, Any
 
-        resultados = context.get("resultados", {})
-        mi = context.get("mi", {})
-        resumo_mi = mi.get("resumo_executivo", {})
 
-        # Dados de entrada
-        big_five = resultados.get("big_five", {})
-        teique = resultados.get("teique", {})
-        dass = resultados.get("dass", {})
-        esquemas = resultados.get("esquemas", {})
+def build_resumo_executivo(context: Dict[str, Any]) -> Dict[str, Any]:
+    """
+    Padrão oficial: {id, titulo, html}
+    Compatível com PDFEngine e templates premium.
+    """
 
-        # Textos do MI (fallback caso o MI ainda não esteja plugado)
-        texto_resumo = resumo_mi.get(
-            "texto",
-            "O MindScan identificou padrões comportamentais, emocionais e cognitivos "
-            "que permitem compreender com precisão a atuação profissional do avaliado."
-        )
+    resultados = context.get("resultados", {})
+    mi = context.get("mi", {})
+    resumo = mi.get("resumo_executivo", {})
 
-        destaques = resumo_mi.get(
-            "destaques",
-            [
-                "Traços de personalidade bem estruturados.",
-                "Boa estabilidade emocional para ambientes exigentes.",
-                "Recursos cognitivos adequados para funções estratégicas."
-            ]
-        )
+    # Texto MI (fallback seguro)
+    texto_resumo = resumo.get(
+        "texto",
+        "O MindScan identificou padrões comportamentais, emocionais e "
+        "cognitivos que explicam com precisão a atuação profissional do avaliado."
+    )
 
-        alertas = resumo_mi.get(
-            "alertas",
-            [
-                "Algumas tendências emocionais requerem acompanhamento.",
-                "Certos padrões de esquemas podem influenciar decisões sob pressão."
-            ]
-        )
+    destaques = resumo.get(
+        "destaques",
+        [
+            "Traços de personalidade bem estruturados.",
+            "Boa estabilidade emocional em ambientes de pressão.",
+            "Recursos cognitivos compatíveis com funções estratégicas."
+        ]
+    )
 
-        return f"""
-<section class="resumo-executivo">
+    alertas = resumo.get(
+        "alertas",
+        [
+            "Algumas tendências emocionais requerem acompanhamento.",
+            "Padrões esquemáticos podem influenciar decisões sob estresse."
+        ]
+    )
+
+    html = f"""
+<section class="resumo-executivo page">
 
     <h2 class="secao-titulo">Resumo Executivo</h2>
 
@@ -70,7 +66,7 @@ class ResumoExecutivoSection:
             </ul>
         </div>
 
-        <div class="bloco alertas">
+        <div class="bloco alerta-premium">
             <h3>Pontos de Atenção</h3>
             <ul>
                 {''.join(f'<li>{item}</li>' for item in alertas)}
@@ -81,3 +77,9 @@ class ResumoExecutivoSection:
 
 </section>
 """
+
+    return {
+        "id": "resumo_executivo",
+        "titulo": "Resumo Executivo",
+        "html": html
+    }

@@ -2,46 +2,47 @@
 # -*- coding: utf-8 -*-
 """
 dass.py — Seção DASS-21 (MindScan PDF Premium)
------------------------------------------------
+Versão consolidada — Leo Vinci v2.0
+-----------------------------------------------------------
 Exibe:
-- Níveis de Depressão, Ansiedade e Estresse
-- Classificação por faixas (leve, moderado, severo)
-- Texto interpretativo com MI (se disponível)
+- Depressão
+- Ansiedade
+- Estresse
 """
 
-class DASSSection:
-    def render(self, context: dict) -> str:
+from typing import Dict, Any
 
-        resultados = context.get("resultados", {})
-        mi = context.get("mi", {})
-        dass_mi = mi.get("dass", {})
 
-        dass = resultados.get("dass", {})
+def build_dass(context: Dict[str, Any]) -> Dict[str, Any]:
+    """
+    Padrão oficial: {id, titulo, html}
+    """
 
-        texto_mi = dass_mi.get(
-            "texto",
-            "A avaliação DASS-21 identifica níveis emocionais relacionados a depressão, "
-            "ansiedade e estresse, permitindo compreender como o avaliado responde a "
-            "pressões e demandas do ambiente profissional."
-        )
+    resultados = context.get("resultados", {})
+    mi = context.get("mi", {})
 
-        def linha(nome, valor):
-            return f"<tr><td>{nome}</td><td>{valor}</td></tr>"
+    dass = resultados.get("dass", {}) or {}
+    dass_mi = mi.get("dass", {}) or {}
 
-        tabela = "".join([
-            linha("Depressão", dass.get("depressao", "—")),
-            linha("Ansiedade", dass.get("ansiedade", "—")),
-            linha("Estresse", dass.get("estresse", "—")),
-        ])
+    texto_mi = dass_mi.get(
+        "texto",
+        "A avaliação DASS-21 identifica níveis emocionais relacionados a "
+        "depressão, ansiedade e estresse, permitindo compreender como o "
+        "avaliado responde às pressões do ambiente profissional."
+    )
 
-        return f"""
-<section class="dass">
+    depressao = dass.get("depressao", "—")
+    ansiedade = dass.get("ansiedade", "—")
+    estresse = dass.get("estresse", "—")
+
+    html = f"""
+<section class="dass page">
 
     <h2 class="secao-titulo">DASS-21 — Estresse, Ansiedade e Depressão</h2>
 
     <p class="mi-texto">{texto_mi}</p>
 
-    <table class="tabela-dass">
+    <table class="tabela-padrao">
         <thead>
             <tr>
                 <th>Dimensão</th>
@@ -49,9 +50,17 @@ class DASSSection:
             </tr>
         </thead>
         <tbody>
-            {tabela}
+            <tr><td>Depressão</td><td>{depressao}</td></tr>
+            <tr><td>Ansiedade</td><td>{ansiedade}</td></tr>
+            <tr><td>Estresse</td><td>{estresse}</td></tr>
         </tbody>
     </table>
 
 </section>
-""" }
+"""
+
+    return {
+        "id": "dass",
+        "titulo": "DASS-21 — Estresse, Ansiedade e Depressão",
+        "html": html
+    }

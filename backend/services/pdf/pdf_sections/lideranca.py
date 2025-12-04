@@ -2,46 +2,49 @@
 # -*- coding: utf-8 -*-
 """
 lideranca.py — Seção de Estilo de Liderança (MindScan PDF Premium)
+Versão consolidada — Leo Vinci v2.0
 ------------------------------------------------------------------
-
-Conteúdos fornecidos:
-
-- Interpretação de liderança baseada em Big Five + TEIQue
-- Padrões de tomada de decisão
-- Estilo de influência e gestão
-- Texto formatado via MI (se disponível)
-- Tabela operacional de indicadores
+Apresenta:
+- Indicadores de liderança
+- Interpretação MI
+- Padrões comportamentais de influência, direção e gestão
 """
 
-class LiderancaSection:
-    def render(self, context: dict) -> str:
+from typing import Dict, Any
 
-        resultados = context.get("resultados", {})
-        mi = context.get("mi", {})
-        lideranca_mi = mi.get("lideranca", {})
 
-        texto_mi = lideranca_mi.get(
-            "texto",
-            "O estilo de liderança demonstra padrões de influência, coordenação e "
-            "gestão coerentes com os traços de personalidade predominantes."
-        )
+def build_lideranca(context: Dict[str, Any]) -> Dict[str, Any]:
+    """
+    Padrão oficial: {id, titulo, html}
+    Compatível com PDFEngine v2.0 e templates premium.
+    """
 
-        # Dados baseados em algoritmos (cada projeto pode alimentar isso de forma dinâmica)
-        estilo = resultados.get("lideranca", {})
+    resultados = context.get("resultados", {})
+    mi = context.get("mi", {})
 
-        def linha(nome, valor):
-            return f"<tr><td>{nome}</td><td>{valor}</td></tr>"
+    estilo = resultados.get("lideranca", {}) or {}
+    lideranca_mi = mi.get("lideranca", {}) or {}
 
-        tabela = "".join([
-            linha("Tomada de decisão", estilo.get("decisao", "—")),
-            linha("Influência social", estilo.get("influencia", "—")),
-            linha("Gestão emocional", estilo.get("gestao_emocional", "—")),
-            linha("Direção e clareza", estilo.get("direcao", "—")),
-            linha("Relacionamento interpessoal", estilo.get("relacional", "—")),
-        ])
+    texto_mi = lideranca_mi.get(
+        "texto",
+        "O estilo de liderança demonstra padrões de influência, coordenação e "
+        "gestão coerentes com os traços de personalidade predominantes."
+    )
 
-        return f"""
-<section class="lideranca">
+    # Construção das linhas da tabela (fallback incluído)
+    def linha(nome: str, chave: str) -> str:
+        return f"<tr><td>{nome}</td><td>{estilo.get(chave, '—')}</td></tr>"
+
+    tabela = "".join([
+        linha("Tomada de decisão", "decisao"),
+        linha("Influência social", "influencia"),
+        linha("Gestão emocional", "gestao_emocional"),
+        linha("Direção e clareza", "direcao"),
+        linha("Relacionamento interpessoal", "relacional"),
+    ])
+
+    html = f"""
+<section class="lideranca page">
 
     <h2 class="secao-titulo">Estilo de Liderança</h2>
 
@@ -49,7 +52,7 @@ class LiderancaSection:
         {texto_mi}
     </p>
 
-    <table class="tabela-lideranca">
+    <table class="tabela-padrao">
         <thead>
             <tr>
                 <th>Indicador</th>
@@ -63,3 +66,9 @@ class LiderancaSection:
 
 </section>
 """
+
+    return {
+        "id": "lideranca",
+        "titulo": "Estilo de Liderança",
+        "html": html
+    }

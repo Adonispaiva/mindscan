@@ -1,18 +1,17 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-weasy_renderer_async.py — Renderer Assíncrono Experimental do MindScan PDF Engine
+weasy_renderer_async.py — Renderer Assíncrono WeasyPrint (MindScan v2.0)
+Autor: Leo Vinci (Inovexa)
 -------------------------------------------------------------------------------
-
-Objetivo:
-- Executar a renderização com WeasyPrint de forma assíncrona.
-- Evitar bloqueio da thread principal em servidores concorrentes.
-- Integrar com o modo TURBO + pipeline otimizada do PDFBuilder v36.
-- Manter compatibilidade com logger + telemetria.
-
-Estratégia:
-- WeasyPrint NÃO é nativamente async.
-- Uso correto: delegar a renderização para ThreadPoolExecutor.
+FINALIDADE:
+    - Executar renderização PDF de forma **assíncrona**
+    - Compatível com ReportEngine v2.0
+    - Compatível com PDFEngine v2.0
+    - Compatível com AsyncPDFPipeline v2.0
+    - NÃO usa base.html
+    - NÃO injeta {{conteudo}}
+    - Recebe HTML FINAL já montado
 """
 
 import asyncio
@@ -22,44 +21,30 @@ from weasyprint import HTML, CSS
 
 
 class WeasyRendererAsync:
+    """
+    Renderer assíncrono oficial do MindScan v2.0.
+    """
 
-    def __init__(self, templates_dir: Path, logger=None, max_workers: int = 4):
-        """
-        templates_dir: pasta contendo base.html e estilo.css
-        max_workers: número máximo de threads para execução paralela
-        """
-        self.templates_dir = Path(templates_dir)
+    def __init__(self, logger=None, max_workers: int = 4):
         self.logger = logger
         self.max_workers = max_workers
 
-        self.base_html = self.templates_dir / "base.html"
-        self.css_file = self.templates_dir / "estilo.css"
+        # Executor compartilhado
+        self.executor = ThreadPoolExecutor(max_workers=max_workers)
 
-        # Executor assíncrono
-        self.executor = ThreadPoolExecutor(max_workers=self.max_workers)
-
-        # Logs iniciais
         if self.logger:
-            self.logger.info(f"WeasyRendererAsync inicializado com {self.max_workers} threads.")
-
-        # Validação dos templates
-        if not self.base_html.exists():
-            msg = f"Template base não encontrado: {self.base_html}"
-            if self.logger: self.logger.error(msg)
-            raise FileNotFoundError(msg)
-
-        if not self.css_file.exists():
-            msg = f"Arquivo de estilo não encontrado: {self.css_file}"
-            if self.logger: self.logger.error(msg)
-            raise FileNotFoundError(msg)
+            self.logger.info(
+                f"WeasyRendererAsync v2.0 inicializado (threads={max_workers})."
+            )
 
     # ----------------------------------------------------------------------
-    # OPERADOR ASSÍNCRONO PRINCIPAL
+    # MÉTODO PRINCIPAL — assinatura padronizada
     # ----------------------------------------------------------------------
-    async def render_html_to_pdf(self, conteudo_html: str, output_path: Path):
+    async def render(self, html_final: str, css_text: str, output_path: Path):
         """
-        Método realmente assíncrono.
-        Despacha a renderização para um pool de threads.
+        html_final: HTML final gerado pelo ReportEngine
+        css_text: conteúdo completo do CSS consolidado
+        output_path: caminho onde o PDF será gravado
         """
 
         loop = asyncio.get_event_loop()
@@ -69,15 +54,14 @@ class WeasyRendererAsync:
             self.logger.info(f"Arquivo destino: {output_path}")
 
         try:
-            # Carregar template base
-            base = self.base_html.read_text(encoding="utf-8")
-            final_html = base.replace("{{conteudo}}", conteudo_html)
+            css_obj = CSS(string=css_text)
 
-            # Execução real da renderização (não-bloqueante)
+            # Execução real dentro do executor
             await loop.run_in_executor(
                 self.executor,
-                self._render_sync,      # função síncrona abaixo
-                final_html,
+                self._render_sync,
+                html_final,
+                css_obj,
                 output_path
             )
 
@@ -88,18 +72,14 @@ class WeasyRendererAsync:
 
         except Exception as e:
             if self.logger:
-                self.logger.evento_erro("WeasyRendererAsync.render_html_to_pdf", e)
+                self.logger.evento_erro("WeasyRendererAsync.render", e)
             raise e
 
     # ----------------------------------------------------------------------
-    # Função síncrona chamada dentro do executor
+    # Função síncrona utilizada dentro do executor
     # ----------------------------------------------------------------------
-    def _render_sync(self, html_str: str, output_path: Path):
-        """
-        Função SÍNCRONA que realiza a renderização real.
-        Executada dentro do ThreadPoolExecutor.
-        """
-        HTML(string=html_str, base_url=str(self.templates_dir)).write_pdf(
+    def _render_sync(self, html_final: str, css_obj: CSS, output_path: Path):
+        HTML(string=html_final).write_pdf(
             str(output_path),
-            stylesheets=[CSS(filename=str(self.css_file))]
+            stylesheets=[css_obj]
         )

@@ -1,32 +1,19 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-performance_governor.py — Adaptive Performance Governor · Inovexa
-------------------------------------------------------------------
-
-Objetivo:
-- Controlar dinamicamente o modo TURBO (paralelização).
-- Monitorar CPU/RAM via ResourceMonitor.
-- Ajustar agressividade do pipeline conforme a carga do sistema.
-- Evitar degradação e sobrecarga em servidores.
-- Otimizar performance automaticamente.
-
-Funciona com:
-- PDFBuilder v36 (otimizado)
-- SectionEngine v39 (paralelo inteligente)
-- AsyncPipeline v40
-- ResourceMonitor v38
-- Telemetria Avançada
-- Logger corporativo
-
-Estratégia:
-- Coleta de CPU/RAM em tempo real.
-- Ajustes de política conforme thresholds.
-- Força Modo Seguro quando necessário.
-- Habilita TURBO+ quando seguro.
+performance_governor.py — Adaptive Performance Governor (SynMind v2.0)
+Autor: Leo Vinci (Inovexa)
+-------------------------------------------------------------------------------
+Função:
+    - Ajustar dinamicamente o modo TURBO de acordo com CPU/RAM
+    - Integrado com ResourceMonitor v2.0
+    - Telemetria avançada para registrar eventos de carga
+    - Operação segura (sem eval, sem riscos)
 """
 
+import json
 import time
+from typing import Optional
 
 
 class PerformanceGovernor:
@@ -34,38 +21,58 @@ class PerformanceGovernor:
     def __init__(
         self,
         logger=None,
-        monitor=None,         # ResourceMonitor
-        cpu_limit_high=85.0,  # acima disso, desligar TURBO
-        cpu_limit_low=45.0,   # abaixo disso, ativar TURBO
-        ram_limit_mb=1500.0,  # limite recomendado
-        cool_down=2.0          # segundos antes de reavaliar
+        monitor=None,         # ResourceMonitor v2.0
+        telemetry=None,       # TelemetryAdvanced v2.0
+        cpu_limit_high: float = 85.0,   # acima disso → desligar turbo
+        cpu_limit_low: float = 45.0,    # abaixo disso → ativar turbo
+        ram_limit_mb: float = 1500.0,   # limite de carga máxima
+        cool_down: float = 1.5          # intervalo entre avaliações
     ):
         self.logger = logger
         self.monitor = monitor
+        self.telemetry = telemetry
+
         self.cpu_limit_high = cpu_limit_high
         self.cpu_limit_low = cpu_limit_low
         self.ram_limit_mb = ram_limit_mb
         self.cool_down = cool_down
 
-        # Estado interno
+        # Estado
         self.turbo_enabled = False
         self.last_eval = 0.0
 
         if self.logger:
             self.logger.info(
-                f"PerformanceGovernor iniciado. CPU_HIGH={cpu_limit_high} "
-                f"CPU_LOW={cpu_limit_low} RAM_LIMIT={ram_limit_mb}MB"
+                f"PerformanceGovernor v2.0 iniciado | "
+                f"CPU_HIGH={cpu_limit_high}% CPU_LOW={cpu_limit_low}% "
+                f"RAM_LIMIT={ram_limit_mb}MB"
             )
 
-    # ============================================================
-    # Avaliar estado atual do sistema
-    # ============================================================
-    def avaliar(self):
+    # ----------------------------------------------------------------------
+    # LER CPU de maneira segura (sem eval)
+    # ----------------------------------------------------------------------
+    def _ler_cpu(self) -> float:
         """
-        Coleta CPU/RAM do monitor e ajusta estado interno.
-        Chamado em intervalos seguros pelo PDFBuilder/AsyncPipeline.
+        Tenta ler a última linha JSONL gravada pelo ResourceMonitor v2.0.
+        Sem eval, sem riscos.
         """
+        try:
+            with open(self.monitor.output_file, "r", encoding="utf-8") as f:
+                for line in reversed(f.readlines()):
+                    try:
+                        data = json.loads(line.strip())
+                        return float(data.get("cpu_percent", 0.0))
+                    except json.JSONDecodeError:
+                        continue
+        except Exception:
+            pass
 
+        return 0.0
+
+    # ----------------------------------------------------------------------
+    # AVALIAÇÃO DE CARGA
+    # ----------------------------------------------------------------------
+    def avaliar(self) -> bool:
         agora = time.time()
         if agora - self.last_eval < self.cool_down:
             return self.turbo_enabled
@@ -73,64 +80,46 @@ class PerformanceGovernor:
         self.last_eval = agora
 
         if not self.monitor:
-            # Sem monitor, assume modo normal
             return self.turbo_enabled
 
-        # Última leitura do ResourceMonitor
-        # O monitor salva JSONL, mas também mantém pico de RAM.
         cpu = self._ler_cpu()
-        ram = self.monitor.peak_memory_mb
+        ram = getattr(self.monitor, "peak_memory_mb", 0.0)
 
         if self.logger:
-            self.logger.info(
-                f"[Governor] Avaliação: CPU={cpu:.2f}% RAM={ram:.1f}MB"
-            )
+            self.logger.info(f"[Governor] CPU={cpu:.2f}% RAM={ram:.1f}MB")
 
-        # Regra 1 — Carga muito alta = desliga TURBO imediatamente
+        # Registrar evento de carga
+        if self.telemetry:
+            self.telemetry.registrar_carga(cpu, ram)
+
+        # Regra 1 — carga alta
         if cpu > self.cpu_limit_high or ram > self.ram_limit_mb:
             if self.turbo_enabled:
                 self.turbo_enabled = False
                 if self.logger:
-                    self.logger.warn("[Governor] TURBO desativado por carga alta.")
+                    self.logger.warn("[Governor] TURBO desativado (carga alta).")
+                if self.telemetry:
+                    self.telemetry.registrar_evento("turbo_desativado_carga_alta")
             return False
 
-        # Regra 2 — Carga baixa = ativa TURBO automaticamente
+        # Regra 2 — carga baixa
         if cpu < self.cpu_limit_low:
             if not self.turbo_enabled:
                 self.turbo_enabled = True
                 if self.logger:
                     self.logger.info("[Governor] TURBO ativado (carga baixa).")
+                if self.telemetry:
+                    self.telemetry.registrar_evento("turbo_ativado_carga_baixa")
             return True
 
-        # Regra 3 — Região neutra = mantém estado atual
+        # Regra 3 — manter estado
         if self.logger:
             self.logger.info("[Governor] Mantendo estado atual de TURBO.")
 
         return self.turbo_enabled
 
-    # ============================================================
-    # Leitura segura da última CPU registrada pelo monitor
-    # ============================================================
-    def _ler_cpu(self):
-        """
-        Usa o JSONL mais recente gerado pelo ResourceMonitor para
-        descobrir a CPU atual. Caso não seja possível, retorna 0%.
-        """
-        try:
-            with open(self.monitor.output_file, "r", encoding="utf-8") as f:
-                lines = f.readlines()
-            if not lines:
-                return 0.0
-            last = lines[-1]
-            data = eval(last) if last.startswith("{") else {}
-            return data.get("cpu_percent", 0.0)
-        except Exception:
-            return 0.0
-
-    # ============================================================
-    # Interface pública
-    # ============================================================
+    # ----------------------------------------------------------------------
+    # INTERFACE PÚBLICA
+    # ----------------------------------------------------------------------
     def turbo_ativado(self) -> bool:
-        """Retorna o estado atual do TURBO."""
         return self.turbo_enabled
-42

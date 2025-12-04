@@ -2,39 +2,67 @@
 # -*- coding: utf-8 -*-
 """
 anexos.py — Seção de Anexos (MindScan PDF Premium)
---------------------------------------------------
-
+Versão consolidada — Leo Vinci v2.0
+---------------------------------------------------------------------------
 Inclui:
-- Tabelas adicionais
-- Dados brutos
-- Gráficos auxiliares
-- Informações complementares do relatório
-- Arquitetura preparada para anexos dinâmicos (como imagens base64)
+- Tabelas e dados adicionais
+- Informações complementares
+- Anexos dinâmicos (texto, números, imagens base64)
 """
 
-class AnexosSection:
-    def render(self, context: dict) -> str:
+from typing import Dict, Any, List
 
-        anexos = context.get("resultados", {}).get("anexos", [])
-        mi = context.get("mi", {})
-        anexos_mi = mi.get("anexos", {})
 
-        texto_mi = anexos_mi.get(
-            "texto",
-            "Esta seção apresenta informações complementares que enriquecem a "
-            "compreensão dos resultados obtidos pelo MindScan."
-        )
+def build_anexos(context: Dict[str, Any]) -> Dict[str, Any]:
+    """
+    Padrão oficial de seção:
+    {id, titulo, html}
+    """
 
-        if not anexos:
-            lista_html = "<p>Nenhum anexo adicional fornecido.</p>"
+    resultados = context.get("resultados", {})
+    mi = context.get("mi", {})
+
+    anexos: List[Any] = resultados.get("anexos", []) or []
+    anexos_mi = mi.get("anexos", {}) or {}
+
+    texto_mi = anexos_mi.get(
+        "texto",
+        "Esta seção apresenta informações complementares que enriquecem a "
+        "interpretação dos resultados obtidos pelo MindScan."
+    )
+
+    # Renderização dos anexos dinâmicos
+    itens_html = []
+
+    for idx, item in enumerate(anexos, start=1):
+
+        # Texto simples
+        if isinstance(item, str):
+            itens_html.append(f"<li><strong>Anexo {idx}:</strong> {item}</li>")
+
+        # Imagens base64
+        elif isinstance(item, dict) and item.get("tipo") == "imagem":
+            src = item.get("base64", "")
+            legenda = item.get("legenda", f"Imagem {idx}")
+            itens_html.append(
+                f"<li><strong>{legenda}:</strong><br><img src='{src}' "
+                f"alt='{legenda}' style='max-width: 100%; margin-top: 10px;'></li>"
+            )
+
+        # Dados estruturados (listas ou dicts)
         else:
-            itens = []
-            for idx, item in enumerate(anexos, start=1):
-                itens.append(f"<li><strong>Anexo {idx}:</strong> {item}</li>")
-            lista_html = "<ul>" + "".join(itens) + "</ul>"
+            itens_html.append(
+                f"<li><strong>Anexo {idx}:</strong> Dados adicionais disponíveis.</li>"
+            )
 
-        return f"""
-<section class="anexos">
+    # Fallback
+    if not itens_html:
+        itens_html.append("<p>Nenhum anexo adicional fornecido.</p>")
+
+    lista_html = "<ul>" + "".join(itens_html) + "</ul>"
+
+    html = f"""
+<section class="anexos page">
 
     <h2 class="secao-titulo">Anexos</h2>
 
@@ -44,3 +72,9 @@ class AnexosSection:
 
 </section>
 """
+
+    return {
+        "id": "anexos",
+        "titulo": "Anexos",
+        "html": html
+    }

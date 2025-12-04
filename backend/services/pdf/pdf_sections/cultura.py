@@ -2,48 +2,48 @@
 # -*- coding: utf-8 -*-
 """
 cultura.py — Seção de Cultura Organizacional (OCAI) — MindScan PDF Premium
---------------------------------------------------------------------------
-
-Esta seção apresenta:
-- Perfil cultural atual do avaliado
-- Compatibilidade com culturas organizacionais (OCAI)
-- Direções de desenvolvimento
-- Análise MI (se disponível)
+Versão consolidada — Leo Vinci v2.0
+-----------------------------------------------------------
+Apresenta:
+- Perfil OCAI
+- Interpretação MI cultural
+- Estrutura premium padronizada
 """
 
-class CulturaSection:
-    def render(self, context: dict) -> str:
+from typing import Dict, Any
 
-        resultados = context.get("resultados", {})
-        mi = context.get("mi", {})
-        cultura_mi = mi.get("cultura", {})
 
-        ocai = resultados.get("ocai", {})
+def build_cultura(context: Dict[str, Any]) -> Dict[str, Any]:
+    """
+    Padrão oficial de seção:
+    {id, titulo, html}
+    """
 
-        texto_mi = cultura_mi.get(
-            "texto",
-            "A análise cultural identifica as inclinações naturais do avaliado em termos "
-            "de estrutura, flexibilidade, colaboração e orientação a resultados."
-        )
+    resultados = context.get("resultados", {})
+    mi = context.get("mi", {})
 
-        def linha(nome, valor):
-            return f"<tr><td>{nome}</td><td>{valor}</td></tr>"
+    ocai = resultados.get("ocai", {})
+    cultura_mi = mi.get("cultura", {})
 
-        tabela = "".join([
-            linha("Cultura Clã", ocai.get("cla", "—")),
-            linha("Cultura Adhocracia", ocai.get("adhocracia", "—")),
-            linha("Cultura Mercado", ocai.get("mercado", "—")),
-            linha("Cultura Hierarquia", ocai.get("hierarquia", "—")),
-        ])
+    texto_mi = cultura_mi.get(
+        "texto",
+        "A análise cultural identifica as inclinações naturais do avaliado "
+        "em termos de estrutura, flexibilidade, colaboração e orientação a resultados."
+    )
 
-        return f"""
-<section class="cultura">
+    cla = ocai.get("cla", "—")
+    adhoc = ocai.get("adhocracia", "—")
+    mercado = ocai.get("mercado", "—")
+    hier = ocai.get("hierarquia", "—")
+
+    html = f"""
+<section class="cultura page">
 
     <h2 class="secao-titulo">Cultura Organizacional (OCAI)</h2>
 
     <p class="mi-texto">{texto_mi}</p>
 
-    <table class="tabela-cultura">
+    <table class="tabela-padrao">
         <thead>
             <tr>
                 <th>Dimensão</th>
@@ -51,9 +51,18 @@ class CulturaSection:
             </tr>
         </thead>
         <tbody>
-            {tabela}
+            <tr><td>Cultura Clã</td><td>{cla}</td></tr>
+            <tr><td>Cultura Adhocracia</td><td>{adhoc}</td></tr>
+            <tr><td>Cultura Mercado</td><td>{mercado}</td></tr>
+            <tr><td>Cultura Hierarquia</td><td>{hier}</td></tr>
         </tbody>
     </table>
 
 </section>
 """
+
+    return {
+        "id": "cultura",
+        "titulo": "Cultura Organizacional (OCAI)",
+        "html": html
+    }

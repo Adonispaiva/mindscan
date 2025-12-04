@@ -2,42 +2,43 @@
 # -*- coding: utf-8 -*-
 """
 personalidade.py — Seção de Personalidade (MindScan PDF Premium)
-----------------------------------------------------------------
-
-Esta seção apresenta:
-- Radar Big Five
-- Interpretações comportamentais
-- Análise textual via MI
-- Síntese dos padrões predominantes
+Versão consolidada — Leo Vinci v2.0
+-----------------------------------------------------------
+Apresenta:
+- Radar Big Five (tabela)
+- Interpretação comportamental via MI
+- Síntese textual premium
 """
 
-class PersonalidadeSection:
-    def render(self, context: dict) -> str:
+from typing import Dict, Any
 
-        resultados = context.get("resultados", {})
-        mi = context.get("mi", {})
 
-        big_five = resultados.get("big_five", {})
-        texto_mi = mi.get("personalidade", {}).get(
-            "texto",
-            "A análise dos traços de personalidade revela padrões consistentes "
-            "com o estilo de funcionamento predominante do avaliado."
-        )
+def build_personalidade(context: Dict[str, Any]) -> Dict[str, Any]:
+    """
+    Padrão oficial: {id, titulo, html}
+    Implementação compatível com todos os templates premium.
+    """
 
-        # Construção da tabela de traços (simples)
-        def linha(nome, valor):
-            return f"<tr><td>{nome}</td><td>{valor}</td></tr>"
+    resultados = context.get("resultados", {})
+    mi = context.get("mi", {})
 
-        tabela = "".join([
-            linha("Abertura", big_five.get("abertura", "—")),
-            linha("Conscienciosidade", big_five.get("conscienciosidade", "—")),
-            linha("Extroversão", big_five.get("extroversao", "—")),
-            linha("Agradabilidade", big_five.get("agradabilidade", "—")),
-            linha("Estabilidade Emocional", big_five.get("neuroticismo", "—")),
-        ])
+    big = resultados.get("big_five", {})
 
-        return f"""
-<section class="personalidade">
+    texto_mi = mi.get("personalidade", {}).get(
+        "texto",
+        "A análise dos traços de personalidade revela padrões consistentes "
+        "com o estilo de funcionamento predominante do avaliado."
+    )
+
+    # Fallback seguro
+    abertura = big.get("abertura", "—")
+    consc = big.get("conscienciosidade", "—")
+    extrov = big.get("extroversao", "—")
+    agrad = big.get("agradabilidade", "—")
+    neuro = big.get("neuroticismo", "—")
+
+    html = f"""
+<section class="personalidade page">
 
     <h2 class="secao-titulo">Perfil de Personalidade (Big Five)</h2>
 
@@ -45,7 +46,7 @@ class PersonalidadeSection:
         {texto_mi}
     </p>
 
-    <table class="tabela-bf">
+    <table class="tabela-padrao">
         <thead>
             <tr>
                 <th>Dimensão</th>
@@ -53,9 +54,19 @@ class PersonalidadeSection:
             </tr>
         </thead>
         <tbody>
-            {tabela}
+            <tr><td>Abertura</td><td>{abertura}</td></tr>
+            <tr><td>Conscienciosidade</td><td>{consc}</td></tr>
+            <tr><td>Extroversão</td><td>{extrov}</td></tr>
+            <tr><td>Agradabilidade</td><td>{agrad}</td></tr>
+            <tr><td>Estabilidade Emocional</td><td>{neuro}</td></tr>
         </tbody>
     </table>
 
 </section>
 """
+
+    return {
+        "id": "personalidade",
+        "titulo": "Perfil de Personalidade (Big Five)",
+        "html": html
+    }

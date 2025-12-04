@@ -2,27 +2,29 @@
 # -*- coding: utf-8 -*-
 """
 capa.py — Seção de Capa (MindScan PDF Premium)
-----------------------------------------------
-Gera a capa executiva do relatório MindScan.
-Inclui:
-- Logo
-- Identidade
-- Nome do avaliado
-- Data
-- Título oficial
+Versão consolidada — Leo Vinci v2.0
+------------------------------------------------
+Responsável por gerar a capa executiva do PDF,
+seguindo o padrão visual oficial SynMind/Inovexa.
 """
 
 from datetime import datetime
+from typing import Dict, Any
 
-class CapaSection:
-    def render(self, context: dict) -> str:
-        usuario = context.get("usuario", {})
-        nome = usuario.get("nome", "Avaliado")
-        cargo = usuario.get("cargo", "Profissional")
-        data = datetime.now().strftime("%d/%m/%Y")
 
-        return f"""
-<section class='capa'>
+def build_capa(context: Dict[str, Any]) -> Dict[str, Any]:
+    """
+    Retorna estrutura de seção padronizada para o PDFEngine.
+    O PDFEngine injeta o HTML final no template principal.
+    """
+
+    usuario = context.get("usuario", {})
+    nome = usuario.get("nome", "Avaliado")
+    cargo = usuario.get("cargo", "Profissional")
+    data = datetime.now().strftime("%d/%m/%Y")
+
+    html = f"""
+<section class='capa page'>
     <div class='capa-container'>
         <div class='logo'>
             <h1>MIND<span>SCAN</span></h1>
@@ -41,3 +43,9 @@ class CapaSection:
     </div>
 </section>
 """
+
+    return {
+        "id": "capa",
+        "titulo": "Capa",
+        "html": html
+    }

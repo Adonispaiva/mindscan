@@ -2,31 +2,36 @@
 # -*- coding: utf-8 -*-
 """
 identidade.py — Seção de Identidade (MindScan PDF Premium)
-----------------------------------------------------------
-
-Responsável por apresentar:
-- Dados essenciais do avaliado
-- Informações contextuais
-- Identidade profissional
-- Estrutura compatível com o PDF Premium
+Versão consolidada — Leo Vinci v2.0
+-----------------------------------------------------------
+Apresenta:
+- Informações pessoais essenciais
+- Contexto profissional
+- Identidade organizacional
 """
 
 from datetime import datetime
+from typing import Dict, Any
 
-class IdentidadeSection:
-    def render(self, context: dict) -> str:
-        usuario = context.get("usuario", {})
 
-        nome = usuario.get("nome", "Nome não informado")
-        idade = usuario.get("idade", "—")
-        genero = usuario.get("genero", "—")
-        cargo = usuario.get("cargo", "—")
-        senioridade = usuario.get("senioridade", "—")
-        empresa = usuario.get("empresa", "—")
-        data_geracao = datetime.now().strftime("%d/%m/%Y")
+def build_identidade(context: Dict[str, Any]) -> Dict[str, Any]:
+    """
+    Retorna estrutura padronizada para o PDFEngine.
+    Padrão oficial: {id, titulo, html}
+    """
 
-        return f"""
-<section class="identidade">
+    usuario = context.get("usuario", {})
+
+    nome = usuario.get("nome", "Nome não informado")
+    idade = usuario.get("idade", "—")
+    genero = usuario.get("genero", "—")
+    empresa = usuario.get("empresa", "—")
+    cargo = usuario.get("cargo", "—")
+    senioridade = usuario.get("senioridade", "—")
+    data_geracao = datetime.now().strftime("%d/%m/%Y")
+
+    html = f"""
+<section class="identidade page">
     <h2 class="secao-titulo">Identidade Profissional</h2>
 
     <div class="identidade-container">
@@ -49,3 +54,9 @@ class IdentidadeSection:
     </div>
 </section>
 """
+
+    return {
+        "id": "identidade",
+        "titulo": "Identidade Profissional",
+        "html": html
+    }

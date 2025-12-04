@@ -1,167 +1,115 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-section_engine.py — SectionEngine (Motor Inteligente de Paralelização)
------------------------------------------------------------------------
+section_engine.py — DataPreProcessorEngine (MindScan SynMind v2.0)
+Autor: Leo Vinci (Inovexa)
+--------------------------------------------------------------------------------
+FINALIDADE:
+    Este módulo NÃO RENDERIZA SEÇÕES.
+    Ele funciona exclusivamente como um motor de pré-processamento
+    de dados antes que o PDFBuilder ou o ReportEngine sejam chamados.
 
-Objetivo:
-- Controlar a execução das seções do relatório MindScan.
-- Paralelizar com inteligência (não simplesmente simultâneo).
-- Garantir a ordem final das seções, mesmo executando em paralelo.
-- Integrar Telemetria Avançada e Logger.
-- Permitir extensões futuras (ciclos, clusters, caches).
+    Atribuições:
+        - Executar cálculos pesados de forma paralela
+        - Normalizar estruturas do payload
+        - Organizar dados para MI (Meta-Interpretação)
+        - Preparar blocos de inteligência antes do relatório
+        - Rodar pipelines modulares definidos pela arquitetura
 
-Funcionalidades:
-- Execução sequencial ou paralela (modo TURBO)
-- Detecção automática de dependências
-- Execução isolada por seção
-- Ordenação garantida dos resultados (estável)
-- Telemetria por seção
-- Logs estruturados
+    Ele NÃO:
+        - gera HTML
+        - chama templates
+        - monta seções do PDF
+        - interage com renderers
+        - injeta conteúdo em páginas
+
+    Este é um módulo cognitivo, não visual.
 """
 
 from concurrent.futures import ThreadPoolExecutor, as_completed
+from typing import Callable, Dict, Any, List, Optional
+
+from ..telemetry.logger import PDFLogger
+from ..telemetry.resource_monitor import ResourceMonitor
 
 
-class SectionEngine:
+class DataPreProcessorEngine:
+    """
+    Motor de pré-processamento do MindScan.
+    Recebe:
+        payload   → informações brutas da avaliação
+        pipelines → lista de funções que transformam ou enriquecem dados
+
+    Todas as funções do pipeline devem seguir assinatura:
+        fn(payload: dict) -> dict
+    """
 
     def __init__(
         self,
-        secoes,
-        logger=None,
-        telemetry=None,
-        turbo=False,
-        max_workers=6
+        max_workers: int = 4,
+        logger: Optional[PDFLogger] = None,
+        telemetry: Optional[ResourceMonitor] = None,
     ):
-        """
-        secoes: lista de instâncias de Section()
-        turbo: ativa execução paralela
-        max_workers: nº máximo de threads
-        """
-
-        self.secoes = secoes
-        self.logger = logger
-        self.telemetry = telemetry
-        self.turbo = turbo
         self.max_workers = max_workers
+        self.logger = logger or PDFLogger()
+        self.telemetry = telemetry or ResourceMonitor()
 
-        if self.logger:
-            self.logger.info(
-                f"SectionEngine inicializado. TURBO={self.turbo}, workers={self.max_workers}"
-            )
+        self.logger.info(
+            f"DataPreProcessorEngine v2.0 inicializado "
+            f"(workers={self.max_workers})"
+        )
 
-    # ===================================================================
-    # Execução Inteligente de Todas as Seções
-    # ===================================================================
-    def executar(self, ctx):
+    # ----------------------------------------------------------------------
+    # ADICIONA FUNÇÕES DE PRÉ-PROCESSAMENTO
+    # ----------------------------------------------------------------------
+    def run_pipelines(self, payload: Dict[str, Any], pipelines: List[Callable]):
         """
-        Execução das seções com:
-        - telemetria por seção
-        - logs por seção
-        - paralelização opcional
-        - ordenação final preservada
+        Executa todas as funções de pré-processamento.
+        Cada função recebe o payload e retorna um payload transformado.
+
+        Execução em paralelo, com coleta de resultados segura.
         """
+        if not pipelines:
+            self.logger.warn("Nenhum pipeline registrado para o DataPreProcessorEngine.")
+            return payload
 
-        # Modo não paralelo (seguro)
-        if not self.turbo:
-            return self._executar_sequencial(ctx)
+        self.logger.info(f"Executando {len(pipelines)} pipelines de pré-processamento…")
+        self.telemetry.measure_start()
 
-        # Modo paralelo inteligente
-        return self._executar_paralelo(ctx)
+        results = payload.copy()
 
-    # ===================================================================
-    # EXECUÇÃO SEQUENCIAL
-    # ===================================================================
-    def _executar_sequencial(self, ctx):
-        html_chunks = []
+        with ThreadPoolExecutor(max_workers=self.max_workers) as executor:
+            future_map = {executor.submit(fn, results): fn for fn in pipelines}
 
-        for secao in self.secoes:
-            nome = secao.__class__.__name__
-
-            if self.logger:
-                self.logger.info(f"[SectionEngine] Executando seção: {nome}")
-
-            try:
-                if self.telemetry:
-                    self.telemetry.iniciar(f"secao_{nome}")
-
-                chunk = secao.render(ctx)
-
-                if self.telemetry:
-                    self.telemetry.finalizar(f"secao_{nome}")
-
-                html_chunks.append(chunk)
-
-            except Exception as e:
-                if self.logger:
-                    self.logger.evento_erro(f"Section_{nome}", e)
-                raise e
-
-        return html_chunks
-
-    # ===================================================================
-    # EXECUÇÃO PARALELA (Modo TURBO)
-    # ===================================================================
-    def _executar_paralelo(self, ctx):
-        html_results = {}
-        futures = {}
-
-        if self.logger:
-            self.logger.warn("[SectionEngine] Executando em modo TURBO.")
-
-        # Executor com número controlado de threads
-        with ThreadPoolExecutor(max_workers=self.max_workers) as pool:
-
-            for secao in self.secoes:
-                nome = secao.__class__.__name__
-
-                futures[pool.submit(self._executar_secao_isolada, secao, ctx)] = nome
-
-            # Esperar todas finalizarem
-            for f in as_completed(futures):
-                nome = futures[f]
-
+            for future in as_completed(future_map):
+                fn = future_map[future]
                 try:
-                    resultado = f.result()
-                    html_results[nome] = resultado
+                    updated = future.result()
+                    if isinstance(updated, dict):
+                        results.update(updated)
+                        self.logger.info(f"Pipeline concluído: {fn.__name__}")
+                    else:
+                        self.logger.warn(
+                            f"Pipeline {fn.__name__} retornou tipo inválido: {type(updated)}"
+                        )
 
                 except Exception as e:
-                    if self.logger:
-                        self.logger.evento_erro(f"SectionParallel_{nome}", e)
-                    raise e
+                    self.logger.evento_erro(fn.__name__, e)
 
-        # Ordenação final (mantém ordem do PDF)
-        html_final = [
-            html_results[secao.__class__.__name__]
-            for secao in self.secoes
-        ]
+        self.telemetry.measure_end()
+        self.logger.info("Pré-processamento concluído.")
 
-        return html_final
+        return results
 
-    # ===================================================================
-    # Execução isolada de uma seção (thread-safe)
-    # ===================================================================
-    def _executar_secao_isolada(self, secao, ctx):
-        nome = secao.__class__.__name__
-
-        if self.logger:
-            self.logger.info(f"[SectionEngine] Thread iniciada: {nome}")
-
-        try:
-            if self.telemetry:
-                self.telemetry.iniciar(f"secao_{nome}")
-
-            chunk = secao.render(ctx)
-
-            if self.telemetry:
-                self.telemetry.finalizar(f"secao_{nome}")
-
-            if self.logger:
-                self.logger.info(f"[SectionEngine] Seção finalizada: {nome}")
-
-            return chunk
-
-        except Exception as e:
-            if self.logger:
-                self.logger.evento_erro(f"Section_{nome}", e)
-            raise e
+    # ----------------------------------------------------------------------
+    # REGRA DE NEGÓCIO EXCLUSIVA DO ENGINE
+    # ----------------------------------------------------------------------
+    def run(self, payload: Dict[str, Any], pipelines: List[Callable]) -> Dict[str, Any]:
+        """
+        Entrada principal.
+        Retorna payload processado, pronto para pdf_builder ou MI.
+        """
+        self.logger.log_start("pre-processamento", "section-engine")
+        processed = self.run_pipelines(payload, pipelines)
+        self.logger.log_end("pre-processamento concluído")
+        return processed

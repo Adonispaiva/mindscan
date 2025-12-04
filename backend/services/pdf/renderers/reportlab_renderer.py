@@ -1,13 +1,16 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-reportlab_renderer.py — Renderer Fallback usando ReportLab
------------------------------------------------------------
+reportlab_renderer.py — Renderer Fallback (ReportLab)
+MindScan v2.0 — Leo Vinci (Inovexa)
+----------------------------------------------------------------------
+Função:
+    - Atuar como fallback quando o WeasyRenderer não está disponível
+    - Aceita HTML final (já montado pelo ReportEngine)
+    - Gera PDF simples baseado em texto
 
-Versão integrada ao Logger:
-- Registra fallback em uso
-- Registra caminhos
-- Registra erros
+Observação:
+    - CSS é ignorado (ReportLab não interpreta), mas mantido na assinatura.
 """
 
 from pathlib import Path
@@ -18,22 +21,28 @@ import re
 
 
 class ReportLabRenderer:
-    def __init__(self, templates_dir: Path, logger=None):
-        """
-        Mantém compatibilidade com a assinatura do WeasyRenderer.
-        """
-        self.templates_dir = Path(templates_dir)
+    """
+    Renderer fallback oficial do MindScan.
+    """
+
+    def __init__(self, logger=None):
         self.logger = logger
 
         if self.logger:
-            self.logger.warn("ATENÇÃO: Utilizando renderer fallback (ReportLab).")
+            self.logger.warn("ATENÇÃO: Renderer ativo é ReportLab (fallback).")
 
-    # --------------------------------------------------------------
-    # Renderização fallback simples
-    # --------------------------------------------------------------
-    def render_html_to_pdf(self, conteudo_html: str, output_path: Path):
+    # ------------------------------------------------------------------
+    # ASSINATURA PADRÃO (compatível com WeasyRenderer)
+    # ------------------------------------------------------------------
+    def render(self, html_final: str, css_text: str, output_path: Path):
         """
-        Converte HTML final em PDF simples (texto puro).
+        Parâmetros:
+            html_final: HTML completo do ReportEngine
+            css_text: CSS carregado (ignorado)
+            output_path: destino do PDF
+
+        Retorno:
+            Caminho final do PDF
         """
 
         if self.logger:
@@ -41,48 +50,64 @@ class ReportLabRenderer:
             self.logger.info(f"Arquivo de saída: {output_path}")
 
         try:
-            text = self._sanitize_html(conteudo_html)
-
-            c = canvas.Canvas(str(output_path), pagesize=A4)
-            width, height = A4
-
-            x = 20 * mm
-            y = height - 25 * mm
-
-            c.setFont("Helvetica", 11)
-
-            for linha in text.split("\n"):
-                if y < 20 * mm:
-                    c.showPage()
-                    c.setFont("Helvetica", 11)
-                    y = height - 20 * mm
-
-                c.drawString(x, y, linha[:110])
-                y -= 6 * mm
-
-            c.save()
+            texto = self._sanitize_html(html_final)
+            self._generate_pdf(texto, output_path)
 
             if self.logger:
-                self.logger.info("Renderização concluída (ReportLab).")
+                self.logger.info("Renderização concluída (ReportLab fallback).")
 
             return output_path
 
         except Exception as e:
             if self.logger:
-                self.logger.evento_erro("ReportLabRenderer.render_html_to_pdf", e)
+                self.logger.evento_erro("ReportLabRenderer.render", e)
             raise e
 
-    # --------------------------------------------------------------
-    # Sanitização de HTML para texto simples
-    # --------------------------------------------------------------
+    # ------------------------------------------------------------------
+    # Sanitização avançada de HTML
+    # ------------------------------------------------------------------
     def _sanitize_html(self, html: str) -> str:
         """
-        Remove tags HTML.
+        Remove tags HTML mantendo espaçamento mínimo.
         """
         texto = html
+
+        # Remover scripts e estilos
         texto = re.sub(r"<(script|style).*?>.*?</\\1>", "", texto, flags=re.DOTALL)
+
+        # Quebras estratégicas
         texto = texto.replace("<p", "\n<p")
         texto = texto.replace("<tr", "\n<tr")
+        texto = texto.replace("<li", "\n• ")
+
+        # Remover tags
         texto = re.sub(r"<[^>]+>", "", texto)
+
+        # Normalizar múltiplas quebras
         texto = re.sub(r"\n\s*\n", "\n", texto)
+
         return texto.strip()
+
+    # ------------------------------------------------------------------
+    # Geração do PDF (texto puro)
+    # ------------------------------------------------------------------
+    def _generate_pdf(self, text: str, output_path: Path):
+        c = canvas.Canvas(str(output_path), pagesize=A4)
+        width, height = A4
+
+        x = 20 * mm
+        y = height - 25 * mm
+
+        c.setFont("Helvetica", 11)
+
+        for linha in text.split("\n"):
+
+            if y < 20 * mm:
+                c.showPage()
+                c.setFont("Helvetica", 11)
+                y = height - 20 * mm
+
+            c.drawString(x, y, linha[:120])
+            y -= 6 * mm
+
+        c.save()

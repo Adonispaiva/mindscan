@@ -1,95 +1,97 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-distributed_renderer.py — DistributedRenderer (Protótipo Cluster Inovexa)
--------------------------------------------------------------------------
-
-Objetivo:
-- Enviar HTML + CSS para um servidor remoto que gera o PDF.
-- Retornar o PDF final para o PDFBuilder.
-- Permitir renderização distribuída (cluster de render nodes).
-- Integrar com Logger e Telemetria Avançada.
-- Oferecer fallback automático para render local (WeasyRenderer).
-
-Modo de operação:
-- Envia requisição POST para /render
-- Payload: { html, base_url }
-- Retorno: PDF em bytes
+distributed_renderer.py — DistributedRenderer (MindScan Cluster v2.0)
+Autor: Leo Vinci (Inovexa)
+---------------------------------------------------------------------------
+Função:
+    - Enviar HTML FINAL + CSS para servidor remoto de renderização
+    - Receber PDF em bytes
+    - Aplicar fallback automático usando WeasyRenderer
+Compatível com:
+    - ReportEngine v2.0
+    - PDFBuilder v2.0
+    - renderers premium, executive, technical, psychodynamic
 """
 
 import requests
 from pathlib import Path
+
 from backend.services.pdf.renderers.weasy_renderer import WeasyRenderer
 
 
 class DistributedRenderer:
+    """
+    Renderer distribuído oficial (SynMind / Inovexa v2.0).
+    """
 
     def __init__(
         self,
-        templates_dir: Path,
         endpoint: str,
         logger=None,
         telemetry=None,
         timeout: int = 20,
         fallback_local: bool = True
     ):
-        """
-        templates_dir: pasta contendo base.html e estilo.css (para o fallback)
-        endpoint: URL do servidor remoto (ex: http://10.0.0.25:5000/render)
-        fallback_local: se True, usa WeasyRenderer em caso de falha
-        """
-        self.templates_dir = Path(templates_dir)
         self.endpoint = endpoint
         self.logger = logger
         self.telemetry = telemetry
         self.timeout = timeout
         self.fallback_local = fallback_local
 
-        self.local_renderer = WeasyRenderer(templates_dir, logger=logger)
+        # Renderer local (WeasyPrint) — versão modernizada
+        self.local_renderer = WeasyRenderer(logger=logger)
 
         if self.logger:
             self.logger.info(
-                f"DistributedRenderer inicializado. Endpoint={endpoint}, "
+                f"DistributedRenderer v2.0 ativo. Endpoint={endpoint}, "
                 f"fallback_local={fallback_local}"
             )
 
-    # ----------------------------------------------------------------------
-    # Envio ao servidor remoto
-    # ----------------------------------------------------------------------
-    def _render_remoto(self, html: str):
+    # ------------------------------------------------------------------
+    # Render remoto
+    # ------------------------------------------------------------------
+    def _render_remote(self, html_final: str, css_text: str) -> bytes:
         """
-        Envia HTML para o servidor remoto e recebe PDF (bytes).
+        Envia HTML FINAL + CSS para o servidor remoto de renderização.
+        O servidor deve devolver PDF em bytes.
         """
 
         try:
             if self.logger:
-                self.logger.info(f"[DistributedRenderer] Enviando job para {self.endpoint}")
+                self.logger.info(
+                    f"[DistributedRenderer] Enviando render job remoto → {self.endpoint}"
+                )
 
             response = requests.post(
                 self.endpoint,
-                json={"html": html, "base_url": str(self.templates_dir)},
-                timeout=self.timeout,
+                json={
+                    "html": html_final,
+                    "css": css_text,
+                },
+                timeout=self.timeout
             )
 
             if response.status_code != 200:
                 raise RuntimeError(
-                    f"Falha no servidor remoto ({response.status_code}): {response.text}"
+                    f"Servidor remoto retornou {response.status_code}: {response.text}"
                 )
 
             return response.content  # PDF em bytes
 
         except Exception as e:
             if self.logger:
-                self.logger.evento_erro("DistributedRenderer._render_remoto", e)
+                self.logger.evento_erro("DistributedRenderer._render_remote", e)
             raise e
 
-    # ----------------------------------------------------------------------
-    # Método principal
-    # ----------------------------------------------------------------------
-    def render_html_to_pdf(self, html: str, output_path: Path):
+    # ------------------------------------------------------------------
+    # Método principal (assinatura padronizada v2.0)
+    # ------------------------------------------------------------------
+    def render(self, html_final: str, css_text: str, output_path: Path):
         """
-        Tenta renderizar remotamente.
-        Caso falhe, faz fallback para render local.
+        html_final: HTML final produzido pelo ReportEngine
+        css_text: CSS consolidado
+        output_path: caminho para salvar PDF
         """
 
         # Telemetria
@@ -97,26 +99,29 @@ class DistributedRenderer:
             self.telemetry.iniciar("render_distributed")
 
         try:
-            # 1. Tentar render remoto
-            pdf_bytes = self._render_remoto(html)
+            # 1. Tentar renderização remota (principal)
+            pdf_bytes = self._render_remote(html_final, css_text)
 
-            # 2. Salvar PDF recebido
+            # 2. Salvar PDF remoto
             with open(output_path, "wb") as f:
                 f.write(pdf_bytes)
 
             if self.logger:
-                self.logger.info("[DistributedRenderer] PDF gerado remotamente com sucesso.")
+                self.logger.info("[DistributedRenderer] PDF remoto gerado com sucesso.")
 
         except Exception:
-            # Fallback automático
+            # 3. Fallback (WeasyRenderer)
             if self.fallback_local:
                 if self.logger:
-                    self.logger.warn("[DistributedRenderer] Falha remota. Usando fallback local.")
-                output_path = self.local_renderer.render_html_to_pdf(html, output_path)
-            else:
-                raise
+                    self.logger.warn(
+                        "[DistributedRenderer] Falha remota → fallback local (WeasyRenderer)"
+                    )
+                return self.local_renderer.render(html_final, css_text, output_path)
 
-        if self.telemetry:
-            self.telemetry.finalizar("render_distributed")
+            raise
+
+        finally:
+            if self.telemetry:
+                self.telemetry.finalizar("render_distributed")
 
         return output_path

@@ -1,75 +1,117 @@
-#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-pdf_builder.py — MindScan PDF Builder (Premium)
+PDF Builder – MindScan (SynMind)
+Versão definitiva – Leo Vinci v2.0
 ------------------------------------------------
-Responsável por:
-- Carregar e instanciar todas as seções do relatório
-- Montar o pipeline em ordem lógica
-- Criar contexto consolidado (algoritmos, MI, dados brutos)
-- Integrar com o PDFEngine
+Função:
+    - Agregar *todas* as seções do MindScan
+    - Gerar o pacote final de conteúdo para os renderers
+    - Manter arquitetura estável, modular e expansível
+
+O Builder NÃO toma decisões de template.
+Apenas entrega o “conteúdo base” consolidado.
 """
 
-from pathlib import Path
 from typing import Dict, Any, List
+from pathlib import Path
 
-# Import das seções
-from pdf_sections.capa import CapaSection
-from pdf_sections.identidade import IdentidadeSection
-from pdf_sections.resumo_executivo import ResumoExecutivoSection
-from pdf_sections.personalidade import PersonalidadeSection
-from pdf_sections.lideranca import LiderancaSection
-from pdf_sections.cultura import CulturaSection
-from pdf_sections.esquemas import EsquemasSection
-from pdf_sections.dass import DASSSection
-from pdf_sections.performance import PerformanceSection
-from pdf_sections.bussola import BussolaSection
-from pdf_sections.recomendacoes import RecomendacoesSection
-from pdf_sections.pdi import PDISection
-from pdf_sections.anexos import AnexosSection
+# Seções padronizadas (todas convertidas no padrão {id, titulo, html})
+from .pdf_sections.capa import build_capa
+from .pdf_sections.identidade import build_identidade
+from .pdf_sections.resumo_executivo import build_resumo_executivo
+from .pdf_sections.personalidade import build_personalidade
+from .pdf_sections.cultura import build_cultura
+from .pdf_sections.performance import build_performance
+from .pdf_sections.esquemas import build_esquemas
+from .pdf_sections.dass import build_dass
+from .pdf_sections.lideranca import build_lideranca
+from .pdf_sections.bussola import build_bussola
+from .pdf_sections.recomendacoes import build_recomendacoes
+from .pdf_sections.pdi import build_pdi
+from .pdf_sections.anexos import build_anexos
 
-from pdf_engine import PDFEngine
+from .report_engine import ReportEngine
+from .templates.estilo import CSS_STYLE_LOADER
+from ..pdf.engine.performance_governor import PerformanceGovernor
 
 
 class PDFBuilder:
     """
-    Orquestra o relatório completo do MindScan.
+    Builder oficial do MindScan.
+    Responsável pela coleta de seções e geração do documento bruto.
     """
 
-    def __init__(self, output_dir: Path = None):
-        self.output_dir = output_dir or Path("./output")
-        self.engine = PDFEngine(self.output_dir)
+    def __init__(self, payload: Dict[str, Any], template: str = "executive"):
+        self.payload = payload
+        self.template = template
+        self.sections: List[Dict[str, Any]] = []
+        self.performance_guard = PerformanceGovernor()
 
-        # Ordem oficial das seções do relatório
+    # -----------------------------------------------------------
+    # 1. Validação do payload
+    # -----------------------------------------------------------
+    def validate(self):
+        """
+        Validação moderna e compatível com payload MindScan v2.0.
+        Regras:
+            - deve conter "resultados"
+            - deve conter "usuario"
+            - deve conter "mi"
+        Nada além disso é obrigatório.
+        """
+        if "resultados" not in self.payload:
+            raise ValueError("[PDFBuilder] Campo obrigatório faltando: 'resultados'.")
+
+        if "usuario" not in self.payload:
+            raise ValueError("[PDFBuilder] Campo obrigatório faltando: 'usuario'.")
+
+        if "mi" not in self.payload:
+            raise ValueError("[PDFBuilder] Campo obrigatório faltando: 'mi'.")
+
+    # -----------------------------------------------------------
+    # 2. Montagem das seções
+    # -----------------------------------------------------------
+    def build_sections(self):
+        """
+        Monta TODAS as seções do MindScan.
+        Renderers decidem quais usar.
+        """
+
         self.sections = [
-            CapaSection(),
-            IdentidadeSection(),
-            ResumoExecutivoSection(),
-            PersonalidadeSection(),
-            LiderancaSection(),
-            CulturaSection(),
-            EsquemasSection(),
-            DASSSection(),
-            PerformanceSection(),
-            BussolaSection(),
-            RecomendacoesSection(),
-            PDISection(),
-            AnexosSection(),
+            build_capa(self.payload),
+            build_identidade(self.payload),
+            build_resumo_executivo(self.payload),
+            build_personalidade(self.payload),
+            build_cultura(self.payload),
+            build_performance(self.payload),
+            build_esquemas(self.payload),
+            build_dass(self.payload),
+            build_lideranca(self.payload),
+            build_bussola(self.payload),
+            build_recomendacoes(self.payload),
+            build_pdi(self.payload),
+            build_anexos(self.payload),
         ]
 
-    def build_context(self, dados_usuario: Dict[str, Any], resultados: Dict[str, Any], mi: Dict[str, Any]):
-        """
-        Consolida dados do usuário, algoritmos, análises e MI.
-        """
-        return {
-            "usuario": dados_usuario,
-            "resultados": resultados,
-            "mi": mi,
-        }
+        return self.sections
 
-    def gerar_relatorio(self, dados_usuario: dict, resultados: dict, mi: dict, renderer):
-        """
-        Entrada principal para geração do relatório.
-        """
-        context = self.build_context(dados_usuario, resultados, mi)
-        return self.engine.render(self.sections, context, renderer)
+    # -----------------------------------------------------------
+    # 3. Engine de Renderização
+    # -----------------------------------------------------------
+    def render(self, output_path: str) -> str:
+        engine = ReportEngine(template=self.template)
+        css = CSS_STYLE_LOADER()
+        final_doc = engine.combine(self.sections, css)
+        Path(output_path).write_bytes(final_doc)
+        return output_path
+
+    # -----------------------------------------------------------
+    # 4. Pipeline completo
+    # -----------------------------------------------------------
+    def run(self, output_path: str) -> str:
+        self.performance_guard.check_start()
+        self.validate()
+        self.build_sections()
+        pdf_path = self.render(output_path)
+        self.performance_guard.check_end()
+        return pdf_path

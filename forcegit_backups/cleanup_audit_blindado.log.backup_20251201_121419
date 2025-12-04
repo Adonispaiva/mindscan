@@ -1,0 +1,40 @@
+==============================================
+ INÍCIO DA AUDITORIA BLINDADA — MINDSCAN
+==============================================
+Data: 2025-12-01 08:22:46.652134
+Dry-run: NÃO
+
+[OK] Ambiente validado.
+==============================================
+ INÍCIO DA AUDITORIA BLINDADA — MINDSCAN
+==============================================
+Data: 2025-12-01 08:24:46.327105
+Dry-run: NÃO
+
+[OK] Ambiente validado.
+[OK] Backup criado em: D:\projetos-inovexa\mindscan\_backup_mindscan_20251201_082446
+[REMOVIDO] .git/hooks/applypatch-msg.sample
+[REMOVIDO] .git/hooks/commit-msg.sample
+[REMOVIDO] .git/hooks/fsmonitor-watchman.sample
+[REMOVIDO] .git/hooks/post-update.sample
+[REMOVIDO] .git/hooks/pre-applypatch.sample
+[REMOVIDO] .git/hooks/pre-commit.sample
+[REMOVIDO] .git/hooks/pre-merge-commit.sample
+[REMOVIDO] .git/hooks/pre-push.sample
+[REMOVIDO] .git/hooks/pre-rebase.sample
+[REMOVIDO] .git/hooks/pre-receive.sample
+[REMOVIDO] .git/hooks/prepare-commit-msg.sample
+[REMOVIDO] .git/hooks/push-to-checkout.sample
+[REMOVIDO] .git/hooks/sendemail-validate.sample
+[REMOVIDO] .git/hooks/update.sample
+[REMOVIDO] .git/info/exclude
+[REMOVIDO] .git/info/refs
+[REMOVIDO] .git/logs/refs/heads/main
+[REMOVIDO] .git/logs/refs/heads/master
+[REMOVIDO] .git/logs/refs/remotes/origin/main
+[PASTA REMOVIDA] .git/logs/refs/remotes/origin
+[PASTA REMOVIDA] .git/logs/refs/heads
+[PASTA REMOVIDA] .git/logs/refs/remotes
+[REMOVIDO] .git/logs/HEAD
+[PASTA REMOVIDA] .git/logs/refs
+[REMOVIDO] .git/objects/02/a1ee9e8873fc0600352846e0237b5b651393a4

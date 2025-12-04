@@ -1,13 +1,18 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-weasy_renderer.py — Renderer Premium do MindScan usando WeasyPrint
-------------------------------------------------------------------
+weasy_renderer.py — Renderer WeasyPrint (MindScan v2.0)
+Autor: Leo Vinci (Inovexa)
+----------------------------------------------------------------------
+Função:
+    - Recebe o HTML FINAL do ReportEngine
+    - Aplica o CSS consolidado
+    - Gera o PDF usando WeasyPrint
 
-Versão integrada ao Logger:
-- Registra início da renderização
-- Arquivo sendo gerado
-- Erros detalhados
+Observação:
+    — NÃO carrega mais base.html
+    — NÃO substitui placeholders
+    — Tudo já chega pronto do ReportEngine
 """
 
 from pathlib import Path
@@ -15,63 +20,47 @@ from weasyprint import HTML, CSS
 
 
 class WeasyRenderer:
-    def __init__(self, templates_dir: Path, logger=None):
-        """
-        templates_dir: pasta com base.html e estilo.css
-        logger: instância de MindScanLogger (opcional)
-        """
-        self.templates_dir = Path(templates_dir)
+    """
+    Renderer oficial do MindScan usando WeasyPrint.
+    HTML final é recebido já estruturado pelo ReportEngine.
+    """
+
+    def __init__(self, logger=None):
         self.logger = logger
 
-        self.base_html = self.templates_dir / "base.html"
-        self.css_file = self.templates_dir / "estilo.css"
-
-        # Logs
         if self.logger:
-            self.logger.info(f"WeasyRenderer inicializado. Templates em: {self.templates_dir}")
+            self.logger.info("WeasyRenderer v2.0 inicializado.")
 
-        # Valida existência
-        if not self.base_html.exists():
-            msg = f"Template base não encontrado: {self.base_html}"
-            if self.logger: self.logger.error(msg)
-            raise FileNotFoundError(msg)
-
-        if not self.css_file.exists():
-            msg = f"Arquivo de estilo não encontrado: {self.css_file}"
-            if self.logger: self.logger.error(msg)
-            raise FileNotFoundError(msg)
-
-    # --------------------------------------------------------------
-    # RENDERIZAÇÃO FINAL PARA PDF
-    # --------------------------------------------------------------
-    def render_html_to_pdf(self, conteudo_html: str, output_path: Path):
+    # ------------------------------------------------------------------
+    # Renderização final para PDF
+    # ------------------------------------------------------------------
+    def render(self, html_final: str, css_text: str, output_path: Path):
         """
-        Converte HTML final em PDF real usando WeasyPrint.
+        html_final: HTML completo gerado pelo ReportEngine
+        css_text: conteúdo do estilo retornado por CSS_STYLE_LOADER()
+        output_path: onde salvar o PDF gerado
         """
 
         if self.logger:
-            self.logger.info("Iniciando renderização com WeasyPrint...")
+            self.logger.info("Iniciando renderização PDF (WeasyPrint v2.0)...")
             self.logger.info(f"Arquivo de saída: {output_path}")
 
         try:
-            # Carregar template base
-            base = self.base_html.read_text(encoding="utf-8")
-
-            # Substituir o placeholder
-            final_html = base.replace("{{conteudo}}", conteudo_html)
+            # CSS como stylesheet temporário
+            css_obj = CSS(string=css_text)
 
             # Gerar PDF
-            HTML(string=final_html, base_url=str(self.templates_dir)).write_pdf(
+            HTML(string=html_final).write_pdf(
                 str(output_path),
-                stylesheets=[CSS(filename=str(self.css_file))]
+                stylesheets=[css_obj]
             )
 
             if self.logger:
-                self.logger.info("Renderização concluída com sucesso (WeasyPrint).")
+                self.logger.info("Renderização concluída com sucesso (WeasyPrint v2.0).")
 
             return output_path
 
         except Exception as e:
             if self.logger:
-                self.logger.evento_erro("WeasyRenderer.render_html_to_pdf", e)
+                self.logger.evento_erro("WeasyRenderer.render", e)
             raise e

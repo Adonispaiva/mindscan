@@ -1,0 +1,468 @@
+MindScan — Estrutura do Projeto
+Gerado em: 2025-12-02 18:31:15.929598
+============================================================
+
+├── .git/ [IGNORED]
+├── .github/
+│   └── workflows/
+│       ├── mindscan_ci.yml
+│       └── sync_auditoria.yml
+├── ARCHITECTURE.md
+├── CLOSING_SUMMARY.md
+├── DEV_GUIDE.md
+├── OBSERVABILITY_GUIDE.md
+├── PERFORMANCE_GUIDE.md
+├── README.md
+├── __init__.py
+├── __pycache__/ [IGNORED]
+├── audios/
+│   └── transcrever_audios.py
+├── auditar_mindscan.py
+├── backend/
+│   ├── __pycache__/ [IGNORED]
+│   ├── algorithms/
+│   │   ├── big5/
+│   │   │   └── big5.py
+│   │   ├── big5.py
+│   │   ├── bussola/
+│   │   │   └── bussola.py
+│   │   ├── bussola.py
+│   │   ├── cruzamentos/
+│   │   │   └── cruzamentos.py
+│   │   ├── cruzamentos.py
+│   │   ├── dass21/
+│   │   │   └── dass21.py
+│   │   ├── dass21.py
+│   │   ├── esquemas/
+│   │   │   └── esquemas.py
+│   │   ├── esquemas.py
+│   │   ├── matcher/
+│   │   │   └── matcher.py
+│   │   ├── ocai/
+│   │   │   └── ocai.py
+│   │   ├── ocai.py
+│   │   ├── performance/
+│   │   │   └── performance.py
+│   │   ├── performance.py
+│   │   ├── teique/
+│   │   │   └── teique.py
+│   │   └── teique.py
+│   ├── api/
+│   │   ├── router.py
+│   │   ├── schemas.py
+│   │   ├── service.py
+│   │   └── utils.py
+│   ├── app.py
+│   ├── config.py
+│   ├── core/
+│   │   ├── diagnostic_engine.py
+│   │   ├── engine.py
+│   │   ├── nlp_processor.py
+│   │   ├── normalizer.py
+│   │   ├── runtime_kernel.py
+│   │   └── scoring.py
+│   ├── database.py
+│   ├── db/
+│   │   └── vazio.md
+│   ├── engine/
+│   │   ├── aggregator.py
+│   │   ├── audit.py
+│   │   ├── normalizer.py
+│   │   ├── pipeline.py
+│   │   └── validator.py
+│   ├── integrations/
+│   │   ├── __init__.py
+│   │   ├── whatsapp.py
+│   │   ├── whatsapp_ai.py
+│   │   ├── whatsapp_handler.py
+│   │   └── whatsapp_utils.py
+│   ├── main.py
+│   ├── mi/
+│   │   ├── compliance/
+│   │   │   └── vazio.md
+│   │   ├── mi_engine.py
+│   │   ├── mi_formatter.py
+│   │   ├── mi_normalizer.py
+│   │   ├── persona/
+│   │   │   └── vazio.md
+│   │   └── prompts/
+│   │       └── prompt_mi_synmind.md
+│   ├── models/
+│   │   ├── algorithm_output.py
+│   │   ├── audit_log.py
+│   │   ├── bussola_profile.py
+│   │   ├── cross_insights_model.py
+│   │   ├── diagnostic_payload.py
+│   │   ├── diagnostic_request.py
+│   │   ├── diagnostic_response.py
+│   │   ├── inputs/
+│   │   │   └── vazio.md
+│   │   ├── metadata_block.py
+│   │   ├── mi_document_package.py
+│   │   ├── mindscan_result.py
+│   │   ├── nlp_enrichment.py
+│   │   ├── ocai_profile.py
+│   │   ├── outputs/
+│   │   │   └── vazio.md
+│   │   ├── performance_profile.py
+│   │   ├── schema_profile.py
+│   │   └── scoring/
+│   │       └── vazio.md
+│   ├── models.py
+│   ├── pipelines/
+│   │   ├── mindscan_pipeline.py
+│   │   └── whatsapp_notification.py
+│   ├── providers/
+│   │   ├── ai_provider.py
+│   │   ├── analytics_provider.py
+│   │   ├── auth_provider.py
+│   │   ├── cache_provider.py
+│   │   ├── email_provider.py
+│   │   ├── model_provider.py
+│   │   ├── notification_provider.py
+│   │   ├── provider_manager.py
+│   │   ├── queue_provider.py
+│   │   ├── report_provider.py
+│   │   ├── scheduler_provider.py
+│   │   ├── storage_provider.py
+│   │   └── vector_index_provider.py
+│   ├── pysettings.py
+│   ├── reports/
+│   │   ├── assets_manager.py
+│   │   ├── html_exporter.py
+│   │   ├── pdf_generator.py
+│   │   └── report_engine.py
+│   ├── requirements.txt
+│   ├── routers/
+│   │   ├── __pycache__/ [IGNORED]
+│   │   ├── api_router.py
+│   │   ├── candidates_router.py
+│   │   ├── diagnostic_router.py
+│   │   ├── health_router.py
+│   │   ├── mindscan_api.py
+│   │   ├── tests_router.py
+│   │   ├── users_router.py
+│   │   └── whatsapp_router.py
+│   ├── run_e2e.py
+│   ├── runtime/
+│   │   ├── backend_config.log
+│   │   └── backend_runtime.log
+│   ├── services/
+│   │   ├── __init__.py
+│   │   ├── __pycache__/ [IGNORED]
+│   │   ├── auth_service.py
+│   │   ├── base_service.py
+│   │   ├── data_service.py
+│   │   ├── engine_service.py
+│   │   ├── export/
+│   │   │   ├── mindscan_results.json
+│   │   │   └── vazio.md
+│   │   ├── html/
+│   │   │   └── vazio.md
+│   │   ├── pdf/
+│   │   │   ├── assets/
+│   │   │   ├── engine/
+│   │   │   │   ├── async_pdf_builder.py
+│   │   │   │   ├── async_pipeline.py
+│   │   │   │   ├── pdf.engine.py
+│   │   │   │   ├── performance_governor.py
+│   │   │   │   ├── report_engine.py
+│   │   │   │   └── section_engine.py
+│   │   │   ├── pdf.engine.py
+│   │   │   ├── pdf_builder.py
+│   │   │   ├── pdf_sections/
+│   │   │   │   ├── anexos.py
+│   │   │   │   ├── bussola.py
+│   │   │   │   ├── capa.py
+│   │   │   │   ├── cultura.py
+│   │   │   │   ├── dass.py
+│   │   │   │   ├── esquemas.py
+│   │   │   │   ├── identidade.py
+│   │   │   │   ├── lideranca.py
+│   │   │   │   ├── pdi.py
+│   │   │   │   ├── performance.py
+│   │   │   │   ├── personalidade.py
+│   │   │   │   ├── recomendacoes.py
+│   │   │   │   └── resumo_executivo.py
+│   │   │   ├── renderers/
+│   │   │   │   ├── distributed_renderer.py
+│   │   │   │   ├── matplotlib_ready.py
+│   │   │   │   ├── reportlab_renderer.py
+│   │   │   │   ├── weasy_renderer.py
+│   │   │   │   └── weasy_renderer_async.py
+│   │   │   ├── report_templates/
+│   │   │   │   ├── enterprise_template.py
+│   │   │   │   ├── executive_template.py
+│   │   │   │   ├── premium_template.py
+│   │   │   │   ├── psychodynamic_template.py
+│   │   │   │   └── technical_template.py
+│   │   │   ├── telemetry/
+│   │   │   │   ├── logger.py
+│   │   │   │   ├── resource_monitor.py
+│   │   │   │   └── telemetry_advanced.py
+│   │   │   ├── templates/
+│   │   │   │   ├── base.html
+│   │   │   │   ├── componentes.py
+│   │   │   │   ├── estilo.css
+│   │   │   │   └── estilo.py
+│   │   │   └── validators/
+│   │   │       └── data_validator.py
+│   │   ├── psych_core_service.py
+│   │   ├── report_service.py
+│   │   ├── runtime/
+│   │   └── runtime_interface.py
+│   ├── storage/
+│   │   └── pdf_publisher.py
+│   ├── utils/
+│   │   ├── file_manager.py
+│   │   ├── id_generator.py
+│   │   ├── logger.py
+│   │   └── validators.py
+│   ├── venv/ [IGNORED]
+│   └── workers/
+│       └── main_worker.py
+├── core/
+│   ├── __init__.py
+│   ├── algorithms/
+│   │   ├── advanced_algorithm.py
+│   │   └── base_algorithm.py
+│   ├── diagnostics/
+│   │   └── diagnostics.py
+│   ├── engine/
+│   │   └── engine.py
+│   ├── metrics/
+│   │   └── metrics.py
+│   ├── profiles/
+│   │   └── profiler.py
+│   ├── reporting/
+│   │   └── report_generator.py
+│   ├── scoring/
+│   │   └── scorer.py
+│   └── utils/
+│       └── vazio.md
+├── data/
+│   ├── norms/
+│   │   └── vazio.md
+│   ├── sample_input.json
+│   ├── sample_output.json
+│   ├── templates/
+│   │   └── vazio.md
+│   └── weights/
+│       └── vazio.md
+├── docs/
+│   ├── metodologias/
+│   │   └── vazio.md
+│   ├── pdfs/
+│   │   └── vazio.md
+│   ├── prompts/
+│   │   └── vazio.md
+│   └── whatsapp_integration_techspec.md
+├── executar_revisor_global.bat
+├── forcegit_backups/
+│   ├── Indo.backup_20251201_121419
+│   ├── activate.bat.20251126_070249.bak.backup_20251201_121418
+│   ├── audit_2025-11-26_06-43-36.json.20251126_070249.bak.backup_20251201_121418
+│   ├── audit_manager.py.20251126_070249.bak.backup_20251201_121418
+│   ├── audit_mindscan.txt.20251126_070249.bak.backup_20251201_121418
+│   ├── audit_push_2025-11-25_12h01m18s.txt.20251126_070249.bak.backup_20251201_121418
+│   ├── automator_log.txt.20251126_070249.bak.backup_20251201_121418
+│   ├── backend_manager.py.20251126_070249.bak.backup_20251201_121418
+│   ├── backend_report_2025-11-26_06-43-36.json.20251126_070249.bak.backup_20251201_121418
+│   ├── backups_autofix.backup_20251201_121419/
+│   ├── cleanup_audit_blindado.log.backup_20251201_121419
+│   ├── cleanup_audit_blindado_forcegit.log.backup_20251201_121419
+│   ├── cleanup_audit_blindado_forcegit_v2.log.backup_20251201_121419
+│   ├── cleanup_manager.py.20251126_070249.bak.backup_20251201_121418
+│   ├── core_manager.py.20251126_070249.bak.backup_20251201_121418
+│   ├── data_validator.py.20251126_070249.bak.backup_20251201_121418
+│   ├── executar_automator.bat.20251126_070249.bak.backup_20251201_121418
+│   ├── fix_paths_manager.py.20251126_070249.bak.backup_20251201_121418
+│   ├── generate_tree.bat.20251126_070249.bak.backup_20251201_121418
+│   ├── github_manager.py.20251126_070249.bak.backup_20251201_121418
+│   ├── log_sincronizacao.txt.20251126_070248.bak.backup_20251201_121418
+│   ├── log_sincronizacao.txt.backup_20251201_121419
+│   ├── logger.py.20251126_070248.bak.backup_20251201_121418
+│   ├── rebuild_report_2025-11-26_06-43-36.json.20251126_070249.bak.backup_20251201_121418
+│   ├── relatorio_auditoria.json.20251126_070248.bak.backup_20251201_121418
+│   ├── release_manager.py.20251126_070249.bak.backup_20251201_121418
+│   ├── report_manager.py.20251126_070249.bak.backup_20251201_121418
+│   ├── report_service.py.20251126_070248.bak.backup_20251201_121418
+│   ├── scan_project_file_sizes.bat.20251126_070249.bak.backup_20251201_121418
+│   ├── scan_project_file_sizes.py.20251126_070249.bak.backup_20251201_121418
+│   ├── start_backend.bat.20251126_070248.bak.backup_20251201_121418
+│   ├── task_manager.py.20251126_070249.bak.backup_20251201_121418
+│   └── trash.backup_20251201_121419/
+│       └── vazio.md
+├── forcegit_v3.log
+├── frontend/
+│   ├── cadastro.html
+│   ├── entrada_dados.html
+│   ├── index.html
+│   ├── login.html
+│   ├── main.tsx
+│   ├── package.json
+│   ├── postcss.config.js
+│   ├── resultado.html
+│   ├── src/
+│   │   ├── App.tsx
+│   │   ├── components/
+│   │   │   ├── layout/
+│   │   │   │   ├── Navbar.tsx
+│   │   │   │   └── Sidebar.tsx
+│   │   │   └── ui/
+│   │   │       ├── Accordion.tsx
+│   │   │       ├── Avatar.tsx
+│   │   │       ├── Badge.tsx
+│   │   │       ├── Breadcrumbs.tsx
+│   │   │       ├── Button.tsx
+│   │   │       ├── Card.tsx
+│   │   │       ├── Dropdown.tsx
+│   │   │       ├── Footer.tsx
+│   │   │       ├── Header.tsx
+│   │   │       ├── Input.tsx
+│   │   │       ├── Loader.tsx
+│   │   │       ├── Modal.tsx
+│   │   │       ├── Navbar.tsx
+│   │   │       ├── Popover.tsx
+│   │   │       ├── Sidebar.tsx
+│   │   │       ├── Table.tsx
+│   │   │       ├── Tabs.tsx
+│   │   │       └── Tooltip.tsx
+│   │   ├── layouts/
+│   │   │   └── BaseLayout.tsx
+│   │   ├── pages/
+│   │   │   ├── CandidateDetails.tsx
+│   │   │   ├── Candidates.tsx
+│   │   │   ├── Dashboard.tsx
+│   │   │   ├── Home.tsx
+│   │   │   ├── Login.tsx
+│   │   │   ├── NotFound.tsx
+│   │   │   ├── Register.tsx
+│   │   │   ├── ReportDetails.tsx
+│   │   │   ├── Reports.tsx
+│   │   │   ├── Settings.tsx
+│   │   │   ├── TestDetails.tsx
+│   │   │   └── Tests.tsx
+│   │   ├── router/
+│   │   │   └── index.tsx
+│   │   └── styles/
+│   │       └── index.css
+│   ├── tailwind.config.js
+│   ├── tsconfig.json
+│   └── vite.config.ts
+├── gerar_tree_referencia.bat
+├── instalador_mindscan.py
+├── logs/ [IGNORED]
+├── main.py
+├── maintenance/
+│   ├── __pycache__/ [IGNORED]
+│   ├── backup.py
+│   └── healthcheck.py
+├── managers/
+│   └── backend_manager.py
+├── manutencao_mindscan.bat
+├── mindscan_cli/
+│   └── mindscan_pdf_cli.py
+├── mindscan_examples/
+│   ├── gerar_jsons_modelo.py
+│   └── gerar_relatorio_pdf.py
+├── mindscan_manifest.json
+├── mindscan_pdf/
+│   ├── __init__.py
+│   └── cli.py
+├── mindscan_selfheal_max.py
+├── modules/
+│   ├── predictor.py
+│   ├── synmind_ai_engine.py
+│   └── synmind_kernel.py
+├── pdf.builder.py
+├── pdf_engine/
+│   ├── core/
+│   │   ├── builder.py
+│   │   ├── loader.py
+│   │   ├── pipeline.py
+│   │   └── renderer.py
+│   └── sections/
+│       ├── culture.py
+│       ├── emotional.py
+│       ├── final_report.py
+│       ├── introduction.py
+│       ├── performance.py
+│       └── personality.py
+├── pyproject.toml
+├── relatorio_auditoria.json
+├── releases/
+│   ├── metadata_2025-11-26_06-43-39.json
+│   └── mindscan_release_2025-11-26_06-43-39.zip
+├── setup.cfg
+├── setup.py
+├── sincronizar_github.py
+├── start_backend.bat
+├── tests/
+│   ├── async/
+│   │   ├── test_async_pdf_builder.py
+│   │   ├── test_async_pipeline.py
+│   │   └── test_distributed_renderer_async.py
+│   ├── test_app.py
+│   ├── test_engine.py
+│   ├── test_frontend.py
+│   ├── test_pdf_engine.py
+│   ├── test_performance_stress.py
+│   └── test_stress_weasy_real.py
+├── tools/
+│   ├── audit_push.bat
+│   ├── automator/
+│   │   ├── __init__.py
+│   │   ├── __pycache__/ [IGNORED]
+│   │   ├── audit_manager.py
+│   │   ├── backend_manager.py
+│   │   ├── cleanup_manager.py
+│   │   ├── core_manager.py
+│   │   ├── data_validator.py
+│   │   ├── executar_automator.bat
+│   │   ├── fix_paths_manager.py
+│   │   ├── github_manager.py
+│   │   ├── log_manager.py
+│   │   ├── logs/ [IGNORED]
+│   │   ├── main.py
+│   │   ├── release_manager.py
+│   │   ├── report_manager.py
+│   │   ├── task_manager.py
+│   │   ├── tasks/
+│   │   │   ├── __init__.py
+│   │   │   ├── fix_backend.py
+│   │   │   ├── fix_modules.py
+│   │   │   ├── fix_services.py
+│   │   │   ├── generate_report.py
+│   │   │   ├── run_audit.py
+│   │   │   └── validate_structure.py
+│   │   └── tasks.json
+│   ├── build.py
+│   ├── cleanup.py
+│   ├── cli/
+│   │   └── vazio.md
+│   ├── consolidar_big5_v1.py
+│   ├── consolidar_bussola_v1.py
+│   ├── consolidar_cruzamentos_v1.py
+│   ├── consolidar_dass21_v1.py
+│   ├── consolidar_esquemas_v1.py
+│   ├── consolidar_ocai_v1.py
+│   ├── consolidar_performance_v1.py
+│   ├── consolidar_teique_v1.py
+│   ├── exporter.py
+│   ├── fix_mindscan_cleanup_blindado_forcegit_v3.bat
+│   ├── fix_mindscan_cleanup_blindado_forcegit_v3.py
+│   ├── generate_tree.bat
+│   ├── generate_tree.py
+│   ├── gerar_tree_referencia.py
+│   ├── push_to_github.py
+│   ├── revisor_global.py
+│   ├── scan_project_file_sizes.bat
+│   ├── scan_project_file_sizes.py
+│   ├── sync_all.py
+│   ├── transcricao/
+│   │   └── vazio.md
+│   └── validadores/
+│       └── vazio.md
+├── tree_atual.json
+└── tree_referencia.json
