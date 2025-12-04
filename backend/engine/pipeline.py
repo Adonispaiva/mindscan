@@ -1,2 +1,45 @@
-# Arquivo restaurado automaticamente pelo Self-Healing MAX v1.1
-# Insira a lógica específica aqui.
+"""
+MindScan Engine — Pipeline Principal
+Autor: Inovexa Software
+Versão: 1.0.0
+
+A pipeline é o núcleo unificado que coordena:
+- carregamento de dados
+- normalização
+- scoring
+- geração de insights
+- geração de diagnósticos
+- sumarização final
+"""
+
+from .scoring_engine import ScoringEngine
+from .summarization_engine import SummarizationEngine
+
+
+class MindScanPipeline:
+    """
+    Orquestrador geral do fluxo MindScan.
+    """
+
+    def __init__(self):
+        self.scoring = ScoringEngine()
+        self.summarizer = SummarizationEngine()
+
+    def run(self, user_data: dict) -> dict:
+        """
+        Executa TODA a pipeline do MindScan.
+
+        :param user_data: dados brutos já pré-validados
+        :return: dicionário contendo resultados completos
+        """
+
+        # 1. Scoring psicométrico
+        scores = self.scoring.compute_scores(user_data)
+
+        # 2. Sumarização inteligente (insights gerais)
+        summary = self.summarizer.generate_summary(scores)
+
+        return {
+            "scores": scores,
+            "summary": summary
+        }
