@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\backend\services\pdf\report_templates\executive_template.py
+# Última atualização: 2025-12-11T09:59:21.266858
+
 # -*- coding: utf-8 -*-
 """
 executive_template.py — Template Executivo do MindScan (SynMind v2.0)

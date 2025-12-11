@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\pdf_engine\core\builder.py
+# Última atualização: 2025-12-11T09:59:27.745995
+
 """
 pdf_engine/core/builder.py
 PDFBuilder — Núcleo de montagem estrutural do PDF MindScan

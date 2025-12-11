@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\tools\automator\data_validator.py
+# Última atualização: 2025-12-11T09:59:27.808460
+
 """
 data_validator.py
 Validador Psicométrico Completo do MindScan

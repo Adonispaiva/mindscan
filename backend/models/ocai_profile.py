@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\backend\models\ocai_profile.py
+# Última atualização: 2025-12-11T09:59:20.964461
+
 # ocai_profile.py
 # MindScan Rebuild – Modelo do Perfil OCAI
 # Versão Definitiva • Estrutura Avançada Pydantic-Style

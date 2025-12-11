@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\backend\models\performance_profile.py
+# Última atualização: 2025-12-11T09:59:20.980027
+
 # performance_profile.py
 # MindScan Rebuild – Modelo de Performance
 # Versão Definitiva • Estrutura Avançada Pydantic-Style

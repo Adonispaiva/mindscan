@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\backend\algorithms\big5\big5.py
+# Última atualização: 2025-12-11T09:59:20.594842
+
 """
 BIG5 — Núcleo Principal (Versão Ultra Superior Inovexa)
 --------------------------------------------------------

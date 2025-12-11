@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\pdf_engine\core\renderer.py
+# Última atualização: 2025-12-11T09:59:27.761619
+
 """
 pdf_engine/core/renderer.py
 Módulo: Renderização das seções do PDF do MindScan

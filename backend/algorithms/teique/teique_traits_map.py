@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\backend\algorithms\teique\teique_traits_map.py
+# Última atualização: 2025-12-11T09:59:20.730228
+
 """
 TEIQue Traits Map
 Mapeamento completo de traços emocionais derivados das dimensões TEIQue.

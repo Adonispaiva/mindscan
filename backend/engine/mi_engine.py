@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\backend\engine\mi_engine.py
+# Última atualização: 2025-12-11T09:59:20.813004
+
 # MindScan MI Engine — Ultra Superior v1.0
 # Módulo responsável por consolidar indicadores MI (Mind Integrity)
 # Operação: entrada → normalização → cálculo → geração de estrutura MI

@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\backend\engine\mi_engine_advanced.py
+# Última atualização: 2025-12-11T09:59:20.814002
+
 # MindScan Advanced MI Engine — Ultra Superior v1.0
 # Versão avançada: correção de outliers, ponderação adaptativa,
 # clusterização cognitiva e score multinível.

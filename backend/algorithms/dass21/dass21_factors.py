@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\backend\algorithms\dass21\dass21_factors.py
+# Última atualização: 2025-12-11T09:59:20.652172
+
 """
 DASS-21 Factors
 Gera fatores agregados do DASS-21 para interpretação global.

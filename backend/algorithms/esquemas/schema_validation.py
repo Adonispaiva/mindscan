@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\backend\algorithms\esquemas\schema_validation.py
+# Última atualização: 2025-12-11T09:59:20.683445
+
 """
 Schema Validation
 Validação estruturada para o nível item→dimensão dos Esquemas.

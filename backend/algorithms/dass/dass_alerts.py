@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\backend\algorithms\dass\dass_alerts.py
+# Última atualização: 2025-12-11T09:59:20.652172
+
 """
 DASS – ALERT ENGINE (Versão ULTRA SUPERIOR)
 Gera alertas estruturados a partir das combinações de sintomas,

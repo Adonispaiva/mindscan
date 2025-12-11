@@ -1,0 +1,26 @@
+MindScan — Intellectual Property License
+Inovexa Software © 2025
+
+Permissão é concedida para uso interno, comercial e corporativo,
+mediante os seguintes termos:
+
+1. Todo o código, algoritmos, modelos, descrições e estruturas deste
+   software são propriedade exclusiva da Inovexa Software.
+
+2. É proibida a:
+   - redistribuição,
+   - revenda,
+   - engenharia reversa,
+   - cópia parcial ou total,
+   - reutilização fora do ecossistema Inovexa/SynMind.
+
+3. É permitida a execução ilimitada para fins operacionais da SynMind,
+   clientes diretos, e demonstrações comerciais autorizadas.
+
+4. Modificações internas são permitidas desde que aprovadas pela
+   Diretoria Técnica (Leo Vinci).
+
+5. Este software contém módulos estratégicos e protegidos. Qualquer uso
+   inadequado será tratado como violação grave de propriedade intelectual.
+
+Ao utilizar este software, você concorda integralmente com estes termos.

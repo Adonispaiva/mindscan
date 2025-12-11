@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\backend\algorithms\performance\performance_alerts.py
+# Última atualização: 2025-12-11T09:59:20.698978
+
 """
 Performance Alerts
 Gera alertas com base em padrões críticos nas dimensões de performance.

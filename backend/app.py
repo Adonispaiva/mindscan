@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\backend\app.py
+# Última atualização: 2025-12-11T09:59:20.558303
+
 # app.py
 # MindScan Backend - Arquitetura Oficial Inovexa
 # Carrega todos os routers reais do diretório /routers

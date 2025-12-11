@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\backend\venv\Scripts\jp.py
+# Última atualização: 2025-12-11T09:59:27.527222
+
 #!D:\projetos-inovexa\mindscan\backend\venv\Scripts\python.exe
 
 import sys

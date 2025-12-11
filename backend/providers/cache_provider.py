@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\backend\providers\cache_provider.py
+# Última atualização: 2025-12-11T09:59:21.058152
+
 # ============================================================
 # MindScan — Cache Provider
 # ============================================================

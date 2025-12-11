@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\backend\algorithms\dass\dass_profile_builder.py
+# Última atualização: 2025-12-11T09:59:20.652172
+
 """
 DASS – PROFILE BUILDER (Versão ULTRA SUPERIOR)
 Constrói o perfil completo do DASS clássico (stress, anxiety, depression)

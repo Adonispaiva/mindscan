@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\backend\algorithms\dass\dass_summary.py
+# Última atualização: 2025-12-11T09:59:20.652172
+
 """
 DASS – SUMMARY GENERATOR (Versão ULTRA SUPERIOR)
 Gera resumo estruturado, de leitura rápida, consolidando

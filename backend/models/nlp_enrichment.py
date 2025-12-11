@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\backend\models\nlp_enrichment.py
+# Última atualização: 2025-12-11T09:59:20.964461
+
 # nlp_enrichment.py
 # MindScan Rebuild – Modelo de Enriquecimento NLP
 # Versão Definitiva • Estrutura Avançada Pydantic-Style

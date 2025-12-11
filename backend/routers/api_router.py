@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\backend\routers\api_router.py
+# Última atualização: 2025-12-11T09:59:21.073776
+
 # MindScan Backend — API Router Central
 # Arquitetura oficial MindScan v2.0 — Inovexa Software
 

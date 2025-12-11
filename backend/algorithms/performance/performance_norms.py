@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\backend\algorithms\performance\performance_norms.py
+# Última atualização: 2025-12-11T09:59:20.714601
+
 """
 Performance Norms
 Normaliza os valores brutos do questionário de performance para 0–100.

@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\tools\consolidar_ocai_v1.py
+# Última atualização: 2025-12-11T09:59:27.792836
+
 """
 Consolidar OCAI — Automação Total v1.0
 Diretor: Leo Vinci — Inovexa Software

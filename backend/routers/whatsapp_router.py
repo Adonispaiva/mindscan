@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\backend\routers\whatsapp_router.py
+# Última atualização: 2025-12-11T09:59:21.089476
+
 """
 Router Oficial do WhatsApp para o MindScan
 Inovexa Software | SynMind | MindScan®

@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\backend\utils\logger.py
+# Última atualização: 2025-12-11T09:59:21.308202
+
 # D:\projetos-inovexa\mindscan\backend\utils\logger.py
 
 import logging

@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\backend\algorithms\big5.py
+# Última atualização: 2025-12-11T09:59:20.573935
+
 # Caminho: D:\backend\algorithms\big5.py
 # MindScan — Big Five Padronizado v2.0
 # Autor: Leo Vinci — Diretor de Tecnologia e Produção (Inovexa)

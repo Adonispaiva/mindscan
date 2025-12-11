@@ -1,0 +1,2371 @@
+{
+    ".": {
+        "dirs": [
+            ".github",
+            "_optimizer_checkpoints",
+            "admin",
+            "analytics",
+            "audios",
+            "auth",
+            "backend",
+            "coaching_v4",
+            "core",
+            "data",
+            "deploy",
+            "docs",
+            "export_v4",
+            "frontend",
+            "generated_reports",
+            "graphql_live",
+            "logging",
+            "maintenance",
+            "managers",
+            "mindgen",
+            "mindscan_cli",
+            "mindscan_examples",
+            "mindscan_pdf",
+            "modules",
+            "pdf_engine",
+            "releases",
+            "tests",
+            "tools",
+            "web",
+            "webapp"
+        ],
+        "files": [
+            ".env",
+            ".mindscan_push.log",
+            "ARCHITECTURE.md",
+            "CLOSING_SUMMARY.md",
+            "DEV_GUIDE.md",
+            "Dockerfile",
+            "LICENSE_INOVEXA",
+            "LICENSE_INOVEXA.txt",
+            "OBSERVABILITY_GUIDE.md",
+            "PERFORMANCE_GUIDE.md",
+            "README.md",
+            "__init__.py",
+            "auditar_mindscan.py",
+            "docker-compose.yml",
+            "executar_revisor_global.bat",
+            "forcegit_v3.log",
+            "gerar_tree_referencia.bat",
+            "governance_metadata.json",
+            "instalador_mindscan.py",
+            "main.py",
+            "manutencao_mindscan.bat",
+            "mindscan_manifest.json",
+            "mindscan_selfheal_max.py",
+            "mindscan_web_api.py",
+            "pdf.builder.py",
+            "pyproject.toml",
+            "relatorio_auditoria.json",
+            "requirements.txt",
+            "setup.cfg",
+            "setup.py",
+            "sincronizar_github.py",
+            "start_backend.bat",
+            "tree_atual.json",
+            "tree_referencia.json",
+            "tree_validation_report.json"
+        ]
+    },
+    ".github": {
+        "dirs": [
+            "workflows"
+        ],
+        "files": []
+    },
+    ".github\\workflows": {
+        "dirs": [],
+        "files": [
+            "deploy.yml",
+            "mindscan_ci.yml",
+            "sync_auditoria.yml"
+        ]
+    },
+    "admin": {
+        "dirs": [],
+        "files": [
+            "admin_router.py"
+        ]
+    },
+    "analytics": {
+        "dirs": [],
+        "files": [
+            "analytics_router.py",
+            "analytics_service.py",
+            "live_metrics_router.py",
+            "live_metrics_service.py"
+        ]
+    },
+    "audios": {
+        "dirs": [],
+        "files": [
+            "WhatsApp Ptt 2025-12-08 at 09.07.39.ogg",
+            "WhatsApp Ptt 2025-12-08 at 09.07.39_transcricao.txt",
+            "WhatsApp Ptt 2025-12-08 at 09.08.44.ogg",
+            "WhatsApp Ptt 2025-12-08 at 09.08.44_transcricao.txt",
+            "WhatsApp Ptt 2025-12-08 at 09.09.54.ogg",
+            "WhatsApp Ptt 2025-12-08 at 09.09.54_transcricao.txt",
+            "transcrever_audios.py"
+        ]
+    },
+    "auth": {
+        "dirs": [],
+        "files": [
+            "auth_router.py",
+            "auth_service.py",
+            "middleware_auth.py"
+        ]
+    },
+    "backend": {
+        "dirs": [
+            "algorithms",
+            "analytics",
+            "api",
+            "core",
+            "db",
+            "engine",
+            "integrations",
+            "mi",
+            "middleware",
+            "models",
+            "pipelines",
+            "providers",
+            "reports",
+            "routers",
+            "runtime",
+            "services",
+            "static",
+            "storage",
+            "tests",
+            "utils",
+            "workers"
+        ],
+        "files": [
+            "app.py",
+            "config.py",
+            "database.py",
+            "main.py",
+            "models.py",
+            "pysettings.py",
+            "requirements.txt",
+            "run_e2e.py"
+        ]
+    },
+    "backend\\algorithms": {
+        "dirs": [
+            "big5",
+            "bussola",
+            "core",
+            "cruzamentos",
+            "dass",
+            "dass21",
+            "esquemas",
+            "matcher",
+            "ocai",
+            "performance",
+            "teique"
+        ],
+        "files": [
+            "algorithms_big5.py",
+            "algorithms_bussola.py",
+            "algorithms_cross.py",
+            "algorithms_dass.py",
+            "algorithms_esquemas.py",
+            "algorithms_global.py",
+            "algorithms_ocai.py",
+            "algorithms_performance.py",
+            "algorithms_teique.py",
+            "big5.py",
+            "bussola.py",
+            "cruzamentos.py",
+            "dass21.py",
+            "esquemas.py",
+            "ocai.py",
+            "performance.py",
+            "teique.py"
+        ]
+    },
+    "backend\\algorithms\\big5": {
+        "dirs": [],
+        "files": [
+            "big5.py",
+            "big5_alerts.py",
+            "big5_crosslinks.py",
+            "big5_dimensions.py",
+            "big5_enrichment.py",
+            "big5_factor_map.py",
+            "big5_factor_weights.py",
+            "big5_insights.py",
+            "big5_needs_map.py",
+            "big5_norms.py",
+            "big5_output_formatter.py",
+            "big5_predictor.py",
+            "big5_profile_builder.py",
+            "big5_risk_flags.py",
+            "big5_risk_map.py",
+            "big5_strengths.py",
+            "big5_summary.py",
+            "big5_traits_map.py",
+            "big5_validation.py"
+        ]
+    },
+    "backend\\algorithms\\bussola": {
+        "dirs": [],
+        "files": [
+            "bussola.py",
+            "bussola_alerts.py",
+            "bussola_archetypes.py",
+            "bussola_coordinates.py",
+            "bussola_crosslinks.py",
+            "bussola_directions.py",
+            "bussola_map.py",
+            "bussola_matrix.py",
+            "bussola_output_formatter.py",
+            "bussola_positioning.py",
+            "bussola_recommendations.py",
+            "bussola_risks.py",
+            "bussola_strengths.py",
+            "bussola_summary.py",
+            "bussola_validation.py",
+            "bussola_vectors.py"
+        ]
+    },
+    "backend\\algorithms\\core": {
+        "dirs": [],
+        "files": [
+            "cross_instrument_mapper.py",
+            "instrument_pipeline.py",
+            "instrument_registry.py",
+            "performance_estimator.py",
+            "scale_normalizer.py",
+            "statistical_verifier.py"
+        ]
+    },
+    "backend\\algorithms\\cruzamentos": {
+        "dirs": [],
+        "files": [
+            "cross_alerts.py",
+            "cross_big5_dass.py",
+            "cross_big5_egos.py",
+            "cross_big5_esquemas.py",
+            "cross_big5_ocai.py",
+            "cross_big5_performance.py",
+            "cross_big5_teique.py",
+            "cross_engine.py",
+            "cross_ocai_big5.py",
+            "cross_ocai_dass.py",
+            "cross_ocai_egos.py",
+            "cross_ocai_teique.py",
+            "cross_risks.py",
+            "cross_strengths.py",
+            "cross_teique_big5.py",
+            "cross_teique_dass.py",
+            "cross_teique_egos.py",
+            "cross_teique_esquemas.py",
+            "cruzamentos.py"
+        ]
+    },
+    "backend\\algorithms\\dass": {
+        "dirs": [],
+        "files": [
+            "dass_alerts.py",
+            "dass_crosslinks.py",
+            "dass_factor_map.py",
+            "dass_forms.py",
+            "dass_norms.py",
+            "dass_profile_builder.py",
+            "dass_risk_flags.py",
+            "dass_summary.py",
+            "dass_validation.py"
+        ]
+    },
+    "backend\\algorithms\\dass21": {
+        "dirs": [],
+        "files": [
+            "dass21.py",
+            "dass21_alerts.py",
+            "dass21_crosslinks.py",
+            "dass21_dimensions.py",
+            "dass21_factor_map.py",
+            "dass21_factors.py",
+            "dass21_forms.py",
+            "dass21_insights.py",
+            "dass21_norms.py",
+            "dass21_output_formatter.py",
+            "dass21_profile_builder.py",
+            "dass21_risk_map.py",
+            "dass21_summary.py",
+            "dass21_validation.py"
+        ]
+    },
+    "backend\\algorithms\\esquemas": {
+        "dirs": [],
+        "files": [
+            "esquemas.py",
+            "esquemas_alerts.py",
+            "esquemas_classifier.py",
+            "esquemas_crosslinks.py",
+            "esquemas_dimensions.py",
+            "esquemas_factor_weights.py",
+            "esquemas_needs_map.py",
+            "esquemas_norms.py",
+            "esquemas_profile_builder.py",
+            "esquemas_risk_map.py",
+            "esquemas_strengths.py",
+            "esquemas_summary.py",
+            "esquemas_validation.py",
+            "schema_alerts.py",
+            "schema_dimensions.py",
+            "schema_insights.py",
+            "schema_output_formatter.py",
+            "schema_profile_builder.py",
+            "schema_risk_map.py",
+            "schema_summary.py",
+            "schema_validation.py"
+        ]
+    },
+    "backend\\algorithms\\matcher": {
+        "dirs": [],
+        "files": [
+            "matcher.py"
+        ]
+    },
+    "backend\\algorithms\\ocai": {
+        "dirs": [],
+        "files": [
+            "ocai.py",
+            "ocai_alerts.py",
+            "ocai_crosslinks.py",
+            "ocai_culture_map.py",
+            "ocai_descriptives.py",
+            "ocai_dimensions.py",
+            "ocai_insights.py",
+            "ocai_norms.py",
+            "ocai_output_formatter.py",
+            "ocai_profile_builder.py",
+            "ocai_summary.py",
+            "ocai_validation.py"
+        ]
+    },
+    "backend\\algorithms\\performance": {
+        "dirs": [],
+        "files": [
+            "performance.py",
+            "performance_alerts.py",
+            "performance_crosslinks.py",
+            "performance_dimensions.py",
+            "performance_insights.py",
+            "performance_norms.py",
+            "performance_output_formatter.py",
+            "performance_predictor.py",
+            "performance_profile_builder.py",
+            "performance_risk_map.py",
+            "performance_scoring_matrix.py",
+            "performance_strengths.py",
+            "performance_summary.py",
+            "performance_time_series.py",
+            "performance_validation.py"
+        ]
+    },
+    "backend\\algorithms\\teique": {
+        "dirs": [],
+        "files": [
+            "teique.py",
+            "teique_alerts.py",
+            "teique_crosslinks.py",
+            "teique_dimensions.py",
+            "teique_facets.py",
+            "teique_factor_weights.py",
+            "teique_insights.py",
+            "teique_interpretation.py",
+            "teique_norms.py",
+            "teique_output_formatter.py",
+            "teique_profile_builder.py",
+            "teique_risk_flags.py",
+            "teique_risk_map.py",
+            "teique_strengths.py",
+            "teique_summary.py",
+            "teique_traits_map.py",
+            "teique_validation.py"
+        ]
+    },
+    "backend\\analytics": {
+        "dirs": [
+            "audit",
+            "metrics",
+            "monitoring"
+        ],
+        "files": []
+    },
+    "backend\\analytics\\audit": {
+        "dirs": [],
+        "files": [
+            "audit_log_service.py"
+        ]
+    },
+    "backend\\analytics\\metrics": {
+        "dirs": [],
+        "files": [
+            "metrics_service.py"
+        ]
+    },
+    "backend\\analytics\\monitoring": {
+        "dirs": [],
+        "files": [
+            "monitoring_service.py"
+        ]
+    },
+    "backend\\api": {
+        "dirs": [
+            "compat",
+            "controllers",
+            "docs",
+            "middleware",
+            "routes",
+            "schemas",
+            "services",
+            "utils",
+            "validators"
+        ],
+        "files": [
+            "router.py",
+            "schemas.py",
+            "service.py",
+            "utils.py"
+        ]
+    },
+    "backend\\api\\compat": {
+        "dirs": [],
+        "files": [
+            "external_api_compat_layer.py"
+        ]
+    },
+    "backend\\api\\controllers": {
+        "dirs": [],
+        "files": [
+            "mindscan_controller.py",
+            "report_controller.py",
+            "session_controller.py"
+        ]
+    },
+    "backend\\api\\docs": {
+        "dirs": [],
+        "files": [
+            "openapi_mindscan.md"
+        ]
+    },
+    "backend\\api\\middleware": {
+        "dirs": [],
+        "files": [
+            "audit_middleware.py"
+        ]
+    },
+    "backend\\api\\routes": {
+        "dirs": [],
+        "files": [
+            "health_check_router.py",
+            "integration_router.py",
+            "routes_admin_panel.py",
+            "routes_mindscan_integration.py",
+            "routes_report.py",
+            "routes_results.py"
+        ]
+    },
+    "backend\\api\\schemas": {
+        "dirs": [],
+        "files": [
+            "mindscan_models.py",
+            "report_schema.py"
+        ]
+    },
+    "backend\\api\\services": {
+        "dirs": [],
+        "files": [
+            "diagnostic_orchestrator.py",
+            "file_upload_service.py",
+            "input_normalizer.py",
+            "instrument_normalizer.py",
+            "logging_service.py",
+            "mindscan_service.py",
+            "output_formatter.py",
+            "report_gateway.py",
+            "result_gateway.py",
+            "session_gateway.py"
+        ]
+    },
+    "backend\\api\\utils": {
+        "dirs": [],
+        "files": [
+            "error_response_builder.py"
+        ]
+    },
+    "backend\\api\\validators": {
+        "dirs": [],
+        "files": [
+            "mindscan_validator.py"
+        ]
+    },
+    "backend\\core": {
+        "dirs": [
+            "compliance",
+            "diagnostic",
+            "interpretation",
+            "normalization",
+            "orchestrator"
+        ],
+        "files": [
+            "diagnostic_engine.py",
+            "engine.py",
+            "nlp_processor.py",
+            "normalizer.py",
+            "runtime_kernel.py",
+            "scoring.py"
+        ]
+    },
+    "backend\\core\\compliance": {
+        "dirs": [],
+        "files": [
+            "compliance_engine.py"
+        ]
+    },
+    "backend\\core\\diagnostic": {
+        "dirs": [],
+        "files": [
+            "diagnostic_engine_v3.py"
+        ]
+    },
+    "backend\\core\\interpretation": {
+        "dirs": [],
+        "files": [
+            "interpretation_pipeline.py"
+        ]
+    },
+    "backend\\core\\normalization": {
+        "dirs": [],
+        "files": [
+            "global_normalization.py"
+        ]
+    },
+    "backend\\core\\orchestrator": {
+        "dirs": [],
+        "files": [
+            "mindscan_orchestrator.py"
+        ]
+    },
+    "backend\\db": {
+        "dirs": [],
+        "files": [
+            "vazio.md"
+        ]
+    },
+    "backend\\engine": {
+        "dirs": [],
+        "files": [
+            "__init__.py",
+            "aggregator.py",
+            "audit.py",
+            "audit_engine.py",
+            "hybrid_consistency_checker.py",
+            "hybrid_insight_engine.py",
+            "hybrid_narrative_engine.py",
+            "hybrid_payload_builder.py",
+            "hybrid_reasoning_expander.py",
+            "hybrid_score_engine.py",
+            "hybrid_summary_builder.py",
+            "insight_aggregator.py",
+            "insight_engine.py",
+            "mi_engine.py",
+            "mi_engine_advanced.py",
+            "mi_engine_hybrid.py",
+            "mi_hybrid_orchestrator.py",
+            "mi_hybrid_profile_builder.py",
+            "mi_hybrid_router.py",
+            "normalization_engine.py",
+            "normalizer.py",
+            "pipeline.py",
+            "post_diagnostic_engine.py",
+            "pre_diagnostic_engine.py",
+            "profile_aggregator.py",
+            "report_engine.py",
+            "report_generator.py",
+            "risk_aggregator.py",
+            "risk_engine.py",
+            "risk_map_engine.py",
+            "risk_rules_engine.py",
+            "routing_engine.py",
+            "runtime_engine.py",
+            "score_aggregator.py",
+            "scoring_engine.py",
+            "summarization_engine.py",
+            "summary_aggregator.py",
+            "summary_engine.py",
+            "synthesis_engine.py",
+            "synthetic_engine.py",
+            "system_engine.py",
+            "talent_engine.py",
+            "trait_engine.py",
+            "validation_engine.py",
+            "validator.py"
+        ]
+    },
+    "backend\\integrations": {
+        "dirs": [
+            "events",
+            "webhooks",
+            "whatsapp"
+        ],
+        "files": [
+            "__init__.py",
+            "whatsapp.py",
+            "whatsapp_ai.py",
+            "whatsapp_handler.py",
+            "whatsapp_utils.py"
+        ]
+    },
+    "backend\\integrations\\events": {
+        "dirs": [],
+        "files": [
+            "event_dispatcher.py",
+            "integration_event_handlers.py"
+        ]
+    },
+    "backend\\integrations\\webhooks": {
+        "dirs": [],
+        "files": [
+            "webhook_engine.py"
+        ]
+    },
+    "backend\\integrations\\whatsapp": {
+        "dirs": [],
+        "files": [
+            "whatsapp_gateway.py"
+        ]
+    },
+    "backend\\mi": {
+        "dirs": [
+            "compliance",
+            "generative",
+            "persona",
+            "prompts"
+        ],
+        "files": [
+            "mi_chain_of_thought.py",
+            "mi_context_engine.py",
+            "mi_cross_section_engine.py",
+            "mi_engine.py",
+            "mi_executive_summary_engine.py",
+            "mi_formatter.py",
+            "mi_narrative_polisher.py",
+            "mi_normalizer.py",
+            "mi_postprocessing.py",
+            "mi_reasoning.py",
+            "mi_risk_detector.py",
+            "mi_sanitizer.py",
+            "mi_semantic_mapper.py",
+            "mi_structurer.py",
+            "mi_validator.py",
+            "role_fit_engine.py"
+        ]
+    },
+    "backend\\mi\\compliance": {
+        "dirs": [],
+        "files": [
+            "compliance_apa.py",
+            "compliance_bias.py",
+            "compliance_diagnostic.py",
+            "compliance_ethics.py",
+            "compliance_fairness.py",
+            "compliance_limits.py",
+            "compliance_moderation.py",
+            "compliance_organizational.py",
+            "compliance_privacy.py",
+            "compliance_psycho.py",
+            "compliance_root.py",
+            "compliance_security.py",
+            "compliance_transparency.py"
+        ]
+    },
+    "backend\\mi\\generative": {
+        "dirs": [],
+        "files": [
+            "mi_adaptative_narrative_engine.py",
+            "mi_adaptative_response_generator.py",
+            "mi_adaptive_personality_shift.py",
+            "mi_anomaly_explainer.py",
+            "mi_beharioval_anchor_engine.py",
+            "mi_behavioral_forecast_engine.py",
+            "mi_blindspot_detector.py",
+            "mi_cognitive_map_generator.py",
+            "mi_confidence_projection_engine.py",
+            "mi_conflict_radar.py",
+            "mi_deep_trait_expander.py",
+            "mi_development_path_generator.py",
+            "mi_dialogue_coach.py",
+            "mi_dynamic_performance_engine.py",
+            "mi_emotional_force_map.py",
+            "mi_emotional_graph.py",
+            "mi_emotional_regulation_engine.py",
+            "mi_generative_insights.py",
+            "mi_generative_master_orchestrator.py",
+            "mi_generative_summary_engine.py",
+            "mi_integrated_profile_builder.py",
+            "mi_leadership_predictor.py",
+            "mi_meta_insight_synthesizer.py",
+            "mi_meta_patterns.py",
+            "mi_motivation_vector_engine.py",
+            "mi_multilayer_profile_orchestrator.py",
+            "mi_multioutput_merger.py",
+            "mi_opportunity_scanner.py",
+            "mi_persona_synthesizer.py",
+            "mi_predictive_rolefit_v2.py",
+            "mi_question_expansion_engine.py",
+            "mi_relationship_stability_engine.py",
+            "mi_role_recommendation_engine.py",
+            "mi_social_dynamics_engine.py",
+            "mi_strength_opportunity_mapper.py",
+            "mi_stress_vectorizer.py",
+            "mi_structural_personality_engine.py",
+            "mi_team_compatibility_engine.py",
+            "mi_team_role_suggester.py",
+            "mi_trait_predictor.py"
+        ]
+    },
+    "backend\\mi\\persona": {
+        "dirs": [],
+        "files": [
+            "persona_constraints.py",
+            "persona_core.py",
+            "persona_examples.py",
+            "persona_filters.py",
+            "persona_metadata.py",
+            "persona_rules.py",
+            "persona_style.py",
+            "persona_voice.py"
+        ]
+    },
+    "backend\\mi\\prompts": {
+        "dirs": [],
+        "files": [
+            "prompt_mi_synmind.md"
+        ]
+    },
+    "backend\\middleware": {
+        "dirs": [],
+        "files": [
+            "rate_limit_middleware.py"
+        ]
+    },
+    "backend\\models": {
+        "dirs": [
+            "inputs",
+            "outputs",
+            "scoring"
+        ],
+        "files": [
+            "algorithm_output.py",
+            "audit_log.py",
+            "bussola_profile.py",
+            "cross_insights_model.py",
+            "culture_profile.py",
+            "diagnostic_flags.py",
+            "diagnostic_matrix.py",
+            "diagnostic_payload.py",
+            "diagnostic_profile_builder.py",
+            "diagnostic_request.py",
+            "diagnostic_response.py",
+            "emotional_profile.py",
+            "insight_block.py",
+            "leadership_profile.py",
+            "metadata_block.py",
+            "mi_document.py",
+            "mi_document_package.py",
+            "mindscan_full_document.py",
+            "mindscan_result.py",
+            "narrative_block.py",
+            "nlp_enrichment.py",
+            "ocai_profile.py",
+            "pdf_render_payload.py",
+            "pdf_section_context.py",
+            "pdi_item.py",
+            "performance_profile.py",
+            "recommendation_item.py",
+            "report_block.py",
+            "report_context.py",
+            "report_section.py",
+            "report_summary.py",
+            "roadmap_item.py",
+            "schema_profile.py"
+        ]
+    },
+    "backend\\models\\inputs": {
+        "dirs": [],
+        "files": [
+            "behavioral_input.py",
+            "big5_input.py",
+            "bussola_input.py",
+            "cognitive_input.py",
+            "context_input.py",
+            "cross_input.py",
+            "cultura_input.py",
+            "dass_input.py",
+            "device_input.py",
+            "esquemas_input.py",
+            "export_input.py",
+            "insight_input.py",
+            "leadership_input.py",
+            "metadata_input.py",
+            "mi_input.py",
+            "ocai_input.py",
+            "pdf_input.py",
+            "performance_input.py",
+            "personality_input.py",
+            "pipeline_input.py",
+            "profile_input.py",
+            "schemas_input.py",
+            "scoring_input.py",
+            "session_input.py",
+            "system_input.py",
+            "teique_input.py",
+            "user_profile.py",
+            "vazio.md"
+        ]
+    },
+    "backend\\models\\outputs": {
+        "dirs": [],
+        "files": [
+            "big5_output.py",
+            "bussola_output.py",
+            "bussola_section_output.py",
+            "cross_output.py",
+            "dass_output.py",
+            "decision_output.py",
+            "diagnostic_output.py",
+            "diagnostic_report_output.py",
+            "esquemas_output.py",
+            "insight_output.py",
+            "metadata_output.py",
+            "mi_output.py",
+            "ocai_output.py",
+            "pdf_output.py",
+            "performance_output.py",
+            "personality_output.py",
+            "pipeline_output.py",
+            "risk_report.py",
+            "strengths_report.py",
+            "summary_output.py",
+            "teique_output.py",
+            "token_output.py",
+            "user_output.py"
+        ]
+    },
+    "backend\\models\\scoring": {
+        "dirs": [],
+        "files": [
+            "scoring_big5.py",
+            "scoring_bussola.py",
+            "scoring_cross.py",
+            "scoring_dass.py",
+            "scoring_esquemas.py",
+            "scoring_global.py",
+            "scoring_ocai.py",
+            "scoring_performance.py",
+            "scoring_teique.py",
+            "scoring_validation.py"
+        ]
+    },
+    "backend\\pipelines": {
+        "dirs": [],
+        "files": [
+            "big5_pipeline.py",
+            "bussola_pipeline.py",
+            "cross_pipeline.py",
+            "dass_pipeline.py",
+            "diagnostic_pipeline_async.py",
+            "esquemas_pipeline.py",
+            "full_pipeline.py",
+            "mindscan_pipeline.py",
+            "ocai_pipeline.py",
+            "performance_pipeline.py",
+            "teique_pipeline.py",
+            "whatsapp_notification.py"
+        ]
+    },
+    "backend\\providers": {
+        "dirs": [],
+        "files": [
+            "ai_provider.py",
+            "analytics_provider.py",
+            "auth_provider.py",
+            "cache_provider.py",
+            "email_provider.py",
+            "model_provider.py",
+            "notification_provider.py",
+            "provider_manager.py",
+            "queue_provider.py",
+            "report_provider.py",
+            "scheduler_provider.py",
+            "storage_provider.py",
+            "vector_index_provider.py"
+        ]
+    },
+    "backend\\reports": {
+        "dirs": [],
+        "files": [
+            "assets_manager.py",
+            "html_exporter.py",
+            "pdf_generator.py",
+            "report_engine.py"
+        ]
+    },
+    "backend\\routers": {
+        "dirs": [],
+        "files": [
+            "analytics_router.py",
+            "api_router.py",
+            "candidates_router.py",
+            "diagnostic_router.py",
+            "diagnostics_router.py",
+            "export_router.py",
+            "health_router.py",
+            "metadata_router.py",
+            "mi_router.py",
+            "mindscan_api.py",
+            "pdf_router.py",
+            "report_router.py",
+            "tests_router.py",
+            "user_profile_router.py",
+            "users_router.py",
+            "whatsapp_router.py"
+        ]
+    },
+    "backend\\runtime": {
+        "dirs": [],
+        "files": [
+            "backend_config.log",
+            "backend_runtime.log"
+        ]
+    },
+    "backend\\services": {
+        "dirs": [
+            "adapters",
+            "algorithms",
+            "builders",
+            "core",
+            "design",
+            "engines",
+            "export",
+            "helpers",
+            "html",
+            "infrastructure",
+            "mi",
+            "orchestrators",
+            "pdf",
+            "pdf_tools",
+            "post_processors",
+            "report",
+            "runtime"
+        ],
+        "files": [
+            "__init__.py",
+            "analytics_service.py",
+            "auth_service.py",
+            "base_service.py",
+            "culture_service.py",
+            "data_service.py",
+            "diagnostic_matrix_service.py",
+            "engine_service.py",
+            "export_service.py",
+            "flags_service.py",
+            "insight_service.py",
+            "leadership_service.py",
+            "metadata_service.py",
+            "mi_compiler_service.py",
+            "narrative_service.py",
+            "pdf__init__.py",
+            "pdf_engine.py",
+            "pdf_validator_service.py",
+            "pdi_service.py",
+            "performance_service.py",
+            "psych_core_service.py",
+            "recommendation_service.py",
+            "report_assets.py",
+            "report_branding.py",
+            "report_export_manager.py",
+            "report_pipeline_helper.py",
+            "report_service.py",
+            "roadmap_service.py",
+            "runtime_interface.py"
+        ]
+    },
+    "backend\\services\\adapters": {
+        "dirs": [],
+        "files": [
+            "corporate_render_adapter.py",
+            "corporate_style_adapter.py"
+        ]
+    },
+    "backend\\services\\algorithms": {
+        "dirs": [],
+        "files": []
+    },
+    "backend\\services\\builders": {
+        "dirs": [],
+        "files": [
+            "corporate_section_builder.py"
+        ]
+    },
+    "backend\\services\\core": {
+        "dirs": [],
+        "files": [
+            "__init__.py",
+            "auth_service.py",
+            "base_service.py",
+            "data_service.py",
+            "engine_service.py",
+            "export_service.py",
+            "psyc_core_service.py",
+            "runtime_interface.py"
+        ]
+    },
+    "backend\\services\\design": {
+        "dirs": [],
+        "files": [
+            "corporate_color_system.py",
+            "corporate_icon_loader.py",
+            "corporate_layout_engine.py"
+        ]
+    },
+    "backend\\services\\engines": {
+        "dirs": [],
+        "files": [
+            "corporate_behavior_engine.py",
+            "corporate_competency_engine.py",
+            "corporate_culture_engine.py",
+            "corporate_growth_engine.py",
+            "corporate_risk_engine.py",
+            "corporate_summary_builder.py"
+        ]
+    },
+    "backend\\services\\export": {
+        "dirs": [],
+        "files": [
+            "mindscan_results.json",
+            "vazio.md"
+        ]
+    },
+    "backend\\services\\helpers": {
+        "dirs": [],
+        "files": [
+            "data_sanitizer.py",
+            "html_sanitizer.py",
+            "payload_integrator.py",
+            "report_text_engine.py",
+            "report_utils.py"
+        ]
+    },
+    "backend\\services\\html": {
+        "dirs": [],
+        "files": [
+            "vazio.md"
+        ]
+    },
+    "backend\\services\\infrastructure": {
+        "dirs": [],
+        "files": [
+            "cache_service.py",
+            "error_monitor.py",
+            "performance_profiler.py"
+        ]
+    },
+    "backend\\services\\mi": {
+        "dirs": [],
+        "files": [
+            "compliance_filter.py",
+            "integration_engine.py",
+            "mi_engine.py",
+            "narrative_engine.py",
+            "persona.py",
+            "style_engine.py"
+        ]
+    },
+    "backend\\services\\orchestrators": {
+        "dirs": [],
+        "files": [
+            "corporate_orchestrator.py"
+        ]
+    },
+    "backend\\services\\pdf": {
+        "dirs": [
+            "assets",
+            "engine",
+            "pdf_sections",
+            "renderers",
+            "telemetry",
+            "validators"
+        ],
+        "files": [
+            "arquetipos_dominancia.py",
+            "capa_enterprise.py",
+            "carga_cognitiva.py",
+            "competencias.py",
+            "competencias_analiticas.py",
+            "conclusao.py",
+            "diagnostico_final.py",
+            "estrutura_defensiva.py",
+            "estrutura_motivacional.py",
+            "fluxo_psicodinamico_integrado.py",
+            "identidade_cognitiva.py",
+            "identidade_emocional.py",
+            "mapa_comportamental.py",
+            "mapa_operacional.py",
+            "mapa_tensao_emocional.py",
+            "narrativa.py",
+            "pdf.engine.py",
+            "pdf_builder.py",
+            "pdf_diagnostics.py",
+            "pdf_engine_manifest.py",
+            "pdf_exceptions.py",
+            "pdf_logging.py",
+            "pdf_metadata.py",
+            "pdf_registry.py",
+            "pdf_service.py",
+            "pdf_validator.py",
+            "performance.py",
+            "planejamento.py",
+            "premium_renderer.py",
+            "psychodynamic_renderer.py",
+            "recomendacoes.py",
+            "render_orchestrator.py",
+            "resumo_estrategico.py",
+            "sintese_executiva.py"
+        ]
+    },
+    "backend\\services\\pdf\\assets": {
+        "dirs": [],
+        "files": []
+    },
+    "backend\\services\\pdf\\engine": {
+        "dirs": [],
+        "files": [
+            "async_pdf_builder.py",
+            "async_pipeline.py",
+            "pdf.engine.py",
+            "performance_governor.py",
+            "report_engine.py",
+            "section_engine.py"
+        ]
+    },
+    "backend\\services\\pdf\\pdf_sections": {
+        "dirs": [],
+        "files": [
+            "analise_performance.py",
+            "anexos.py",
+            "anexos_profissionais.py",
+            "bussola.py",
+            "capa.py",
+            "capa_enterprise.py",
+            "capa_executiva.py",
+            "cultura.py",
+            "dass.py",
+            "eixo_profissional.py",
+            "esquemas.py",
+            "estilo_cognitivo.py",
+            "forcas_globais.py",
+            "identidade.py",
+            "inteligencia_emocional.py",
+            "lideranca.py",
+            "mapa_cultural.py",
+            "mapa_emocional.py",
+            "mapa_esquemas.py",
+            "mapa_lideranca.py",
+            "match_duplo.py",
+            "matriz_diagnostica.py",
+            "maturidade_profissional.py",
+            "narrativa.py",
+            "pdi.py",
+            "pdi_completo.py",
+            "perfil_integrado.py",
+            "performance.py",
+            "personalidade.py",
+            "recomendacoes.py",
+            "resumo_estrategico.py",
+            "resumo_executivo.py",
+            "riscos_globais.py",
+            "roadmap_completo.py",
+            "trilha_de_carreira.py"
+        ]
+    },
+    "backend\\services\\pdf\\renderers": {
+        "dirs": [],
+        "files": [
+            "distributed_renderer.py",
+            "font_manager.py",
+            "html_renderer.py",
+            "hybrid_renderer.py",
+            "image_manager.py",
+            "matplotlib_ready.py",
+            "pdf_accessibility.py",
+            "pdf_exporter.py",
+            "pdf_integrity_validator.py",
+            "pdf_layout_engine.py",
+            "pdf_post_processor.py",
+            "pdf_sanitizer.py",
+            "pdf_section_validator.py",
+            "pdf_security.py",
+            "pdf_styler.py",
+            "pdf_theme_manager.py",
+            "reportlab_renderer.py",
+            "resource_resolver.py",
+            "weasy_renderer.py",
+            "weasy_renderer_async.py"
+        ]
+    },
+    "backend\\services\\pdf\\telemetry": {
+        "dirs": [],
+        "files": [
+            "logger.py",
+            "resource_monitor.py",
+            "telemetry_advanced.py"
+        ]
+    },
+    "backend\\services\\pdf\\validators": {
+        "dirs": [],
+        "files": [
+            "data_validator.py"
+        ]
+    },
+    "backend\\services\\pdf_tools": {
+        "dirs": [],
+        "files": [
+            "pdf_postprocessor.py"
+        ]
+    },
+    "backend\\services\\post_processors": {
+        "dirs": [],
+        "files": [
+            "corporate_post_processor.py"
+        ]
+    },
+    "backend\\services\\report": {
+        "dirs": [
+            "assembler",
+            "assets",
+            "builders",
+            "enhancers",
+            "pdf",
+            "renderers"
+        ],
+        "files": []
+    },
+    "backend\\services\\report\\assembler": {
+        "dirs": [],
+        "files": [
+            "report_assembler.py"
+        ]
+    },
+    "backend\\services\\report\\assets": {
+        "dirs": [
+            "charts",
+            "covers",
+            "styles"
+        ],
+        "files": []
+    },
+    "backend\\services\\report\\assets\\charts": {
+        "dirs": [],
+        "files": [
+            "chart_generator.py"
+        ]
+    },
+    "backend\\services\\report\\assets\\covers": {
+        "dirs": [],
+        "files": [
+            "cover_manager.py"
+        ]
+    },
+    "backend\\services\\report\\assets\\styles": {
+        "dirs": [],
+        "files": [
+            "style_manager.py"
+        ]
+    },
+    "backend\\services\\report\\builders": {
+        "dirs": [],
+        "files": [
+            "psychodynamic_builder.py"
+        ]
+    },
+    "backend\\services\\report\\enhancers": {
+        "dirs": [],
+        "files": [
+            "report_enhancer.py"
+        ]
+    },
+    "backend\\services\\report\\pdf": {
+        "dirs": [],
+        "files": [
+            "pdf_pipeline.py"
+        ]
+    },
+    "backend\\services\\report\\renderers": {
+        "dirs": [],
+        "files": [
+            "base_renderer.py",
+            "executive_renderer.py",
+            "premium_renderer.py",
+            "psychodynamic_renderer.py",
+            "technical_renderer.py"
+        ]
+    },
+    "backend\\services\\runtime": {
+        "dirs": [],
+        "files": []
+    },
+    "backend\\static": {
+        "dirs": [],
+        "files": [
+            "mindscan_corporate.css"
+        ]
+    },
+    "backend\\storage": {
+        "dirs": [],
+        "files": [
+            "pdf_publisher.py"
+        ]
+    },
+    "backend\\tests": {
+        "dirs": [],
+        "files": [
+            "test_corporate_pipeline.py"
+        ]
+    },
+    "backend\\utils": {
+        "dirs": [],
+        "files": [
+            "api_utils.py",
+            "array_utils.py",
+            "config_loader.py",
+            "diagnostic_formatter.py",
+            "document_utils.py",
+            "file_manager.py",
+            "hashing_utils.py",
+            "id_generator.py",
+            "json_sanitizer.py",
+            "logger.py",
+            "math_utils.py",
+            "pdf_utils.py",
+            "profile_formatter.py",
+            "resource_manager.py",
+            "scheduler_utils.py",
+            "token_manager.py",
+            "validators.py",
+            "vector_utils.py"
+        ]
+    },
+    "backend\\workers": {
+        "dirs": [],
+        "files": [
+            "main_worker.py"
+        ]
+    },
+    "coaching_v4": {
+        "dirs": [
+            "analysis",
+            "builder",
+            "engine",
+            "finalizers",
+            "manager",
+            "orchestrators",
+            "ranking",
+            "routes",
+            "ui"
+        ],
+        "files": []
+    },
+    "coaching_v4\\analysis": {
+        "dirs": [],
+        "files": [
+            "coaching_behavior_analyzer.py"
+        ]
+    },
+    "coaching_v4\\builder": {
+        "dirs": [],
+        "files": [
+            "coaching_action_plan_builder.py"
+        ]
+    },
+    "coaching_v4\\engine": {
+        "dirs": [],
+        "files": [
+            "coaching_advanced_insight_engine.py",
+            "coaching_contextual_engine.py",
+            "coaching_engine_v4.py",
+            "coaching_intervention_generator.py"
+        ]
+    },
+    "coaching_v4\\finalizers": {
+        "dirs": [],
+        "files": [
+            "coaching_system_finalizer_v4.py"
+        ]
+    },
+    "coaching_v4\\manager": {
+        "dirs": [],
+        "files": [
+            "coaching_recommendation_manager.py"
+        ]
+    },
+    "coaching_v4\\orchestrators": {
+        "dirs": [],
+        "files": [
+            "coaching_master_orchestrator_v4.py"
+        ]
+    },
+    "coaching_v4\\ranking": {
+        "dirs": [],
+        "files": [
+            "coaching_priority_ranker_v4.py"
+        ]
+    },
+    "coaching_v4\\routes": {
+        "dirs": [],
+        "files": [
+            "coaching_router_v4.py"
+        ]
+    },
+    "coaching_v4\\ui": {
+        "dirs": [],
+        "files": [
+            "coaching_panel_renderer.py"
+        ]
+    },
+    "core": {
+        "dirs": [
+            "algorithms",
+            "diagnostics",
+            "engine",
+            "metrics",
+            "profiles",
+            "reporting",
+            "scoring",
+            "utils"
+        ],
+        "files": [
+            "__init__.py"
+        ]
+    },
+    "core\\algorithms": {
+        "dirs": [],
+        "files": [
+            "advanced_algorithm.py",
+            "base_algorithm.py"
+        ]
+    },
+    "core\\diagnostics": {
+        "dirs": [],
+        "files": [
+            "diagnostics.py"
+        ]
+    },
+    "core\\engine": {
+        "dirs": [],
+        "files": [
+            "engine.py"
+        ]
+    },
+    "core\\metrics": {
+        "dirs": [],
+        "files": [
+            "metrics.py"
+        ]
+    },
+    "core\\profiles": {
+        "dirs": [],
+        "files": [
+            "profiler.py"
+        ]
+    },
+    "core\\reporting": {
+        "dirs": [],
+        "files": [
+            "report_generator.py"
+        ]
+    },
+    "core\\scoring": {
+        "dirs": [],
+        "files": [
+            "scorer.py"
+        ]
+    },
+    "core\\utils": {
+        "dirs": [],
+        "files": [
+            "vazio.md"
+        ]
+    },
+    "data": {
+        "dirs": [
+            "norms",
+            "weights"
+        ],
+        "files": [
+            "sample_input.json",
+            "sample_output.json"
+        ]
+    },
+    "data\\norms": {
+        "dirs": [],
+        "files": [
+            "vazio.md"
+        ]
+    },
+    "data\\weights": {
+        "dirs": [],
+        "files": [
+            "vazio.md"
+        ]
+    },
+    "deploy": {
+        "dirs": [],
+        "files": [
+            "CloudCheck.json",
+            "Dockerfile.prod",
+            "README_DEPLOY.md",
+            "docker-compose.prod.yml",
+            "docker-compose.ssl.yml",
+            "docker-compose.yml",
+            "generate_ssl.sh",
+            "nginx.conf",
+            "nginx_ssl.conf"
+        ]
+    },
+    "docs": {
+        "dirs": [
+            "metodologias",
+            "pdfs",
+            "prompts"
+        ],
+        "files": [
+            "MindScan_Module_Map.md",
+            "mindscan_report_pipeline.md",
+            "whatsapp_integration_techspec.md"
+        ]
+    },
+    "docs\\metodologias": {
+        "dirs": [],
+        "files": [
+            "vazio.md"
+        ]
+    },
+    "docs\\pdfs": {
+        "dirs": [],
+        "files": [
+            "vazio.md"
+        ]
+    },
+    "docs\\prompts": {
+        "dirs": [],
+        "files": [
+            "vazio.md"
+        ]
+    },
+    "export_v4": {
+        "dirs": [
+            "analysis",
+            "assets",
+            "builder",
+            "docx",
+            "finalizers",
+            "fusion",
+            "html",
+            "layout",
+            "meta",
+            "packager",
+            "pdf",
+            "profiles",
+            "routes",
+            "styles",
+            "utils"
+        ],
+        "files": [
+            "expv4_master_orchestrator.py"
+        ]
+    },
+    "export_v4\\analysis": {
+        "dirs": [],
+        "files": [
+            "expv4_recommendation_engine.py"
+        ]
+    },
+    "export_v4\\assets": {
+        "dirs": [],
+        "files": [
+            "expv4_asset_loader.py"
+        ]
+    },
+    "export_v4\\builder": {
+        "dirs": [],
+        "files": [
+            "expv4_document_builder.py",
+            "expv4_section_builder.py"
+        ]
+    },
+    "export_v4\\docx": {
+        "dirs": [],
+        "files": [
+            "docx_renderer_engine_v4.py",
+            "docx_template_registry_v4.py"
+        ]
+    },
+    "export_v4\\finalizers": {
+        "dirs": [],
+        "files": [
+            "expv4_system_finalizer.py"
+        ]
+    },
+    "export_v4\\fusion": {
+        "dirs": [],
+        "files": [
+            "expv4_data_merger.py"
+        ]
+    },
+    "export_v4\\html": {
+        "dirs": [],
+        "files": [
+            "expv4_html_template_engine.py"
+        ]
+    },
+    "export_v4\\layout": {
+        "dirs": [],
+        "files": [
+            "expv4_layout_manager.py"
+        ]
+    },
+    "export_v4\\meta": {
+        "dirs": [],
+        "files": [
+            "expv4_meta_generator.py"
+        ]
+    },
+    "export_v4\\packager": {
+        "dirs": [],
+        "files": [
+            "expv4_export_packager.py"
+        ]
+    },
+    "export_v4\\pdf": {
+        "dirs": [],
+        "files": [
+            "pdf_renderer_engine_v4.py",
+            "pdf_renderer_engine_v4.py.txt",
+            "pdf_template_registry_v4.py"
+        ]
+    },
+    "export_v4\\profiles": {
+        "dirs": [],
+        "files": [
+            "expv4_export_profile.py"
+        ]
+    },
+    "export_v4\\routes": {
+        "dirs": [],
+        "files": [
+            "expv4_router.py"
+        ]
+    },
+    "export_v4\\styles": {
+        "dirs": [],
+        "files": [
+            "export_style_manager_v4.py"
+        ]
+    },
+    "export_v4\\utils": {
+        "dirs": [],
+        "files": [
+            "expv4_content_sanitizer.py",
+            "expv4_image_embedder.py"
+        ]
+    },
+    "frontend": {
+        "dirs": [
+            "src"
+        ],
+        "files": [
+            "cadastro.html",
+            "entrada_dados.html",
+            "index.html",
+            "login.html",
+            "main.tsx",
+            "package.json",
+            "postcss.config.js",
+            "resultado.html",
+            "tailwind.config.js",
+            "tsconfig.json",
+            "vite.config.ts"
+        ]
+    },
+    "frontend\\src": {
+        "dirs": [
+            "components",
+            "layouts",
+            "pages",
+            "router",
+            "styles"
+        ],
+        "files": [
+            "App.tsx"
+        ]
+    },
+    "frontend\\src\\components": {
+        "dirs": [
+            "layout",
+            "ui"
+        ],
+        "files": []
+    },
+    "frontend\\src\\components\\layout": {
+        "dirs": [],
+        "files": [
+            "Navbar.tsx",
+            "Sidebar.tsx"
+        ]
+    },
+    "frontend\\src\\components\\ui": {
+        "dirs": [],
+        "files": [
+            "Accordion.tsx",
+            "Avatar.tsx",
+            "Badge.tsx",
+            "Breadcrumbs.tsx",
+            "Button.tsx",
+            "Card.tsx",
+            "Dropdown.tsx",
+            "Footer.tsx",
+            "Header.tsx",
+            "Input.tsx",
+            "Loader.tsx",
+            "Modal.tsx",
+            "Navbar.tsx",
+            "Popover.tsx",
+            "Sidebar.tsx",
+            "Table.tsx",
+            "Tabs.tsx",
+            "Tooltip.tsx"
+        ]
+    },
+    "frontend\\src\\layouts": {
+        "dirs": [],
+        "files": [
+            "BaseLayout.tsx"
+        ]
+    },
+    "frontend\\src\\pages": {
+        "dirs": [],
+        "files": [
+            "CandidateDetails.tsx",
+            "Candidates.tsx",
+            "Dashboard.tsx",
+            "Home.tsx",
+            "Login.tsx",
+            "NotFound.tsx",
+            "Register.tsx",
+            "ReportDetails.tsx",
+            "Reports.tsx",
+            "Settings.tsx",
+            "TestDetails.tsx",
+            "Tests.tsx"
+        ]
+    },
+    "frontend\\src\\router": {
+        "dirs": [],
+        "files": [
+            "index.tsx"
+        ]
+    },
+    "frontend\\src\\styles": {
+        "dirs": [],
+        "files": [
+            "index.css"
+        ]
+    },
+    "generated_reports": {
+        "dirs": [],
+        "files": []
+    },
+    "graphql_live": {
+        "dirs": [
+            "bridge",
+            "engine",
+            "feeds",
+            "finalizers",
+            "orchestrators",
+            "subscriptions"
+        ],
+        "files": [
+            "gql_live_router.py",
+            "gql_live_schema.py"
+        ]
+    },
+    "graphql_live\\bridge": {
+        "dirs": [],
+        "files": [
+            "gql_live_bridge.py"
+        ]
+    },
+    "graphql_live\\engine": {
+        "dirs": [],
+        "files": [
+            "gql_live_context_engine.py"
+        ]
+    },
+    "graphql_live\\feeds": {
+        "dirs": [],
+        "files": [
+            "gql_realtime_feed.py"
+        ]
+    },
+    "graphql_live\\finalizers": {
+        "dirs": [],
+        "files": [
+            "gql_system_finalizer.py"
+        ]
+    },
+    "graphql_live\\orchestrators": {
+        "dirs": [],
+        "files": [
+            "gql_stream_orchestrator.py"
+        ]
+    },
+    "graphql_live\\subscriptions": {
+        "dirs": [],
+        "files": [
+            "gql_subscription_manager.py"
+        ]
+    },
+    "logging": {
+        "dirs": [],
+        "files": [
+            "loggin_service.py"
+        ]
+    },
+    "maintenance": {
+        "dirs": [],
+        "files": [
+            "backup.py",
+            "healthcheck.py"
+        ]
+    },
+    "managers": {
+        "dirs": [],
+        "files": [
+            "backend_manager.py"
+        ]
+    },
+    "mindgen": {
+        "dirs": [
+            "analytics",
+            "charts",
+            "fusion",
+            "orchestrators",
+            "panels",
+            "reports",
+            "routes",
+            "ui",
+            "visuals",
+            "widgets"
+        ],
+        "files": [
+            "mindgen_master_orchestrator.py"
+        ]
+    },
+    "mindgen\\analytics": {
+        "dirs": [],
+        "files": [
+            "behavioral_trend_analyzer.py",
+            "insight_priority_ranker.py",
+            "multi_cluster_analyzer.py"
+        ]
+    },
+    "mindgen\\charts": {
+        "dirs": [],
+        "files": [
+            "behavioral_density_plot.py",
+            "behavioral_phase_diagram.py",
+            "behavioral_radar_chart.py",
+            "cognitive_direction_chart.py",
+            "cognitive_flux_chart.py",
+            "competency_spider_chart.py",
+            "composite_behavioral_chart.py",
+            "emotional_intensity_curve.py",
+            "emotional_volatibity_chart.py",
+            "heatmap_emotional_matrix.py",
+            "performance_distribution_plot.py",
+            "performance_evolution_chart.py"
+        ]
+    },
+    "mindgen\\fusion": {
+        "dirs": [],
+        "files": [
+            "mindgen_data_fusion_engine.py",
+            "mindgen_matrix_composer.py",
+            "visual_insight_bridge.py"
+        ]
+    },
+    "mindgen\\orchestrators": {
+        "dirs": [],
+        "files": [
+            "mindgen_global_orchestrator.py",
+            "mindgen_integrated_view_oschestrator.py",
+            "mindgen_view_consolidator.py"
+        ]
+    },
+    "mindgen\\panels": {
+        "dirs": [],
+        "files": [
+            "mindgen_overview_panel.py",
+            "performance_overview_panel.py",
+            "semantic_profile_panel.py"
+        ]
+    },
+    "mindgen\\reports": {
+        "dirs": [],
+        "files": [
+            "executive_briefing_builder.py"
+        ]
+    },
+    "mindgen\\routes": {
+        "dirs": [],
+        "files": [
+            "mindgen_dashboard_router.py"
+        ]
+    },
+    "mindgen\\ui": {
+        "dirs": [],
+        "files": [
+            "adaptative_visual_switcher.py",
+            "adaptive_dashboard_layout.py",
+            "mindgen_canvas_manager.py",
+            "mindgen_card_manager.py",
+            "mindgen_grid_layout.py",
+            "mindgen_panel_manager.py",
+            "mindgen_stack_panel.py",
+            "mindgen_theme_manager.py"
+        ]
+    },
+    "mindgen\\visuals": {
+        "dirs": [],
+        "files": [
+            "behavioral_energy_map.py",
+            "behavioral_force_map.py",
+            "cognitive_landscape_visualizer.py",
+            "emotional_vector_surface.py",
+            "influence_vector_field.py",
+            "leadership_influence_map.py",
+            "leadership_trajectory_visual.py",
+            "personality_cluster_map.py",
+            "semantic_alignment_visualizer.py",
+            "semantic_heat_signature.py",
+            "semantic_relation_graph.py",
+            "social_dynamics_visualizer.py",
+            "visual_map_builder.py"
+        ]
+    },
+    "mindgen\\widgets": {
+        "dirs": [],
+        "files": [
+            "executive_summary_widget.py",
+            "leadership_projection_widget.py"
+        ]
+    },
+    "mindscan_cli": {
+        "dirs": [],
+        "files": [
+            "mindscan_pdf_cli.py"
+        ]
+    },
+    "mindscan_examples": {
+        "dirs": [],
+        "files": [
+            "gerar_jsons_modelo.py",
+            "gerar_relatorio_pdf.py"
+        ]
+    },
+    "mindscan_pdf": {
+        "dirs": [],
+        "files": [
+            "__init__.py",
+            "cli.py"
+        ]
+    },
+    "modules": {
+        "dirs": [],
+        "files": [
+            "predictor.py",
+            "synmind_ai_engine.py",
+            "synmind_kernel.py"
+        ]
+    },
+    "pdf_engine": {
+        "dirs": [
+            "core",
+            "sections"
+        ],
+        "files": []
+    },
+    "pdf_engine\\core": {
+        "dirs": [],
+        "files": [
+            "builder.py",
+            "loader.py",
+            "pipeline.py",
+            "renderer.py"
+        ]
+    },
+    "pdf_engine\\sections": {
+        "dirs": [],
+        "files": [
+            "culture.py",
+            "emotional.py",
+            "final_report.py",
+            "introduction.py",
+            "performance.py",
+            "personality.py"
+        ]
+    },
+    "releases": {
+        "dirs": [],
+        "files": [
+            "README.md",
+            "RELEASE_NOTES.md",
+            "app_manifest.json",
+            "metadata_2025-11-26_06-43-39.json",
+            "mindscan_release_2025-11-26_06-43-39.zip",
+            "release_structure.json",
+            "synmind_integration.md"
+        ]
+    },
+    "tests": {
+        "dirs": [
+            "async"
+        ],
+        "files": [
+            "test_app.py",
+            "test_engine.py",
+            "test_frontend.py",
+            "test_pdf_engine.py",
+            "test_performance_stress.py",
+            "test_stress_weasy_real.py"
+        ]
+    },
+    "tests\\async": {
+        "dirs": [],
+        "files": [
+            "test_async_pdf_builder.py",
+            "test_async_pipeline.py",
+            "test_distributed_renderer_async.py"
+        ]
+    },
+    "tools": {
+        "dirs": [
+            "automator",
+            "cli",
+            "transcricao",
+            "validadores"
+        ],
+        "files": [
+            "audit_push.bat",
+            "build.py",
+            "consolidar_big5_v1.py",
+            "consolidar_bussola_v1.py",
+            "consolidar_cruzamentos_v1.py",
+            "consolidar_dass21_v1.py",
+            "consolidar_esquemas_v1.py",
+            "consolidar_ocai_v1.py",
+            "consolidar_performance_v1.py",
+            "consolidar_teique_v1.py",
+            "exporter.py",
+            "mindscan_file_generator.py",
+            "mindscan_optimizer.bat",
+            "mindscan_optimizer.py",
+            "mindscan_structure_auto_create.py",
+            "mindscan_superscript.bat",
+            "mindscan_superscript.py",
+            "optimizer.log",
+            "optimizer_launcher.log",
+            "push_to_github.py",
+            "scan_project_file_sizes.bat",
+            "scan_project_file_sizes.py",
+            "sync_all.py"
+        ]
+    },
+    "tools\\automator": {
+        "dirs": [
+            "tasks"
+        ],
+        "files": [
+            "__init__.py",
+            "audit_manager.py",
+            "backend_manager.py",
+            "cleanup_manager.py",
+            "core_manager.py",
+            "data_validator.py",
+            "executar_automator.bat",
+            "fix_paths_manager.py",
+            "github_manager.py",
+            "log_manager.py",
+            "main.py",
+            "release_manager.py",
+            "report_manager.py",
+            "task_manager.py",
+            "tasks.json"
+        ]
+    },
+    "tools\\automator\\tasks": {
+        "dirs": [],
+        "files": [
+            "__init__.py",
+            "fix_backend.py",
+            "fix_modules.py",
+            "fix_services.py",
+            "generate_report.py",
+            "run_audit.py",
+            "validate_structure.py"
+        ]
+    },
+    "tools\\cli": {
+        "dirs": [],
+        "files": [
+            "vazio.md"
+        ]
+    },
+    "tools\\transcricao": {
+        "dirs": [],
+        "files": [
+            "vazio.md"
+        ]
+    },
+    "tools\\validadores": {
+        "dirs": [],
+        "files": [
+            "vazio.md"
+        ]
+    },
+    "web": {
+        "dirs": [
+            "assets",
+            "finalizers",
+            "graphql",
+            "middleware",
+            "orchestrators",
+            "reports",
+            "routes",
+            "security",
+            "services",
+            "state",
+            "ui",
+            "utils",
+            "websocket"
+        ],
+        "files": [
+            "index.html",
+            "web_app.py"
+        ]
+    },
+    "web\\assets": {
+        "dirs": [],
+        "files": [
+            "asset_registry.py"
+        ]
+    },
+    "web\\finalizers": {
+        "dirs": [],
+        "files": [
+            "web_system_finalizer.py"
+        ]
+    },
+    "web\\graphql": {
+        "dirs": [],
+        "files": [
+            "graphql_schema.py"
+        ]
+    },
+    "web\\middleware": {
+        "dirs": [],
+        "files": [
+            "web_auth_middleware.py"
+        ]
+    },
+    "web\\orchestrators": {
+        "dirs": [],
+        "files": [
+            "web_master_orchestrator.py"
+        ]
+    },
+    "web\\reports": {
+        "dirs": [],
+        "files": [
+            "report_data_pipeline.py",
+            "report_renderer_web.py",
+            "web_docx_exporter.py",
+            "web_pdf_exporter.py",
+            "web_report_template_manager.py"
+        ]
+    },
+    "web\\routes": {
+        "dirs": [],
+        "files": [
+            "admin_router.py",
+            "analytics_router.py",
+            "dashboard_router.py",
+            "graphql_router.py",
+            "org_dashboard_router.py",
+            "report_web_router.py",
+            "session_auth_router.py",
+            "web_export_router.py",
+            "web_health_router.py",
+            "web_router_registry.py"
+        ]
+    },
+    "web\\security": {
+        "dirs": [],
+        "files": [
+            "role_permission_manager.py",
+            "web_security_manager.py"
+        ]
+    },
+    "web\\services": {
+        "dirs": [
+            "providers"
+        ],
+        "files": [
+            "analytics_service.py",
+            "charts_service.py",
+            "dashboard_data_aggregator.py",
+            "dashboard_service.py",
+            "insight_feed_service.py",
+            "org_kpi_service.py",
+            "realtime_update_service.py",
+            "session_tracker_service.py",
+            "team_insight_service.py",
+            "user_management_service.py",
+            "web_log_service.py"
+        ]
+    },
+    "web\\services\\providers": {
+        "dirs": [],
+        "files": [
+            "org_structure_provider.py",
+            "risk_data_provider.py",
+            "user_activity_provider.py"
+        ]
+    },
+    "web\\state": {
+        "dirs": [],
+        "files": [
+            "dashboard_state_manager.py"
+        ]
+    },
+    "web\\ui": {
+        "dirs": [
+            "icons",
+            "org",
+            "styles",
+            "team",
+            "themes",
+            "widgets"
+        ],
+        "files": [
+            "dashboard_layout_manager.py",
+            "dashboard_widget_binder.py",
+            "ui_dynamic_loader.py",
+            "ui_renderer.py"
+        ]
+    },
+    "web\\ui\\icons": {
+        "dirs": [],
+        "files": [
+            "ui_icon_manager.py"
+        ]
+    },
+    "web\\ui\\org": {
+        "dirs": [],
+        "files": [
+            "org_insight_renderer.py",
+            "org_profile_renderer.py"
+        ]
+    },
+    "web\\ui\\styles": {
+        "dirs": [],
+        "files": [
+            "corporate_style_manager.py",
+            "web_style_merger.py"
+        ]
+    },
+    "web\\ui\\team": {
+        "dirs": [],
+        "files": [
+            "team_profile_renderer.py"
+        ]
+    },
+    "web\\ui\\themes": {
+        "dirs": [],
+        "files": [
+            "dashboard_theme_bridge.py",
+            "theme_manager_v4.py"
+        ]
+    },
+    "web\\ui\\widgets": {
+        "dirs": [],
+        "files": [
+            "performance_heatmap_widget.py",
+            "widget_global_stats.py",
+            "widget_kpi_board.py",
+            "widget_registry.py",
+            "widget_risk_overview.py",
+            "widget_team_map.py",
+            "widget_trend_graph.py"
+        ]
+    },
+    "web\\utils": {
+        "dirs": [],
+        "files": [
+            "http_error_handler.py",
+            "http_utilities.py"
+        ]
+    },
+    "web\\websocket": {
+        "dirs": [],
+        "files": [
+            "websocket_updates.py"
+        ]
+    },
+    "webapp": {
+        "dirs": [
+            "src"
+        ],
+        "files": [
+            "index.html",
+            "package.json",
+            "tsconfig.json",
+            "vite.config.ts"
+        ]
+    },
+    "webapp\\src": {
+        "dirs": [],
+        "files": [
+            "AdminConsole.tsx",
+            "Analytics.tsx",
+            "App.tsx",
+            "LiveMonitor.tsx",
+            "Login.tsx",
+            "main.tsx"
+        ]
+    },
+    "_optimizer_checkpoints": {
+        "dirs": [],
+        "files": []
+    }
+}

@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\backend\engine\risk_aggregator.py
+# Última atualização: 2025-12-11T09:59:20.827002
+
 """
 MindScan — Risk Aggregator (ULTRA)
 Inovexa Software — Engenharia Ultra Superior

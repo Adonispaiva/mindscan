@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\backend\engine\insight_aggregator.py
+# Última atualização: 2025-12-11T09:59:20.810002
+
 """
 MindScan — Insight Aggregator (ULTRA)
 Inovexa Software — Engenharia Ultra Superior

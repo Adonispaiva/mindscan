@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\tools\consolidar_big5_v1.py
+# Última atualização: 2025-12-11T09:59:27.777220
+
 """
 Consolidar Big5 — Automação Total v1.0
 Diretor: Leo Vinci — Inovexa

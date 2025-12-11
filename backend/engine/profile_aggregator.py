@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\backend\engine\profile_aggregator.py
+# Última atualização: 2025-12-11T09:59:20.824000
+
 """
 MindScan — Profile Aggregator
 Inovexa Software — Engenharia Ultra Superior

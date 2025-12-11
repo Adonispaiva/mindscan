@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\backend\services\pdf\engine\pdf.engine.py
+# Última atualização: 2025-12-11T09:59:21.200087
+
 # -*- coding: utf-8 -*-
 """
 pdf_engine.py — MindScan SynMind v2.0

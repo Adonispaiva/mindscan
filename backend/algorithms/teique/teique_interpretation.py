@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\backend\algorithms\teique\teique_interpretation.py
+# Última atualização: 2025-12-11T09:59:20.730228
+
 from fastapi import HTTPException, status
 from backend.schemas.user_schema import (
     UserCreateRequest,

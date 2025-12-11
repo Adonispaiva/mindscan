@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\backend\algorithms\dass\dass_factor_map.py
+# Última atualização: 2025-12-11T09:59:20.652172
+
 """
 DASS – FACTOR MAP (Versão ULTRA SUPERIOR)
 Mapeamento técnico dos fatores do DASS clássico (stress, anxiety, depression)

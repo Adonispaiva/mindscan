@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\backend\algorithms\performance\performance.py
+# Última atualização: 2025-12-11T09:59:20.698978
+
 """
 Performance — Núcleo de Avaliação de Performance Profissional
 Integra normas, dimensões, alertas, riscos, forças, insights e previsão.

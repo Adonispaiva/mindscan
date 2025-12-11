@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\backend\algorithms\teique\teique_strengths.py
+# Última atualização: 2025-12-11T09:59:20.730228
+
 """
 TEIQue Strengths
 Gera mapa de forças emocionais baseado nas dimensões e fatores agregados do TEIQue.

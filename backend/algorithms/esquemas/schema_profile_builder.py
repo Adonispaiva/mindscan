@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\backend\algorithms\esquemas\schema_profile_builder.py
+# Última atualização: 2025-12-11T09:59:20.683445
+
 """
 Schema Profile Builder
 Constrói um perfil psicodinâmico intermediário com base nas dimensões

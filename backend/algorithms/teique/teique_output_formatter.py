@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\backend\algorithms\teique\teique_output_formatter.py
+# Última atualização: 2025-12-11T09:59:20.730228
+
 """
 TEIQue Output Formatter
 Converte resultados brutos do módulo TEIQue em um payload padronizado para o

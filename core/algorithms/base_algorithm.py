@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\core\algorithms\base_algorithm.py
+# Última atualização: 2025-12-11T09:59:27.558489
+
 """
 MindScan — Base Psychological Algorithm
 Direção Técnica: Leo Vinci (Inovexa)

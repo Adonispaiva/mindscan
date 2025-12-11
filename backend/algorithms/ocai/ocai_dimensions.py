@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\backend\algorithms\ocai\ocai_dimensions.py
+# Última atualização: 2025-12-11T09:59:20.698978
+
 """
 OCAI Dimensions
 Converte escores normalizados nas quatro dimensões fundamentais da cultura:

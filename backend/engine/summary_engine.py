@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\backend\engine\summary_engine.py
+# Última atualização: 2025-12-11T09:59:20.838001
+
 # MindScan Summary Engine — Ultra Superior v1.0
 # Responsável por gerar resumos estruturados de múltiplas dimensões cognitivas,
 # incluindo combinações MI, traços, riscos, forças e insights.

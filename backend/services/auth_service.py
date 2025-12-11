@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\backend\services\auth_service.py
+# Última atualização: 2025-12-11T09:59:21.089476
+
 from datetime import datetime, timedelta
 from typing import Optional, Dict, Any
 import jwt

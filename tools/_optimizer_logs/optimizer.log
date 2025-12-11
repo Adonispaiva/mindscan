@@ -1,0 +1,32 @@
+[2025-12-11 11:13:13] → Gerando árvore completa (FULLTREE)…
+[2025-12-11 11:13:17] ✓ Árvore gerada.
+
+[2025-12-11 11:14:28] → Gerando árvore completa (FULLTREE)…
+[2025-12-11 11:14:32] ✓ Árvore gerada.
+
+[2025-12-11 11:26:34] → Gerando árvore completa do projeto (FULLTREE)…
+[2025-12-11 11:26:42] ✓ Arquivos de árvore gerados:
+[2025-12-11 11:26:42]   - JSON: D:\projetos-inovexa\mindscan\full_tree.json
+[2025-12-11 11:26:42]   - TXT : D:\projetos-inovexa\mindscan\full_tree.txt
+[2025-12-11 11:26:42]   - LOG : D:\projetos-inovexa\mindscan\logs\estrutura\tree_2025-12-11_11h26min42s.txt
+
+[2025-12-11 14:06:25] → Gerando árvore completa do projeto (FULLTREE)…
+[2025-12-11 14:06:26] ✓ Arquivos de árvore gerados:
+[2025-12-11 14:06:26]   - JSON: D:\projetos-inovexa\mindscan\full_tree.json
+[2025-12-11 14:06:26]   - TXT : D:\projetos-inovexa\mindscan\full_tree.txt
+[2025-12-11 14:06:26]   - LOG : D:\projetos-inovexa\mindscan\logs\estrutura\tree_2025-12-11_14h06min26s.txt
+
+[2025-12-11 15:00:30] → Gerando TREE_LEGACY (modo 10)…
+[2025-12-11 15:00:31] ✓ TREE_LEGACY salvo em:
+[2025-12-11 15:00:31]   - D:\projetos-inovexa\mindscan\tools\tree_legacy_2025-12-11_15h00min31s.txt
+[2025-12-11 15:00:31]   - D:\projetos-inovexa\mindscan\logs\estrutura\tree_legacy_2025-12-11_15h00min31s.txt
+
+[2025-12-11 15:06:00] → FULLTREE (modo 9)…
+[2025-12-11 15:06:01] ✓ FULLTREE concluído.
+
+[2025-12-11 15:08:54] → Executando auditoria (AUDIT)…
+[2025-12-11 15:09:07] ✓ Auditoria concluída.
+
+[2025-12-11 15:13:35] → FULLTREE (modo 9)…
+[2025-12-11 15:13:36] ✓ FULLTREE concluído.
+

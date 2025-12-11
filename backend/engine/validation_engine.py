@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\backend\engine\validation_engine.py
+# Última atualização: 2025-12-11T09:59:20.841083
+
 """
 MindScan — Validation Engine (ULTRA)
 Inovexa Software — Engenharia Ultra Superior

@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\backend\database.py
+# Última atualização: 2025-12-11T09:59:20.558303
+
 # Caminho: backend/database.py
 # MindScan Backend — Núcleo de Banco de Dados
 # Diretor Técnico: Leo Vinci (Inovexa Software)

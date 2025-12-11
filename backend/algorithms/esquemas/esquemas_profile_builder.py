@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\backend\algorithms\esquemas\esquemas_profile_builder.py
+# Última atualização: 2025-12-11T09:59:20.683445
+
 """
 Esquemas Profile Builder
 Constrói o perfil final dos 18 Esquemas incluindo:

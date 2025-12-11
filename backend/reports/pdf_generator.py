@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\backend\reports\pdf_generator.py
+# Última atualização: 2025-12-11T09:59:21.073776
+
 # Caminho: D:\projetos-inovexa\mindscan\backend\reports\pdf_generator.py
 """
 Gerador REAL de PDF do MindScan®

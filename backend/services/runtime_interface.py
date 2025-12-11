@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\backend\services\runtime_interface.py
+# Última atualização: 2025-12-11T09:59:21.120711
+
 from typing import Dict, Any
 
 class RuntimeInterface:

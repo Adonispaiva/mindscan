@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\backend\engine\routing_engine.py
+# Última atualização: 2025-12-11T09:59:20.831000
+
 """
 MindScan — Routing Engine (ULTRA)
 Inovexa Software — Engenharia Ultra Superior

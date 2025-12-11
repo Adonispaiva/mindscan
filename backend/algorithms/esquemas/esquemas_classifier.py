@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\backend\algorithms\esquemas\esquemas_classifier.py
+# Última atualização: 2025-12-11T09:59:20.667799
+
 """
 Esquemas Classifier
 Converte dimensões normalizadas em pontuações finais dos 18 Esquemas de Young.

@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\backend\engine\talent_engine.py
+# Última atualização: 2025-12-11T09:59:20.841083
+
 # MindScan Talent Engine — Ultra Superior v1.0
 # Identifica talentos dominantes, potenciais, lacunas e zonas de excelência.
 

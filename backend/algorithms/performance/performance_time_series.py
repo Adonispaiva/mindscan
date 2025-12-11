@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\backend\algorithms\performance\performance_time_series.py
+# Última atualização: 2025-12-11T09:59:20.714601
+
 """
 Performance Time Series
 Módulo responsável por análise temporal (evolutiva) da performance

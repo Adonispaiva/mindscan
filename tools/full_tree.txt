@@ -1,0 +1,1710 @@
+[.]
+  DIR  - .github
+  DIR  - _optimizer_checkpoints
+  DIR  - admin
+  DIR  - analytics
+  DIR  - audios
+  DIR  - auth
+  DIR  - backend
+  DIR  - coaching_v4
+  DIR  - core
+  DIR  - data
+  DIR  - deploy
+  DIR  - docs
+  DIR  - export_v4
+  DIR  - frontend
+  DIR  - generated_reports
+  DIR  - graphql_live
+  DIR  - logging
+  DIR  - maintenance
+  DIR  - managers
+  DIR  - mindgen
+  DIR  - mindscan_cli
+  DIR  - mindscan_examples
+  DIR  - mindscan_pdf
+  DIR  - modules
+  DIR  - pdf_engine
+  DIR  - releases
+  DIR  - tests
+  DIR  - tools
+  DIR  - web
+  DIR  - webapp
+  FILE - .env
+  FILE - .mindscan_push.log
+  FILE - ARCHITECTURE.md
+  FILE - CLOSING_SUMMARY.md
+  FILE - DEV_GUIDE.md
+  FILE - Dockerfile
+  FILE - LICENSE_INOVEXA
+  FILE - LICENSE_INOVEXA.txt
+  FILE - OBSERVABILITY_GUIDE.md
+  FILE - PERFORMANCE_GUIDE.md
+  FILE - README.md
+  FILE - __init__.py
+  FILE - auditar_mindscan.py
+  FILE - docker-compose.yml
+  FILE - executar_revisor_global.bat
+  FILE - forcegit_v3.log
+  FILE - gerar_tree_referencia.bat
+  FILE - governance_metadata.json
+  FILE - instalador_mindscan.py
+  FILE - main.py
+  FILE - manutencao_mindscan.bat
+  FILE - mindscan_manifest.json
+  FILE - mindscan_selfheal_max.py
+  FILE - mindscan_web_api.py
+  FILE - pdf.builder.py
+  FILE - pyproject.toml
+  FILE - relatorio_auditoria.json
+  FILE - requirements.txt
+  FILE - setup.cfg
+  FILE - setup.py
+  FILE - sincronizar_github.py
+  FILE - start_backend.bat
+  FILE - tree_atual.json
+  FILE - tree_referencia.json
+  FILE - tree_validation_report.json
+
+[.github]
+  DIR  - workflows
+
+[.github\workflows]
+  FILE - deploy.yml
+  FILE - mindscan_ci.yml
+  FILE - sync_auditoria.yml
+
+[admin]
+  FILE - admin_router.py
+
+[analytics]
+  FILE - analytics_router.py
+  FILE - analytics_service.py
+  FILE - live_metrics_router.py
+  FILE - live_metrics_service.py
+
+[audios]
+  FILE - WhatsApp Ptt 2025-12-08 at 09.07.39.ogg
+  FILE - WhatsApp Ptt 2025-12-08 at 09.07.39_transcricao.txt
+  FILE - WhatsApp Ptt 2025-12-08 at 09.08.44.ogg
+  FILE - WhatsApp Ptt 2025-12-08 at 09.08.44_transcricao.txt
+  FILE - WhatsApp Ptt 2025-12-08 at 09.09.54.ogg
+  FILE - WhatsApp Ptt 2025-12-08 at 09.09.54_transcricao.txt
+  FILE - transcrever_audios.py
+
+[auth]
+  FILE - auth_router.py
+  FILE - auth_service.py
+  FILE - middleware_auth.py
+
+[backend]
+  DIR  - algorithms
+  DIR  - analytics
+  DIR  - api
+  DIR  - core
+  DIR  - db
+  DIR  - engine
+  DIR  - integrations
+  DIR  - mi
+  DIR  - middleware
+  DIR  - models
+  DIR  - pipelines
+  DIR  - providers
+  DIR  - reports
+  DIR  - routers
+  DIR  - runtime
+  DIR  - services
+  DIR  - static
+  DIR  - storage
+  DIR  - tests
+  DIR  - utils
+  DIR  - workers
+  FILE - app.py
+  FILE - config.py
+  FILE - database.py
+  FILE - main.py
+  FILE - models.py
+  FILE - pysettings.py
+  FILE - requirements.txt
+  FILE - run_e2e.py
+
+[backend\algorithms]
+  DIR  - big5
+  DIR  - bussola
+  DIR  - core
+  DIR  - cruzamentos
+  DIR  - dass
+  DIR  - dass21
+  DIR  - esquemas
+  DIR  - matcher
+  DIR  - ocai
+  DIR  - performance
+  DIR  - teique
+  FILE - algorithms_big5.py
+  FILE - algorithms_bussola.py
+  FILE - algorithms_cross.py
+  FILE - algorithms_dass.py
+  FILE - algorithms_esquemas.py
+  FILE - algorithms_global.py
+  FILE - algorithms_ocai.py
+  FILE - algorithms_performance.py
+  FILE - algorithms_teique.py
+  FILE - big5.py
+  FILE - bussola.py
+  FILE - cruzamentos.py
+  FILE - dass21.py
+  FILE - esquemas.py
+  FILE - ocai.py
+  FILE - performance.py
+  FILE - teique.py
+
+[backend\algorithms\big5]
+  FILE - big5.py
+  FILE - big5_alerts.py
+  FILE - big5_crosslinks.py
+  FILE - big5_dimensions.py
+  FILE - big5_enrichment.py
+  FILE - big5_factor_map.py
+  FILE - big5_factor_weights.py
+  FILE - big5_insights.py
+  FILE - big5_needs_map.py
+  FILE - big5_norms.py
+  FILE - big5_output_formatter.py
+  FILE - big5_predictor.py
+  FILE - big5_profile_builder.py
+  FILE - big5_risk_flags.py
+  FILE - big5_risk_map.py
+  FILE - big5_strengths.py
+  FILE - big5_summary.py
+  FILE - big5_traits_map.py
+  FILE - big5_validation.py
+
+[backend\algorithms\bussola]
+  FILE - bussola.py
+  FILE - bussola_alerts.py
+  FILE - bussola_archetypes.py
+  FILE - bussola_coordinates.py
+  FILE - bussola_crosslinks.py
+  FILE - bussola_directions.py
+  FILE - bussola_map.py
+  FILE - bussola_matrix.py
+  FILE - bussola_output_formatter.py
+  FILE - bussola_positioning.py
+  FILE - bussola_recommendations.py
+  FILE - bussola_risks.py
+  FILE - bussola_strengths.py
+  FILE - bussola_summary.py
+  FILE - bussola_validation.py
+  FILE - bussola_vectors.py
+
+[backend\algorithms\core]
+  FILE - cross_instrument_mapper.py
+  FILE - instrument_pipeline.py
+  FILE - instrument_registry.py
+  FILE - performance_estimator.py
+  FILE - scale_normalizer.py
+  FILE - statistical_verifier.py
+
+[backend\algorithms\cruzamentos]
+  FILE - cross_alerts.py
+  FILE - cross_big5_dass.py
+  FILE - cross_big5_egos.py
+  FILE - cross_big5_esquemas.py
+  FILE - cross_big5_ocai.py
+  FILE - cross_big5_performance.py
+  FILE - cross_big5_teique.py
+  FILE - cross_engine.py
+  FILE - cross_ocai_big5.py
+  FILE - cross_ocai_dass.py
+  FILE - cross_ocai_egos.py
+  FILE - cross_ocai_teique.py
+  FILE - cross_risks.py
+  FILE - cross_strengths.py
+  FILE - cross_teique_big5.py
+  FILE - cross_teique_dass.py
+  FILE - cross_teique_egos.py
+  FILE - cross_teique_esquemas.py
+  FILE - cruzamentos.py
+
+[backend\algorithms\dass]
+  FILE - dass_alerts.py
+  FILE - dass_crosslinks.py
+  FILE - dass_factor_map.py
+  FILE - dass_forms.py
+  FILE - dass_norms.py
+  FILE - dass_profile_builder.py
+  FILE - dass_risk_flags.py
+  FILE - dass_summary.py
+  FILE - dass_validation.py
+
+[backend\algorithms\dass21]
+  FILE - dass21.py
+  FILE - dass21_alerts.py
+  FILE - dass21_crosslinks.py
+  FILE - dass21_dimensions.py
+  FILE - dass21_factor_map.py
+  FILE - dass21_factors.py
+  FILE - dass21_forms.py
+  FILE - dass21_insights.py
+  FILE - dass21_norms.py
+  FILE - dass21_output_formatter.py
+  FILE - dass21_profile_builder.py
+  FILE - dass21_risk_map.py
+  FILE - dass21_summary.py
+  FILE - dass21_validation.py
+
+[backend\algorithms\esquemas]
+  FILE - esquemas.py
+  FILE - esquemas_alerts.py
+  FILE - esquemas_classifier.py
+  FILE - esquemas_crosslinks.py
+  FILE - esquemas_dimensions.py
+  FILE - esquemas_factor_weights.py
+  FILE - esquemas_needs_map.py
+  FILE - esquemas_norms.py
+  FILE - esquemas_profile_builder.py
+  FILE - esquemas_risk_map.py
+  FILE - esquemas_strengths.py
+  FILE - esquemas_summary.py
+  FILE - esquemas_validation.py
+  FILE - schema_alerts.py
+  FILE - schema_dimensions.py
+  FILE - schema_insights.py
+  FILE - schema_output_formatter.py
+  FILE - schema_profile_builder.py
+  FILE - schema_risk_map.py
+  FILE - schema_summary.py
+  FILE - schema_validation.py
+
+[backend\algorithms\matcher]
+  FILE - matcher.py
+
+[backend\algorithms\ocai]
+  FILE - ocai.py
+  FILE - ocai_alerts.py
+  FILE - ocai_crosslinks.py
+  FILE - ocai_culture_map.py
+  FILE - ocai_descriptives.py
+  FILE - ocai_dimensions.py
+  FILE - ocai_insights.py
+  FILE - ocai_norms.py
+  FILE - ocai_output_formatter.py
+  FILE - ocai_profile_builder.py
+  FILE - ocai_summary.py
+  FILE - ocai_validation.py
+
+[backend\algorithms\performance]
+  FILE - performance.py
+  FILE - performance_alerts.py
+  FILE - performance_crosslinks.py
+  FILE - performance_dimensions.py
+  FILE - performance_insights.py
+  FILE - performance_norms.py
+  FILE - performance_output_formatter.py
+  FILE - performance_predictor.py
+  FILE - performance_profile_builder.py
+  FILE - performance_risk_map.py
+  FILE - performance_scoring_matrix.py
+  FILE - performance_strengths.py
+  FILE - performance_summary.py
+  FILE - performance_time_series.py
+  FILE - performance_validation.py
+
+[backend\algorithms\teique]
+  FILE - teique.py
+  FILE - teique_alerts.py
+  FILE - teique_crosslinks.py
+  FILE - teique_dimensions.py
+  FILE - teique_facets.py
+  FILE - teique_factor_weights.py
+  FILE - teique_insights.py
+  FILE - teique_interpretation.py
+  FILE - teique_norms.py
+  FILE - teique_output_formatter.py
+  FILE - teique_profile_builder.py
+  FILE - teique_risk_flags.py
+  FILE - teique_risk_map.py
+  FILE - teique_strengths.py
+  FILE - teique_summary.py
+  FILE - teique_traits_map.py
+  FILE - teique_validation.py
+
+[backend\analytics]
+  DIR  - audit
+  DIR  - metrics
+  DIR  - monitoring
+
+[backend\analytics\audit]
+  FILE - audit_log_service.py
+
+[backend\analytics\metrics]
+  FILE - metrics_service.py
+
+[backend\analytics\monitoring]
+  FILE - monitoring_service.py
+
+[backend\api]
+  DIR  - compat
+  DIR  - controllers
+  DIR  - docs
+  DIR  - middleware
+  DIR  - routes
+  DIR  - schemas
+  DIR  - services
+  DIR  - utils
+  DIR  - validators
+  FILE - router.py
+  FILE - schemas.py
+  FILE - service.py
+  FILE - utils.py
+
+[backend\api\compat]
+  FILE - external_api_compat_layer.py
+
+[backend\api\controllers]
+  FILE - mindscan_controller.py
+  FILE - report_controller.py
+  FILE - session_controller.py
+
+[backend\api\docs]
+  FILE - openapi_mindscan.md
+
+[backend\api\middleware]
+  FILE - audit_middleware.py
+
+[backend\api\routes]
+  FILE - health_check_router.py
+  FILE - integration_router.py
+  FILE - routes_admin_panel.py
+  FILE - routes_mindscan_integration.py
+  FILE - routes_report.py
+  FILE - routes_results.py
+
+[backend\api\schemas]
+  FILE - mindscan_models.py
+  FILE - report_schema.py
+
+[backend\api\services]
+  FILE - diagnostic_orchestrator.py
+  FILE - file_upload_service.py
+  FILE - input_normalizer.py
+  FILE - instrument_normalizer.py
+  FILE - logging_service.py
+  FILE - mindscan_service.py
+  FILE - output_formatter.py
+  FILE - report_gateway.py
+  FILE - result_gateway.py
+  FILE - session_gateway.py
+
+[backend\api\utils]
+  FILE - error_response_builder.py
+
+[backend\api\validators]
+  FILE - mindscan_validator.py
+
+[backend\core]
+  DIR  - compliance
+  DIR  - diagnostic
+  DIR  - interpretation
+  DIR  - normalization
+  DIR  - orchestrator
+  FILE - diagnostic_engine.py
+  FILE - engine.py
+  FILE - nlp_processor.py
+  FILE - normalizer.py
+  FILE - runtime_kernel.py
+  FILE - scoring.py
+
+[backend\core\compliance]
+  FILE - compliance_engine.py
+
+[backend\core\diagnostic]
+  FILE - diagnostic_engine_v3.py
+
+[backend\core\interpretation]
+  FILE - interpretation_pipeline.py
+
+[backend\core\normalization]
+  FILE - global_normalization.py
+
+[backend\core\orchestrator]
+  FILE - mindscan_orchestrator.py
+
+[backend\db]
+  FILE - vazio.md
+
+[backend\engine]
+  FILE - __init__.py
+  FILE - aggregator.py
+  FILE - audit.py
+  FILE - audit_engine.py
+  FILE - hybrid_consistency_checker.py
+  FILE - hybrid_insight_engine.py
+  FILE - hybrid_narrative_engine.py
+  FILE - hybrid_payload_builder.py
+  FILE - hybrid_reasoning_expander.py
+  FILE - hybrid_score_engine.py
+  FILE - hybrid_summary_builder.py
+  FILE - insight_aggregator.py
+  FILE - insight_engine.py
+  FILE - mi_engine.py
+  FILE - mi_engine_advanced.py
+  FILE - mi_engine_hybrid.py
+  FILE - mi_hybrid_orchestrator.py
+  FILE - mi_hybrid_profile_builder.py
+  FILE - mi_hybrid_router.py
+  FILE - normalization_engine.py
+  FILE - normalizer.py
+  FILE - pipeline.py
+  FILE - post_diagnostic_engine.py
+  FILE - pre_diagnostic_engine.py
+  FILE - profile_aggregator.py
+  FILE - report_engine.py
+  FILE - report_generator.py
+  FILE - risk_aggregator.py
+  FILE - risk_engine.py
+  FILE - risk_map_engine.py
+  FILE - risk_rules_engine.py
+  FILE - routing_engine.py
+  FILE - runtime_engine.py
+  FILE - score_aggregator.py
+  FILE - scoring_engine.py
+  FILE - summarization_engine.py
+  FILE - summary_aggregator.py
+  FILE - summary_engine.py
+  FILE - synthesis_engine.py
+  FILE - synthetic_engine.py
+  FILE - system_engine.py
+  FILE - talent_engine.py
+  FILE - trait_engine.py
+  FILE - validation_engine.py
+  FILE - validator.py
+
+[backend\integrations]
+  DIR  - events
+  DIR  - webhooks
+  DIR  - whatsapp
+  FILE - __init__.py
+  FILE - whatsapp.py
+  FILE - whatsapp_ai.py
+  FILE - whatsapp_handler.py
+  FILE - whatsapp_utils.py
+
+[backend\integrations\events]
+  FILE - event_dispatcher.py
+  FILE - integration_event_handlers.py
+
+[backend\integrations\webhooks]
+  FILE - webhook_engine.py
+
+[backend\integrations\whatsapp]
+  FILE - whatsapp_gateway.py
+
+[backend\mi]
+  DIR  - compliance
+  DIR  - generative
+  DIR  - persona
+  DIR  - prompts
+  FILE - mi_chain_of_thought.py
+  FILE - mi_context_engine.py
+  FILE - mi_cross_section_engine.py
+  FILE - mi_engine.py
+  FILE - mi_executive_summary_engine.py
+  FILE - mi_formatter.py
+  FILE - mi_narrative_polisher.py
+  FILE - mi_normalizer.py
+  FILE - mi_postprocessing.py
+  FILE - mi_reasoning.py
+  FILE - mi_risk_detector.py
+  FILE - mi_sanitizer.py
+  FILE - mi_semantic_mapper.py
+  FILE - mi_structurer.py
+  FILE - mi_validator.py
+  FILE - role_fit_engine.py
+
+[backend\mi\compliance]
+  FILE - compliance_apa.py
+  FILE - compliance_bias.py
+  FILE - compliance_diagnostic.py
+  FILE - compliance_ethics.py
+  FILE - compliance_fairness.py
+  FILE - compliance_limits.py
+  FILE - compliance_moderation.py
+  FILE - compliance_organizational.py
+  FILE - compliance_privacy.py
+  FILE - compliance_psycho.py
+  FILE - compliance_root.py
+  FILE - compliance_security.py
+  FILE - compliance_transparency.py
+
+[backend\mi\generative]
+  FILE - mi_adaptative_narrative_engine.py
+  FILE - mi_adaptative_response_generator.py
+  FILE - mi_adaptive_personality_shift.py
+  FILE - mi_anomaly_explainer.py
+  FILE - mi_beharioval_anchor_engine.py
+  FILE - mi_behavioral_forecast_engine.py
+  FILE - mi_blindspot_detector.py
+  FILE - mi_cognitive_map_generator.py
+  FILE - mi_confidence_projection_engine.py
+  FILE - mi_conflict_radar.py
+  FILE - mi_deep_trait_expander.py
+  FILE - mi_development_path_generator.py
+  FILE - mi_dialogue_coach.py
+  FILE - mi_dynamic_performance_engine.py
+  FILE - mi_emotional_force_map.py
+  FILE - mi_emotional_graph.py
+  FILE - mi_emotional_regulation_engine.py
+  FILE - mi_generative_insights.py
+  FILE - mi_generative_master_orchestrator.py
+  FILE - mi_generative_summary_engine.py
+  FILE - mi_integrated_profile_builder.py
+  FILE - mi_leadership_predictor.py
+  FILE - mi_meta_insight_synthesizer.py
+  FILE - mi_meta_patterns.py
+  FILE - mi_motivation_vector_engine.py
+  FILE - mi_multilayer_profile_orchestrator.py
+  FILE - mi_multioutput_merger.py
+  FILE - mi_opportunity_scanner.py
+  FILE - mi_persona_synthesizer.py
+  FILE - mi_predictive_rolefit_v2.py
+  FILE - mi_question_expansion_engine.py
+  FILE - mi_relationship_stability_engine.py
+  FILE - mi_role_recommendation_engine.py
+  FILE - mi_social_dynamics_engine.py
+  FILE - mi_strength_opportunity_mapper.py
+  FILE - mi_stress_vectorizer.py
+  FILE - mi_structural_personality_engine.py
+  FILE - mi_team_compatibility_engine.py
+  FILE - mi_team_role_suggester.py
+  FILE - mi_trait_predictor.py
+
+[backend\mi\persona]
+  FILE - persona_constraints.py
+  FILE - persona_core.py
+  FILE - persona_examples.py
+  FILE - persona_filters.py
+  FILE - persona_metadata.py
+  FILE - persona_rules.py
+  FILE - persona_style.py
+  FILE - persona_voice.py
+
+[backend\mi\prompts]
+  FILE - prompt_mi_synmind.md
+
+[backend\middleware]
+  FILE - rate_limit_middleware.py
+
+[backend\models]
+  DIR  - inputs
+  DIR  - outputs
+  DIR  - scoring
+  FILE - algorithm_output.py
+  FILE - audit_log.py
+  FILE - bussola_profile.py
+  FILE - cross_insights_model.py
+  FILE - culture_profile.py
+  FILE - diagnostic_flags.py
+  FILE - diagnostic_matrix.py
+  FILE - diagnostic_payload.py
+  FILE - diagnostic_profile_builder.py
+  FILE - diagnostic_request.py
+  FILE - diagnostic_response.py
+  FILE - emotional_profile.py
+  FILE - insight_block.py
+  FILE - leadership_profile.py
+  FILE - metadata_block.py
+  FILE - mi_document.py
+  FILE - mi_document_package.py
+  FILE - mindscan_full_document.py
+  FILE - mindscan_result.py
+  FILE - narrative_block.py
+  FILE - nlp_enrichment.py
+  FILE - ocai_profile.py
+  FILE - pdf_render_payload.py
+  FILE - pdf_section_context.py
+  FILE - pdi_item.py
+  FILE - performance_profile.py
+  FILE - recommendation_item.py
+  FILE - report_block.py
+  FILE - report_context.py
+  FILE - report_section.py
+  FILE - report_summary.py
+  FILE - roadmap_item.py
+  FILE - schema_profile.py
+
+[backend\models\inputs]
+  FILE - behavioral_input.py
+  FILE - big5_input.py
+  FILE - bussola_input.py
+  FILE - cognitive_input.py
+  FILE - context_input.py
+  FILE - cross_input.py
+  FILE - cultura_input.py
+  FILE - dass_input.py
+  FILE - device_input.py
+  FILE - esquemas_input.py
+  FILE - export_input.py
+  FILE - insight_input.py
+  FILE - leadership_input.py
+  FILE - metadata_input.py
+  FILE - mi_input.py
+  FILE - ocai_input.py
+  FILE - pdf_input.py
+  FILE - performance_input.py
+  FILE - personality_input.py
+  FILE - pipeline_input.py
+  FILE - profile_input.py
+  FILE - schemas_input.py
+  FILE - scoring_input.py
+  FILE - session_input.py
+  FILE - system_input.py
+  FILE - teique_input.py
+  FILE - user_profile.py
+  FILE - vazio.md
+
+[backend\models\outputs]
+  FILE - big5_output.py
+  FILE - bussola_output.py
+  FILE - bussola_section_output.py
+  FILE - cross_output.py
+  FILE - dass_output.py
+  FILE - decision_output.py
+  FILE - diagnostic_output.py
+  FILE - diagnostic_report_output.py
+  FILE - esquemas_output.py
+  FILE - insight_output.py
+  FILE - metadata_output.py
+  FILE - mi_output.py
+  FILE - ocai_output.py
+  FILE - pdf_output.py
+  FILE - performance_output.py
+  FILE - personality_output.py
+  FILE - pipeline_output.py
+  FILE - risk_report.py
+  FILE - strengths_report.py
+  FILE - summary_output.py
+  FILE - teique_output.py
+  FILE - token_output.py
+  FILE - user_output.py
+
+[backend\models\scoring]
+  FILE - scoring_big5.py
+  FILE - scoring_bussola.py
+  FILE - scoring_cross.py
+  FILE - scoring_dass.py
+  FILE - scoring_esquemas.py
+  FILE - scoring_global.py
+  FILE - scoring_ocai.py
+  FILE - scoring_performance.py
+  FILE - scoring_teique.py
+  FILE - scoring_validation.py
+
+[backend\pipelines]
+  FILE - big5_pipeline.py
+  FILE - bussola_pipeline.py
+  FILE - cross_pipeline.py
+  FILE - dass_pipeline.py
+  FILE - diagnostic_pipeline_async.py
+  FILE - esquemas_pipeline.py
+  FILE - full_pipeline.py
+  FILE - mindscan_pipeline.py
+  FILE - ocai_pipeline.py
+  FILE - performance_pipeline.py
+  FILE - teique_pipeline.py
+  FILE - whatsapp_notification.py
+
+[backend\providers]
+  FILE - ai_provider.py
+  FILE - analytics_provider.py
+  FILE - auth_provider.py
+  FILE - cache_provider.py
+  FILE - email_provider.py
+  FILE - model_provider.py
+  FILE - notification_provider.py
+  FILE - provider_manager.py
+  FILE - queue_provider.py
+  FILE - report_provider.py
+  FILE - scheduler_provider.py
+  FILE - storage_provider.py
+  FILE - vector_index_provider.py
+
+[backend\reports]
+  FILE - assets_manager.py
+  FILE - html_exporter.py
+  FILE - pdf_generator.py
+  FILE - report_engine.py
+
+[backend\routers]
+  FILE - analytics_router.py
+  FILE - api_router.py
+  FILE - candidates_router.py
+  FILE - diagnostic_router.py
+  FILE - diagnostics_router.py
+  FILE - export_router.py
+  FILE - health_router.py
+  FILE - metadata_router.py
+  FILE - mi_router.py
+  FILE - mindscan_api.py
+  FILE - pdf_router.py
+  FILE - report_router.py
+  FILE - tests_router.py
+  FILE - user_profile_router.py
+  FILE - users_router.py
+  FILE - whatsapp_router.py
+
+[backend\runtime]
+  FILE - backend_config.log
+  FILE - backend_runtime.log
+
+[backend\services]
+  DIR  - adapters
+  DIR  - algorithms
+  DIR  - builders
+  DIR  - core
+  DIR  - design
+  DIR  - engines
+  DIR  - export
+  DIR  - helpers
+  DIR  - html
+  DIR  - infrastructure
+  DIR  - mi
+  DIR  - orchestrators
+  DIR  - pdf
+  DIR  - pdf_tools
+  DIR  - post_processors
+  DIR  - report
+  DIR  - runtime
+  FILE - __init__.py
+  FILE - analytics_service.py
+  FILE - auth_service.py
+  FILE - base_service.py
+  FILE - culture_service.py
+  FILE - data_service.py
+  FILE - diagnostic_matrix_service.py
+  FILE - engine_service.py
+  FILE - export_service.py
+  FILE - flags_service.py
+  FILE - insight_service.py
+  FILE - leadership_service.py
+  FILE - metadata_service.py
+  FILE - mi_compiler_service.py
+  FILE - narrative_service.py
+  FILE - pdf__init__.py
+  FILE - pdf_engine.py
+  FILE - pdf_validator_service.py
+  FILE - pdi_service.py
+  FILE - performance_service.py
+  FILE - psych_core_service.py
+  FILE - recommendation_service.py
+  FILE - report_assets.py
+  FILE - report_branding.py
+  FILE - report_export_manager.py
+  FILE - report_pipeline_helper.py
+  FILE - report_service.py
+  FILE - roadmap_service.py
+  FILE - runtime_interface.py
+
+[backend\services\adapters]
+  FILE - corporate_render_adapter.py
+  FILE - corporate_style_adapter.py
+
+[backend\services\algorithms]
+
+[backend\services\builders]
+  FILE - corporate_section_builder.py
+
+[backend\services\core]
+  FILE - __init__.py
+  FILE - auth_service.py
+  FILE - base_service.py
+  FILE - data_service.py
+  FILE - engine_service.py
+  FILE - export_service.py
+  FILE - psyc_core_service.py
+  FILE - runtime_interface.py
+
+[backend\services\design]
+  FILE - corporate_color_system.py
+  FILE - corporate_icon_loader.py
+  FILE - corporate_layout_engine.py
+
+[backend\services\engines]
+  FILE - corporate_behavior_engine.py
+  FILE - corporate_competency_engine.py
+  FILE - corporate_culture_engine.py
+  FILE - corporate_growth_engine.py
+  FILE - corporate_risk_engine.py
+  FILE - corporate_summary_builder.py
+
+[backend\services\export]
+  FILE - mindscan_results.json
+  FILE - vazio.md
+
+[backend\services\helpers]
+  FILE - data_sanitizer.py
+  FILE - html_sanitizer.py
+  FILE - payload_integrator.py
+  FILE - report_text_engine.py
+  FILE - report_utils.py
+
+[backend\services\html]
+  FILE - vazio.md
+
+[backend\services\infrastructure]
+  FILE - cache_service.py
+  FILE - error_monitor.py
+  FILE - performance_profiler.py
+
+[backend\services\mi]
+  FILE - compliance_filter.py
+  FILE - integration_engine.py
+  FILE - mi_engine.py
+  FILE - narrative_engine.py
+  FILE - persona.py
+  FILE - style_engine.py
+
+[backend\services\orchestrators]
+  FILE - corporate_orchestrator.py
+
+[backend\services\pdf]
+  DIR  - assets
+  DIR  - engine
+  DIR  - pdf_sections
+  DIR  - renderers
+  DIR  - telemetry
+  DIR  - validators
+  FILE - arquetipos_dominancia.py
+  FILE - capa_enterprise.py
+  FILE - carga_cognitiva.py
+  FILE - competencias.py
+  FILE - competencias_analiticas.py
+  FILE - conclusao.py
+  FILE - diagnostico_final.py
+  FILE - estrutura_defensiva.py
+  FILE - estrutura_motivacional.py
+  FILE - fluxo_psicodinamico_integrado.py
+  FILE - identidade_cognitiva.py
+  FILE - identidade_emocional.py
+  FILE - mapa_comportamental.py
+  FILE - mapa_operacional.py
+  FILE - mapa_tensao_emocional.py
+  FILE - narrativa.py
+  FILE - pdf.engine.py
+  FILE - pdf_builder.py
+  FILE - pdf_diagnostics.py
+  FILE - pdf_engine_manifest.py
+  FILE - pdf_exceptions.py
+  FILE - pdf_logging.py
+  FILE - pdf_metadata.py
+  FILE - pdf_registry.py
+  FILE - pdf_service.py
+  FILE - pdf_validator.py
+  FILE - performance.py
+  FILE - planejamento.py
+  FILE - premium_renderer.py
+  FILE - psychodynamic_renderer.py
+  FILE - recomendacoes.py
+  FILE - render_orchestrator.py
+  FILE - resumo_estrategico.py
+  FILE - sintese_executiva.py
+
+[backend\services\pdf\assets]
+
+[backend\services\pdf\engine]
+  FILE - async_pdf_builder.py
+  FILE - async_pipeline.py
+  FILE - pdf.engine.py
+  FILE - performance_governor.py
+  FILE - report_engine.py
+  FILE - section_engine.py
+
+[backend\services\pdf\pdf_sections]
+  FILE - analise_performance.py
+  FILE - anexos.py
+  FILE - anexos_profissionais.py
+  FILE - bussola.py
+  FILE - capa.py
+  FILE - capa_enterprise.py
+  FILE - capa_executiva.py
+  FILE - cultura.py
+  FILE - dass.py
+  FILE - eixo_profissional.py
+  FILE - esquemas.py
+  FILE - estilo_cognitivo.py
+  FILE - forcas_globais.py
+  FILE - identidade.py
+  FILE - inteligencia_emocional.py
+  FILE - lideranca.py
+  FILE - mapa_cultural.py
+  FILE - mapa_emocional.py
+  FILE - mapa_esquemas.py
+  FILE - mapa_lideranca.py
+  FILE - match_duplo.py
+  FILE - matriz_diagnostica.py
+  FILE - maturidade_profissional.py
+  FILE - narrativa.py
+  FILE - pdi.py
+  FILE - pdi_completo.py
+  FILE - perfil_integrado.py
+  FILE - performance.py
+  FILE - personalidade.py
+  FILE - recomendacoes.py
+  FILE - resumo_estrategico.py
+  FILE - resumo_executivo.py
+  FILE - riscos_globais.py
+  FILE - roadmap_completo.py
+  FILE - trilha_de_carreira.py
+
+[backend\services\pdf\renderers]
+  FILE - distributed_renderer.py
+  FILE - font_manager.py
+  FILE - html_renderer.py
+  FILE - hybrid_renderer.py
+  FILE - image_manager.py
+  FILE - matplotlib_ready.py
+  FILE - pdf_accessibility.py
+  FILE - pdf_exporter.py
+  FILE - pdf_integrity_validator.py
+  FILE - pdf_layout_engine.py
+  FILE - pdf_post_processor.py
+  FILE - pdf_sanitizer.py
+  FILE - pdf_section_validator.py
+  FILE - pdf_security.py
+  FILE - pdf_styler.py
+  FILE - pdf_theme_manager.py
+  FILE - reportlab_renderer.py
+  FILE - resource_resolver.py
+  FILE - weasy_renderer.py
+  FILE - weasy_renderer_async.py
+
+[backend\services\pdf\telemetry]
+  FILE - logger.py
+  FILE - resource_monitor.py
+  FILE - telemetry_advanced.py
+
+[backend\services\pdf\validators]
+  FILE - data_validator.py
+
+[backend\services\pdf_tools]
+  FILE - pdf_postprocessor.py
+
+[backend\services\post_processors]
+  FILE - corporate_post_processor.py
+
+[backend\services\report]
+  DIR  - assembler
+  DIR  - assets
+  DIR  - builders
+  DIR  - enhancers
+  DIR  - pdf
+  DIR  - renderers
+
+[backend\services\report\assembler]
+  FILE - report_assembler.py
+
+[backend\services\report\assets]
+  DIR  - charts
+  DIR  - covers
+  DIR  - styles
+
+[backend\services\report\assets\charts]
+  FILE - chart_generator.py
+
+[backend\services\report\assets\covers]
+  FILE - cover_manager.py
+
+[backend\services\report\assets\styles]
+  FILE - style_manager.py
+
+[backend\services\report\builders]
+  FILE - psychodynamic_builder.py
+
+[backend\services\report\enhancers]
+  FILE - report_enhancer.py
+
+[backend\services\report\pdf]
+  FILE - pdf_pipeline.py
+
+[backend\services\report\renderers]
+  FILE - base_renderer.py
+  FILE - executive_renderer.py
+  FILE - premium_renderer.py
+  FILE - psychodynamic_renderer.py
+  FILE - technical_renderer.py
+
+[backend\services\runtime]
+
+[backend\static]
+  FILE - mindscan_corporate.css
+
+[backend\storage]
+  FILE - pdf_publisher.py
+
+[backend\tests]
+  FILE - test_corporate_pipeline.py
+
+[backend\utils]
+  FILE - api_utils.py
+  FILE - array_utils.py
+  FILE - config_loader.py
+  FILE - diagnostic_formatter.py
+  FILE - document_utils.py
+  FILE - file_manager.py
+  FILE - hashing_utils.py
+  FILE - id_generator.py
+  FILE - json_sanitizer.py
+  FILE - logger.py
+  FILE - math_utils.py
+  FILE - pdf_utils.py
+  FILE - profile_formatter.py
+  FILE - resource_manager.py
+  FILE - scheduler_utils.py
+  FILE - token_manager.py
+  FILE - validators.py
+  FILE - vector_utils.py
+
+[backend\workers]
+  FILE - main_worker.py
+
+[coaching_v4]
+  DIR  - analysis
+  DIR  - builder
+  DIR  - engine
+  DIR  - finalizers
+  DIR  - manager
+  DIR  - orchestrators
+  DIR  - ranking
+  DIR  - routes
+  DIR  - ui
+
+[coaching_v4\analysis]
+  FILE - coaching_behavior_analyzer.py
+
+[coaching_v4\builder]
+  FILE - coaching_action_plan_builder.py
+
+[coaching_v4\engine]
+  FILE - coaching_advanced_insight_engine.py
+  FILE - coaching_contextual_engine.py
+  FILE - coaching_engine_v4.py
+  FILE - coaching_intervention_generator.py
+
+[coaching_v4\finalizers]
+  FILE - coaching_system_finalizer_v4.py
+
+[coaching_v4\manager]
+  FILE - coaching_recommendation_manager.py
+
+[coaching_v4\orchestrators]
+  FILE - coaching_master_orchestrator_v4.py
+
+[coaching_v4\ranking]
+  FILE - coaching_priority_ranker_v4.py
+
+[coaching_v4\routes]
+  FILE - coaching_router_v4.py
+
+[coaching_v4\ui]
+  FILE - coaching_panel_renderer.py
+
+[core]
+  DIR  - algorithms
+  DIR  - diagnostics
+  DIR  - engine
+  DIR  - metrics
+  DIR  - profiles
+  DIR  - reporting
+  DIR  - scoring
+  DIR  - utils
+  FILE - __init__.py
+
+[core\algorithms]
+  FILE - advanced_algorithm.py
+  FILE - base_algorithm.py
+
+[core\diagnostics]
+  FILE - diagnostics.py
+
+[core\engine]
+  FILE - engine.py
+
+[core\metrics]
+  FILE - metrics.py
+
+[core\profiles]
+  FILE - profiler.py
+
+[core\reporting]
+  FILE - report_generator.py
+
+[core\scoring]
+  FILE - scorer.py
+
+[core\utils]
+  FILE - vazio.md
+
+[data]
+  DIR  - norms
+  DIR  - weights
+  FILE - sample_input.json
+  FILE - sample_output.json
+
+[data\norms]
+  FILE - vazio.md
+
+[data\weights]
+  FILE - vazio.md
+
+[deploy]
+  FILE - CloudCheck.json
+  FILE - Dockerfile.prod
+  FILE - README_DEPLOY.md
+  FILE - docker-compose.prod.yml
+  FILE - docker-compose.ssl.yml
+  FILE - docker-compose.yml
+  FILE - generate_ssl.sh
+  FILE - nginx.conf
+  FILE - nginx_ssl.conf
+
+[docs]
+  DIR  - metodologias
+  DIR  - pdfs
+  DIR  - prompts
+  FILE - MindScan_Module_Map.md
+  FILE - mindscan_report_pipeline.md
+  FILE - whatsapp_integration_techspec.md
+
+[docs\metodologias]
+  FILE - vazio.md
+
+[docs\pdfs]
+  FILE - vazio.md
+
+[docs\prompts]
+  FILE - vazio.md
+
+[export_v4]
+  DIR  - analysis
+  DIR  - assets
+  DIR  - builder
+  DIR  - docx
+  DIR  - finalizers
+  DIR  - fusion
+  DIR  - html
+  DIR  - layout
+  DIR  - meta
+  DIR  - packager
+  DIR  - pdf
+  DIR  - profiles
+  DIR  - routes
+  DIR  - styles
+  DIR  - utils
+  FILE - expv4_master_orchestrator.py
+
+[export_v4\analysis]
+  FILE - expv4_recommendation_engine.py
+
+[export_v4\assets]
+  FILE - expv4_asset_loader.py
+
+[export_v4\builder]
+  FILE - expv4_document_builder.py
+  FILE - expv4_section_builder.py
+
+[export_v4\docx]
+  FILE - docx_renderer_engine_v4.py
+  FILE - docx_template_registry_v4.py
+
+[export_v4\finalizers]
+  FILE - expv4_system_finalizer.py
+
+[export_v4\fusion]
+  FILE - expv4_data_merger.py
+
+[export_v4\html]
+  FILE - expv4_html_template_engine.py
+
+[export_v4\layout]
+  FILE - expv4_layout_manager.py
+
+[export_v4\meta]
+  FILE - expv4_meta_generator.py
+
+[export_v4\packager]
+  FILE - expv4_export_packager.py
+
+[export_v4\pdf]
+  FILE - pdf_renderer_engine_v4.py
+  FILE - pdf_renderer_engine_v4.py.txt
+  FILE - pdf_template_registry_v4.py
+
+[export_v4\profiles]
+  FILE - expv4_export_profile.py
+
+[export_v4\routes]
+  FILE - expv4_router.py
+
+[export_v4\styles]
+  FILE - export_style_manager_v4.py
+
+[export_v4\utils]
+  FILE - expv4_content_sanitizer.py
+  FILE - expv4_image_embedder.py
+
+[frontend]
+  DIR  - src
+  FILE - cadastro.html
+  FILE - entrada_dados.html
+  FILE - index.html
+  FILE - login.html
+  FILE - main.tsx
+  FILE - package.json
+  FILE - postcss.config.js
+  FILE - resultado.html
+  FILE - tailwind.config.js
+  FILE - tsconfig.json
+  FILE - vite.config.ts
+
+[frontend\src]
+  DIR  - components
+  DIR  - layouts
+  DIR  - pages
+  DIR  - router
+  DIR  - styles
+  FILE - App.tsx
+
+[frontend\src\components]
+  DIR  - layout
+  DIR  - ui
+
+[frontend\src\components\layout]
+  FILE - Navbar.tsx
+  FILE - Sidebar.tsx
+
+[frontend\src\components\ui]
+  FILE - Accordion.tsx
+  FILE - Avatar.tsx
+  FILE - Badge.tsx
+  FILE - Breadcrumbs.tsx
+  FILE - Button.tsx
+  FILE - Card.tsx
+  FILE - Dropdown.tsx
+  FILE - Footer.tsx
+  FILE - Header.tsx
+  FILE - Input.tsx
+  FILE - Loader.tsx
+  FILE - Modal.tsx
+  FILE - Navbar.tsx
+  FILE - Popover.tsx
+  FILE - Sidebar.tsx
+  FILE - Table.tsx
+  FILE - Tabs.tsx
+  FILE - Tooltip.tsx
+
+[frontend\src\layouts]
+  FILE - BaseLayout.tsx
+
+[frontend\src\pages]
+  FILE - CandidateDetails.tsx
+  FILE - Candidates.tsx
+  FILE - Dashboard.tsx
+  FILE - Home.tsx
+  FILE - Login.tsx
+  FILE - NotFound.tsx
+  FILE - Register.tsx
+  FILE - ReportDetails.tsx
+  FILE - Reports.tsx
+  FILE - Settings.tsx
+  FILE - TestDetails.tsx
+  FILE - Tests.tsx
+
+[frontend\src\router]
+  FILE - index.tsx
+
+[frontend\src\styles]
+  FILE - index.css
+
+[generated_reports]
+
+[graphql_live]
+  DIR  - bridge
+  DIR  - engine
+  DIR  - feeds
+  DIR  - finalizers
+  DIR  - orchestrators
+  DIR  - subscriptions
+  FILE - gql_live_router.py
+  FILE - gql_live_schema.py
+
+[graphql_live\bridge]
+  FILE - gql_live_bridge.py
+
+[graphql_live\engine]
+  FILE - gql_live_context_engine.py
+
+[graphql_live\feeds]
+  FILE - gql_realtime_feed.py
+
+[graphql_live\finalizers]
+  FILE - gql_system_finalizer.py
+
+[graphql_live\orchestrators]
+  FILE - gql_stream_orchestrator.py
+
+[graphql_live\subscriptions]
+  FILE - gql_subscription_manager.py
+
+[logging]
+  FILE - loggin_service.py
+
+[maintenance]
+  FILE - backup.py
+  FILE - healthcheck.py
+
+[managers]
+  FILE - backend_manager.py
+
+[mindgen]
+  DIR  - analytics
+  DIR  - charts
+  DIR  - fusion
+  DIR  - orchestrators
+  DIR  - panels
+  DIR  - reports
+  DIR  - routes
+  DIR  - ui
+  DIR  - visuals
+  DIR  - widgets
+  FILE - mindgen_master_orchestrator.py
+
+[mindgen\analytics]
+  FILE - behavioral_trend_analyzer.py
+  FILE - insight_priority_ranker.py
+  FILE - multi_cluster_analyzer.py
+
+[mindgen\charts]
+  FILE - behavioral_density_plot.py
+  FILE - behavioral_phase_diagram.py
+  FILE - behavioral_radar_chart.py
+  FILE - cognitive_direction_chart.py
+  FILE - cognitive_flux_chart.py
+  FILE - competency_spider_chart.py
+  FILE - composite_behavioral_chart.py
+  FILE - emotional_intensity_curve.py
+  FILE - emotional_volatibity_chart.py
+  FILE - heatmap_emotional_matrix.py
+  FILE - performance_distribution_plot.py
+  FILE - performance_evolution_chart.py
+
+[mindgen\fusion]
+  FILE - mindgen_data_fusion_engine.py
+  FILE - mindgen_matrix_composer.py
+  FILE - visual_insight_bridge.py
+
+[mindgen\orchestrators]
+  FILE - mindgen_global_orchestrator.py
+  FILE - mindgen_integrated_view_oschestrator.py
+  FILE - mindgen_view_consolidator.py
+
+[mindgen\panels]
+  FILE - mindgen_overview_panel.py
+  FILE - performance_overview_panel.py
+  FILE - semantic_profile_panel.py
+
+[mindgen\reports]
+  FILE - executive_briefing_builder.py
+
+[mindgen\routes]
+  FILE - mindgen_dashboard_router.py
+
+[mindgen\ui]
+  FILE - adaptative_visual_switcher.py
+  FILE - adaptive_dashboard_layout.py
+  FILE - mindgen_canvas_manager.py
+  FILE - mindgen_card_manager.py
+  FILE - mindgen_grid_layout.py
+  FILE - mindgen_panel_manager.py
+  FILE - mindgen_stack_panel.py
+  FILE - mindgen_theme_manager.py
+
+[mindgen\visuals]
+  FILE - behavioral_energy_map.py
+  FILE - behavioral_force_map.py
+  FILE - cognitive_landscape_visualizer.py
+  FILE - emotional_vector_surface.py
+  FILE - influence_vector_field.py
+  FILE - leadership_influence_map.py
+  FILE - leadership_trajectory_visual.py
+  FILE - personality_cluster_map.py
+  FILE - semantic_alignment_visualizer.py
+  FILE - semantic_heat_signature.py
+  FILE - semantic_relation_graph.py
+  FILE - social_dynamics_visualizer.py
+  FILE - visual_map_builder.py
+
+[mindgen\widgets]
+  FILE - executive_summary_widget.py
+  FILE - leadership_projection_widget.py
+
+[mindscan_cli]
+  FILE - mindscan_pdf_cli.py
+
+[mindscan_examples]
+  FILE - gerar_jsons_modelo.py
+  FILE - gerar_relatorio_pdf.py
+
+[mindscan_pdf]
+  FILE - __init__.py
+  FILE - cli.py
+
+[modules]
+  FILE - predictor.py
+  FILE - synmind_ai_engine.py
+  FILE - synmind_kernel.py
+
+[pdf_engine]
+  DIR  - core
+  DIR  - sections
+
+[pdf_engine\core]
+  FILE - builder.py
+  FILE - loader.py
+  FILE - pipeline.py
+  FILE - renderer.py
+
+[pdf_engine\sections]
+  FILE - culture.py
+  FILE - emotional.py
+  FILE - final_report.py
+  FILE - introduction.py
+  FILE - performance.py
+  FILE - personality.py
+
+[releases]
+  FILE - README.md
+  FILE - RELEASE_NOTES.md
+  FILE - app_manifest.json
+  FILE - metadata_2025-11-26_06-43-39.json
+  FILE - mindscan_release_2025-11-26_06-43-39.zip
+  FILE - release_structure.json
+  FILE - synmind_integration.md
+
+[tests]
+  DIR  - async
+  FILE - test_app.py
+  FILE - test_engine.py
+  FILE - test_frontend.py
+  FILE - test_pdf_engine.py
+  FILE - test_performance_stress.py
+  FILE - test_stress_weasy_real.py
+
+[tests\async]
+  FILE - test_async_pdf_builder.py
+  FILE - test_async_pipeline.py
+  FILE - test_distributed_renderer_async.py
+
+[tools]
+  DIR  - automator
+  DIR  - cli
+  DIR  - transcricao
+  DIR  - validadores
+  FILE - audit_push.bat
+  FILE - build.py
+  FILE - consolidar_big5_v1.py
+  FILE - consolidar_bussola_v1.py
+  FILE - consolidar_cruzamentos_v1.py
+  FILE - consolidar_dass21_v1.py
+  FILE - consolidar_esquemas_v1.py
+  FILE - consolidar_ocai_v1.py
+  FILE - consolidar_performance_v1.py
+  FILE - consolidar_teique_v1.py
+  FILE - exporter.py
+  FILE - mindscan_file_generator.py
+  FILE - mindscan_optimizer.bat
+  FILE - mindscan_optimizer.py
+  FILE - mindscan_structure_auto_create.py
+  FILE - mindscan_superscript.bat
+  FILE - mindscan_superscript.py
+  FILE - optimizer.log
+  FILE - optimizer_launcher.log
+  FILE - push_to_github.py
+  FILE - scan_project_file_sizes.bat
+  FILE - scan_project_file_sizes.py
+  FILE - sync_all.py
+
+[tools\automator]
+  DIR  - tasks
+  FILE - __init__.py
+  FILE - audit_manager.py
+  FILE - backend_manager.py
+  FILE - cleanup_manager.py
+  FILE - core_manager.py
+  FILE - data_validator.py
+  FILE - executar_automator.bat
+  FILE - fix_paths_manager.py
+  FILE - github_manager.py
+  FILE - log_manager.py
+  FILE - main.py
+  FILE - release_manager.py
+  FILE - report_manager.py
+  FILE - task_manager.py
+  FILE - tasks.json
+
+[tools\automator\tasks]
+  FILE - __init__.py
+  FILE - fix_backend.py
+  FILE - fix_modules.py
+  FILE - fix_services.py
+  FILE - generate_report.py
+  FILE - run_audit.py
+  FILE - validate_structure.py
+
+[tools\cli]
+  FILE - vazio.md
+
+[tools\transcricao]
+  FILE - vazio.md
+
+[tools\validadores]
+  FILE - vazio.md
+
+[web]
+  DIR  - assets
+  DIR  - finalizers
+  DIR  - graphql
+  DIR  - middleware
+  DIR  - orchestrators
+  DIR  - reports
+  DIR  - routes
+  DIR  - security
+  DIR  - services
+  DIR  - state
+  DIR  - ui
+  DIR  - utils
+  DIR  - websocket
+  FILE - index.html
+  FILE - web_app.py
+
+[web\assets]
+  FILE - asset_registry.py
+
+[web\finalizers]
+  FILE - web_system_finalizer.py
+
+[web\graphql]
+  FILE - graphql_schema.py
+
+[web\middleware]
+  FILE - web_auth_middleware.py
+
+[web\orchestrators]
+  FILE - web_master_orchestrator.py
+
+[web\reports]
+  FILE - report_data_pipeline.py
+  FILE - report_renderer_web.py
+  FILE - web_docx_exporter.py
+  FILE - web_pdf_exporter.py
+  FILE - web_report_template_manager.py
+
+[web\routes]
+  FILE - admin_router.py
+  FILE - analytics_router.py
+  FILE - dashboard_router.py
+  FILE - graphql_router.py
+  FILE - org_dashboard_router.py
+  FILE - report_web_router.py
+  FILE - session_auth_router.py
+  FILE - web_export_router.py
+  FILE - web_health_router.py
+  FILE - web_router_registry.py
+
+[web\security]
+  FILE - role_permission_manager.py
+  FILE - web_security_manager.py
+
+[web\services]
+  DIR  - providers
+  FILE - analytics_service.py
+  FILE - charts_service.py
+  FILE - dashboard_data_aggregator.py
+  FILE - dashboard_service.py
+  FILE - insight_feed_service.py
+  FILE - org_kpi_service.py
+  FILE - realtime_update_service.py
+  FILE - session_tracker_service.py
+  FILE - team_insight_service.py
+  FILE - user_management_service.py
+  FILE - web_log_service.py
+
+[web\services\providers]
+  FILE - org_structure_provider.py
+  FILE - risk_data_provider.py
+  FILE - user_activity_provider.py
+
+[web\state]
+  FILE - dashboard_state_manager.py
+
+[web\ui]
+  DIR  - icons
+  DIR  - org
+  DIR  - styles
+  DIR  - team
+  DIR  - themes
+  DIR  - widgets
+  FILE - dashboard_layout_manager.py
+  FILE - dashboard_widget_binder.py
+  FILE - ui_dynamic_loader.py
+  FILE - ui_renderer.py
+
+[web\ui\icons]
+  FILE - ui_icon_manager.py
+
+[web\ui\org]
+  FILE - org_insight_renderer.py
+  FILE - org_profile_renderer.py
+
+[web\ui\styles]
+  FILE - corporate_style_manager.py
+  FILE - web_style_merger.py
+
+[web\ui\team]
+  FILE - team_profile_renderer.py
+
+[web\ui\themes]
+  FILE - dashboard_theme_bridge.py
+  FILE - theme_manager_v4.py
+
+[web\ui\widgets]
+  FILE - performance_heatmap_widget.py
+  FILE - widget_global_stats.py
+  FILE - widget_kpi_board.py
+  FILE - widget_registry.py
+  FILE - widget_risk_overview.py
+  FILE - widget_team_map.py
+  FILE - widget_trend_graph.py
+
+[web\utils]
+  FILE - http_error_handler.py
+  FILE - http_utilities.py
+
+[web\websocket]
+  FILE - websocket_updates.py
+
+[webapp]
+  DIR  - src
+  FILE - index.html
+  FILE - package.json
+  FILE - tsconfig.json
+  FILE - vite.config.ts
+
+[webapp\src]
+  FILE - AdminConsole.tsx
+  FILE - Analytics.tsx
+  FILE - App.tsx
+  FILE - LiveMonitor.tsx
+  FILE - Login.tsx
+  FILE - main.tsx
+
+[_optimizer_checkpoints]
+

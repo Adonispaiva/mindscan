@@ -1,0 +1,36 @@
+{
+  "name": "MindScan",
+  "version": "1.0.0-rc1",
+  "build": "RC1",
+  "description": "MindScan — MI Hybrid Intelligence Platform",
+  "authors": [
+    "Inovexa Software",
+    "Leo Vinci (Diretor de Tecnologia)"
+  ],
+  "modules": {
+    "api": "mindscan_web_api.py",
+    "engine_original": "backend/engine/mi_engine.py",
+    "engine_advanced": "backend/engine/mi_engine_advanced.py",
+    "engine_formatter": "backend/engine/mi_formatter.py",
+    "analytics": "analytics/analytics_service.py",
+    "live_metrics": "analytics/live_metrics_service.py",
+    "admin_panel": "admin/admin_router.py",
+    "auth": "auth/auth_router.py",
+    "reporting": "generated_reports/"
+  },
+  "webapp": {
+    "entry": "webapp/src/main.tsx",
+    "routes": ["/", "/login", "/admin", "/analytics", "/live"]
+  },
+  "deploy": {
+    "dockerfile": "deploy/Dockerfile.prod",
+    "compose": "deploy/docker-compose.prod.yml",
+    "ci_cd": ".github/workflows/deploy.yml"
+  },
+  "integrity": {
+    "supports_ssl": true,
+    "supports_scaling": true,
+    "supports_realtime": true,
+    "supports_analytics": true
+  }
+}

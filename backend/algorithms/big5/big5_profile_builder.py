@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\backend\algorithms\big5\big5_profile_builder.py
+# Última atualização: 2025-12-11T09:59:20.606785
+
 """
 Big5 Profile Builder — Versão Ultra Superior
 --------------------------------------------

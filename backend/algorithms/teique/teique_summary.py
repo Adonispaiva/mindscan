@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\backend\algorithms\teique\teique_summary.py
+# Última atualização: 2025-12-11T09:59:20.730228
+
 """
 TEIQue Summary
 Gera um resumo executivo e técnico a partir de:

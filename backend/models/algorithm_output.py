@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\backend\models\algorithm_output.py
+# Última atualização: 2025-12-11T09:59:20.948776
+
 # algorithm_output.py
 # MindScan Rebuild – Modelo Unificado de Saída dos Algoritmos
 # Versão Definitiva • Estrutura Avançada Pydantic-Style

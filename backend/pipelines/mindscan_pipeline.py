@@ -1,52 +1,62 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
 # Caminho: D:\projetos-inovexa\mindscan\backend\pipelines\mindscan_pipeline.py
+# Última atualização: 2025-12-11T09:59:21.058152
+
 """
-Pipeline Principal do MindScan® com Integração do Hook WhatsApp
-Inovexa Software | SynMind | MindScan®
+mindscan_pipeline.py — NÚCLEO ULTRA SUPERIOR DO MINDSCAN
+Pipeline oficial que controla:
 
-Funções incluídas:
-- Execução do pipeline psicométrico (simulação — núcleo real permanece em outro módulo)
-- Geração do relatório PDF (referência — responsabilidade externa)
-- Chamada automática do hook WhatsApp após geração
-
-IMPORTANTE:
-Este arquivo apenas integra o hook WhatsApp. Ele NÃO altera:
-- lógica psicométrica
-- cruzamentos
-- narrativas
-- arquivos originais do MindScan
+- Normalização total
+- Integração cognitiva
+- Extração de insights centrais
+- Mapeamento emocional
+- Scoring estrutural
+- Riscos
+- Resumo executivo final
 """
 
-import logging
-from backend.reports.pdf_generator import generate_mindscan_pdf
-from backend.storage.pdf_publisher import publish_pdf
-from backend.pipelines.whatsapp_notification import mindscan_postprocess_hook
+from engine.validation_engine import ValidationEngine
+from engine.normalizer_engine import NormalizerEngine
+from engine.integration_engine import IntegrationEngine
+from engine.insight_engine import InsightEngine
+from engine.risk_engine import RiskEngine
+from engine.scoring_engine import ScoringEngine
+from engine.summary_engine import SummaryEngine
 
-logger = logging.getLogger("mindscan_pipeline")
-logger.setLevel(logging.INFO)
 
+class MindScanPipeline:
+    def __init__(self):
+        self.validator = ValidationEngine()
+        self.normalizer = NormalizerEngine()
+        self.integrator = IntegrationEngine()
+        self.insight = InsightEngine()
+        self.risk = RiskEngine()
+        self.scorer = ScoringEngine()
+        self.summarizer = SummaryEngine()
 
-def run_mindscan_pipeline(user_id: str, phone: str, data: dict = None) -> dict:
-    """
-    Função executora do pipeline MindScan.
-    """
-    logger.info(f"[MindScan] Iniciando pipeline para usuário {user_id}...")
+    def run(self, payload: dict) -> dict:
+        self.validator.validate_input(payload)
 
-    # 1. Processamento psicométrico (representação)
-    logger.info("[MindScan] Processamento psicométrico concluído.")
+        normalized = self.normalizer.normalize(payload)
+        integrated = self.integrator.integrate(normalized)
+        insights = self.insight.extract_insights(integrated)
+        risks = self.risk.evaluate(integrated)
+        scores = self.scorer.compute_score(integrated)
 
-    # 2. Geração / obtenção do PDF (placeholder atual)
-    pdf_path = generate_mindscan_pdf(user_id, data or {})
-    pdf_url = publish_pdf(pdf_path)
-    logger.info(f"[MindScan] Relatório disponível em {pdf_url}")
+        summary = self.summarizer.generate_summary(
+            integrated,
+            model="mindscan",
+            density="ultra",
+            include_insights=True,
+            include_risks=True,
+            include_behavior_predictions=True
+        )
 
-    # 3. Chamada automática do hook WhatsApp
-    logger.info("[MindScan] Disparando hook WhatsApp...")
-    hook_response = mindscan_postprocess_hook(user_phone=phone, pdf_url=pdf_url)
-
-    # 4. Finalização
-    return {
-        "status": "completed",
-        "user": user_id,
-        "pdf_url": pdf_url,
-        "whatsapp": hook_response
-    }
+        return {
+            "normalized": normalized,
+            "integrated": integrated,
+            "insights": insights,
+            "risks": risks,
+            "scores": scores,
+            "summary": summary
+        }

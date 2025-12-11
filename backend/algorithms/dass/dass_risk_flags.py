@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\backend\algorithms\dass\dass_risk_flags.py
+# Última atualização: 2025-12-11T09:59:20.652172
+
 """
 DASS – RISK FLAGS (Versão ULTRA SUPERIOR)
 Gera bandeiras de risco escalonadas (verde → amarelo → vermelho)

@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\backend\integrations\whatsapp_ai.py
+# Última atualização: 2025-12-11T09:59:20.841083
+
 # Caminho recomendado: D:\projetos-inovexa\mindscan\backend\integrations\whatsapp_ai.py
 """
 Módulo IA de Atendimento Básico via WhatsApp

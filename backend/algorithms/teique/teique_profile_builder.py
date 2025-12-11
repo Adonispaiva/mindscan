@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\backend\algorithms\teique\teique_profile_builder.py
+# Última atualização: 2025-12-11T09:59:20.730228
+
 """
 TEIQue Profile Builder
 Responsável por construir o perfil emocional final a partir das dimensões

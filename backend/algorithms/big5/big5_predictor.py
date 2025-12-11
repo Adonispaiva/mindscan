@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\backend\algorithms\big5\big5_predictor.py
+# Última atualização: 2025-12-11T09:59:20.605783
+
 """
 Big5 Predictor — Versão Ultra Superior
 --------------------------------------

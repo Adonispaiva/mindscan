@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\backend\algorithms\esquemas\esquemas_norms.py
+# Última atualização: 2025-12-11T09:59:20.683445
+
 """
 Esquemas Norms
 Converte pontuações brutas do questionário de Esquemas em escala 0–100.

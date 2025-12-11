@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\backend\models\diagnostic_request.py
+# Última atualização: 2025-12-11T09:59:20.948776
+
 from pydantic import BaseModel, Field
 from typing import List, Optional, Dict, Any
 

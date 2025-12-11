@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\backend\integrations\whatsapp_handler.py
+# Última atualização: 2025-12-11T09:59:20.841083
+
 # Caminho: D:\projetos-inovexa\mindscan\backend\integrations\whatsapp_handler.py
 """
 Handler oficial do WhatsApp para o MindScan

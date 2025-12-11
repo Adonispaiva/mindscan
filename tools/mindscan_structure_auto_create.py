@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\tools\mindscan_structure_auto_create.py
+# Última atualização: 2025-12-11T09:59:27.792836
+
 import os
 import json
 import hashlib

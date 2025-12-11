@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\backend\models\bussola_profile.py
+# Última atualização: 2025-12-11T09:59:20.948776
+
 # bussola_profile.py
 # MindScan Rebuild – Modelo da Bússola de Competências
 # Versão Definitiva • Estrutura Avançada Pydantic-Style

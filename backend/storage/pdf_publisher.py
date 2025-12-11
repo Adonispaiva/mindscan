@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\backend\storage\pdf_publisher.py
+# Última atualização: 2025-12-11T09:59:21.292589
+
 # Caminho: D:\projetos-inovexa\mindscan\backend\storage\pdf_publisher.py
 """
 Publicador de PDF MindScan® — Armazenamento em S3 / Cloudflare R2 / MinIO

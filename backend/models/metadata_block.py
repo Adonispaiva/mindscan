@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\backend\models\metadata_block.py
+# Última atualização: 2025-12-11T09:59:20.964461
+
 # metadata_block.py
 # MindScan Rebuild – Bloco Global de Metadados
 # Versão Definitiva • Estrutura Avançada Pydantic-Style

@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\backend\services\base_service.py
+# Última atualização: 2025-12-11T09:59:21.089476
+
 """
 MindScan Backend — Base Service
 Diretor Técnico: Leo Vinci

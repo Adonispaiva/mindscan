@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\tests\async\test_async_pdf_builder.py
+# Última atualização: 2025-12-11T09:59:27.777220
+
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """

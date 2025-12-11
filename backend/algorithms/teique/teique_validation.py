@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\backend\algorithms\teique\teique_validation.py
+# Última atualização: 2025-12-11T09:59:20.730228
+
 """
 TEIQue Validation
 Validação estrutural e de integridade para o módulo TEIQue.

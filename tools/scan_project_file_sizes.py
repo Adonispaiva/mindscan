@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\tools\scan_project_file_sizes.py
+# Última atualização: 2025-12-11T09:59:27.808460
+
 """
 MindScan - Inovexa
 scan_project_file_sizes.py (Versão Diretor 2.0)

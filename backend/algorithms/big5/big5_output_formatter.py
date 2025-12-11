@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\backend\algorithms\big5\big5_output_formatter.py
+# Última atualização: 2025-12-11T09:59:20.603782
+
 """
 Big5 Output Formatter — Versão Ultra Superior
 ---------------------------------------------

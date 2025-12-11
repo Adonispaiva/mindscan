@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\mindscan_examples\gerar_relatorio_pdf.py
+# Última atualização: 2025-12-11T09:59:27.745995
+
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """

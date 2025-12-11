@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\backend\services\pdf\report_templates\enterprise_template.py
+# Última atualização: 2025-12-11T09:59:21.264865
+
 # -*- coding: utf-8 -*-
 """
 enterprise_template.py — Template Enterprise MindScan (SynMind v2.0)

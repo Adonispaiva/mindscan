@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\tools\automator\tasks\generate_report.py
+# Última atualização: 2025-12-11T09:59:27.824087
+
 """
 Task: generate_report
 MindScan Automator — Inovexa Software

@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\backend\algorithms\teique\teique_risk_map.py
+# Última atualização: 2025-12-11T09:59:20.730228
+
 """
 TEIQue Risk Map
 Mapeia riscos emocionais específicos com base nas dimensões e fatores agregados.

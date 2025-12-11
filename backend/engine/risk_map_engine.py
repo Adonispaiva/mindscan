@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\backend\engine\risk_map_engine.py
+# Última atualização: 2025-12-11T09:59:20.829001
+
 """
 MindScan — Risk Map Engine (ULTRA)
 Inovexa Software — Engenharia Ultra Superior

@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\backend\engine\summary_aggregator.py
+# Última atualização: 2025-12-11T09:59:20.837001
+
 # MindScan Summarization Aggregator — Ultra Superior
 # Une múltiplos resumos setoriais e cria uma síntese final unificada.
 

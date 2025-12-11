@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\tools\automator\fix_paths_manager.py
+# Última atualização: 2025-12-11T09:59:27.808460
+
 import os
 import json
 import shutil

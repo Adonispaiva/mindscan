@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\backend\services\psych_core_service.py
+# Última atualização: 2025-12-11T09:59:21.105108
+
 """
 MindScan Backend — PsychCoreService
 Diretor Técnico: Leo Vinci

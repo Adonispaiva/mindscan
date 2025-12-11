@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\backend\models\schema_profile.py
+# Última atualização: 2025-12-11T09:59:20.980027
+
 # schema_profile.py
 # MindScan Rebuild – Modelo de Esquemas (Young Schema Model)
 # Versão Definitiva • Estrutura Avançada Pydantic-Style

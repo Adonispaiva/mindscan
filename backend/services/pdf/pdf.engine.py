@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\backend\services\pdf\pdf.engine.py
+# Última atualização: 2025-12-11T09:59:21.184463
+
 # pdf_engine.py
 # MindScan PDF Engine — núcleo responsável pela orquestração da geração de PDFs.
 

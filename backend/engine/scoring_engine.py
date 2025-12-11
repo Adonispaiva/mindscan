@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\backend\engine\scoring_engine.py
+# Última atualização: 2025-12-11T09:59:20.834001
+
 # MindScan Scoring Engine — Ultra Superior
 # Motor de cálculo central: aplica matriz de pesos, normalização
 # e transforma indicadores em score global e setorial.

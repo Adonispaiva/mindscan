@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\backend\algorithms\esquemas\schema_insights.py
+# Última atualização: 2025-12-11T09:59:20.683445
+
 """
 Schema Insights
 Gera interpretações qualitativas a partir das dimensões intermediárias

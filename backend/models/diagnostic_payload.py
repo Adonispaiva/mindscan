@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\backend\models\diagnostic_payload.py
+# Última atualização: 2025-12-11T09:59:20.948776
+
 # diagnostic_payload.py
 # MindScan Rebuild – Modelo de Payload para o Diagnostic Engine
 # Versão Definitiva • Arquitetura Avançada Pydantic-Style

@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\tools\mindscan_file_generator.py
+# Última atualização: 2025-12-11T09:59:27.792836
+
 """
 MindScan File Generator v1.0
 -----------------------------------

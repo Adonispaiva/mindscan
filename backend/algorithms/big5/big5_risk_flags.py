@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\backend\algorithms\big5\big5_risk_flags.py
+# Última atualização: 2025-12-11T09:59:20.607783
+
 """
 Big5 Risk Flags — Versão Ultra Superior
 ---------------------------------------

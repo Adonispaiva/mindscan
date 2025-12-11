@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\backend\algorithms\teique\teique_risk_flags.py
+# Última atualização: 2025-12-11T09:59:20.730228
+
 """
 TEIQue — Risk Flags
 Geração de bandeiras de risco emocionais utilizando padrões do MindScan.

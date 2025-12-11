@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\backend\algorithms\esquemas\esquemas_factor_weights.py
+# Última atualização: 2025-12-11T09:59:20.667799
+
 """
 Esquemas Factor Weights
 Calcula pesos e fatores agregados para interpretação avançada dos esquemas.

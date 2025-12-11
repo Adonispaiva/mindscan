@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\backend\algorithms\matcher\matcher.py
+# Última atualização: 2025-12-11T09:59:20.683445
+
 """
 Matcher — Engine de Compatibilidade
 Responsável por calcular correspondência entre:

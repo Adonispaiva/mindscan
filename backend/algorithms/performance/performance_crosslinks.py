@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\backend\algorithms\performance\performance_crosslinks.py
+# Última atualização: 2025-12-11T09:59:20.698978
+
 """
 Performance Crosslinks
 Relaciona dimensões de performance com outros módulos:

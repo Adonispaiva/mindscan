@@ -1,0 +1,46 @@
+version: "3.9"
+
+services:
+
+  mindscan_api:
+    build: ..
+    container_name: mindscan_api_ssl
+    restart: always
+    expose:
+      - "8000"
+    volumes:
+      - ../generated_reports:/app/generated_reports
+    environment:
+      MINDSCAN_REPORT_OUTPUT: "/app/generated_reports"
+
+  nginx:
+    image: nginx:latest
+    container_name: mindscan_nginx_ssl
+    restart: always
+    volumes:
+      - ./nginx_ssl.conf:/etc/nginx/nginx.conf:ro
+      - ../web:/usr/share/nginx/html:ro
+      - certbot-www:/var/www/certbot
+      - certbot-etc:/etc/letsencrypt
+    ports:
+      - "80:80"
+      - "443:443"
+    depends_on:
+      - mindscan_api
+
+  certbot:
+    image: certbot/certbot
+    container_name: mindscan_certbot
+    volumes:
+      - certbot-etc:/etc/letsencrypt
+      - certbot-www:/var/www/certbot
+    entrypoint: >
+      sh -c "trap exit TERM;
+             while :; do
+               certbot renew --webroot -w /var/www/certbot;
+               sleep 12h & wait $${!};
+             done"
+
+volumes:
+  certbot-etc:
+  certbot-www:

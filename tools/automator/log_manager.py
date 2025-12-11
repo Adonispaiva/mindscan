@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\tools\automator\log_manager.py
+# Última atualização: 2025-12-11T09:59:27.808460
+
 """
 log_manager.py
 Gerenciador central de logs do MindScan Automator - Versão Profissional Completa

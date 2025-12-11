@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\backend\core\engine.py
+# Última atualização: 2025-12-11T09:59:20.777102
+
 from typing import Dict, Any
 from backend.core.normalizer import Normalizer
 from backend.core.nlp_processor import NLPProcessor

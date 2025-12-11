@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\backend\utils\validators.py
+# Última atualização: 2025-12-11T09:59:21.308202
+
 # ============================================================
 # MindScan — Validators (UTILS)
 # ============================================================

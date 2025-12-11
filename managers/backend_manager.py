@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\managers\backend_manager.py
+# Última atualização: 2025-12-11T09:59:27.683474
+
 """
 BackendManager — Inovexa MindScan
 Diretor Técnico: Leo Vinci

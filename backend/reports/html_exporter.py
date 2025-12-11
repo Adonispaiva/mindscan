@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\backend\reports\html_exporter.py
+# Última atualização: 2025-12-11T09:59:21.073776
+
 # ============================================================
 # MindScan — HTML Exporter
 # ============================================================

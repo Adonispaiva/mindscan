@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\tools\automator\release_manager.py
+# Última atualização: 2025-12-11T09:59:27.808460
+
 """
 release_manager.py
 Gerador Profissional de Releases do MindScan

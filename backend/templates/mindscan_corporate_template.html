@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <title>Relatório MindScan Corporate</title>
+    <link rel="stylesheet" href="../static/mindscan_corporate.css" />
+</head>
+
+<body>
+
+    <header class="ms-header">
+        <h1>MindScan Corporate Report</h1>
+        <p class="ms-subtitle">Análise Psicoprofissional Executiva</p>
+    </header>
+
+    <section class="ms-section" id="cover">
+        <h2>{{ name }}</h2>
+        <p><strong>Cargo:</strong> {{ position }}</p>
+        <p><strong>Data:</strong> {{ date }}</p>
+        <p><strong>ID Avaliação:</strong> {{ test_id }}</p>
+    </section>
+
+    <section class="ms-section" id="summary">
+        <h2>Resumo Executivo</h2>
+        <p class="ms-headline">{{ headline }}</p>
+        <p>{{ overview }}</p>
+
+        <h3>Pontos-Chave</h3>
+        <ul>
+            {% for kp in key_points %}
+            <li>{{ kp }}</li>
+            {% endfor %}
+        </ul>
+    </section>
+
+    <section class="ms-section" id="competencies">
+        <h2>Mapa de Competências</h2>
+        {% for block in competencies %}
+        <h3>{{ block.title }}</h3>
+        <p>{{ block.content }}</p>
+        {% endfor %}
+    </section>
+
+    <section class="ms-section" id="behavior">
+        <h2>Padrões Comportamentais</h2>
+        {% for block in behavior %}
+        <h3>{{ block.title }}</h3>
+        <p>{{ block.content }}</p>
+        {% endfor %}
+    </section>
+
+    <section class="ms-section" id="risks">
+        <h2>Riscos e Blind Spots</h2>
+        {% for block in risks %}
+        <div class="ms-risk">
+            <h3>{{ block.title }}</h3>
+            <p>{{ block.content }}</p>
+        </div>
+        {% endfor %}
+    </section>
+
+    <section class="ms-section" id="growth">
+        <h2>Potenciais de Desenvolvimento</h2>
+        {% for block in growth %}
+        <div class="ms-growth">
+            <h3>{{ block.title }}</h3>
+            <p>{{ block.content }}</p>
+        </div>
+        {% endfor %}
+    </section>
+
+    <section class="ms-section" id="culture">
+        <h2>Aderência Cultural</h2>
+        {% for block in culture %}
+        <h3>{{ block.title }}</h3>
+        <p>{{ block.content }}</p>
+        {% endfor %}
+    </section>
+
+    <section class="ms-section" id="conclusion">
+        <h2>Conclusão Executiva</h2>
+        {% for block in conclusion %}
+        <p>{{ block.content }}</p>
+        {% endfor %}
+    </section>
+
+    <footer class="ms-footer">
+        MindScan® Corporate — SynMind Technologies
+    </footer>
+
+</body>
+</html>

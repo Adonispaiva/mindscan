@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\backend\algorithms\performance\performance_profile_builder.py
+# Última atualização: 2025-12-11T09:59:20.714601
+
 """
 Performance Profile Builder
 Constrói o perfil profissional consolidado a partir das dimensões de performance.

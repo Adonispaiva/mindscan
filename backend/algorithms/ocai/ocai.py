@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\backend\algorithms\ocai\ocai.py
+# Última atualização: 2025-12-11T09:59:20.698978
+
 """
 OCAI — Cultura Organizacional
 Pipeline completo: validação → normas → dimensões → descritores → alertas → crosslinks → resumo → formatação final.

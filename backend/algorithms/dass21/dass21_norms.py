@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\backend\algorithms\dass21\dass21_norms.py
+# Última atualização: 2025-12-11T09:59:20.667799
+
 """
 DASS-21 Norms
 Normalização das pontuações do DASS-21 para a escala 0–100,

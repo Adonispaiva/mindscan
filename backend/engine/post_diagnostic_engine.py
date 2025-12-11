@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\backend\engine\post_diagnostic_engine.py
+# Última atualização: 2025-12-11T09:59:20.822000
+
 # MindScan Post-Diagnostic Engine — Ultra Superior
 # Responsável por criar interpretações pós-diagnósticas a partir
 # de scores consolidados e matrizes de risco/força.

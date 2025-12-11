@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\backend\algorithms\esquemas\esquemas_needs_map.py
+# Última atualização: 2025-12-11T09:59:20.683445
+
 """
 Esquemas Needs Map
 Mapeia cada um dos 18 Esquemas de Young para suas necessidades emocionais

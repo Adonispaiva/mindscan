@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\backend\integrations\whatsapp.py
+# Última atualização: 2025-12-11T09:59:20.841083
+
 """
 Módulo Oficial de Integração WhatsApp (Twilio API)
 MindScan® — Inovexa Software | SynMind

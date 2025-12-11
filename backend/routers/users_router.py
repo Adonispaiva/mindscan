@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\backend\routers\users_router.py
+# Última atualização: 2025-12-11T09:59:21.089476
+
 # Caminho: backend/routers/users_router.py
 # MindScan Backend — Users Router (Autenticação e Gestão de Usuários)
 # Diretor Técnico: Leo Vinci — Inovexa Software

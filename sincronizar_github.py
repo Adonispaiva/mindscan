@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\sincronizar_github.py
+# Última atualização: 2025-12-11T09:59:20.429839
+
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """

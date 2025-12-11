@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\backend\algorithms\big5\big5_enrichment.py
+# Última atualização: 2025-12-11T09:59:20.598842
+
 """
 Big5 Enrichment — Versão Ultra Superior
 ---------------------------------------

@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\backend\algorithms\bussola\bussola_archetypes.py
+# Última atualização: 2025-12-11T09:59:20.615855
+
 """
 Bússola Archetypes — Versão Ultra Superior
 --------------------------------------------------------

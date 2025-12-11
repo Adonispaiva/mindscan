@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\backend\integrations\__init__.py
+# Última atualização: 2025-12-11T09:59:20.841083
+
 """
 Pacote de Integração WhatsApp do MindScan®
 Inovexa Software | SynMind

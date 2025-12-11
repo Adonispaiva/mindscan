@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\backend\engine\score_aggregator.py
+# Última atualização: 2025-12-11T09:59:20.833002
+
 # MindScan Score Aggregator — Ultra Superior
 # Função: unificar, normalizar e consolidar scores de múltiplos engines.
 

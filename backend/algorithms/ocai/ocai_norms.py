@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\backend\algorithms\ocai\ocai_norms.py
+# Última atualização: 2025-12-11T09:59:20.698978
+
 """
 OCAI Norms
 Normaliza valores brutos do instrumento OCAI para a escala 0–100.

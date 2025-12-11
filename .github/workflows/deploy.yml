@@ -1,0 +1,38 @@
+name: Deploy MindScan Cloud
+
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: Login to Registry
+        uses: docker/login-action@v2
+        with:
+          registry: ${{ secrets.REGISTRY_URL }}
+          username: ${{ secrets.REGISTRY_USER }}
+          password: ${{ secrets.REGISTRY_PASS }}
+
+      - name: Build Docker Image
+        run: |
+          docker build \
+            -f deploy/Dockerfile.prod \
+            -t ${{ secrets.REGISTRY_URL }}/mindscan:latest .
+
+      - name: Push Image
+        run: |
+          docker push ${{ secrets.REGISTRY_URL }}/mindscan:latest
+
+      - name: Trigger SynMind Deploy
+        run: |
+          curl -X POST ${{ secrets.SYNMIND_DEPLOY_HOOK }}

@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\tools\automator\audit_manager.py
+# Última atualização: 2025-12-11T09:59:27.808460
+
 """
 audit_manager.py
 Auditoria MAX do MindScan – Versão Profissional Completa (A)

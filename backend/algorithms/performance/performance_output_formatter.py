@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\backend\algorithms\performance\performance_output_formatter.py
+# Última atualização: 2025-12-11T09:59:20.714601
+
 """
 Performance Output Formatter
 Gera o payload final da avaliação de performance profissional.

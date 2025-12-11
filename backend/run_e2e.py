@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\backend\run_e2e.py
+# Última atualização: 2025-12-11T09:59:20.558303
+
 import json
 import os
 from datetime import datetime

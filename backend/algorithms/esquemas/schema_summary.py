@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\backend\algorithms\esquemas\schema_summary.py
+# Última atualização: 2025-12-11T09:59:20.683445
+
 """
 Schema Summary
 Consolida o perfil dimensional (item-level) gerado pelo SchemaProfileBuilder.

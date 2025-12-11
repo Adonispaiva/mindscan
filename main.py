@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\main.py
+# Última atualização: 2025-12-11T09:59:20.421857
+
 """
 MindScan - Sistema Principal (main.py)
 Inovexa Software

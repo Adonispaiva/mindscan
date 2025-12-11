@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\backend\algorithms\dass21\dass21_summary.py
+# Última atualização: 2025-12-11T09:59:20.667799
+
 """
 DASS21 Summary — Versão ULTRA SUPERIOR
 --------------------------------------------------------------

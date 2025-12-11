@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\backend\services\pdf\report_templates\psychodynamic_template.py
+# Última atualização: 2025-12-11T09:59:21.273799
+
 # -*- coding: utf-8 -*-
 """
 psychodynamic_template.py — Template Psicodinâmico do MindScan (SynMind v2.0)

@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\backend\services\engine_service.py
+# Última atualização: 2025-12-11T09:59:21.089476
+
 # Caminho: backend/services/engine_service.py
 # MindScan Backend — Engine Service (Orquestrador Central da MI)
 # Diretor Técnico: Leo Vinci — Inovexa Software

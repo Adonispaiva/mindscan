@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\backend\algorithms\big5\big5_factor_map.py
+# Última atualização: 2025-12-11T09:59:20.599855
+
 """
 Big5 Factor Map — Versão Ultra Superior
 ---------------------------------------

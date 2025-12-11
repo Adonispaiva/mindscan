@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\backend\providers\scheduler_provider.py
+# Última atualização: 2025-12-11T09:59:21.073776
+
 # scheduler_provider.py
 # MindScan / SynMind 2025 – Agendador Definitivo, Estável, Completo
 

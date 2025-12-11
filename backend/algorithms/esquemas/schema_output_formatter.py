@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\backend\algorithms\esquemas\schema_output_formatter.py
+# Última atualização: 2025-12-11T09:59:20.683445
+
 """
 Schema Output Formatter
 Formata o bloco final de saída para o motor MindScan, consolidando:

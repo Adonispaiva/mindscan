@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\backend\models\mi_document_package.py
+# Última atualização: 2025-12-11T09:59:20.964461
+
 # mi_document_package.py
 # MindScan Rebuild – Pacote Final para o MI Formatter
 # Versão Definitiva • Estrutura Avançada Pydantic-Style

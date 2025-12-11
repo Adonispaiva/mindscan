@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\tools\automator\task_manager.py
+# Última atualização: 2025-12-11T09:59:27.824087
+
 """
 task_manager.py
 Controlador Profissional de Tasks do MindScan Automator

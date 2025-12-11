@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\backend\routers\candidates_router.py
+# Última atualização: 2025-12-11T09:59:21.073776
+
 # Caminho: backend/routers/candidates_router.py
 # MindScan Backend — Candidates Router
 # Diretor Técnico: Leo Vinci — Inovexa Software

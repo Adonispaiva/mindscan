@@ -1,3 +1,7 @@
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Caminho: D:\projetos-inovexa\mindscan\backend\algorithms\dass\dass_forms.py
+# Última atualização: 2025-12-11T09:59:20.652172
+
 """
 DASS – FORMS ENGINE (Versão ULTRA SUPERIOR)
 Estruturas de coleta, validação e normalização dos formulários
