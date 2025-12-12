@@ -1,9 +1,16 @@
 """
-Pacote Python inicializado automaticamente.
+Backend Models Package
+Expose ORM models for external imports.
 
-Projeto : MindScan / Inovexa
-Gerado  : 2025-12-12 11:37:26
-Motivo  : Garantir resolução correta de imports absolutos e relativos
-Aviso   : NÃO remover este arquivo.
+Exemplo suportado:
+    from backend.models import User
 """
-__all__ = []
+
+from __future__ import annotations
+
+# Import explícito do ORM model "User"
+from .user import User
+
+__all__ = [
+    "User",
+]
