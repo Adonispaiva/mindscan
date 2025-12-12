@@ -1,32 +1,28 @@
-# Arquivo normalizado pelo MindScan Optimizer (Final Version)
-# Caminho: D:\projetos-inovexa\mindscan\backend\app.py
-# Última atualização: 2025-12-11T09:59:20.558303
-
 # app.py
-# MindScan Backend - Arquitetura Oficial Inovexa
-# Carrega todos os routers reais do diretório /routers
-# NÃO ALTERAR A ESTRUTURA DE IMPORTS
+# Arquivo normalizado pelo MindScan Optimizer (Final Version)
+# Arquitetura oficial Inovexa
+# Carrega todos os routers reais do diretório backend/routers
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-# Routers reais do backend
-from routers.api_router import router as api_router
-from routers.candidates_router import router as candidates_router
-from routers.diagnostic_router import router as diagnostic_router
-from routers.health_router import router as health_router
-from routers.mindscan_api import router as mindscan_router
-from routers.tests_router import router as tests_router
-from routers.users_router import router as users_router
-from routers.whatsapp_router import router as whatsapp_router
+# Routers (imports absolutos – padrão produção)
+from backend.routers.api_router import router as api_router
+from backend.routers.candidates_router import router as candidates_router
+from backend.routers.diagnostic_router import router as diagnostic_router
+from backend.routers.health_router import router as health_router
+from backend.routers.mindscan_api import router as mindscan_router
+from backend.routers.tests_router import router as tests_router
+from backend.routers.users_router import router as users_router
+from backend.routers.whatsapp_router import router as whatsapp_router
 
 # Configurações
-from config import settings
+from backend.config import settings
 
 
-# ============================================================
+# =========================================================
 # Inicialização da API
-# ============================================================
+# =========================================================
 
 app = FastAPI(
     title="MindScan API",
@@ -35,9 +31,9 @@ app = FastAPI(
 )
 
 
-# ============================================================
+# =========================================================
 # Configuração de CORS
-# ============================================================
+# =========================================================
 
 app.add_middleware(
     CORSMiddleware,
@@ -48,43 +44,28 @@ app.add_middleware(
 )
 
 
-# ============================================================
-# Registro dos routers reais
-# ============================================================
+# =========================================================
+# Registro dos routers
+# =========================================================
 
-app.include_router(api_router, prefix="/api", tags=["API Root"])
-app.include_router(candidates_router, prefix="/candidates", tags=["Candidatos"])
-app.include_router(diagnostic_router, prefix="/diagnostic", tags=["Diagnóstico Psicométrico"])
-app.include_router(health_router, prefix="/health", tags=["Health Check"])
-app.include_router(mindscan_router, prefix="/mindscan", tags=["Engine Psicométrico"])
-app.include_router(tests_router, prefix="/tests", tags=["Testes e Blocos Psicométricos"])
-app.include_router(users_router, prefix="/users", tags=["Usuários"])
-app.include_router(whatsapp_router, prefix="/whatsapp", tags=["Integração WhatsApp"])
+app.include_router(api_router)
+app.include_router(candidates_router)
+app.include_router(diagnostic_router)
+app.include_router(health_router)
+app.include_router(mindscan_router)
+app.include_router(tests_router)
+app.include_router(users_router)
+app.include_router(whatsapp_router)
 
 
-# ============================================================
-# Rota raiz
-# ============================================================
+# =========================================================
+# Healthcheck raiz
+# =========================================================
 
 @app.get("/")
 def root():
     return {
-        "status": "online",
-        "service": "MindScan Backend",
-        "version": "2.0",
-        "environment": settings.ENV
+        "status": "ok",
+        "service": "MindScan API",
+        "version": "2.0"
     }
-
-
-# ============================================================
-# Execução local
-# ============================================================
-
-if __name__ == "__main__":
-    import uvicorn
-    uvicorn.run(
-        "app:app",
-        host="127.0.0.1",
-        port=8000,
-        reload=True
-    )

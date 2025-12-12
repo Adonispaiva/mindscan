@@ -1,7 +1,3 @@
-# Arquivo normalizado pelo MindScan Optimizer (Final Version)
-# Caminho: D:\projetos-inovexa\mindscan\backend\main.py
-# Última atualização: 2025-12-11T09:59:20.558303
-
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
@@ -26,7 +22,7 @@ import traceback
 from datetime import datetime
 from pathlib import Path
 
-from pysettings import settings
+from backend.pysettings import settings
 from backend.app import app
 
 # ============================================================
@@ -108,8 +104,13 @@ def api_thread():
         log_event("api_boot", {"host": settings.API_HOST, "port": settings.API_PORT})
         while True:
             HEARTBEAT["api"] = datetime.now().isoformat()
-            uvicorn.run(app, host=settings.API_HOST, port=settings.API_PORT, log_level="warning")
-    except Exception as e:
+            uvicorn.run(
+                app,
+                host=settings.API_HOST,
+                port=settings.API_PORT,
+                log_level="warning"
+            )
+    except Exception:
         log_event("api_crash", traceback.format_exc())
         raise
 
@@ -129,13 +130,11 @@ def watchdog(worker_th, api_th):
     while True:
         HEARTBEAT["main"] = datetime.now().isoformat()
 
-        # Worker morreu
-        if settings.WORKER_ENABLED and not worker_th.is_alive():
+        if settings.WORKER_ENABLED and worker_th and not worker_th.is_alive():
             log_event("worker_recover", {})
             worker_th = start_worker()
 
-        # API morreu
-        if settings.API_ENABLED and not api_th.is_alive():
+        if settings.API_ENABLED and api_th and not api_th.is_alive():
             log_event("api_recover", {})
             api_th = start_api()
 
@@ -163,8 +162,11 @@ def start_backend():
     else:
         log_event("api_disabled", {})
 
-    # Inicia Watchdog
-    wd = threading.Thread(target=watchdog, args=(worker_th, api_th), daemon=True)
+    wd = threading.Thread(
+        target=watchdog,
+        args=(worker_th, api_th),
+        daemon=True
+    )
     wd.start()
     log_event("watchdog_started", {})
 
@@ -176,6 +178,5 @@ if __name__ == "__main__":
     log_event("direct_execution", {})
     start_backend()
 
-    # Loop principal
     while True:
         time.sleep(1)
