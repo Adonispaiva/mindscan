@@ -1,16 +1,7 @@
-"""
-Backend Models Package
-Expose ORM models for external imports.
-
-Exemplo suportado:
-    from backend.models import User
-"""
-
-from __future__ import annotations
-
-# Import explícito do ORM model "User"
-from .user import User
+from backend.models.user import User
+from backend.models.candidate import Candidate
 
 __all__ = [
     "User",
+    "Candidate",
 ]
