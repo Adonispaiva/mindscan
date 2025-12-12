@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: mindscan-inovexa
+    env: docker
+    plan: free
+    autoDeploy: true
+    region: oregon
+
+    envVars:
+      - key: PORT
+        value: 8000
