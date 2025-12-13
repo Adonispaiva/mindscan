@@ -33,3 +33,14 @@
 [2025-12-12 05:58:59] → FULLTREE (modo 9)…
 [2025-12-12 05:58:59] ✓ FULLTREE concluído.
 
+[2025-12-12 11:39:38] → FULLTREE (modo 9)…
+[2025-12-12 11:39:39] ✓ FULLTREE concluído.
+
+[2025-12-12 11:39:46] → Gerando TREE_LEGACY (modo 10)…
+[2025-12-12 11:39:49] ✓ TREE_LEGACY salvo em:
+[2025-12-12 11:39:49]   - D:\projetos-inovexa\mindscan\tools\tree_legacy_2025-12-12_11h39min49s.txt
+[2025-12-12 11:39:49]   - D:\projetos-inovexa\mindscan\logs\estrutura\tree_legacy_2025-12-12_11h39min49s.txt
+
+[2025-12-12 11:39:57] → Gerando governança (GOVERNANCE)…
+[2025-12-12 11:39:57] ✓ Governança concluída.
+

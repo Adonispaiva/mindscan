@@ -1,5 +1,5 @@
 {
-    "generated_at": "2025-12-12T11:27:41.212184",
+    "generated_at": "2025-12-13T11:32:10.808997",
     "root": "D:\\projetos-inovexa\\mindscan",
     "tree": {
         ".": {
@@ -56,8 +56,10 @@
                 "forcegit_v3.log",
                 "full_tree.json",
                 "full_tree.txt",
+                "generate_init_files.py",
                 "gerar_tree_referencia.bat",
                 "governance_metadata.json",
+                "init_generation.log",
                 "instalador_mindscan.py",
                 "main.py",
                 "manutencao_mindscan.bat",
@@ -141,39 +143,486 @@
         },
         ".git\\objects": {
             "dirs": [
+                "00",
+                "01",
+                "02",
+                "04",
                 "05",
+                "06",
                 "08",
+                "0b",
+                "0c",
+                "0e",
+                "10",
+                "11",
+                "12",
+                "15",
+                "16",
+                "17",
+                "19",
+                "1d",
+                "20",
+                "22",
+                "26",
+                "27",
+                "29",
+                "2a",
+                "2b",
+                "2c",
+                "2e",
+                "2f",
+                "30",
+                "32",
+                "33",
+                "34",
+                "35",
+                "38",
+                "3d",
+                "3f",
+                "41",
+                "42",
+                "45",
+                "47",
+                "48",
+                "49",
+                "4c",
+                "4d",
+                "4e",
+                "4f",
+                "50",
+                "52",
+                "53",
                 "55",
+                "56",
+                "57",
+                "58",
+                "5a",
+                "5c",
+                "5f",
+                "60",
+                "61",
+                "62",
+                "63",
+                "64",
+                "67",
+                "69",
+                "6a",
+                "6c",
+                "6d",
+                "6e",
+                "6f",
+                "71",
+                "74",
+                "75",
+                "77",
+                "78",
+                "79",
+                "7d",
                 "7f",
+                "80",
+                "84",
+                "85",
+                "86",
+                "87",
+                "88",
+                "8a",
                 "8b",
                 "8c",
+                "8d",
+                "8e",
+                "93",
+                "94",
+                "95",
                 "98",
                 "99",
                 "9b",
                 "9d",
+                "9e",
+                "9f",
+                "a2",
+                "a5",
+                "a6",
+                "a7",
+                "a9",
+                "ac",
+                "ae",
+                "af",
+                "b0",
+                "b2",
+                "b3",
+                "b4",
+                "b5",
+                "b6",
+                "b8",
+                "b9",
                 "bc",
+                "bd",
+                "be",
+                "c0",
+                "c2",
+                "c3",
+                "c5",
+                "c7",
+                "c8",
+                "ca",
+                "cb",
+                "ce",
+                "cf",
                 "d0",
+                "d1",
+                "d2",
+                "d4",
                 "d5",
+                "d6",
+                "d9",
+                "da",
+                "dd",
+                "df",
+                "e1",
+                "e2",
+                "e3",
+                "e4",
+                "e5",
+                "e7",
+                "e8",
+                "e9",
+                "eb",
+                "ec",
+                "ed",
                 "ee",
                 "ef",
                 "f0",
+                "f1",
                 "f2",
+                "f3",
+                "f4",
                 "f5",
+                "f7",
+                "fa",
+                "fe",
                 "info",
                 "pack"
             ],
             "files": []
         },
+        ".git\\objects\\00": {
+            "dirs": [],
+            "files": [
+                "3b39cec977e878a5943c3d64e268154bb24b27",
+                "fc92457384349d5fdb299ffb3e660ec0291a40"
+            ]
+        },
+        ".git\\objects\\01": {
+            "dirs": [],
+            "files": [
+                "3c875a07d351af3627460bc41429d5b2706d3a"
+            ]
+        },
+        ".git\\objects\\02": {
+            "dirs": [],
+            "files": [
+                "e8e88ce5d98e7ab28bc43fe47bc722cf020e8d"
+            ]
+        },
+        ".git\\objects\\04": {
+            "dirs": [],
+            "files": [
+                "827e06ddebf770ba83fb09c94f09e7234fa699",
+                "ed3d1ddd9f87501e8f13bbd7782f849fee9263",
+                "fb59ba7f3dda06774946db1805475b5a8fc35a"
+            ]
+        },
         ".git\\objects\\05": {
             "dirs": [],
             "files": [
-                "1e316ee384830c215641145088636447bab1cd"
+                "1e316ee384830c215641145088636447bab1cd",
+                "cc8d68658047b859434c6b0e1acd295385a72b"
+            ]
+        },
+        ".git\\objects\\06": {
+            "dirs": [],
+            "files": [
+                "034d53bec4f085ef0f6589812ee4dde287e24a"
             ]
         },
         ".git\\objects\\08": {
             "dirs": [],
             "files": [
-                "5fddfd45f142c6b5c573af7a5180d935a13ceb"
+                "5fddfd45f142c6b5c573af7a5180d935a13ceb",
+                "75b6653d2a2f3052970b616b24bb85ad81a3ef"
+            ]
+        },
+        ".git\\objects\\0b": {
+            "dirs": [],
+            "files": [
+                "396ac67aa1d399e6245698c725a650c71d1e4a",
+                "bba28a3c34925816a37de5ce28a089e81737c5"
+            ]
+        },
+        ".git\\objects\\0c": {
+            "dirs": [],
+            "files": [
+                "8b9be2e7830df5fab2b9a68927d196c2893a4c"
+            ]
+        },
+        ".git\\objects\\0e": {
+            "dirs": [],
+            "files": [
+                "1de4f8edeec2dc3dfe0d0369600bc17d0d5fdf"
+            ]
+        },
+        ".git\\objects\\10": {
+            "dirs": [],
+            "files": [
+                "66e22985b31346316e3517f491ff334abd18dd",
+                "79bf1150827f2c8b928d2f2e29b8cab5b210df"
+            ]
+        },
+        ".git\\objects\\11": {
+            "dirs": [],
+            "files": [
+                "5bb78bf8cceb7b7d2b9a1c462d75371ace3ec7",
+                "dcc77747f7d1cb238110c379f5c3ab069d9979",
+                "f92c23998e5f9b45b0279b9c52584cc5f2f6f3"
+            ]
+        },
+        ".git\\objects\\12": {
+            "dirs": [],
+            "files": [
+                "f176676da2bf332e37bb12fe81e8087950e303"
+            ]
+        },
+        ".git\\objects\\15": {
+            "dirs": [],
+            "files": [
+                "4f654dae230d343ca9bcfc1a04aa0a74de7bd5",
+                "bff435c197a11682ae851ec824282e3617b0b9"
+            ]
+        },
+        ".git\\objects\\16": {
+            "dirs": [],
+            "files": [
+                "c85f2707bf5b0d22071052f8cadbd1dba21d21",
+                "f7f461088fff7abac024e419d330324eeef245"
+            ]
+        },
+        ".git\\objects\\17": {
+            "dirs": [],
+            "files": [
+                "bc15b373041788f6790c4759791b00290be9be"
+            ]
+        },
+        ".git\\objects\\19": {
+            "dirs": [],
+            "files": [
+                "8a72039bdf3bef50c3fb032dc6f16004e97b67"
+            ]
+        },
+        ".git\\objects\\1d": {
+            "dirs": [],
+            "files": [
+                "be71a7857ff47d5e24811b87a345c3f65aaf34"
+            ]
+        },
+        ".git\\objects\\20": {
+            "dirs": [],
+            "files": [
+                "0221cac021e50126d2fb4ddeb68874fe0da1b7",
+                "2ad087a67e882423cbae91ecc86ff98446abec",
+                "f69cef140cdb791b40d475124926c5886eff0a"
+            ]
+        },
+        ".git\\objects\\22": {
+            "dirs": [],
+            "files": [
+                "94906079c7b685355c6e0ae3058b38097f3500"
+            ]
+        },
+        ".git\\objects\\26": {
+            "dirs": [],
+            "files": [
+                "5d5dc29afed3f5227b573d455967f8cceb8bc2"
+            ]
+        },
+        ".git\\objects\\27": {
+            "dirs": [],
+            "files": [
+                "2dce96bfade9fe25e6d8fc9b594c8f43a26342"
+            ]
+        },
+        ".git\\objects\\29": {
+            "dirs": [],
+            "files": [
+                "05f08a5db98020e2274e1cb6fff966b5212c60",
+                "c7c3e636f3bfe7db40c85e78bf8d8a13efbdb1"
+            ]
+        },
+        ".git\\objects\\2a": {
+            "dirs": [],
+            "files": [
+                "aa100a506432a9d787b36e28abc774372c69ed"
+            ]
+        },
+        ".git\\objects\\2b": {
+            "dirs": [],
+            "files": [
+                "1c0c706f160c4a93d01ea14a0810f92cf9f768"
+            ]
+        },
+        ".git\\objects\\2c": {
+            "dirs": [],
+            "files": [
+                "27b924e9e426630a21c9894849466cde976e5a"
+            ]
+        },
+        ".git\\objects\\2e": {
+            "dirs": [],
+            "files": [
+                "b023ad049242cdcce3145eb3798d845b5aa40a",
+                "b6ffca03f720cf21d53c7636a7079b0c81fb54"
+            ]
+        },
+        ".git\\objects\\2f": {
+            "dirs": [],
+            "files": [
+                "96edbdcf3e47566b6634e26fe20a524aa72a27",
+                "d6cb071771e085cb315b4e6e16a3b9466e5839"
+            ]
+        },
+        ".git\\objects\\30": {
+            "dirs": [],
+            "files": [
+                "d3b75037146b385fd61cd134457050b371311f"
+            ]
+        },
+        ".git\\objects\\32": {
+            "dirs": [],
+            "files": [
+                "678b7bf9044c308acc7e0918d5b5086aea4ea1"
+            ]
+        },
+        ".git\\objects\\33": {
+            "dirs": [],
+            "files": [
+                "36b601c33716487b943387675bb4542ec5f8d1",
+                "45db79aa47d6de2ba4bedec182de13137bd54a",
+                "d30c99c957c7ce817a27b9304df88b7f8ff73c"
+            ]
+        },
+        ".git\\objects\\34": {
+            "dirs": [],
+            "files": [
+                "059596de9b2138554760eb2ef6a365a5896ce2",
+                "221930004380b6e911abda4d0e54486c8c716a",
+                "9e43296e948425c66dec34e4a00c0b8a84429a"
+            ]
+        },
+        ".git\\objects\\35": {
+            "dirs": [],
+            "files": [
+                "cd07cd935cef26d00c6c4fd06d1bc6a71abca5"
+            ]
+        },
+        ".git\\objects\\38": {
+            "dirs": [],
+            "files": [
+                "bc5272b28cb983bdb23047a3be281622925ed0"
+            ]
+        },
+        ".git\\objects\\3d": {
+            "dirs": [],
+            "files": [
+                "fbd636e08587f6f25f1a0d677101a78af4de60"
+            ]
+        },
+        ".git\\objects\\3f": {
+            "dirs": [],
+            "files": [
+                "a80e6b0451c6ff14e7cc32a8da72b89c3c5af9"
+            ]
+        },
+        ".git\\objects\\41": {
+            "dirs": [],
+            "files": [
+                "4e318bce21a9b5def343527cd946bf65866b4a"
+            ]
+        },
+        ".git\\objects\\42": {
+            "dirs": [],
+            "files": [
+                "481809a10140ae85e9f17e7282b65d4aebbf8f",
+                "b088377e2abcb992f8590ae40601b07957a4a9"
+            ]
+        },
+        ".git\\objects\\45": {
+            "dirs": [],
+            "files": [
+                "f1b9c2e220548bd0183f77becd40b6c4671ec2"
+            ]
+        },
+        ".git\\objects\\47": {
+            "dirs": [],
+            "files": [
+                "2ad17230654d48e4e320cd1180794baac532d6"
+            ]
+        },
+        ".git\\objects\\48": {
+            "dirs": [],
+            "files": [
+                "ffaf11dcfd7fa7bf1f197487a480586602e962"
+            ]
+        },
+        ".git\\objects\\49": {
+            "dirs": [],
+            "files": [
+                "05f65cb2953491cfb3a7480d6b5d4a24f27425",
+                "16963bbb505fc803e117c0e3fc178fdcd87ce5",
+                "bf72936da7395cb381ff75819a483fb228adfc"
+            ]
+        },
+        ".git\\objects\\4c": {
+            "dirs": [],
+            "files": [
+                "5649a7a72d4f5026af86d6c759cfd27858ec9e",
+                "8075971e07e2ae88d0662c8f6564ab227d2127"
+            ]
+        },
+        ".git\\objects\\4d": {
+            "dirs": [],
+            "files": [
+                "be09d47380a681f6468391c812f4de13947c3b"
+            ]
+        },
+        ".git\\objects\\4e": {
+            "dirs": [],
+            "files": [
+                "14c1dcf2f76b44ecd8c2377cf78d386c06be11"
+            ]
+        },
+        ".git\\objects\\4f": {
+            "dirs": [],
+            "files": [
+                "1b126115a5369f74eca1b2d338f1d7e61c808e",
+                "bec8ea11cb6611496b02138d099a86edf3a6e3"
+            ]
+        },
+        ".git\\objects\\50": {
+            "dirs": [],
+            "files": [
+                "29992d95fa1f34a0a60670a00ea737a2b9542b"
+            ]
+        },
+        ".git\\objects\\52": {
+            "dirs": [],
+            "files": [
+                "3ba2d2a3d9cd7f05a78a560b1db678070738e3",
+                "b0706af38650ba5bb78a31e297dc11ba256597"
+            ]
+        },
+        ".git\\objects\\53": {
+            "dirs": [],
+            "files": [
+                "9f80ff2618881cfdb6d89bcb586f7be0d369f8"
             ]
         },
         ".git\\objects\\55": {
@@ -182,10 +631,218 @@
                 "3b831526fbb1da6e76d90136a32efa0d33a9c0"
             ]
         },
+        ".git\\objects\\56": {
+            "dirs": [],
+            "files": [
+                "6d3a60610c2b8c9dbcc11b6d40cb7ce48647b1"
+            ]
+        },
+        ".git\\objects\\57": {
+            "dirs": [],
+            "files": [
+                "8dfc82159fc1159b4843c7623adf029b05ec8d"
+            ]
+        },
+        ".git\\objects\\58": {
+            "dirs": [],
+            "files": [
+                "2e3e940a896125ad28a83ec2c86316b258cbc2"
+            ]
+        },
+        ".git\\objects\\5a": {
+            "dirs": [],
+            "files": [
+                "63678b44f65b62ac9a84bf56db2ca8f0bf2f41"
+            ]
+        },
+        ".git\\objects\\5c": {
+            "dirs": [],
+            "files": [
+                "83d31f264df3e0b202b5f7fd6c6fb19689ba8d"
+            ]
+        },
+        ".git\\objects\\5f": {
+            "dirs": [],
+            "files": [
+                "1176ed0778004d40ddc1cca2d26c0da473c80f"
+            ]
+        },
+        ".git\\objects\\60": {
+            "dirs": [],
+            "files": [
+                "5212b39db35f6c9a50acedbfb457e87c36efd0",
+                "9a6e924d5554b92a7885933b9b90bb044a0959",
+                "cb36861eeb162b8a06e384baa52157c211ee22"
+            ]
+        },
+        ".git\\objects\\61": {
+            "dirs": [],
+            "files": [
+                "2066cb09d2742a79f974c54d018241fdffa10c",
+                "c847ad92441b35caf18ba1326342727f436b95",
+                "e479e246883baa9cdd13e4f3b419977b4fd858"
+            ]
+        },
+        ".git\\objects\\62": {
+            "dirs": [],
+            "files": [
+                "8735ea0d314abd012dec51b92750704a3c0a32"
+            ]
+        },
+        ".git\\objects\\63": {
+            "dirs": [],
+            "files": [
+                "8ef04767800715569382469ee91e830c5ed256",
+                "ce18a2b3c1e6e0da58698dd0ec87d3aec5f616"
+            ]
+        },
+        ".git\\objects\\64": {
+            "dirs": [],
+            "files": [
+                "07f201234502d06d3f7bb2d454b2ac545b0bde",
+                "24a46501d2b4d17803d96bdbf38a47b7dfcfdd"
+            ]
+        },
+        ".git\\objects\\67": {
+            "dirs": [],
+            "files": [
+                "559b46e4d08e5bb13db24fd040c4d9521cfb56"
+            ]
+        },
+        ".git\\objects\\69": {
+            "dirs": [],
+            "files": [
+                "8e239972bf23ef16773eb3664277c9d90de0ea"
+            ]
+        },
+        ".git\\objects\\6a": {
+            "dirs": [],
+            "files": [
+                "25338001f2052f971ddde02d269b82f166fdd1"
+            ]
+        },
+        ".git\\objects\\6c": {
+            "dirs": [],
+            "files": [
+                "6039684890865d978abc3f995f02f390825195"
+            ]
+        },
+        ".git\\objects\\6d": {
+            "dirs": [],
+            "files": [
+                "9a956f20d22b59a72a34ed22b75d0ea373f02d"
+            ]
+        },
+        ".git\\objects\\6e": {
+            "dirs": [],
+            "files": [
+                "e765d422c008e5cc6e2e4c1bb6a3d899662ac7"
+            ]
+        },
+        ".git\\objects\\6f": {
+            "dirs": [],
+            "files": [
+                "c6ed9c702897552c5398a06c6af0baa4d46c65"
+            ]
+        },
+        ".git\\objects\\71": {
+            "dirs": [],
+            "files": [
+                "4c6898f43fbd98dd2c1f79a610e493323be8a4"
+            ]
+        },
+        ".git\\objects\\74": {
+            "dirs": [],
+            "files": [
+                "7b407efa4d36047fee45ab2dd64a590c71c2e9"
+            ]
+        },
+        ".git\\objects\\75": {
+            "dirs": [],
+            "files": [
+                "e3907f098206c3f27edc3d102289a0e25b8372"
+            ]
+        },
+        ".git\\objects\\77": {
+            "dirs": [],
+            "files": [
+                "55463ff8f44d14013902e887a786cf510812ca",
+                "8d56f1b0b214e041872ef18d859594f5b172c3",
+                "f8a85b4ca152f569087e39178f6b4bd49a3342"
+            ]
+        },
+        ".git\\objects\\78": {
+            "dirs": [],
+            "files": [
+                "2ec5e3e5baf43268d44d54dc63690b4200a465"
+            ]
+        },
+        ".git\\objects\\79": {
+            "dirs": [],
+            "files": [
+                "272b8f5e679c059a4707c5b0a91be5cb2838ac",
+                "73fae721d8c24f1b49c798bf54d41ec6af2712"
+            ]
+        },
+        ".git\\objects\\7d": {
+            "dirs": [],
+            "files": [
+                "9ed25ad034dddabd1d102f53a6825974aa1934"
+            ]
+        },
         ".git\\objects\\7f": {
             "dirs": [],
             "files": [
-                "5c65348da08adbb23ab14389f73b1fc4ecce62"
+                "5c65348da08adbb23ab14389f73b1fc4ecce62",
+                "7b70d715a5c07251158cea67510438c5b2906c"
+            ]
+        },
+        ".git\\objects\\80": {
+            "dirs": [],
+            "files": [
+                "805f6bf254e13ec8dd21e458febcf62fcda9fc",
+                "a15a611c96384151f644e716a96c8c1f3a697c",
+                "b5a7e35a11685041250b68f9585baa0c892353"
+            ]
+        },
+        ".git\\objects\\84": {
+            "dirs": [],
+            "files": [
+                "2bf1118142c6f1e401da2fd179b203f87ea3be",
+                "f755f5be452408aeef4c67a07726ed1f7820a3"
+            ]
+        },
+        ".git\\objects\\85": {
+            "dirs": [],
+            "files": [
+                "46e38b74b53e5fd616598f160685218c02ac0b",
+                "b428bd3ff78e4022add3b2867ee964f17687c4",
+                "e313771bbcf6896884717a2047b4e20ca2cb91"
+            ]
+        },
+        ".git\\objects\\86": {
+            "dirs": [],
+            "files": [
+                "828bb8513b21c9e7c5e6e2d0f498c35b24e912"
+            ]
+        },
+        ".git\\objects\\87": {
+            "dirs": [],
+            "files": [
+                "592a0ff307dc35e9e2627fbebb131469d37843"
+            ]
+        },
+        ".git\\objects\\88": {
+            "dirs": [],
+            "files": [
+                "04bfa7a43890063daa02ea3afdbfbe82e0560b",
+                "b54540f197d8daed5d89f4b8af536e3e1faaac"
+            ]
+        },
+        ".git\\objects\\8a": {
+            "dirs": [],
+            "files": [
+                "b1f5714850f6fa31d6b131ac76b3ef3b170ac1"
             ]
         },
         ".git\\objects\\8b": {
@@ -200,6 +857,36 @@
                 "60840d2ce05312adc150877cd9ab7d9eda544b"
             ]
         },
+        ".git\\objects\\8d": {
+            "dirs": [],
+            "files": [
+                "402e9de2d3d575714bf0cf0ceafb83e68feca0"
+            ]
+        },
+        ".git\\objects\\8e": {
+            "dirs": [],
+            "files": [
+                "902480038481bedd76e0f43e266f8a00fc5eb8"
+            ]
+        },
+        ".git\\objects\\93": {
+            "dirs": [],
+            "files": [
+                "daf3655447e03f6df48468b5606107b5d7eec3"
+            ]
+        },
+        ".git\\objects\\94": {
+            "dirs": [],
+            "files": [
+                "b52755b2a4ee5ffd76dda3000e45032ef7a7e2"
+            ]
+        },
+        ".git\\objects\\95": {
+            "dirs": [],
+            "files": [
+                "b118498776f2e1b9970c585a24f5154bdd843f"
+            ]
+        },
         ".git\\objects\\98": {
             "dirs": [],
             "files": [
@@ -209,19 +896,139 @@
         ".git\\objects\\99": {
             "dirs": [],
             "files": [
-                "0a4e39125a6c4a92af41ebe3b646486bf37ebe"
+                "0a4e39125a6c4a92af41ebe3b646486bf37ebe",
+                "1373cc2dcd1e7c207e88ec1805384fda7d35f3"
             ]
         },
         ".git\\objects\\9b": {
             "dirs": [],
             "files": [
-                "37d3aa77d5cf3efbb2d384b42f8b6c45a8fbeb"
+                "37d3aa77d5cf3efbb2d384b42f8b6c45a8fbeb",
+                "64deeb994e630fdb3ec662029b75d1ea6b1890",
+                "da7fa4c46a3b7732fd8dac1c123f52b23dc0d7"
             ]
         },
         ".git\\objects\\9d": {
             "dirs": [],
             "files": [
-                "46c6a817f5c4b849ce18dbb7a1440683a01d06"
+                "1e923033429c9308e39e7dda20bb9ce5b09b69",
+                "46c6a817f5c4b849ce18dbb7a1440683a01d06",
+                "eeab535504df648a02fc785b3109264d640609"
+            ]
+        },
+        ".git\\objects\\9e": {
+            "dirs": [],
+            "files": [
+                "6a7bc442c411c8092e68b1968b65fb5868afff",
+                "dacd973e96d3727b10ebf64177c20cb0e9a9ea",
+                "db116dc3270e6e0278045643198d17349ba96d"
+            ]
+        },
+        ".git\\objects\\9f": {
+            "dirs": [],
+            "files": [
+                "d0dad2f39307cac1ae5cc32140d5bdda34aa0d"
+            ]
+        },
+        ".git\\objects\\a2": {
+            "dirs": [],
+            "files": [
+                "6cd8c96cab50f778ae15ed59c58dbd0e65f65b"
+            ]
+        },
+        ".git\\objects\\a5": {
+            "dirs": [],
+            "files": [
+                "2990b3807b7303e4f84d2411f6d7ee4995d686"
+            ]
+        },
+        ".git\\objects\\a6": {
+            "dirs": [],
+            "files": [
+                "dea81e65f8389be3911f883d9de0fbace9d530"
+            ]
+        },
+        ".git\\objects\\a7": {
+            "dirs": [],
+            "files": [
+                "6502f3fe7c0fe61fe549f66e5728acba4073bd",
+                "88dfaa0bb12a552199b4493ec09e77c26b7f9c"
+            ]
+        },
+        ".git\\objects\\a9": {
+            "dirs": [],
+            "files": [
+                "e36beb33699544042eb3633da8d442ff4384b2"
+            ]
+        },
+        ".git\\objects\\ac": {
+            "dirs": [],
+            "files": [
+                "f4b5333a628dc68e34337c9df95c2ddf210809"
+            ]
+        },
+        ".git\\objects\\ae": {
+            "dirs": [],
+            "files": [
+                "14dc8a3220df142bcc21ef7900de6e8f1d3106",
+                "6713dbb4ad422bc0568a35745c9c55f7de1acc",
+                "b5d3120dc1c59d9d7a138f3e01684415a20e5a"
+            ]
+        },
+        ".git\\objects\\af": {
+            "dirs": [],
+            "files": [
+                "f9bb37383a754fa979f1f0a402e0922dc80c3c"
+            ]
+        },
+        ".git\\objects\\b0": {
+            "dirs": [],
+            "files": [
+                "43dc0ec3ad65c7e2846b445906fb8fcf2fd7c6"
+            ]
+        },
+        ".git\\objects\\b2": {
+            "dirs": [],
+            "files": [
+                "209d400e99973adcca80f96b64e0b437d4cd8b",
+                "c682c19664c6914ba488c6344654390203bb88"
+            ]
+        },
+        ".git\\objects\\b3": {
+            "dirs": [],
+            "files": [
+                "4cf5f15aa21aa23823d6937a4d9e8011ff9289"
+            ]
+        },
+        ".git\\objects\\b4": {
+            "dirs": [],
+            "files": [
+                "95f5e2593b3f4e3d1da7faba49134bb9a1fec5"
+            ]
+        },
+        ".git\\objects\\b5": {
+            "dirs": [],
+            "files": [
+                "f3ccb2872b3e13b98739ba8c8bb7435d0dedf1"
+            ]
+        },
+        ".git\\objects\\b6": {
+            "dirs": [],
+            "files": [
+                "1c964731361947e5e23fbe9b9b112eaf68ea6c"
+            ]
+        },
+        ".git\\objects\\b8": {
+            "dirs": [],
+            "files": [
+                "19fd448c0ded64a789d1d72348755adc8a7107",
+                "61c82d83b60880e20821da2fed751c3c2a28ec"
+            ]
+        },
+        ".git\\objects\\b9": {
+            "dirs": [],
+            "files": [
+                "c5fdb652b9186b6d4dc430d59f30ec79dfd28a"
             ]
         },
         ".git\\objects\\bc": {
@@ -230,16 +1037,219 @@
                 "32fc87d2479dd117c0c5ebd95dd8b743ecb3c5"
             ]
         },
+        ".git\\objects\\bd": {
+            "dirs": [],
+            "files": [
+                "79b57f62cffad793585c266dd468efd0929031"
+            ]
+        },
+        ".git\\objects\\be": {
+            "dirs": [],
+            "files": [
+                "41400e573c85d404b19b384b6328c0adf01f04",
+                "54d04b764f1d9361ec61c48bd2d58b0059b183"
+            ]
+        },
+        ".git\\objects\\c0": {
+            "dirs": [],
+            "files": [
+                "7f6dcb6382065c1bf248cd2b5664e87d82ee9e",
+                "a22d0e57a2cd365899d4ff372c3046ddba2d02"
+            ]
+        },
+        ".git\\objects\\c2": {
+            "dirs": [],
+            "files": [
+                "4dfb6d5746cf6f47dec3c39d0b34f91ff08126"
+            ]
+        },
+        ".git\\objects\\c3": {
+            "dirs": [],
+            "files": [
+                "6ca06f7a8aba0c6fc97f4eeb9402289b07943a"
+            ]
+        },
+        ".git\\objects\\c5": {
+            "dirs": [],
+            "files": [
+                "09d55f045a1180ee97bc37688444ba75a7455a",
+                "6a04bafc3e6415256c40f402c5069f717cbe0a",
+                "a2eb3ee56d3a77535b22bfa16d4860c2ad4c5c",
+                "a9824d678eac0bf91f489e467609118ad123f8"
+            ]
+        },
+        ".git\\objects\\c7": {
+            "dirs": [],
+            "files": [
+                "c2d0b7a11dedc557fff3bd3a13818cf6ceb40a"
+            ]
+        },
+        ".git\\objects\\c8": {
+            "dirs": [],
+            "files": [
+                "e8b5d2abe034c558da130b64f07cee701ab886"
+            ]
+        },
+        ".git\\objects\\ca": {
+            "dirs": [],
+            "files": [
+                "4a2e6dd7599ab96a2b71042e3fd92a522fe058",
+                "f60b497545f65e513f87a25035f56b8fd1e0fc"
+            ]
+        },
+        ".git\\objects\\cb": {
+            "dirs": [],
+            "files": [
+                "48869a8f0473f0fdc84a4388d5d80d97b78c8f",
+                "71e3889465406a3d63bd01cfd8726424b19559",
+                "9f1552d689fe8266b110be19b40fbb14666367",
+                "bc3a5d9a1d8913d54b2b87570ec9ecefd850dd"
+            ]
+        },
+        ".git\\objects\\ce": {
+            "dirs": [],
+            "files": [
+                "41e406efd841c0d91182cf4ea6c63d583fa6f1"
+            ]
+        },
+        ".git\\objects\\cf": {
+            "dirs": [],
+            "files": [
+                "06ff31170f40df883c9c12bac55253630c1eb0"
+            ]
+        },
         ".git\\objects\\d0": {
             "dirs": [],
             "files": [
                 "f441d5ec6a0aacabaee784d0efd6c816c7bb3a"
             ]
         },
+        ".git\\objects\\d1": {
+            "dirs": [],
+            "files": [
+                "7a71662929eb5df2c7386dae485537e531172c"
+            ]
+        },
+        ".git\\objects\\d2": {
+            "dirs": [],
+            "files": [
+                "c3608e99374c6e6a7cd639db29f39e08f4e1a0"
+            ]
+        },
+        ".git\\objects\\d4": {
+            "dirs": [],
+            "files": [
+                "60590f1678ea5138d415f18e5ced51fe528fff",
+                "92b0ab1bae5a7b540db0c107bfcb79c2f32563",
+                "e7c56ac310a0555539b40d2722a1f256d25893"
+            ]
+        },
         ".git\\objects\\d5": {
             "dirs": [],
             "files": [
+                "a5043d5779571f99a052660b51e1da0cb60d25",
                 "f2c01914829024ded8ed468d4fa50449d60ce6"
+            ]
+        },
+        ".git\\objects\\d6": {
+            "dirs": [],
+            "files": [
+                "efdaf931ce81d369f12e7cadf0621b9b0cfe45"
+            ]
+        },
+        ".git\\objects\\d9": {
+            "dirs": [],
+            "files": [
+                "db40ad44b399eb8ef5b6398a40ef8dedd0b9a0"
+            ]
+        },
+        ".git\\objects\\da": {
+            "dirs": [],
+            "files": [
+                "59cd2dcd3c7f301a9d79448339711b22352693"
+            ]
+        },
+        ".git\\objects\\dd": {
+            "dirs": [],
+            "files": [
+                "633440a822a1a26219896dcadadf97b0bbeca4"
+            ]
+        },
+        ".git\\objects\\df": {
+            "dirs": [],
+            "files": [
+                "674771d7d02296589c10ec29035c69164a90a5",
+                "a63a2081951439b0025dcf4bb5c59d7c5aee55"
+            ]
+        },
+        ".git\\objects\\e1": {
+            "dirs": [],
+            "files": [
+                "78cb3c6c4c2cc0d5045c4ad59bec3f35edefbc"
+            ]
+        },
+        ".git\\objects\\e2": {
+            "dirs": [],
+            "files": [
+                "ea211557015732442c4bce9155d876781b2b7b"
+            ]
+        },
+        ".git\\objects\\e3": {
+            "dirs": [],
+            "files": [
+                "287d6ca559e67509db0e53ff853a341490784d"
+            ]
+        },
+        ".git\\objects\\e4": {
+            "dirs": [],
+            "files": [
+                "beb51cd3f55cf7a92951aea3b05347894fbb45"
+            ]
+        },
+        ".git\\objects\\e5": {
+            "dirs": [],
+            "files": [
+                "e7994cf59d43c780d21725bdfd4a29d91dfa4d"
+            ]
+        },
+        ".git\\objects\\e7": {
+            "dirs": [],
+            "files": [
+                "1b681719b4b69ac5bcf5815ce4e2bf7e026dce"
+            ]
+        },
+        ".git\\objects\\e8": {
+            "dirs": [],
+            "files": [
+                "90e178db6018441217dd7a4c9a87c702fd059b",
+                "ea3d2a1bf79f16d63a12bdb51a7d4b3144225b"
+            ]
+        },
+        ".git\\objects\\e9": {
+            "dirs": [],
+            "files": [
+                "5a29acf61c518af891f9fbdb9e78608c3d2fc0",
+                "c7bd8decf9b184a175ca36a8bc404bd58af030"
+            ]
+        },
+        ".git\\objects\\eb": {
+            "dirs": [],
+            "files": [
+                "1bf0d00c44a63d6cc3567fe0f5859394c9d146"
+            ]
+        },
+        ".git\\objects\\ec": {
+            "dirs": [],
+            "files": [
+                "3415e41b3707632df640f10a47a37d654212fc",
+                "c13d2d93bda4a5ace313fbc26bf6c768f7ce37"
+            ]
+        },
+        ".git\\objects\\ed": {
+            "dirs": [],
+            "files": [
+                "912a253953b9ffb675f1d9c7e1e13fba7d5db6",
+                "c6d92f7002bc77c69c1bb2ba7b91caf236371d"
             ]
         },
         ".git\\objects\\ee": {
@@ -260,16 +1270,59 @@
                 "01b7de8fbd980acbf11fb38f785f7555f0d530"
             ]
         },
+        ".git\\objects\\f1": {
+            "dirs": [],
+            "files": [
+                "cbba640e62c66309c276ed31349cc1d6201c02"
+            ]
+        },
         ".git\\objects\\f2": {
             "dirs": [],
             "files": [
-                "88bd8774392ec29600fbefd8219ca0f85dbd4e"
+                "75d354b2089535f033ec078074ecb2b2efc231",
+                "88bd8774392ec29600fbefd8219ca0f85dbd4e",
+                "bd0acd713b89627125871adce62c9d50122efb"
+            ]
+        },
+        ".git\\objects\\f3": {
+            "dirs": [],
+            "files": [
+                "7a167fc7c903c658b592379b4dd0d55cd5b43e"
+            ]
+        },
+        ".git\\objects\\f4": {
+            "dirs": [],
+            "files": [
+                "9e417323c2a4db1ce30d01616ed11aafc2ea8d",
+                "c36288f47d276d20e9135257d0c7fa496a8734"
             ]
         },
         ".git\\objects\\f5": {
             "dirs": [],
             "files": [
-                "3e4a116edbac66893cb8c5bb42a8fc3787771c"
+                "3e4a116edbac66893cb8c5bb42a8fc3787771c",
+                "6a42dc243557c45d79efefd899a386bac0efd8"
+            ]
+        },
+        ".git\\objects\\f7": {
+            "dirs": [],
+            "files": [
+                "1b6816b471dbe9ce3ff49dfd99de56df9d9968"
+            ]
+        },
+        ".git\\objects\\fa": {
+            "dirs": [],
+            "files": [
+                "668ba847e1557411298e3ae36ae20659ed9db8",
+                "eda9bb2c5773e3325d42c00e943f568bf28095",
+                "fbcb0fdb929d2eb554c47a7459c754ca3d9ecb"
+            ]
+        },
+        ".git\\objects\\fe": {
+            "dirs": [],
+            "files": [
+                "784a0d87892fb361912d6d4304712794893f53",
+                "7d458972b5bdda58a74b2b4ccaa2dd92c8d955"
             ]
         },
         ".git\\objects\\info": {
@@ -344,12 +1397,14 @@
         "admin": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "admin_router.py"
             ]
         },
         "analytics": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "analytics_router.py",
                 "analytics_service.py",
                 "live_metrics_router.py",
@@ -365,12 +1420,14 @@
                 "WhatsApp Ptt 2025-12-08 at 09.08.44_transcricao.txt",
                 "WhatsApp Ptt 2025-12-08 at 09.09.54.ogg",
                 "WhatsApp Ptt 2025-12-08 at 09.09.54_transcricao.txt",
+                "__init__.py",
                 "transcrever_audios.py"
             ]
         },
         "auth": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "auth_router.py",
                 "auth_service.py",
                 "middleware_auth.py"
@@ -378,6 +1435,7 @@
         },
         "backend": {
             "dirs": [
+                "alembic",
                 "algorithms",
                 "analytics",
                 "api",
@@ -403,6 +1461,7 @@
             ],
             "files": [
                 "__init__.py",
+                "alembic.ini",
                 "app.py",
                 "config.py",
                 "database.py",
@@ -411,6 +1470,34 @@
                 "pysettings.py",
                 "requirements.txt",
                 "run_e2e.py"
+            ]
+        },
+        "backend\\alembic": {
+            "dirs": [
+                "versions"
+            ],
+            "files": [
+                "env.py"
+            ]
+        },
+        "backend\\alembic\\versions": {
+            "dirs": [],
+            "files": [
+                "2025_12_13_0001_create_mindscan_tests_table.py",
+                "xxxxxx_create_mindscan_test_table.py"
+            ]
+        },
+        "backend\\alembic\\versions\\__pycache__": {
+            "dirs": [],
+            "files": [
+                "2025_12_13_0001_create_mindscan_tests_table.cpython-312.pyc",
+                "xxxxxx_create_mindscan_test_table.cpython-312.pyc"
+            ]
+        },
+        "backend\\alembic\\__pycache__": {
+            "dirs": [],
+            "files": [
+                "env.cpython-312.pyc"
             ]
         },
         "backend\\algorithms": {
@@ -428,6 +1515,7 @@
                 "teique"
             ],
             "files": [
+                "__init__.py",
                 "algorithms_big5.py",
                 "algorithms_bussola.py",
                 "algorithms_cross.py",
@@ -450,6 +1538,7 @@
         "backend\\algorithms\\big5": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "big5.py",
                 "big5_alerts.py",
                 "big5_crosslinks.py",
@@ -474,6 +1563,7 @@
         "backend\\algorithms\\bussola": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "bussola.py",
                 "bussola_alerts.py",
                 "bussola_archetypes.py",
@@ -495,6 +1585,7 @@
         "backend\\algorithms\\core": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "cross_instrument_mapper.py",
                 "instrument_pipeline.py",
                 "instrument_registry.py",
@@ -506,6 +1597,7 @@
         "backend\\algorithms\\cruzamentos": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "cross_alerts.py",
                 "cross_big5_dass.py",
                 "cross_big5_egos.py",
@@ -530,6 +1622,7 @@
         "backend\\algorithms\\dass": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "dass_alerts.py",
                 "dass_crosslinks.py",
                 "dass_factor_map.py",
@@ -544,6 +1637,7 @@
         "backend\\algorithms\\dass21": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "dass21.py",
                 "dass21_alerts.py",
                 "dass21_crosslinks.py",
@@ -563,6 +1657,7 @@
         "backend\\algorithms\\esquemas": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "esquemas.py",
                 "esquemas_alerts.py",
                 "esquemas_classifier.py",
@@ -589,12 +1684,14 @@
         "backend\\algorithms\\matcher": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "matcher.py"
             ]
         },
         "backend\\algorithms\\ocai": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "ocai.py",
                 "ocai_alerts.py",
                 "ocai_crosslinks.py",
@@ -612,6 +1709,7 @@
         "backend\\algorithms\\performance": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "performance.py",
                 "performance_alerts.py",
                 "performance_crosslinks.py",
@@ -632,6 +1730,7 @@
         "backend\\algorithms\\teique": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "teique.py",
                 "teique_alerts.py",
                 "teique_crosslinks.py",
@@ -662,18 +1761,21 @@
         "backend\\analytics\\audit": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "audit_log_service.py"
             ]
         },
         "backend\\analytics\\metrics": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "metrics_service.py"
             ]
         },
         "backend\\analytics\\monitoring": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "monitoring_service.py"
             ]
         },
@@ -690,6 +1792,7 @@
                 "validators"
             ],
             "files": [
+                "__init__.py",
                 "router.py",
                 "schemas.py",
                 "service.py",
@@ -699,12 +1802,14 @@
         "backend\\api\\compat": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "external_api_compat_layer.py"
             ]
         },
         "backend\\api\\controllers": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "mindscan_controller.py",
                 "report_controller.py",
                 "session_controller.py"
@@ -719,12 +1824,14 @@
         "backend\\api\\middleware": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "audit_middleware.py"
             ]
         },
         "backend\\api\\routes": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "health_check_router.py",
                 "integration_router.py",
                 "routes_admin_panel.py",
@@ -736,6 +1843,7 @@
         "backend\\api\\schemas": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "mindscan_models.py",
                 "report_schema.py"
             ]
@@ -743,6 +1851,7 @@
         "backend\\api\\services": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "diagnostic_orchestrator.py",
                 "file_upload_service.py",
                 "input_normalizer.py",
@@ -758,12 +1867,14 @@
         "backend\\api\\utils": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "error_response_builder.py"
             ]
         },
         "backend\\api\\validators": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "mindscan_validator.py"
             ]
         },
@@ -776,6 +1887,7 @@
                 "orchestrator"
             ],
             "files": [
+                "__init__.py",
                 "diagnostic_engine.py",
                 "engine.py",
                 "nlp_processor.py",
@@ -787,37 +1899,48 @@
         "backend\\core\\compliance": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "compliance_engine.py"
             ]
         },
         "backend\\core\\diagnostic": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "diagnostic_engine_v3.py"
             ]
         },
         "backend\\core\\interpretation": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "interpretation_pipeline.py"
             ]
         },
         "backend\\core\\normalization": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "global_normalization.py"
             ]
         },
         "backend\\core\\orchestrator": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "mindscan_orchestrator.py"
             ]
         },
         "backend\\db": {
             "dirs": [],
             "files": [
-                "vazio.md"
+                "base.py"
+            ]
+        },
+        "backend\\db\\__pycache__": {
+            "dirs": [],
+            "files": [
+                "base.cpython-312.pyc"
             ]
         },
         "backend\\engine": {
@@ -892,6 +2015,7 @@
         "backend\\integrations\\events": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "event_dispatcher.py",
                 "integration_event_handlers.py"
             ]
@@ -899,12 +2023,14 @@
         "backend\\integrations\\webhooks": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "webhook_engine.py"
             ]
         },
         "backend\\integrations\\whatsapp": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "whatsapp_gateway.py"
             ]
         },
@@ -916,6 +2042,7 @@
                 "prompts"
             ],
             "files": [
+                "__init__.py",
                 "mi_chain_of_thought.py",
                 "mi_context_engine.py",
                 "mi_cross_section_engine.py",
@@ -937,6 +2064,7 @@
         "backend\\mi\\compliance": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "compliance_apa.py",
                 "compliance_bias.py",
                 "compliance_diagnostic.py",
@@ -955,6 +2083,7 @@
         "backend\\mi\\generative": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "mi_adaptative_narrative_engine.py",
                 "mi_adaptative_response_generator.py",
                 "mi_adaptive_personality_shift.py",
@@ -1000,6 +2129,7 @@
         "backend\\mi\\persona": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "persona_constraints.py",
                 "persona_core.py",
                 "persona_examples.py",
@@ -1019,6 +2149,7 @@
         "backend\\middleware": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "rate_limit_middleware.py"
             ]
         },
@@ -1029,9 +2160,11 @@
                 "scoring"
             ],
             "files": [
+                "__init__.py",
                 "algorithm_output.py",
                 "audit_log.py",
                 "bussola_profile.py",
+                "candidate.py",
                 "cross_insights_model.py",
                 "culture_profile.py",
                 "diagnostic_flags.py",
@@ -1048,6 +2181,7 @@
                 "mi_document_package.py",
                 "mindscan_full_document.py",
                 "mindscan_result.py",
+                "mindscan_test.py",
                 "narrative_block.py",
                 "nlp_enrichment.py",
                 "ocai_profile.py",
@@ -1061,12 +2195,14 @@
                 "report_section.py",
                 "report_summary.py",
                 "roadmap_item.py",
-                "schema_profile.py"
+                "schema_profile.py",
+                "user.py"
             ]
         },
         "backend\\models\\inputs": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "behavioral_input.py",
                 "big5_input.py",
                 "bussola_input.py",
@@ -1100,6 +2236,7 @@
         "backend\\models\\outputs": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "big5_output.py",
                 "bussola_output.py",
                 "bussola_section_output.py",
@@ -1128,6 +2265,7 @@
         "backend\\models\\scoring": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "scoring_big5.py",
                 "scoring_bussola.py",
                 "scoring_cross.py",
@@ -1140,9 +2278,19 @@
                 "scoring_validation.py"
             ]
         },
+        "backend\\models\\__pycache__": {
+            "dirs": [],
+            "files": [
+                "__init__.cpython-312.pyc",
+                "candidate.cpython-312.pyc",
+                "mindscan_test.cpython-312.pyc",
+                "user.cpython-312.pyc"
+            ]
+        },
         "backend\\pipelines": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "big5_pipeline.py",
                 "bussola_pipeline.py",
                 "cross_pipeline.py",
@@ -1160,6 +2308,7 @@
         "backend\\providers": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "ai_provider.py",
                 "analytics_provider.py",
                 "auth_provider.py",
@@ -1178,6 +2327,7 @@
         "backend\\reports": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "assets_manager.py",
                 "html_exporter.py",
                 "pdf_generator.py",
@@ -1282,6 +2432,7 @@
         "backend\\services\\adapters": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "corporate_render_adapter.py",
                 "corporate_style_adapter.py"
             ]
@@ -1293,6 +2444,7 @@
         "backend\\services\\builders": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "corporate_section_builder.py"
             ]
         },
@@ -1312,6 +2464,7 @@
         "backend\\services\\design": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "corporate_color_system.py",
                 "corporate_icon_loader.py",
                 "corporate_layout_engine.py"
@@ -1320,6 +2473,7 @@
         "backend\\services\\engines": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "corporate_behavior_engine.py",
                 "corporate_competency_engine.py",
                 "corporate_culture_engine.py",
@@ -1338,6 +2492,7 @@
         "backend\\services\\helpers": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "data_sanitizer.py",
                 "html_sanitizer.py",
                 "payload_integrator.py",
@@ -1354,6 +2509,7 @@
         "backend\\services\\infrastructure": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "cache_service.py",
                 "error_monitor.py",
                 "performance_profiler.py"
@@ -1362,6 +2518,7 @@
         "backend\\services\\mi": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "compliance_filter.py",
                 "integration_engine.py",
                 "mi_engine.py",
@@ -1373,6 +2530,7 @@
         "backend\\services\\orchestrators": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "corporate_orchestrator.py"
             ]
         },
@@ -1388,6 +2546,7 @@
                 "validators"
             ],
             "files": [
+                "__init__.py",
                 "arquetipos_dominancia.py",
                 "capa_enterprise.py",
                 "carga_cognitiva.py",
@@ -1431,6 +2590,7 @@
         "backend\\services\\pdf\\engine": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "async_pdf_builder.py",
                 "async_pipeline.py",
                 "pdf.engine.py",
@@ -1442,6 +2602,7 @@
         "backend\\services\\pdf\\pdf_sections": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "analise_performance.py",
                 "anexos.py",
                 "anexos_profissionais.py",
@@ -1482,6 +2643,7 @@
         "backend\\services\\pdf\\renderers": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "distributed_renderer.py",
                 "font_manager.py",
                 "html_renderer.py",
@@ -1507,6 +2669,7 @@
         "backend\\services\\pdf\\report_templates": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "analytic_template.py",
                 "compass_template.py",
                 "culture_template.py",
@@ -1527,6 +2690,7 @@
         "backend\\services\\pdf\\telemetry": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "logger.py",
                 "resource_monitor.py",
                 "telemetry_advanced.py"
@@ -1535,6 +2699,7 @@
         "backend\\services\\pdf\\templates": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "base.html",
                 "componentes.py",
                 "estilo.css",
@@ -1544,18 +2709,21 @@
         "backend\\services\\pdf\\validators": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "data_validator.py"
             ]
         },
         "backend\\services\\pdf_tools": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "pdf_postprocessor.py"
             ]
         },
         "backend\\services\\post_processors": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "corporate_post_processor.py"
             ]
         },
@@ -1573,6 +2741,7 @@
         "backend\\services\\report\\assembler": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "report_assembler.py"
             ]
         },
@@ -1587,42 +2756,49 @@
         "backend\\services\\report\\assets\\charts": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "chart_generator.py"
             ]
         },
         "backend\\services\\report\\assets\\covers": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "cover_manager.py"
             ]
         },
         "backend\\services\\report\\assets\\styles": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "style_manager.py"
             ]
         },
         "backend\\services\\report\\builders": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "psychodynamic_builder.py"
             ]
         },
         "backend\\services\\report\\enhancers": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "report_enhancer.py"
             ]
         },
         "backend\\services\\report\\pdf": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "pdf_pipeline.py"
             ]
         },
         "backend\\services\\report\\renderers": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "base_renderer.py",
                 "executive_renderer.py",
                 "premium_renderer.py",
@@ -1633,6 +2809,7 @@
         "backend\\services\\report_templates": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "base_renderer.py",
                 "corporate_renderer.py",
                 "corporate_renderer_loader.py",
@@ -1663,6 +2840,7 @@
         "backend\\storage": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "pdf_publisher.py"
             ]
         },
@@ -1675,12 +2853,14 @@
         "backend\\tests": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "test_corporate_pipeline.py"
             ]
         },
         "backend\\utils": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "api_utils.py",
                 "array_utils.py",
                 "config_loader.py",
@@ -1755,6 +2935,8 @@
                 "aiohttp_retry-2.9.1.dist-info",
                 "aiosignal",
                 "aiosignal-1.4.0.dist-info",
+                "alembic",
+                "alembic-1.17.2.dist-info",
                 "annotated_doc",
                 "annotated_doc-0.0.4.dist-info",
                 "annotated_types",
@@ -1795,6 +2977,8 @@
                 "jmespath",
                 "jmespath-1.0.1.dist-info",
                 "jwt",
+                "mako",
+                "mako-1.3.10.dist-info",
                 "markupsafe",
                 "markupsafe-3.0.3.dist-info",
                 "multidict",
@@ -1811,6 +2995,9 @@
                 "pip-25.3.dist-info",
                 "propcache",
                 "propcache-0.4.1.dist-info",
+                "psycopg2",
+                "psycopg2_binary-2.9.11.dist-info",
+                "psycopg2_binary.libs",
                 "pydantic",
                 "pydantic-2.12.5.dist-info",
                 "pydantic_core",
@@ -2148,6 +3335,352 @@
             ]
         },
         "backend\\venv\\Lib\\site-packages\\aiosignal-1.4.0.dist-info\\licenses": {
+            "dirs": [],
+            "files": [
+                "LICENSE"
+            ]
+        },
+        "backend\\venv\\Lib\\site-packages\\alembic": {
+            "dirs": [
+                "autogenerate",
+                "ddl",
+                "operations",
+                "runtime",
+                "script",
+                "templates",
+                "testing",
+                "util"
+            ],
+            "files": [
+                "__init__.py",
+                "__main__.py",
+                "command.py",
+                "config.py",
+                "context.py",
+                "context.pyi",
+                "environment.py",
+                "migration.py",
+                "op.py",
+                "op.pyi",
+                "py.typed"
+            ]
+        },
+        "backend\\venv\\Lib\\site-packages\\alembic\\autogenerate": {
+            "dirs": [],
+            "files": [
+                "__init__.py",
+                "api.py",
+                "compare.py",
+                "render.py",
+                "rewriter.py"
+            ]
+        },
+        "backend\\venv\\Lib\\site-packages\\alembic\\autogenerate\\__pycache__": {
+            "dirs": [],
+            "files": [
+                "__init__.cpython-312.pyc",
+                "api.cpython-312.pyc",
+                "compare.cpython-312.pyc",
+                "render.cpython-312.pyc",
+                "rewriter.cpython-312.pyc"
+            ]
+        },
+        "backend\\venv\\Lib\\site-packages\\alembic\\ddl": {
+            "dirs": [],
+            "files": [
+                "__init__.py",
+                "_autogen.py",
+                "base.py",
+                "impl.py",
+                "mssql.py",
+                "mysql.py",
+                "oracle.py",
+                "postgresql.py",
+                "sqlite.py"
+            ]
+        },
+        "backend\\venv\\Lib\\site-packages\\alembic\\ddl\\__pycache__": {
+            "dirs": [],
+            "files": [
+                "__init__.cpython-312.pyc",
+                "_autogen.cpython-312.pyc",
+                "base.cpython-312.pyc",
+                "impl.cpython-312.pyc",
+                "mssql.cpython-312.pyc",
+                "mysql.cpython-312.pyc",
+                "oracle.cpython-312.pyc",
+                "postgresql.cpython-312.pyc",
+                "sqlite.cpython-312.pyc"
+            ]
+        },
+        "backend\\venv\\Lib\\site-packages\\alembic\\operations": {
+            "dirs": [],
+            "files": [
+                "__init__.py",
+                "base.py",
+                "batch.py",
+                "ops.py",
+                "schemaobj.py",
+                "toimpl.py"
+            ]
+        },
+        "backend\\venv\\Lib\\site-packages\\alembic\\operations\\__pycache__": {
+            "dirs": [],
+            "files": [
+                "__init__.cpython-312.pyc",
+                "base.cpython-312.pyc",
+                "batch.cpython-312.pyc",
+                "ops.cpython-312.pyc",
+                "schemaobj.cpython-312.pyc",
+                "toimpl.cpython-312.pyc"
+            ]
+        },
+        "backend\\venv\\Lib\\site-packages\\alembic\\runtime": {
+            "dirs": [],
+            "files": [
+                "__init__.py",
+                "environment.py",
+                "migration.py"
+            ]
+        },
+        "backend\\venv\\Lib\\site-packages\\alembic\\runtime\\__pycache__": {
+            "dirs": [],
+            "files": [
+                "__init__.cpython-312.pyc",
+                "environment.cpython-312.pyc",
+                "migration.cpython-312.pyc"
+            ]
+        },
+        "backend\\venv\\Lib\\site-packages\\alembic\\script": {
+            "dirs": [],
+            "files": [
+                "__init__.py",
+                "base.py",
+                "revision.py",
+                "write_hooks.py"
+            ]
+        },
+        "backend\\venv\\Lib\\site-packages\\alembic\\script\\__pycache__": {
+            "dirs": [],
+            "files": [
+                "__init__.cpython-312.pyc",
+                "base.cpython-312.pyc",
+                "revision.cpython-312.pyc",
+                "write_hooks.cpython-312.pyc"
+            ]
+        },
+        "backend\\venv\\Lib\\site-packages\\alembic\\templates": {
+            "dirs": [
+                "async",
+                "generic",
+                "multidb",
+                "pyproject",
+                "pyproject_async"
+            ],
+            "files": []
+        },
+        "backend\\venv\\Lib\\site-packages\\alembic\\templates\\async": {
+            "dirs": [],
+            "files": [
+                "README",
+                "alembic.ini.mako",
+                "env.py",
+                "script.py.mako"
+            ]
+        },
+        "backend\\venv\\Lib\\site-packages\\alembic\\templates\\async\\__pycache__": {
+            "dirs": [],
+            "files": [
+                "env.cpython-312.pyc"
+            ]
+        },
+        "backend\\venv\\Lib\\site-packages\\alembic\\templates\\generic": {
+            "dirs": [],
+            "files": [
+                "README",
+                "alembic.ini.mako",
+                "env.py",
+                "script.py.mako"
+            ]
+        },
+        "backend\\venv\\Lib\\site-packages\\alembic\\templates\\generic\\__pycache__": {
+            "dirs": [],
+            "files": [
+                "env.cpython-312.pyc"
+            ]
+        },
+        "backend\\venv\\Lib\\site-packages\\alembic\\templates\\multidb": {
+            "dirs": [],
+            "files": [
+                "README",
+                "alembic.ini.mako",
+                "env.py",
+                "script.py.mako"
+            ]
+        },
+        "backend\\venv\\Lib\\site-packages\\alembic\\templates\\multidb\\__pycache__": {
+            "dirs": [],
+            "files": [
+                "env.cpython-312.pyc"
+            ]
+        },
+        "backend\\venv\\Lib\\site-packages\\alembic\\templates\\pyproject": {
+            "dirs": [],
+            "files": [
+                "README",
+                "alembic.ini.mako",
+                "env.py",
+                "pyproject.toml.mako",
+                "script.py.mako"
+            ]
+        },
+        "backend\\venv\\Lib\\site-packages\\alembic\\templates\\pyproject\\__pycache__": {
+            "dirs": [],
+            "files": [
+                "env.cpython-312.pyc"
+            ]
+        },
+        "backend\\venv\\Lib\\site-packages\\alembic\\templates\\pyproject_async": {
+            "dirs": [],
+            "files": [
+                "README",
+                "alembic.ini.mako",
+                "env.py",
+                "pyproject.toml.mako",
+                "script.py.mako"
+            ]
+        },
+        "backend\\venv\\Lib\\site-packages\\alembic\\templates\\pyproject_async\\__pycache__": {
+            "dirs": [],
+            "files": [
+                "env.cpython-312.pyc"
+            ]
+        },
+        "backend\\venv\\Lib\\site-packages\\alembic\\testing": {
+            "dirs": [
+                "plugin",
+                "suite"
+            ],
+            "files": [
+                "__init__.py",
+                "assertions.py",
+                "env.py",
+                "fixtures.py",
+                "requirements.py",
+                "schemacompare.py",
+                "util.py",
+                "warnings.py"
+            ]
+        },
+        "backend\\venv\\Lib\\site-packages\\alembic\\testing\\plugin": {
+            "dirs": [],
+            "files": [
+                "__init__.py",
+                "bootstrap.py"
+            ]
+        },
+        "backend\\venv\\Lib\\site-packages\\alembic\\testing\\plugin\\__pycache__": {
+            "dirs": [],
+            "files": [
+                "__init__.cpython-312.pyc",
+                "bootstrap.cpython-312.pyc"
+            ]
+        },
+        "backend\\venv\\Lib\\site-packages\\alembic\\testing\\suite": {
+            "dirs": [],
+            "files": [
+                "__init__.py",
+                "_autogen_fixtures.py",
+                "test_autogen_comments.py",
+                "test_autogen_computed.py",
+                "test_autogen_diffs.py",
+                "test_autogen_fks.py",
+                "test_autogen_identity.py",
+                "test_environment.py",
+                "test_op.py"
+            ]
+        },
+        "backend\\venv\\Lib\\site-packages\\alembic\\testing\\suite\\__pycache__": {
+            "dirs": [],
+            "files": [
+                "__init__.cpython-312.pyc",
+                "_autogen_fixtures.cpython-312.pyc",
+                "test_autogen_comments.cpython-312.pyc",
+                "test_autogen_computed.cpython-312.pyc",
+                "test_autogen_diffs.cpython-312.pyc",
+                "test_autogen_fks.cpython-312.pyc",
+                "test_autogen_identity.cpython-312.pyc",
+                "test_environment.cpython-312.pyc",
+                "test_op.cpython-312.pyc"
+            ]
+        },
+        "backend\\venv\\Lib\\site-packages\\alembic\\testing\\__pycache__": {
+            "dirs": [],
+            "files": [
+                "__init__.cpython-312.pyc",
+                "assertions.cpython-312.pyc",
+                "env.cpython-312.pyc",
+                "fixtures.cpython-312.pyc",
+                "requirements.cpython-312.pyc",
+                "schemacompare.cpython-312.pyc",
+                "util.cpython-312.pyc",
+                "warnings.cpython-312.pyc"
+            ]
+        },
+        "backend\\venv\\Lib\\site-packages\\alembic\\util": {
+            "dirs": [],
+            "files": [
+                "__init__.py",
+                "compat.py",
+                "editor.py",
+                "exc.py",
+                "langhelpers.py",
+                "messaging.py",
+                "pyfiles.py",
+                "sqla_compat.py"
+            ]
+        },
+        "backend\\venv\\Lib\\site-packages\\alembic\\util\\__pycache__": {
+            "dirs": [],
+            "files": [
+                "__init__.cpython-312.pyc",
+                "compat.cpython-312.pyc",
+                "editor.cpython-312.pyc",
+                "exc.cpython-312.pyc",
+                "langhelpers.cpython-312.pyc",
+                "messaging.cpython-312.pyc",
+                "pyfiles.cpython-312.pyc",
+                "sqla_compat.cpython-312.pyc"
+            ]
+        },
+        "backend\\venv\\Lib\\site-packages\\alembic\\__pycache__": {
+            "dirs": [],
+            "files": [
+                "__init__.cpython-312.pyc",
+                "__main__.cpython-312.pyc",
+                "command.cpython-312.pyc",
+                "config.cpython-312.pyc",
+                "context.cpython-312.pyc",
+                "environment.cpython-312.pyc",
+                "migration.cpython-312.pyc",
+                "op.cpython-312.pyc"
+            ]
+        },
+        "backend\\venv\\Lib\\site-packages\\alembic-1.17.2.dist-info": {
+            "dirs": [
+                "licenses"
+            ],
+            "files": [
+                "INSTALLER",
+                "METADATA",
+                "RECORD",
+                "REQUESTED",
+                "WHEEL",
+                "entry_points.txt",
+                "top_level.txt"
+            ]
+        },
+        "backend\\venv\\Lib\\site-packages\\alembic-1.17.2.dist-info\\licenses": {
             "dirs": [],
             "files": [
                 "LICENSE"
@@ -11058,6 +12591,124 @@
                 "warnings.cpython-312.pyc"
             ]
         },
+        "backend\\venv\\Lib\\site-packages\\mako": {
+            "dirs": [
+                "ext",
+                "testing"
+            ],
+            "files": [
+                "__init__.py",
+                "_ast_util.py",
+                "ast.py",
+                "cache.py",
+                "cmd.py",
+                "codegen.py",
+                "compat.py",
+                "exceptions.py",
+                "filters.py",
+                "lexer.py",
+                "lookup.py",
+                "parsetree.py",
+                "pygen.py",
+                "pyparser.py",
+                "runtime.py",
+                "template.py",
+                "util.py"
+            ]
+        },
+        "backend\\venv\\Lib\\site-packages\\mako\\ext": {
+            "dirs": [],
+            "files": [
+                "__init__.py",
+                "autohandler.py",
+                "babelplugin.py",
+                "beaker_cache.py",
+                "extract.py",
+                "linguaplugin.py",
+                "preprocessors.py",
+                "pygmentplugin.py",
+                "turbogears.py"
+            ]
+        },
+        "backend\\venv\\Lib\\site-packages\\mako\\ext\\__pycache__": {
+            "dirs": [],
+            "files": [
+                "__init__.cpython-312.pyc",
+                "autohandler.cpython-312.pyc",
+                "babelplugin.cpython-312.pyc",
+                "beaker_cache.cpython-312.pyc",
+                "extract.cpython-312.pyc",
+                "linguaplugin.cpython-312.pyc",
+                "preprocessors.cpython-312.pyc",
+                "pygmentplugin.cpython-312.pyc",
+                "turbogears.cpython-312.pyc"
+            ]
+        },
+        "backend\\venv\\Lib\\site-packages\\mako\\testing": {
+            "dirs": [],
+            "files": [
+                "__init__.py",
+                "_config.py",
+                "assertions.py",
+                "config.py",
+                "exclusions.py",
+                "fixtures.py",
+                "helpers.py"
+            ]
+        },
+        "backend\\venv\\Lib\\site-packages\\mako\\testing\\__pycache__": {
+            "dirs": [],
+            "files": [
+                "__init__.cpython-312.pyc",
+                "_config.cpython-312.pyc",
+                "assertions.cpython-312.pyc",
+                "config.cpython-312.pyc",
+                "exclusions.cpython-312.pyc",
+                "fixtures.cpython-312.pyc",
+                "helpers.cpython-312.pyc"
+            ]
+        },
+        "backend\\venv\\Lib\\site-packages\\mako\\__pycache__": {
+            "dirs": [],
+            "files": [
+                "__init__.cpython-312.pyc",
+                "_ast_util.cpython-312.pyc",
+                "ast.cpython-312.pyc",
+                "cache.cpython-312.pyc",
+                "cmd.cpython-312.pyc",
+                "codegen.cpython-312.pyc",
+                "compat.cpython-312.pyc",
+                "exceptions.cpython-312.pyc",
+                "filters.cpython-312.pyc",
+                "lexer.cpython-312.pyc",
+                "lookup.cpython-312.pyc",
+                "parsetree.cpython-312.pyc",
+                "pygen.cpython-312.pyc",
+                "pyparser.cpython-312.pyc",
+                "runtime.cpython-312.pyc",
+                "template.cpython-312.pyc",
+                "util.cpython-312.pyc"
+            ]
+        },
+        "backend\\venv\\Lib\\site-packages\\mako-1.3.10.dist-info": {
+            "dirs": [
+                "licenses"
+            ],
+            "files": [
+                "INSTALLER",
+                "METADATA",
+                "RECORD",
+                "WHEEL",
+                "entry_points.txt",
+                "top_level.txt"
+            ]
+        },
+        "backend\\venv\\Lib\\site-packages\\mako-1.3.10.dist-info\\licenses": {
+            "dirs": [],
+            "files": [
+                "LICENSE"
+            ]
+        },
         "backend\\venv\\Lib\\site-packages\\markupsafe": {
             "dirs": [],
             "files": [
@@ -19847,6 +21498,67 @@
                 "NOTICE"
             ]
         },
+        "backend\\venv\\Lib\\site-packages\\psycopg2": {
+            "dirs": [],
+            "files": [
+                "__init__.py",
+                "_ipaddress.py",
+                "_json.py",
+                "_psycopg.cp312-win_amd64.pyd",
+                "_range.py",
+                "errorcodes.py",
+                "errors.py",
+                "extensions.py",
+                "extras.py",
+                "pool.py",
+                "sql.py",
+                "tz.py"
+            ]
+        },
+        "backend\\venv\\Lib\\site-packages\\psycopg2\\__pycache__": {
+            "dirs": [],
+            "files": [
+                "__init__.cpython-312.pyc",
+                "_ipaddress.cpython-312.pyc",
+                "_json.cpython-312.pyc",
+                "_range.cpython-312.pyc",
+                "errorcodes.cpython-312.pyc",
+                "errors.cpython-312.pyc",
+                "extensions.cpython-312.pyc",
+                "extras.cpython-312.pyc",
+                "pool.cpython-312.pyc",
+                "sql.cpython-312.pyc",
+                "tz.cpython-312.pyc"
+            ]
+        },
+        "backend\\venv\\Lib\\site-packages\\psycopg2_binary-2.9.11.dist-info": {
+            "dirs": [
+                "licenses"
+            ],
+            "files": [
+                "DELVEWHEEL",
+                "INSTALLER",
+                "METADATA",
+                "RECORD",
+                "REQUESTED",
+                "WHEEL",
+                "top_level.txt"
+            ]
+        },
+        "backend\\venv\\Lib\\site-packages\\psycopg2_binary-2.9.11.dist-info\\licenses": {
+            "dirs": [],
+            "files": [
+                "LICENSE"
+            ]
+        },
+        "backend\\venv\\Lib\\site-packages\\psycopg2_binary.libs": {
+            "dirs": [],
+            "files": [
+                "libcrypto-3-x64-51c45f697a173917ac2ce2ccbe4291ee.dll",
+                "libpq-39ced5d7c01d21795d0b9597d2cf5921.dll",
+                "libssl-3-x64-d3fc11f8b66f745a6288de6a00662144.dll"
+            ]
+        },
         "backend\\venv\\Lib\\site-packages\\pydantic": {
             "dirs": [
                 "_internal",
@@ -28377,11 +30089,13 @@
                 "Activate.ps1",
                 "activate",
                 "activate.bat",
+                "alembic.exe",
                 "deactivate.bat",
                 "dotenv.exe",
                 "f2py.exe",
                 "fastapi.exe",
                 "jp.py",
+                "mako-render.exe",
                 "normalizer.exe",
                 "numpy-config.exe",
                 "pip.exe",
@@ -28403,6 +30117,7 @@
         "backend\\workers": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "main_worker.py"
             ]
         },
@@ -28438,18 +30153,21 @@
         "coaching_v4\\analysis": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "coaching_behavior_analyzer.py"
             ]
         },
         "coaching_v4\\builder": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "coaching_action_plan_builder.py"
             ]
         },
         "coaching_v4\\engine": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "coaching_advanced_insight_engine.py",
                 "coaching_contextual_engine.py",
                 "coaching_engine_v4.py",
@@ -28459,36 +30177,42 @@
         "coaching_v4\\finalizers": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "coaching_system_finalizer_v4.py"
             ]
         },
         "coaching_v4\\manager": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "coaching_recommendation_manager.py"
             ]
         },
         "coaching_v4\\orchestrators": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "coaching_master_orchestrator_v4.py"
             ]
         },
         "coaching_v4\\ranking": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "coaching_priority_ranker_v4.py"
             ]
         },
         "coaching_v4\\routes": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "coaching_router_v4.py"
             ]
         },
         "coaching_v4\\ui": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "coaching_panel_renderer.py"
             ]
         },
@@ -28510,6 +30234,7 @@
         "core\\algorithms": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "advanced_algorithm.py",
                 "base_algorithm.py"
             ]
@@ -28517,36 +30242,42 @@
         "core\\diagnostics": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "diagnostics.py"
             ]
         },
         "core\\engine": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "engine.py"
             ]
         },
         "core\\metrics": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "metrics.py"
             ]
         },
         "core\\profiles": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "profiler.py"
             ]
         },
         "core\\reporting": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "report_generator.py"
             ]
         },
         "core\\scoring": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "scorer.py"
             ]
         },
@@ -28648,24 +30379,28 @@
                 "utils"
             ],
             "files": [
+                "__init__.py",
                 "expv4_master_orchestrator.py"
             ]
         },
         "export_v4\\analysis": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "expv4_recommendation_engine.py"
             ]
         },
         "export_v4\\assets": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "expv4_asset_loader.py"
             ]
         },
         "export_v4\\builder": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "expv4_document_builder.py",
                 "expv4_section_builder.py"
             ]
@@ -28673,6 +30408,7 @@
         "export_v4\\docx": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "docx_renderer_engine_v4.py",
                 "docx_template_registry_v4.py"
             ]
@@ -28680,42 +30416,49 @@
         "export_v4\\finalizers": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "expv4_system_finalizer.py"
             ]
         },
         "export_v4\\fusion": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "expv4_data_merger.py"
             ]
         },
         "export_v4\\html": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "expv4_html_template_engine.py"
             ]
         },
         "export_v4\\layout": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "expv4_layout_manager.py"
             ]
         },
         "export_v4\\meta": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "expv4_meta_generator.py"
             ]
         },
         "export_v4\\packager": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "expv4_export_packager.py"
             ]
         },
         "export_v4\\pdf": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "pdf_renderer_engine_v4.py",
                 "pdf_renderer_engine_v4.py.txt",
                 "pdf_template_registry_v4.py"
@@ -28724,24 +30467,28 @@
         "export_v4\\profiles": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "expv4_export_profile.py"
             ]
         },
         "export_v4\\routes": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "expv4_router.py"
             ]
         },
         "export_v4\\styles": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "export_style_manager_v4.py"
             ]
         },
         "export_v4\\utils": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "expv4_content_sanitizer.py",
                 "expv4_image_embedder.py"
             ]
@@ -28911,6 +30658,7 @@
                 "subscriptions"
             ],
             "files": [
+                "__init__.py",
                 "gql_live_router.py",
                 "gql_live_schema.py"
             ]
@@ -28918,42 +30666,49 @@
         "graphql_live\\bridge": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "gql_live_bridge.py"
             ]
         },
         "graphql_live\\engine": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "gql_live_context_engine.py"
             ]
         },
         "graphql_live\\feeds": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "gql_realtime_feed.py"
             ]
         },
         "graphql_live\\finalizers": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "gql_system_finalizer.py"
             ]
         },
         "graphql_live\\orchestrators": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "gql_stream_orchestrator.py"
             ]
         },
         "graphql_live\\subscriptions": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "gql_subscription_manager.py"
             ]
         },
         "logging": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "loggin_service.py"
             ]
         },
@@ -29037,7 +30792,11 @@
                 "tree_2025-12-11_15h29min30s.txt",
                 "tree_2025-12-12_05h58min59s.txt",
                 "tree_2025-12-12_11h27min36s.txt",
-                "tree_legacy_2025-12-11_15h00min31s.txt"
+                "tree_2025-12-12_11h39min39s.txt",
+                "tree_2025-12-13_05h41min33s.txt",
+                "tree_2025-12-13_11h32min02s.txt",
+                "tree_legacy_2025-12-11_15h00min31s.txt",
+                "tree_legacy_2025-12-12_11h39min49s.txt"
             ]
         },
         "logs\\reports": {
@@ -29051,6 +30810,7 @@
         "maintenance": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "backup.py",
                 "healthcheck.py"
             ]
@@ -29065,6 +30825,7 @@
         "managers": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "backend_manager.py"
             ]
         },
@@ -29082,12 +30843,14 @@
                 "widgets"
             ],
             "files": [
+                "__init__.py",
                 "mindgen_master_orchestrator.py"
             ]
         },
         "mindgen\\analytics": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "behavioral_trend_analyzer.py",
                 "insight_priority_ranker.py",
                 "multi_cluster_analyzer.py"
@@ -29096,6 +30859,7 @@
         "mindgen\\charts": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "behavioral_density_plot.py",
                 "behavioral_phase_diagram.py",
                 "behavioral_radar_chart.py",
@@ -29113,6 +30877,7 @@
         "mindgen\\fusion": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "mindgen_data_fusion_engine.py",
                 "mindgen_matrix_composer.py",
                 "visual_insight_bridge.py"
@@ -29121,6 +30886,7 @@
         "mindgen\\orchestrators": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "mindgen_global_orchestrator.py",
                 "mindgen_integrated_view_oschestrator.py",
                 "mindgen_view_consolidator.py"
@@ -29129,6 +30895,7 @@
         "mindgen\\panels": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "mindgen_overview_panel.py",
                 "performance_overview_panel.py",
                 "semantic_profile_panel.py"
@@ -29137,18 +30904,21 @@
         "mindgen\\reports": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "executive_briefing_builder.py"
             ]
         },
         "mindgen\\routes": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "mindgen_dashboard_router.py"
             ]
         },
         "mindgen\\ui": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "adaptative_visual_switcher.py",
                 "adaptive_dashboard_layout.py",
                 "mindgen_canvas_manager.py",
@@ -29162,6 +30932,7 @@
         "mindgen\\visuals": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "behavioral_energy_map.py",
                 "behavioral_force_map.py",
                 "cognitive_landscape_visualizer.py",
@@ -29180,6 +30951,7 @@
         "mindgen\\widgets": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "executive_summary_widget.py",
                 "leadership_projection_widget.py"
             ]
@@ -29396,12 +31168,14 @@
         "mindscan\\admin": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "admin_router.py"
             ]
         },
         "mindscan\\analytics": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "analytics_router.py",
                 "analytics_service.py",
                 "live_metrics_router.py",
@@ -29417,12 +31191,14 @@
                 "WhatsApp Ptt 2025-12-08 at 09.08.44_transcricao.txt",
                 "WhatsApp Ptt 2025-12-08 at 09.09.54.ogg",
                 "WhatsApp Ptt 2025-12-08 at 09.09.54_transcricao.txt",
+                "__init__.py",
                 "transcrever_audios.py"
             ]
         },
         "mindscan\\auth": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "auth_router.py",
                 "auth_service.py",
                 "middleware_auth.py"
@@ -29454,6 +31230,7 @@
                 "workers"
             ],
             "files": [
+                "__init__.py",
                 "app.py",
                 "config.py",
                 "database.py",
@@ -29479,6 +31256,7 @@
                 "teique"
             ],
             "files": [
+                "__init__.py",
                 "algorithms_big5.py",
                 "algorithms_bussola.py",
                 "algorithms_cross.py",
@@ -29501,6 +31279,7 @@
         "mindscan\\backend\\algorithms\\big5": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "big5.py",
                 "big5_alerts.py",
                 "big5_crosslinks.py",
@@ -29525,6 +31304,7 @@
         "mindscan\\backend\\algorithms\\bussola": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "bussola.py",
                 "bussola_alerts.py",
                 "bussola_archetypes.py",
@@ -29546,6 +31326,7 @@
         "mindscan\\backend\\algorithms\\core": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "cross_instrument_mapper.py",
                 "instrument_pipeline.py",
                 "instrument_registry.py",
@@ -29557,6 +31338,7 @@
         "mindscan\\backend\\algorithms\\cruzamentos": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "cross_alerts.py",
                 "cross_big5_dass.py",
                 "cross_big5_egos.py",
@@ -29581,6 +31363,7 @@
         "mindscan\\backend\\algorithms\\dass": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "dass_alerts.py",
                 "dass_crosslinks.py",
                 "dass_factor_map.py",
@@ -29595,6 +31378,7 @@
         "mindscan\\backend\\algorithms\\dass21": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "dass21.py",
                 "dass21_alerts.py",
                 "dass21_crosslinks.py",
@@ -29614,6 +31398,7 @@
         "mindscan\\backend\\algorithms\\esquemas": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "esquemas.py",
                 "esquemas_alerts.py",
                 "esquemas_classifier.py",
@@ -29640,12 +31425,14 @@
         "mindscan\\backend\\algorithms\\matcher": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "matcher.py"
             ]
         },
         "mindscan\\backend\\algorithms\\ocai": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "ocai.py",
                 "ocai_alerts.py",
                 "ocai_crosslinks.py",
@@ -29663,6 +31450,7 @@
         "mindscan\\backend\\algorithms\\performance": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "performance.py",
                 "performance_alerts.py",
                 "performance_crosslinks.py",
@@ -29683,6 +31471,7 @@
         "mindscan\\backend\\algorithms\\teique": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "teique.py",
                 "teique_alerts.py",
                 "teique_crosslinks.py",
@@ -29713,18 +31502,21 @@
         "mindscan\\backend\\analytics\\audit": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "audit_log_service.py"
             ]
         },
         "mindscan\\backend\\analytics\\metrics": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "metrics_service.py"
             ]
         },
         "mindscan\\backend\\analytics\\monitoring": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "monitoring_service.py"
             ]
         },
@@ -29741,6 +31533,7 @@
                 "validators"
             ],
             "files": [
+                "__init__.py",
                 "router.py",
                 "schemas.py",
                 "service.py",
@@ -29750,12 +31543,14 @@
         "mindscan\\backend\\api\\compat": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "external_api_compat_layer.py"
             ]
         },
         "mindscan\\backend\\api\\controllers": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "mindscan_controller.py",
                 "report_controller.py",
                 "session_controller.py"
@@ -29770,12 +31565,14 @@
         "mindscan\\backend\\api\\middleware": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "audit_middleware.py"
             ]
         },
         "mindscan\\backend\\api\\routes": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "health_check_router.py",
                 "integration_router.py",
                 "routes_admin_panel.py",
@@ -29787,6 +31584,7 @@
         "mindscan\\backend\\api\\schemas": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "mindscan_models.py",
                 "report_schema.py"
             ]
@@ -29794,6 +31592,7 @@
         "mindscan\\backend\\api\\services": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "diagnostic_orchestrator.py",
                 "file_upload_service.py",
                 "input_normalizer.py",
@@ -29809,12 +31608,14 @@
         "mindscan\\backend\\api\\utils": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "error_response_builder.py"
             ]
         },
         "mindscan\\backend\\api\\validators": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "mindscan_validator.py"
             ]
         },
@@ -29827,6 +31628,7 @@
                 "orchestrator"
             ],
             "files": [
+                "__init__.py",
                 "diagnostic_engine.py",
                 "engine.py",
                 "nlp_processor.py",
@@ -29838,30 +31640,35 @@
         "mindscan\\backend\\core\\compliance": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "compliance_engine.py"
             ]
         },
         "mindscan\\backend\\core\\diagnostic": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "diagnostic_engine_v3.py"
             ]
         },
         "mindscan\\backend\\core\\interpretation": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "interpretation_pipeline.py"
             ]
         },
         "mindscan\\backend\\core\\normalization": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "global_normalization.py"
             ]
         },
         "mindscan\\backend\\core\\orchestrator": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "mindscan_orchestrator.py"
             ]
         },
@@ -29943,6 +31750,7 @@
         "mindscan\\backend\\integrations\\events": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "event_dispatcher.py",
                 "integration_event_handlers.py"
             ]
@@ -29950,12 +31758,14 @@
         "mindscan\\backend\\integrations\\webhooks": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "webhook_engine.py"
             ]
         },
         "mindscan\\backend\\integrations\\whatsapp": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "whatsapp_gateway.py"
             ]
         },
@@ -29967,6 +31777,7 @@
                 "prompts"
             ],
             "files": [
+                "__init__.py",
                 "mi_chain_of_thought.py",
                 "mi_context_engine.py",
                 "mi_cross_section_engine.py",
@@ -29988,6 +31799,7 @@
         "mindscan\\backend\\mi\\compliance": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "compliance_apa.py",
                 "compliance_bias.py",
                 "compliance_diagnostic.py",
@@ -30006,6 +31818,7 @@
         "mindscan\\backend\\mi\\generative": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "mi_adaptative_narrative_engine.py",
                 "mi_adaptative_response_generator.py",
                 "mi_adaptive_personality_shift.py",
@@ -30051,6 +31864,7 @@
         "mindscan\\backend\\mi\\persona": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "persona_constraints.py",
                 "persona_core.py",
                 "persona_examples.py",
@@ -30070,6 +31884,7 @@
         "mindscan\\backend\\middleware": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "rate_limit_middleware.py"
             ]
         },
@@ -30080,6 +31895,7 @@
                 "scoring"
             ],
             "files": [
+                "__init__.py",
                 "algorithm_output.py",
                 "audit_log.py",
                 "bussola_profile.py",
@@ -30118,6 +31934,7 @@
         "mindscan\\backend\\models\\inputs": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "behavioral_input.py",
                 "big5_input.py",
                 "bussola_input.py",
@@ -30151,6 +31968,7 @@
         "mindscan\\backend\\models\\outputs": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "big5_output.py",
                 "bussola_output.py",
                 "bussola_section_output.py",
@@ -30179,6 +31997,7 @@
         "mindscan\\backend\\models\\scoring": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "scoring_big5.py",
                 "scoring_bussola.py",
                 "scoring_cross.py",
@@ -30194,6 +32013,7 @@
         "mindscan\\backend\\pipelines": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "big5_pipeline.py",
                 "bussola_pipeline.py",
                 "cross_pipeline.py",
@@ -30211,6 +32031,7 @@
         "mindscan\\backend\\providers": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "ai_provider.py",
                 "analytics_provider.py",
                 "auth_provider.py",
@@ -30229,6 +32050,7 @@
         "mindscan\\backend\\reports": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "assets_manager.py",
                 "html_exporter.py",
                 "pdf_generator.py",
@@ -30238,6 +32060,7 @@
         "mindscan\\backend\\routers": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "analytics_router.py",
                 "api_router.py",
                 "candidates_router.py",
@@ -30330,6 +32153,7 @@
         "mindscan\\backend\\services\\adapters": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "corporate_render_adapter.py",
                 "corporate_style_adapter.py"
             ]
@@ -30337,6 +32161,7 @@
         "mindscan\\backend\\services\\builders": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "corporate_section_builder.py"
             ]
         },
@@ -30356,6 +32181,7 @@
         "mindscan\\backend\\services\\design": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "corporate_color_system.py",
                 "corporate_icon_loader.py",
                 "corporate_layout_engine.py"
@@ -30364,6 +32190,7 @@
         "mindscan\\backend\\services\\engines": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "corporate_behavior_engine.py",
                 "corporate_competency_engine.py",
                 "corporate_culture_engine.py",
@@ -30382,6 +32209,7 @@
         "mindscan\\backend\\services\\helpers": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "data_sanitizer.py",
                 "html_sanitizer.py",
                 "payload_integrator.py",
@@ -30398,6 +32226,7 @@
         "mindscan\\backend\\services\\infrastructure": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "cache_service.py",
                 "error_monitor.py",
                 "performance_profiler.py"
@@ -30406,6 +32235,7 @@
         "mindscan\\backend\\services\\mi": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "compliance_filter.py",
                 "integration_engine.py",
                 "mi_engine.py",
@@ -30417,6 +32247,7 @@
         "mindscan\\backend\\services\\orchestrators": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "corporate_orchestrator.py"
             ]
         },
@@ -30431,6 +32262,7 @@
                 "validators"
             ],
             "files": [
+                "__init__.py",
                 "arquetipos_dominancia.py",
                 "capa_enterprise.py",
                 "carga_cognitiva.py",
@@ -30470,6 +32302,7 @@
         "mindscan\\backend\\services\\pdf\\engine": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "async_pdf_builder.py",
                 "async_pipeline.py",
                 "pdf.engine.py",
@@ -30481,6 +32314,7 @@
         "mindscan\\backend\\services\\pdf\\pdf_sections": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "analise_performance.py",
                 "anexos.py",
                 "anexos_profissionais.py",
@@ -30521,6 +32355,7 @@
         "mindscan\\backend\\services\\pdf\\renderers": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "distributed_renderer.py",
                 "font_manager.py",
                 "html_renderer.py",
@@ -30546,6 +32381,7 @@
         "mindscan\\backend\\services\\pdf\\report_templates": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "analytic_template.py",
                 "compass_template.py",
                 "culture_template.py",
@@ -30566,6 +32402,7 @@
         "mindscan\\backend\\services\\pdf\\telemetry": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "logger.py",
                 "resource_monitor.py",
                 "telemetry_advanced.py"
@@ -30574,6 +32411,7 @@
         "mindscan\\backend\\services\\pdf\\templates": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "base.html",
                 "componentes.py",
                 "estilo.css",
@@ -30583,18 +32421,21 @@
         "mindscan\\backend\\services\\pdf\\validators": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "data_validator.py"
             ]
         },
         "mindscan\\backend\\services\\pdf_tools": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "pdf_postprocessor.py"
             ]
         },
         "mindscan\\backend\\services\\post_processors": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "corporate_post_processor.py"
             ]
         },
@@ -30612,6 +32453,7 @@
         "mindscan\\backend\\services\\report\\assembler": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "report_assembler.py"
             ]
         },
@@ -30626,42 +32468,49 @@
         "mindscan\\backend\\services\\report\\assets\\charts": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "chart_generator.py"
             ]
         },
         "mindscan\\backend\\services\\report\\assets\\covers": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "cover_manager.py"
             ]
         },
         "mindscan\\backend\\services\\report\\assets\\styles": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "style_manager.py"
             ]
         },
         "mindscan\\backend\\services\\report\\builders": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "psychodynamic_builder.py"
             ]
         },
         "mindscan\\backend\\services\\report\\enhancers": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "report_enhancer.py"
             ]
         },
         "mindscan\\backend\\services\\report\\pdf": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "pdf_pipeline.py"
             ]
         },
         "mindscan\\backend\\services\\report\\renderers": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "base_renderer.py",
                 "executive_renderer.py",
                 "premium_renderer.py",
@@ -30672,6 +32521,7 @@
         "mindscan\\backend\\services\\report_templates": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "base_renderer.py",
                 "corporate_renderer.py",
                 "corporate_renderer_loader.py",
@@ -30698,6 +32548,7 @@
         "mindscan\\backend\\storage": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "pdf_publisher.py"
             ]
         },
@@ -30710,12 +32561,14 @@
         "mindscan\\backend\\tests": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "test_corporate_pipeline.py"
             ]
         },
         "mindscan\\backend\\utils": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "api_utils.py",
                 "array_utils.py",
                 "config_loader.py",
@@ -57438,6 +59291,7 @@
         "mindscan\\backend\\workers": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "main_worker.py"
             ]
         },
@@ -57473,18 +59327,21 @@
         "mindscan\\coaching_v4\\analysis": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "coaching_behavior_analyzer.py"
             ]
         },
         "mindscan\\coaching_v4\\builder": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "coaching_action_plan_builder.py"
             ]
         },
         "mindscan\\coaching_v4\\engine": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "coaching_advanced_insight_engine.py",
                 "coaching_contextual_engine.py",
                 "coaching_engine_v4.py",
@@ -57494,36 +59351,42 @@
         "mindscan\\coaching_v4\\finalizers": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "coaching_system_finalizer_v4.py"
             ]
         },
         "mindscan\\coaching_v4\\manager": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "coaching_recommendation_manager.py"
             ]
         },
         "mindscan\\coaching_v4\\orchestrators": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "coaching_master_orchestrator_v4.py"
             ]
         },
         "mindscan\\coaching_v4\\ranking": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "coaching_priority_ranker_v4.py"
             ]
         },
         "mindscan\\coaching_v4\\routes": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "coaching_router_v4.py"
             ]
         },
         "mindscan\\coaching_v4\\ui": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "coaching_panel_renderer.py"
             ]
         },
@@ -57545,6 +59408,7 @@
         "mindscan\\core\\algorithms": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "advanced_algorithm.py",
                 "base_algorithm.py"
             ]
@@ -57552,36 +59416,42 @@
         "mindscan\\core\\diagnostics": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "diagnostics.py"
             ]
         },
         "mindscan\\core\\engine": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "engine.py"
             ]
         },
         "mindscan\\core\\metrics": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "metrics.py"
             ]
         },
         "mindscan\\core\\profiles": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "profiler.py"
             ]
         },
         "mindscan\\core\\reporting": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "report_generator.py"
             ]
         },
         "mindscan\\core\\scoring": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "scorer.py"
             ]
         },
@@ -57683,24 +59553,28 @@
                 "utils"
             ],
             "files": [
+                "__init__.py",
                 "expv4_master_orchestrator.py"
             ]
         },
         "mindscan\\export_v4\\analysis": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "expv4_recommendation_engine.py"
             ]
         },
         "mindscan\\export_v4\\assets": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "expv4_asset_loader.py"
             ]
         },
         "mindscan\\export_v4\\builder": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "expv4_document_builder.py",
                 "expv4_section_builder.py"
             ]
@@ -57708,6 +59582,7 @@
         "mindscan\\export_v4\\docx": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "docx_renderer_engine_v4.py",
                 "docx_template_registry_v4.py"
             ]
@@ -57715,42 +59590,49 @@
         "mindscan\\export_v4\\finalizers": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "expv4_system_finalizer.py"
             ]
         },
         "mindscan\\export_v4\\fusion": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "expv4_data_merger.py"
             ]
         },
         "mindscan\\export_v4\\html": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "expv4_html_template_engine.py"
             ]
         },
         "mindscan\\export_v4\\layout": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "expv4_layout_manager.py"
             ]
         },
         "mindscan\\export_v4\\meta": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "expv4_meta_generator.py"
             ]
         },
         "mindscan\\export_v4\\packager": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "expv4_export_packager.py"
             ]
         },
         "mindscan\\export_v4\\pdf": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "pdf_renderer_engine_v4.py",
                 "pdf_renderer_engine_v4.py.txt",
                 "pdf_template_registry_v4.py"
@@ -57759,24 +59641,28 @@
         "mindscan\\export_v4\\profiles": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "expv4_export_profile.py"
             ]
         },
         "mindscan\\export_v4\\routes": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "expv4_router.py"
             ]
         },
         "mindscan\\export_v4\\styles": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "export_style_manager_v4.py"
             ]
         },
         "mindscan\\export_v4\\utils": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "expv4_content_sanitizer.py",
                 "expv4_image_embedder.py"
             ]
@@ -57937,6 +59823,7 @@
                 "subscriptions"
             ],
             "files": [
+                "__init__.py",
                 "gql_live_router.py",
                 "gql_live_schema.py"
             ]
@@ -57944,42 +59831,49 @@
         "mindscan\\graphql_live\\bridge": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "gql_live_bridge.py"
             ]
         },
         "mindscan\\graphql_live\\engine": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "gql_live_context_engine.py"
             ]
         },
         "mindscan\\graphql_live\\feeds": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "gql_realtime_feed.py"
             ]
         },
         "mindscan\\graphql_live\\finalizers": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "gql_system_finalizer.py"
             ]
         },
         "mindscan\\graphql_live\\orchestrators": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "gql_stream_orchestrator.py"
             ]
         },
         "mindscan\\graphql_live\\subscriptions": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "gql_subscription_manager.py"
             ]
         },
         "mindscan\\logging": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "loggin_service.py"
             ]
         },
@@ -58075,6 +59969,7 @@
         "mindscan\\maintenance": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "backup.py",
                 "healthcheck.py"
             ]
@@ -58089,6 +59984,7 @@
         "mindscan\\managers": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "backend_manager.py"
             ]
         },
@@ -58106,12 +60002,14 @@
                 "widgets"
             ],
             "files": [
+                "__init__.py",
                 "mindgen_master_orchestrator.py"
             ]
         },
         "mindscan\\mindgen\\analytics": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "behavioral_trend_analyzer.py",
                 "insight_priority_ranker.py",
                 "multi_cluster_analyzer.py"
@@ -58120,6 +60018,7 @@
         "mindscan\\mindgen\\charts": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "behavioral_density_plot.py",
                 "behavioral_phase_diagram.py",
                 "behavioral_radar_chart.py",
@@ -58137,6 +60036,7 @@
         "mindscan\\mindgen\\fusion": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "mindgen_data_fusion_engine.py",
                 "mindgen_matrix_composer.py",
                 "visual_insight_bridge.py"
@@ -58145,6 +60045,7 @@
         "mindscan\\mindgen\\orchestrators": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "mindgen_global_orchestrator.py",
                 "mindgen_integrated_view_oschestrator.py",
                 "mindgen_view_consolidator.py"
@@ -58153,6 +60054,7 @@
         "mindscan\\mindgen\\panels": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "mindgen_overview_panel.py",
                 "performance_overview_panel.py",
                 "semantic_profile_panel.py"
@@ -58161,18 +60063,21 @@
         "mindscan\\mindgen\\reports": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "executive_briefing_builder.py"
             ]
         },
         "mindscan\\mindgen\\routes": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "mindgen_dashboard_router.py"
             ]
         },
         "mindscan\\mindgen\\ui": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "adaptative_visual_switcher.py",
                 "adaptive_dashboard_layout.py",
                 "mindgen_canvas_manager.py",
@@ -58186,6 +60091,7 @@
         "mindscan\\mindgen\\visuals": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "behavioral_energy_map.py",
                 "behavioral_force_map.py",
                 "cognitive_landscape_visualizer.py",
@@ -58204,6 +60110,7 @@
         "mindscan\\mindgen\\widgets": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "executive_summary_widget.py",
                 "leadership_projection_widget.py"
             ]
@@ -58211,12 +60118,14 @@
         "mindscan\\mindscan_cli": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "mindscan_pdf_cli.py"
             ]
         },
         "mindscan\\mindscan_examples": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "gerar_jsons_modelo.py",
                 "gerar_relatorio_pdf.py"
             ]
@@ -58231,6 +60140,7 @@
         "mindscan\\modules": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "predictor.py",
                 "synmind_ai_engine.py",
                 "synmind_kernel.py"
@@ -58246,6 +60156,7 @@
         "mindscan\\pdf_engine\\core": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "builder.py",
                 "loader.py",
                 "pipeline.py",
@@ -58255,6 +60166,7 @@
         "mindscan\\pdf_engine\\sections": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "culture.py",
                 "emotional.py",
                 "final_report.py",
@@ -58280,6 +60192,7 @@
                 "async"
             ],
             "files": [
+                "__init__.py",
                 "test_app.py",
                 "test_engine.py",
                 "test_frontend.py",
@@ -58291,6 +60204,7 @@
         "mindscan\\tests\\async": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "test_async_pdf_builder.py",
                 "test_async_pipeline.py",
                 "test_distributed_renderer_async.py"
@@ -58305,6 +60219,7 @@
                 "validadores"
             ],
             "files": [
+                "__init__.py",
                 "audit_push.bat",
                 "build.py",
                 "consolidar_big5_v1.py",
@@ -58430,6 +60345,7 @@
                 "websocket"
             ],
             "files": [
+                "__init__.py",
                 "index.html",
                 "web_app.py"
             ]
@@ -58437,36 +60353,42 @@
         "mindscan\\web\\assets": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "asset_registry.py"
             ]
         },
         "mindscan\\web\\finalizers": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "web_system_finalizer.py"
             ]
         },
         "mindscan\\web\\graphql": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "graphql_schema.py"
             ]
         },
         "mindscan\\web\\middleware": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "web_auth_middleware.py"
             ]
         },
         "mindscan\\web\\orchestrators": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "web_master_orchestrator.py"
             ]
         },
         "mindscan\\web\\reports": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "report_data_pipeline.py",
                 "report_renderer_web.py",
                 "web_docx_exporter.py",
@@ -58477,6 +60399,7 @@
         "mindscan\\web\\routes": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "admin_router.py",
                 "analytics_router.py",
                 "dashboard_router.py",
@@ -58492,6 +60415,7 @@
         "mindscan\\web\\security": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "role_permission_manager.py",
                 "web_security_manager.py"
             ]
@@ -58501,6 +60425,7 @@
                 "providers"
             ],
             "files": [
+                "__init__.py",
                 "analytics_service.py",
                 "charts_service.py",
                 "dashboard_data_aggregator.py",
@@ -58517,6 +60442,7 @@
         "mindscan\\web\\services\\providers": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "org_structure_provider.py",
                 "risk_data_provider.py",
                 "user_activity_provider.py"
@@ -58525,6 +60451,7 @@
         "mindscan\\web\\state": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "dashboard_state_manager.py"
             ]
         },
@@ -58538,6 +60465,7 @@
                 "widgets"
             ],
             "files": [
+                "__init__.py",
                 "dashboard_layout_manager.py",
                 "dashboard_widget_binder.py",
                 "ui_dynamic_loader.py",
@@ -58547,12 +60475,14 @@
         "mindscan\\web\\ui\\icons": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "ui_icon_manager.py"
             ]
         },
         "mindscan\\web\\ui\\org": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "org_insight_renderer.py",
                 "org_profile_renderer.py"
             ]
@@ -58560,6 +60490,7 @@
         "mindscan\\web\\ui\\styles": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "corporate_style_manager.py",
                 "web_style_merger.py"
             ]
@@ -58567,12 +60498,14 @@
         "mindscan\\web\\ui\\team": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "team_profile_renderer.py"
             ]
         },
         "mindscan\\web\\ui\\themes": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "dashboard_theme_bridge.py",
                 "theme_manager_v4.py"
             ]
@@ -58580,6 +60513,7 @@
         "mindscan\\web\\ui\\widgets": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "performance_heatmap_widget.py",
                 "widget_global_stats.py",
                 "widget_kpi_board.py",
@@ -58592,6 +60526,7 @@
         "mindscan\\web\\utils": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "http_error_handler.py",
                 "http_utilities.py"
             ]
@@ -58599,6 +60534,7 @@
         "mindscan\\web\\websocket": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "websocket_updates.py"
             ]
         },
@@ -58635,12 +60571,14 @@
         "mindscan_cli": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "mindscan_pdf_cli.py"
             ]
         },
         "mindscan_examples": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "gerar_jsons_modelo.py",
                 "gerar_relatorio_pdf.py"
             ]
@@ -58655,6 +60593,7 @@
         "modules": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "predictor.py",
                 "synmind_ai_engine.py",
                 "synmind_kernel.py"
@@ -58670,6 +60609,7 @@
         "pdf_engine\\core": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "builder.py",
                 "loader.py",
                 "pipeline.py",
@@ -58679,6 +60619,7 @@
         "pdf_engine\\sections": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "culture.py",
                 "emotional.py",
                 "final_report.py",
@@ -58704,6 +60645,7 @@
                 "async"
             ],
             "files": [
+                "__init__.py",
                 "test_app.py",
                 "test_engine.py",
                 "test_frontend.py",
@@ -58715,6 +60657,7 @@
         "tests\\async": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "test_async_pdf_builder.py",
                 "test_async_pipeline.py",
                 "test_distributed_renderer_async.py"
@@ -58729,6 +60672,7 @@
                 "validadores"
             ],
             "files": [
+                "__init__.py",
                 "audit_push.bat",
                 "build.py",
                 "consolidar_big5_v1.py",
@@ -58756,7 +60700,8 @@
                 "scan_project_file_sizes.bat",
                 "scan_project_file_sizes.py",
                 "sync_all.py",
-                "tree_legacy_2025-12-11_15h00min31s.txt"
+                "tree_legacy_2025-12-11_15h00min31s.txt",
+                "tree_legacy_2025-12-12_11h39min49s.txt"
             ]
         },
         "tools\\automator": {
@@ -58854,6 +60799,7 @@
                 "websocket"
             ],
             "files": [
+                "__init__.py",
                 "index.html",
                 "web_app.py"
             ]
@@ -58861,36 +60807,42 @@
         "web\\assets": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "asset_registry.py"
             ]
         },
         "web\\finalizers": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "web_system_finalizer.py"
             ]
         },
         "web\\graphql": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "graphql_schema.py"
             ]
         },
         "web\\middleware": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "web_auth_middleware.py"
             ]
         },
         "web\\orchestrators": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "web_master_orchestrator.py"
             ]
         },
         "web\\reports": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "report_data_pipeline.py",
                 "report_renderer_web.py",
                 "web_docx_exporter.py",
@@ -58901,6 +60853,7 @@
         "web\\routes": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "admin_router.py",
                 "analytics_router.py",
                 "dashboard_router.py",
@@ -58916,6 +60869,7 @@
         "web\\security": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "role_permission_manager.py",
                 "web_security_manager.py"
             ]
@@ -58925,6 +60879,7 @@
                 "providers"
             ],
             "files": [
+                "__init__.py",
                 "analytics_service.py",
                 "charts_service.py",
                 "dashboard_data_aggregator.py",
@@ -58941,6 +60896,7 @@
         "web\\services\\providers": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "org_structure_provider.py",
                 "risk_data_provider.py",
                 "user_activity_provider.py"
@@ -58949,6 +60905,7 @@
         "web\\state": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "dashboard_state_manager.py"
             ]
         },
@@ -58962,6 +60919,7 @@
                 "widgets"
             ],
             "files": [
+                "__init__.py",
                 "dashboard_layout_manager.py",
                 "dashboard_widget_binder.py",
                 "ui_dynamic_loader.py",
@@ -58971,12 +60929,14 @@
         "web\\ui\\icons": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "ui_icon_manager.py"
             ]
         },
         "web\\ui\\org": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "org_insight_renderer.py",
                 "org_profile_renderer.py"
             ]
@@ -58984,6 +60944,7 @@
         "web\\ui\\styles": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "corporate_style_manager.py",
                 "web_style_merger.py"
             ]
@@ -58991,12 +60952,14 @@
         "web\\ui\\team": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "team_profile_renderer.py"
             ]
         },
         "web\\ui\\themes": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "dashboard_theme_bridge.py",
                 "theme_manager_v4.py"
             ]
@@ -59004,6 +60967,7 @@
         "web\\ui\\widgets": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "performance_heatmap_widget.py",
                 "widget_global_stats.py",
                 "widget_kpi_board.py",
@@ -59016,6 +60980,7 @@
         "web\\utils": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "http_error_handler.py",
                 "http_utilities.py"
             ]
@@ -59023,6 +60988,7 @@
         "web\\websocket": {
             "dirs": [],
             "files": [
+                "__init__.py",
                 "websocket_updates.py"
             ]
         },
@@ -59061,5 +61027,5 @@
             ]
         }
     },
-    "tree_hash": "fd8294760cde90083dd1103d1afd74a08dd70f03e8b415c3d934db3e301c1f4a"
+    "tree_hash": "2bb703bfd38d782647fac3c3d5da6ba1c8901cf54ab3851b5b2b590967680271"
 }
