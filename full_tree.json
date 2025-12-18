@@ -2,6 +2,7 @@
     ".": {
         "dirs": [
             ".github",
+            "_logging_fix_backup",
             "admin",
             "analytics",
             "audios",
@@ -17,7 +18,6 @@
             "frontend",
             "generated_reports",
             "graphql_live",
-            "logging",
             "logs",
             "maintenance",
             "managers",
@@ -25,10 +25,12 @@
             "mindscan",
             "mindscan_cli",
             "mindscan_examples",
+            "mindscan_logging",
             "mindscan_pdf",
             "modules",
             "pdf_engine",
             "releases",
+            "services",
             "tests",
             "tools",
             "web",
@@ -46,10 +48,12 @@
             "OBSERVABILITY_GUIDE.md",
             "PERFORMANCE_GUIDE.md",
             "README.md",
+            "TREE_MindScan.txt",
             "__init__.py",
             "auditar_mindscan.py",
             "docker-compose.yml",
             "executar_revisor_global.bat",
+            "fix_logging_imports.py",
             "forcegit_v3.log",
             "full_tree.json",
             "full_tree.txt",
@@ -60,18 +64,26 @@
             "instalador_mindscan.py",
             "main.py",
             "manutencao_mindscan.bat",
+            "mindscan_demo_2.pdf",
             "mindscan_manifest.json",
+            "mindscan_ms.db",
             "mindscan_selfheal_max.py",
             "mindscan_web_api.py",
+            "models.py",
             "pdf.builder.py",
             "pyproject.toml",
             "relatorio_auditoria.json",
+            "relatorio_logging_conflicts.txt",
+            "relatorio_logging_fix_aplicado.txt",
             "render.yaml",
             "requirements.txt",
+            "run_backend.py",
+            "scan_logging_conflicts.py",
             "setup.cfg",
             "setup.py",
             "sincronizar_github.py",
             "start_backend.bat",
+            "stats.json",
             "tree_atual.json",
             "tree_referencia.json",
             "tree_validation_report.json"
@@ -88,35 +100,45 @@
             "OBSERVABILITY_GUIDE.md": 5669,
             "PERFORMANCE_GUIDE.md": 5443,
             "README.md": 913,
+            "TREE_MindScan.txt": 2506924,
             "__init__.py": 604,
             "auditar_mindscan.py": 7474,
             "docker-compose.yml": 455,
             "executar_revisor_global.bat": 1062,
+            "fix_logging_imports.py": 1831,
             "forcegit_v3.log": 8724,
-            "full_tree.json": 129866,
-            "full_tree.txt": 62117,
+            "full_tree.json": 292211,
+            "full_tree.txt": 142845,
             "generate_init_files.py": 4440,
             "gerar_tree_referencia.bat": 437,
-            "governance_metadata.json": 95,
+            "governance_metadata.json": 231,
             "init_generation.log": 68516,
             "instalador_mindscan.py": 2324,
-            "main.py": 5569,
+            "main.py": 481,
             "manutencao_mindscan.bat": 311,
+            "mindscan_demo_2.pdf": 2215,
             "mindscan_manifest.json": 1931,
+            "mindscan_ms.db": 45056,
             "mindscan_selfheal_max.py": 5962,
             "mindscan_web_api.py": 8280,
+            "models.py": 125,
             "pdf.builder.py": 7175,
             "pyproject.toml": 902,
-            "relatorio_auditoria.json": 3549152,
+            "relatorio_auditoria.json": 7371853,
+            "relatorio_logging_conflicts.txt": 43304,
+            "relatorio_logging_fix_aplicado.txt": 3648,
             "render.yaml": 185,
-            "requirements.txt": 121,
+            "requirements.txt": 610,
+            "run_backend.py": 3288,
+            "scan_logging_conflicts.py": 691,
             "setup.cfg": 743,
             "setup.py": 648,
             "sincronizar_github.py": 6306,
             "start_backend.bat": 796,
+            "stats.json": 112,
             "tree_atual.json": 164812,
-            "tree_referencia.json": 2073850,
-            "tree_validation_report.json": 14938
+            "tree_referencia.json": 2199646,
+            "tree_validation_report.json": 15298
         }
     },
     ".github": {
@@ -170,22 +192,10 @@
     "audios": {
         "dirs": [],
         "files": [
-            "WhatsApp Ptt 2025-12-08 at 09.07.39.ogg",
-            "WhatsApp Ptt 2025-12-08 at 09.07.39_transcricao.txt",
-            "WhatsApp Ptt 2025-12-08 at 09.08.44.ogg",
-            "WhatsApp Ptt 2025-12-08 at 09.08.44_transcricao.txt",
-            "WhatsApp Ptt 2025-12-08 at 09.09.54.ogg",
-            "WhatsApp Ptt 2025-12-08 at 09.09.54_transcricao.txt",
             "__init__.py",
             "transcrever_audios.py"
         ],
         "file_info": {
-            "WhatsApp Ptt 2025-12-08 at 09.07.39.ogg": 21096,
-            "WhatsApp Ptt 2025-12-08 at 09.07.39_transcricao.txt": 115,
-            "WhatsApp Ptt 2025-12-08 at 09.08.44.ogg": 145578,
-            "WhatsApp Ptt 2025-12-08 at 09.08.44_transcricao.txt": 947,
-            "WhatsApp Ptt 2025-12-08 at 09.09.54.ogg": 161104,
-            "WhatsApp Ptt 2025-12-08 at 09.09.54_transcricao.txt": 1170,
             "__init__.py": 243,
             "transcrever_audios.py": 967
         }
@@ -207,12 +217,14 @@
     },
     "backend": {
         "dirs": [
+            "alembic",
             "algorithms",
             "analytics",
             "api",
             "core",
             "db",
             "engine",
+            "generated_reports",
             "integrations",
             "mi",
             "middleware",
@@ -222,6 +234,8 @@
             "reports",
             "routers",
             "runtime",
+            "schemas",
+            "scripts",
             "services",
             "static",
             "storage",
@@ -232,25 +246,53 @@
         ],
         "files": [
             "__init__.py",
+            "alembic.ini",
             "app.py",
             "config.py",
             "database.py",
             "main.py",
+            "main_demo.py",
+            "mindscan_store.py",
             "models.py",
             "pysettings.py",
             "requirements.txt",
-            "run_e2e.py"
+            "run_e2e.py",
+            "start_demo.py"
         ],
         "file_info": {
-            "__init__.py": 72,
-            "app.py": 2244,
+            "__init__.py": 30,
+            "alembic.ini": 693,
+            "app.py": 4762,
             "config.py": 1405,
-            "database.py": 1925,
-            "main.py": 5062,
-            "models.py": 5023,
+            "database.py": 4228,
+            "main.py": 1746,
+            "main_demo.py": 6443,
+            "mindscan_store.py": 2378,
+            "models.py": 1811,
             "pysettings.py": 4334,
-            "requirements.txt": 124,
-            "run_e2e.py": 2478
+            "requirements.txt": 614,
+            "run_e2e.py": 2478,
+            "start_demo.py": 82
+        }
+    },
+    "backend\\alembic": {
+        "dirs": [
+            "versions"
+        ],
+        "files": [
+            "env.py"
+        ],
+        "file_info": {
+            "env.py": 2210
+        }
+    },
+    "backend\\alembic\\versions": {
+        "dirs": [],
+        "files": [
+            "2025_12_13_0001_create_mindscan_tests_table.py"
+        ],
+        "file_info": {
+            "2025_12_13_0001_create_mindscan_tests_table.py": 633
         }
     },
     "backend\\algorithms": {
@@ -283,6 +325,7 @@
             "cruzamentos.py",
             "dass21.py",
             "esquemas.py",
+            "matcher.py",
             "ocai.py",
             "performance.py",
             "teique.py"
@@ -298,14 +341,15 @@
             "algorithms_ocai.py": 1289,
             "algorithms_performance.py": 1178,
             "algorithms_teique.py": 1208,
-            "big5.py": 5102,
-            "bussola.py": 4773,
-            "cruzamentos.py": 5275,
-            "dass21.py": 5036,
-            "esquemas.py": 6790,
-            "ocai.py": 4619,
-            "performance.py": 5276,
-            "teique.py": 4205
+            "big5.py": 322,
+            "bussola.py": 274,
+            "cruzamentos.py": 385,
+            "dass21.py": 288,
+            "esquemas.py": 157,
+            "matcher.py": 318,
+            "ocai.py": 260,
+            "performance.py": 276,
+            "teique.py": 222
         }
     },
     "backend\\algorithms\\big5": {
@@ -334,7 +378,7 @@
         ],
         "file_info": {
             "__init__.py": 243,
-            "big5.py": 4005,
+            "big5.py": 2021,
             "big5_alerts.py": 1644,
             "big5_crosslinks.py": 2761,
             "big5_dimensions.py": 1381,
@@ -378,7 +422,7 @@
         ],
         "file_info": {
             "__init__.py": 243,
-            "bussola.py": 1818,
+            "bussola.py": 504,
             "bussola_alerts.py": 1533,
             "bussola_archetypes.py": 1619,
             "bussola_coordinates.py": 1189,
@@ -461,7 +505,7 @@
             "cross_teique_dass.py": 1753,
             "cross_teique_egos.py": 2033,
             "cross_teique_esquemas.py": 2110,
-            "cruzamentos.py": 1571
+            "cruzamentos.py": 581
         }
     },
     "backend\\algorithms\\dass": {
@@ -512,7 +556,7 @@
         ],
         "file_info": {
             "__init__.py": 243,
-            "dass21.py": 1874,
+            "dass21.py": 1690,
             "dass21_alerts.py": 1572,
             "dass21_crosslinks.py": 1404,
             "dass21_dimensions.py": 1855,
@@ -556,7 +600,7 @@
         ],
         "file_info": {
             "__init__.py": 243,
-            "esquemas.py": 2146,
+            "esquemas.py": 456,
             "esquemas_alerts.py": 877,
             "esquemas_classifier.py": 1577,
             "esquemas_crosslinks.py": 2722,
@@ -587,7 +631,7 @@
         ],
         "file_info": {
             "__init__.py": 243,
-            "matcher.py": 2013
+            "matcher.py": 491
         }
     },
     "backend\\algorithms\\ocai": {
@@ -609,7 +653,7 @@
         ],
         "file_info": {
             "__init__.py": 243,
-            "ocai.py": 2013,
+            "ocai.py": 468,
             "ocai_alerts.py": 807,
             "ocai_crosslinks.py": 1531,
             "ocai_culture_map.py": 719,
@@ -645,7 +689,7 @@
         ],
         "file_info": {
             "__init__.py": 243,
-            "performance.py": 2388,
+            "performance.py": 496,
             "performance_alerts.py": 877,
             "performance_crosslinks.py": 1372,
             "performance_dimensions.py": 1210,
@@ -686,7 +730,7 @@
         ],
         "file_info": {
             "__init__.py": 243,
-            "teique.py": 3283,
+            "teique.py": 484,
             "teique_alerts.py": 3498,
             "teique_crosslinks.py": 4827,
             "teique_dimensions.py": 4076,
@@ -761,6 +805,7 @@
         ],
         "files": [
             "__init__.py",
+            "mindscan_router.py",
             "router.py",
             "schemas.py",
             "service.py",
@@ -768,6 +813,7 @@
         ],
         "file_info": {
             "__init__.py": 243,
+            "mindscan_router.py": 588,
             "router.py": 1786,
             "schemas.py": 291,
             "service.py": 585,
@@ -924,12 +970,12 @@
         ],
         "file_info": {
             "__init__.py": 243,
-            "diagnostic_engine.py": 3989,
+            "diagnostic_engine.py": 5199,
             "engine.py": 2087,
             "nlp_processor.py": 1858,
-            "normalizer.py": 2315,
+            "normalizer.py": 1177,
             "runtime_kernel.py": 4086,
-            "scoring.py": 2813
+            "scoring.py": 1090
         }
     },
     "backend\\core\\compliance": {
@@ -990,10 +1036,10 @@
     "backend\\db": {
         "dirs": [],
         "files": [
-            "vazio.md"
+            "base.py"
         ],
         "file_info": {
-            "vazio.md": 14
+            "base.py": 536
         }
     },
     "backend\\engine": {
@@ -1003,6 +1049,9 @@
             "aggregator.py",
             "audit.py",
             "audit_engine.py",
+            "contracts.py",
+            "engine_context.py",
+            "exceptions.py",
             "hybrid_consistency_checker.py",
             "hybrid_insight_engine.py",
             "hybrid_narrative_engine.py",
@@ -1055,6 +1104,9 @@
             "aggregator.py": 912,
             "audit.py": 1019,
             "audit_engine.py": 1025,
+            "contracts.py": 197,
+            "engine_context.py": 419,
+            "exceptions.py": 74,
             "hybrid_consistency_checker.py": 2387,
             "hybrid_insight_engine.py": 3216,
             "hybrid_narrative_engine.py": 3047,
@@ -1064,8 +1116,8 @@
             "hybrid_summary_builder.py": 1273,
             "insight_aggregator.py": 1221,
             "insight_engine.py": 3439,
-            "integration_engine.py": 0,
-            "metadata_engine.py": 0,
+            "integration_engine.py": 2033,
+            "metadata_engine.py": 441,
             "mi_engine.py": 1426,
             "mi_engine_advanced.py": 1582,
             "mi_engine_hybrid.py": 6482,
@@ -1074,8 +1126,8 @@
             "mi_hybrid_router.py": 1452,
             "normalization_engine.py": 1644,
             "normalizer.py": 1061,
-            "parallel_engine.py": 0,
-            "pdf_engine_advanced.py": 0,
+            "parallel_engine.py": 614,
+            "pdf_engine_advanced.py": 415,
             "pipeline.py": 1315,
             "post_diagnostic_engine.py": 1422,
             "pre_diagnostic_engine.py": 1122,
@@ -1090,7 +1142,7 @@
             "runtime_engine.py": 1902,
             "score_aggregator.py": 1203,
             "scoring_engine.py": 1185,
-            "sequential_engine.py": 0,
+            "sequential_engine.py": 563,
             "summarization_engine.py": 1087,
             "summary_aggregator.py": 866,
             "summary_engine.py": 1469,
@@ -1101,6 +1153,21 @@
             "trait_engine.py": 1498,
             "validation_engine.py": 1426,
             "validator.py": 792
+        }
+    },
+    "backend\\generated_reports": {
+        "dirs": [],
+        "files": [
+            "mindscan_1.html",
+            "mindscan_1.pdf",
+            "mindscan_2.html",
+            "mindscan_2.pdf"
+        ],
+        "file_info": {
+            "mindscan_1.html": 3113,
+            "mindscan_1.pdf": 2215,
+            "mindscan_2.html": 3113,
+            "mindscan_2.pdf": 2215
         }
     },
     "backend\\integrations": {
@@ -1182,11 +1249,12 @@
             "mi_sanitizer.py",
             "mi_semantic_mapper.py",
             "mi_structurer.py",
+            "mi_utils.py",
             "mi_validator.py",
             "role_fit_engine.py"
         ],
         "file_info": {
-            "__init__.py": 243,
+            "__init__.py": 166,
             "mi_chain_of_thought.py": 1843,
             "mi_context_engine.py": 850,
             "mi_cross_section_engine.py": 1019,
@@ -1201,6 +1269,7 @@
             "mi_sanitizer.py": 816,
             "mi_semantic_mapper.py": 1212,
             "mi_structurer.py": 712,
+            "mi_utils.py": 465,
             "mi_validator.py": 5158,
             "role_fit_engine.py": 1284
         }
@@ -1212,6 +1281,7 @@
             "compliance_apa.py",
             "compliance_bias.py",
             "compliance_diagnostic.py",
+            "compliance_engine.py",
             "compliance_ethics.py",
             "compliance_fairness.py",
             "compliance_limits.py",
@@ -1221,6 +1291,7 @@
             "compliance_psycho.py",
             "compliance_root.py",
             "compliance_security.py",
+            "compliance_service.py",
             "compliance_transparency.py"
         ],
         "file_info": {
@@ -1228,6 +1299,7 @@
             "compliance_apa.py": 1121,
             "compliance_bias.py": 1418,
             "compliance_diagnostic.py": 206,
+            "compliance_engine.py": 602,
             "compliance_ethics.py": 202,
             "compliance_fairness.py": 1246,
             "compliance_limits.py": 202,
@@ -1237,6 +1309,7 @@
             "compliance_psycho.py": 202,
             "compliance_root.py": 200,
             "compliance_security.py": 1214,
+            "compliance_service.py": 396,
             "compliance_transparency.py": 1112
         }
     },
@@ -1335,10 +1408,12 @@
             "__init__.py",
             "persona_constraints.py",
             "persona_core.py",
+            "persona_engine.py",
             "persona_examples.py",
             "persona_filters.py",
             "persona_metadata.py",
             "persona_rules.py",
+            "persona_service.py",
             "persona_style.py",
             "persona_voice.py"
         ],
@@ -1346,10 +1421,12 @@
             "__init__.py": 243,
             "persona_constraints.py": 1165,
             "persona_core.py": 982,
+            "persona_engine.py": 738,
             "persona_examples.py": 811,
             "persona_filters.py": 1043,
             "persona_metadata.py": 806,
             "persona_rules.py": 1063,
+            "persona_service.py": 364,
             "persona_style.py": 943,
             "persona_voice.py": 947
         }
@@ -1357,10 +1434,14 @@
     "backend\\mi\\prompts": {
         "dirs": [],
         "files": [
-            "prompt_mi_synmind.md"
+            "prompt_engine.py",
+            "prompt_mi_synmind.md",
+            "prompt_service.py"
         ],
         "file_info": {
-            "prompt_mi_synmind.md": 4639
+            "prompt_engine.py": 553,
+            "prompt_mi_synmind.md": 4639,
+            "prompt_service.py": 373
         }
     },
     "backend\\middleware": {
@@ -1385,6 +1466,7 @@
             "algorithm_output.py",
             "audit_log.py",
             "bussola_profile.py",
+            "candidate.py",
             "cross_insights_model.py",
             "culture_profile.py",
             "diagnostic_flags.py",
@@ -1401,6 +1483,7 @@
             "mi_document_package.py",
             "mindscan_full_document.py",
             "mindscan_result.py",
+            "mindscan_test.py",
             "narrative_block.py",
             "nlp_enrichment.py",
             "ocai_profile.py",
@@ -1414,13 +1497,15 @@
             "report_section.py",
             "report_summary.py",
             "roadmap_item.py",
-            "schema_profile.py"
+            "schema_profile.py",
+            "user.py"
         ],
         "file_info": {
-            "__init__.py": 243,
+            "__init__.py": 178,
             "algorithm_output.py": 3492,
             "audit_log.py": 4191,
             "bussola_profile.py": 2957,
+            "candidate.py": 684,
             "cross_insights_model.py": 3204,
             "culture_profile.py": 1387,
             "diagnostic_flags.py": 1029,
@@ -1437,6 +1522,7 @@
             "mi_document_package.py": 4846,
             "mindscan_full_document.py": 7017,
             "mindscan_result.py": 6141,
+            "mindscan_test.py": 1248,
             "narrative_block.py": 781,
             "nlp_enrichment.py": 3002,
             "ocai_profile.py": 3047,
@@ -1450,7 +1536,8 @@
             "report_section.py": 3538,
             "report_summary.py": 3647,
             "roadmap_item.py": 190,
-            "schema_profile.py": 4410
+            "schema_profile.py": 4410,
+            "user.py": 740
         }
     },
     "backend\\models\\inputs": {
@@ -1694,6 +1781,8 @@
             "analytics_router.py",
             "api_router.py",
             "candidates_router.py",
+            "dashboard_router.py",
+            "demo_router.py",
             "diagnostic_router.py",
             "diagnostics_router.py",
             "export_router.py",
@@ -1701,6 +1790,12 @@
             "metadata_router.py",
             "mi_router.py",
             "mindscan_api.py",
+            "ms_dashboard_router.py",
+            "ms_demo_router.py",
+            "ms_diagnostic_router.py",
+            "ms_pdf_router.py",
+            "ms_report_router.py",
+            "ms_tests_router.py",
             "pdf_router.py",
             "report_router.py",
             "tests_router.py",
@@ -1711,20 +1806,28 @@
         "file_info": {
             "__init__.py": 80,
             "analytics_router.py": 195,
-            "api_router.py": 1985,
-            "candidates_router.py": 2328,
-            "diagnostic_router.py": 4768,
+            "api_router.py": 2104,
+            "candidates_router.py": 1047,
+            "dashboard_router.py": 670,
+            "demo_router.py": 2602,
+            "diagnostic_router.py": 4248,
             "diagnostics_router.py": 197,
-            "export_router.py": 192,
-            "health_router.py": 679,
+            "export_router.py": 1228,
+            "health_router.py": 546,
             "metadata_router.py": 194,
             "mi_router.py": 188,
             "mindscan_api.py": 294,
-            "pdf_router.py": 189,
-            "report_router.py": 192,
-            "tests_router.py": 3184,
+            "ms_dashboard_router.py": 613,
+            "ms_demo_router.py": 2183,
+            "ms_diagnostic_router.py": 3622,
+            "ms_pdf_router.py": 1228,
+            "ms_report_router.py": 1757,
+            "ms_tests_router.py": 1602,
+            "pdf_router.py": 2064,
+            "report_router.py": 1990,
+            "tests_router.py": 1141,
             "user_profile_router.py": 198,
-            "users_router.py": 2756,
+            "users_router.py": 937,
             "whatsapp_router.py": 2049
         }
     },
@@ -1737,6 +1840,26 @@
         "file_info": {
             "backend_config.log": 3840,
             "backend_runtime.log": 34072
+        }
+    },
+    "backend\\schemas": {
+        "dirs": [],
+        "files": [
+            "mindscan_input.py",
+            "mindscan_output.py"
+        ],
+        "file_info": {
+            "mindscan_input.py": 128,
+            "mindscan_output.py": 151
+        }
+    },
+    "backend\\scripts": {
+        "dirs": [],
+        "files": [
+            "run_demo.py"
+        ],
+        "file_info": {
+            "run_demo.py": 247
         }
     },
     "backend\\services": {
@@ -1778,6 +1901,7 @@
             "narrative_service.py",
             "pdf__init__.py",
             "pdf_engine.py",
+            "pdf_service.py",
             "pdf_validator_service.py",
             "pdi_service.py",
             "performance_service.py",
@@ -1799,8 +1923,8 @@
             "culture_service.py": 1752,
             "data_service.py": 2413,
             "diagnostic_matrix_service.py": 2246,
-            "engine_service.py": 8312,
-            "export_service.py": 194,
+            "engine_service.py": 8973,
+            "export_service.py": 2651,
             "flags_service.py": 2010,
             "insight_service.py": 4230,
             "leadership_service.py": 1814,
@@ -1809,6 +1933,7 @@
             "narrative_service.py": 2848,
             "pdf__init__.py": 576,
             "pdf_engine.py": 1251,
+            "pdf_service.py": 593,
             "pdf_validator_service.py": 1440,
             "pdi_service.py": 2326,
             "performance_service.py": 1541,
@@ -1818,7 +1943,7 @@
             "report_branding.py": 1253,
             "report_export_manager.py": 1489,
             "report_pipeline_helper.py": 1060,
-            "report_service.py": 2332,
+            "report_service.py": 8126,
             "roadmap_service.py": 1723,
             "runtime_interface.py": 1759
         }
@@ -2064,14 +2189,14 @@
             "mapa_tensao_emocional.py": 2242,
             "narrativa.py": 5851,
             "pdf.engine.py": 1384,
-            "pdf_builder.py": 4667,
+            "pdf_builder.py": 3655,
             "pdf_diagnostics.py": 1042,
             "pdf_engine_manifest.py": 2262,
             "pdf_exceptions.py": 741,
             "pdf_logging.py": 1163,
             "pdf_metadata.py": 661,
             "pdf_registry.py": 847,
-            "pdf_service.py": 1204,
+            "pdf_service.py": 1047,
             "pdf_validator.py": 1069,
             "performance.py": 4773,
             "planejamento.py": 4779,
@@ -2459,7 +2584,9 @@
         }
     },
     "backend\\services\\report_templates": {
-        "dirs": [],
+        "dirs": [
+            "assets"
+        ],
         "files": [
             "__init__.py",
             "base_renderer.py",
@@ -2479,6 +2606,19 @@
             "premium_renderer.py": 2336,
             "psychodynamic_renderer.py": 1242,
             "technical_renderer.py": 1805
+        }
+    },
+    "backend\\services\\report_templates\\assets": {
+        "dirs": [],
+        "files": [
+            "footer.html",
+            "header.html",
+            "style.css"
+        ],
+        "file_info": {
+            "footer.html": 114,
+            "header.html": 53,
+            "style.css": 339
         }
     },
     "backend\\services\\runtime": {
@@ -2533,6 +2673,7 @@
             "api_utils.py",
             "array_utils.py",
             "config_loader.py",
+            "demo_payload.py",
             "diagnostic_formatter.py",
             "document_utils.py",
             "file_manager.py",
@@ -2554,6 +2695,7 @@
             "api_utils.py": 186,
             "array_utils.py": 188,
             "config_loader.py": 190,
+            "demo_payload.py": 360,
             "diagnostic_formatter.py": 197,
             "document_utils.py": 191,
             "file_manager.py": 3957,
@@ -2710,14 +2852,17 @@
             "metrics",
             "profiles",
             "reporting",
+            "runtime",
             "scoring",
             "utils"
         ],
         "files": [
-            "__init__.py"
+            "__init__.py",
+            "run_mindscan.py"
         ],
         "file_info": {
-            "__init__.py": 2347
+            "__init__.py": 16,
+            "run_mindscan.py": 722
         }
     },
     "core\\algorithms": {
@@ -2728,9 +2873,9 @@
             "base_algorithm.py"
         ],
         "file_info": {
-            "__init__.py": 243,
-            "advanced_algorithm.py": 3188,
-            "base_algorithm.py": 2595
+            "__init__.py": 64,
+            "advanced_algorithm.py": 393,
+            "base_algorithm.py": 6631
         }
     },
     "core\\diagnostics": {
@@ -2748,11 +2893,27 @@
         "dirs": [],
         "files": [
             "__init__.py",
-            "engine.py"
+            "diagnostic_engine.py",
+            "engine.py",
+            "integration_engine.py",
+            "pipeline.py",
+            "post_diagnostice_engine.py",
+            "pre_diagnostice_engine.py",
+            "runtime_engine.py",
+            "system_engine.py",
+            "validation_engine.py"
         ],
         "file_info": {
             "__init__.py": 243,
-            "engine.py": 4238
+            "diagnostic_engine.py": 1327,
+            "engine.py": 4238,
+            "integration_engine.py": 131,
+            "pipeline.py": 1068,
+            "post_diagnostice_engine.py": 277,
+            "pre_diagnostice_engine.py": 392,
+            "runtime_engine.py": 132,
+            "system_engine.py": 155,
+            "validation_engine.py": 312
         }
     },
     "core\\metrics": {
@@ -2788,15 +2949,28 @@
             "report_generator.py": 2343
         }
     },
+    "core\\runtime": {
+        "dirs": [],
+        "files": [
+            "core_runtime.log"
+        ],
+        "file_info": {
+            "core_runtime.log": 516
+        }
+    },
     "core\\scoring": {
         "dirs": [],
         "files": [
             "__init__.py",
-            "scorer.py"
+            "score_aggregator.py",
+            "scorer.py",
+            "scoring_engine.py"
         ],
         "file_info": {
             "__init__.py": 243,
-            "scorer.py": 2341
+            "score_aggregator.py": 4703,
+            "scorer.py": 2341,
+            "scoring_engine.py": 1284
         }
     },
     "core\\utils": {
@@ -3464,17 +3638,6 @@
             "gql_subscription_manager.py": 677
         }
     },
-    "logging": {
-        "dirs": [],
-        "files": [
-            "__init__.py",
-            "loggin_service.py"
-        ],
-        "file_info": {
-            "__init__.py": 243,
-            "loggin_service.py": 1376
-        }
-    },
     "logs": {
         "dirs": [
             "audit",
@@ -3583,7 +3746,24 @@
             "tree_2025-12-11_15h29min30s.txt",
             "tree_2025-12-12_05h58min59s.txt",
             "tree_2025-12-12_11h27min36s.txt",
-            "tree_legacy_2025-12-11_15h00min31s.txt"
+            "tree_2025-12-12_11h39min39s.txt",
+            "tree_2025-12-13_05h41min33s.txt",
+            "tree_2025-12-13_11h32min02s.txt",
+            "tree_2025-12-13_17h05min48s.txt",
+            "tree_2025-12-13_17h28min43s.txt",
+            "tree_2025-12-15_14h49min42s.txt",
+            "tree_2025-12-15_14h52min10s.txt",
+            "tree_2025-12-16_06h03min07s.txt",
+            "tree_2025-12-17_05h42min06s.txt",
+            "tree_2025-12-17_11h23min48s.txt",
+            "tree_legacy_2025-12-11_15h00min31s.txt",
+            "tree_legacy_2025-12-12_11h39min49s.txt",
+            "tree_legacy_2025-12-13_17h05min56s.txt",
+            "tree_legacy_2025-12-15_14h53min51s.txt",
+            "tree_legacy_2025-12-16_06h03min13s.txt",
+            "tree_legacy_2025-12-17_05h42min14s.txt",
+            "tree_legacy_2025-12-17_11h23min54s.txt",
+            "tree_legacy_2025-12-17_17h23min44s.txt"
         ],
         "file_info": {
             "tree_2025-12-08_09h01min19s.txt": 46201,
@@ -3605,7 +3785,24 @@
             "tree_2025-12-11_15h29min30s.txt": 74530,
             "tree_2025-12-12_05h58min59s.txt": 62117,
             "tree_2025-12-12_11h27min36s.txt": 157202,
-            "tree_legacy_2025-12-11_15h00min31s.txt": 75942
+            "tree_2025-12-12_11h39min39s.txt": 137230,
+            "tree_2025-12-13_05h41min33s.txt": 174642,
+            "tree_2025-12-13_11h32min02s.txt": 175141,
+            "tree_2025-12-13_17h05min48s.txt": 138269,
+            "tree_2025-12-13_17h28min43s.txt": 175701,
+            "tree_2025-12-15_14h49min42s.txt": 175701,
+            "tree_2025-12-15_14h52min10s.txt": 175701,
+            "tree_2025-12-16_06h03min07s.txt": 142098,
+            "tree_2025-12-17_05h42min06s.txt": 142365,
+            "tree_2025-12-17_11h23min48s.txt": 142845,
+            "tree_legacy_2025-12-11_15h00min31s.txt": 75942,
+            "tree_legacy_2025-12-12_11h39min49s.txt": 179346,
+            "tree_legacy_2025-12-13_17h05min56s.txt": 180648,
+            "tree_legacy_2025-12-15_14h53min51s.txt": 181005,
+            "tree_legacy_2025-12-16_06h03min13s.txt": 184614,
+            "tree_legacy_2025-12-17_05h42min14s.txt": 184916,
+            "tree_legacy_2025-12-17_11h23min54s.txt": 185530,
+            "tree_legacy_2025-12-17_17h23min44s.txt": 185928
         }
     },
     "logs\\reports": {
@@ -4093,13 +4290,13 @@
         ],
         "file_info": {
             "__init__.py": 243,
-            "app.py": 3067,
+            "app.py": 7067,
             "config.py": 1405,
             "database.py": 1925,
-            "main.py": 5184,
+            "main.py": 3463,
             "models.py": 5023,
             "pysettings.py": 4334,
-            "requirements.txt": 124,
+            "requirements.txt": 597,
             "run_e2e.py": 2478
         }
     },
@@ -6542,6 +6739,7 @@
             "metrics",
             "profiles",
             "reporting",
+            "runtime",
             "scoring",
             "utils"
         ],
@@ -6619,6 +6817,11 @@
             "__init__.py": 243,
             "report_generator.py": 2343
         }
+    },
+    "mindscan\\core\\runtime": {
+        "dirs": [],
+        "files": [],
+        "file_info": {}
     },
     "mindscan\\core\\scoring": {
         "dirs": [],
@@ -8388,6 +8591,17 @@
             "gerar_relatorio_pdf.py": 3491
         }
     },
+    "mindscan_logging": {
+        "dirs": [],
+        "files": [
+            "__init__.py",
+            "loggin_service.py"
+        ],
+        "file_info": {
+            "__init__.py": 243,
+            "loggin_service.py": 1376
+        }
+    },
     "mindscan_pdf": {
         "dirs": [],
         "files": [
@@ -8481,6 +8695,15 @@
             "synmind_integration.md": 1827
         }
     },
+    "services": {
+        "dirs": [],
+        "files": [
+            "report_service.py"
+        ],
+        "file_info": {
+            "report_service.py": 953
+        }
+    },
     "tests": {
         "dirs": [
             "async"
@@ -8555,7 +8778,10 @@
             "scan_project_file_sizes.bat",
             "scan_project_file_sizes.py",
             "sync_all.py",
-            "tree_legacy_2025-12-11_15h00min31s.txt"
+            "tree_legacy_2025-12-16_06h03min13s.txt",
+            "tree_legacy_2025-12-17_05h42min14s.txt",
+            "tree_legacy_2025-12-17_11h23min54s.txt",
+            "tree_legacy_2025-12-17_17h23min44s.txt"
         ],
         "file_info": {
             "__init__.py": 243,
@@ -8586,7 +8812,10 @@
             "scan_project_file_sizes.bat": 575,
             "scan_project_file_sizes.py": 2456,
             "sync_all.py": 1501,
-            "tree_legacy_2025-12-11_15h00min31s.txt": 75942
+            "tree_legacy_2025-12-16_06h03min13s.txt": 184614,
+            "tree_legacy_2025-12-17_05h42min14s.txt": 184916,
+            "tree_legacy_2025-12-17_11h23min54s.txt": 185530,
+            "tree_legacy_2025-12-17_17h23min44s.txt": 185928
         }
     },
     "tools\\automator": {
@@ -9054,6 +9283,134 @@
             "LiveMonitor.tsx": 1821,
             "Login.tsx": 1787,
             "main.tsx": 1192
+        }
+    },
+    "_logging_fix_backup": {
+        "dirs": [
+            "_logging_fix_backup"
+        ],
+        "files": [
+            "fix_logging_imports.py",
+            "scan_logging_conflicts.py"
+        ],
+        "file_info": {
+            "fix_logging_imports.py": 1831,
+            "scan_logging_conflicts.py": 691
+        }
+    },
+    "_logging_fix_backup\\_logging_fix_backup": {
+        "dirs": [
+            "_logging_fix_backup"
+        ],
+        "files": [
+            "fix_logging_imports.py",
+            "scan_logging_conflicts.py"
+        ],
+        "file_info": {
+            "fix_logging_imports.py": 1831,
+            "scan_logging_conflicts.py": 691
+        }
+    },
+    "_logging_fix_backup\\_logging_fix_backup\\_logging_fix_backup": {
+        "dirs": [
+            "_logging_fix_backup"
+        ],
+        "files": [
+            "fix_logging_imports.py",
+            "scan_logging_conflicts.py"
+        ],
+        "file_info": {
+            "fix_logging_imports.py": 1831,
+            "scan_logging_conflicts.py": 691
+        }
+    },
+    "_logging_fix_backup\\_logging_fix_backup\\_logging_fix_backup\\_logging_fix_backup": {
+        "dirs": [
+            "_logging_fix_backup"
+        ],
+        "files": [
+            "fix_logging_imports.py",
+            "scan_logging_conflicts.py"
+        ],
+        "file_info": {
+            "fix_logging_imports.py": 1831,
+            "scan_logging_conflicts.py": 691
+        }
+    },
+    "_logging_fix_backup\\_logging_fix_backup\\_logging_fix_backup\\_logging_fix_backup\\_logging_fix_backup": {
+        "dirs": [
+            "_logging_fix_backup"
+        ],
+        "files": [
+            "fix_logging_imports.py",
+            "scan_logging_conflicts.py"
+        ],
+        "file_info": {
+            "fix_logging_imports.py": 1831,
+            "scan_logging_conflicts.py": 691
+        }
+    },
+    "_logging_fix_backup\\_logging_fix_backup\\_logging_fix_backup\\_logging_fix_backup\\_logging_fix_backup\\_logging_fix_backup": {
+        "dirs": [
+            "_logging_fix_backup"
+        ],
+        "files": [
+            "fix_logging_imports.py",
+            "scan_logging_conflicts.py"
+        ],
+        "file_info": {
+            "fix_logging_imports.py": 1831,
+            "scan_logging_conflicts.py": 691
+        }
+    },
+    "_logging_fix_backup\\_logging_fix_backup\\_logging_fix_backup\\_logging_fix_backup\\_logging_fix_backup\\_logging_fix_backup\\_logging_fix_backup": {
+        "dirs": [
+            "_logging_fix_backup"
+        ],
+        "files": [
+            "fix_logging_imports.py",
+            "scan_logging_conflicts.py"
+        ],
+        "file_info": {
+            "fix_logging_imports.py": 1831,
+            "scan_logging_conflicts.py": 691
+        }
+    },
+    "_logging_fix_backup\\_logging_fix_backup\\_logging_fix_backup\\_logging_fix_backup\\_logging_fix_backup\\_logging_fix_backup\\_logging_fix_backup\\_logging_fix_backup": {
+        "dirs": [
+            "_logging_fix_backup"
+        ],
+        "files": [
+            "fix_logging_imports.py",
+            "scan_logging_conflicts.py"
+        ],
+        "file_info": {
+            "fix_logging_imports.py": 1831,
+            "scan_logging_conflicts.py": 691
+        }
+    },
+    "_logging_fix_backup\\_logging_fix_backup\\_logging_fix_backup\\_logging_fix_backup\\_logging_fix_backup\\_logging_fix_backup\\_logging_fix_backup\\_logging_fix_backup\\_logging_fix_backup": {
+        "dirs": [
+            "_logging_fix_backup"
+        ],
+        "files": [
+            "fix_logging_imports.py",
+            "scan_logging_conflicts.py"
+        ],
+        "file_info": {
+            "fix_logging_imports.py": 1831,
+            "scan_logging_conflicts.py": 691
+        }
+    },
+    "_logging_fix_backup\\_logging_fix_backup\\_logging_fix_backup\\_logging_fix_backup\\_logging_fix_backup\\_logging_fix_backup\\_logging_fix_backup\\_logging_fix_backup\\_logging_fix_backup\\_logging_fix_backup": {
+        "dirs": [],
+        "files": [
+            "fix_logging_imports.py",
+            "scan_logging_conflicts.py"
+        ],
+        "file_info": {
+            "fix_logging_imports.py": 1830,
+            "scan_logging_conflicts.py": 690
         }
     }
 }

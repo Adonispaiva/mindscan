@@ -1,105 +1,33 @@
+from __future__ import annotations
+
+from typing import Any, Dict, List, Optional
+
 from fastapi import APIRouter, Depends, HTTPException
+from pydantic import BaseModel, Field
 from sqlalchemy.orm import Session
-from datetime import datetime
 
-from backend.db.session import get_db
-from backend.models import MindscanTest, User, Candidate
+from backend.database import get_db
+from backend.models import MindscanTest
 
-router = APIRouter(
-    prefix="/tests",
-    tags=["Tests"]
-)
+router = APIRouter(prefix="/tests", tags=["tests"])
 
-# ============================================================
-# HEALTH CHECK
-# ============================================================
 
-@router.get("/health", summary="Health check do módulo de testes")
-def tests_health():
-    return {
-        "status": "ok",
-        "module": "tests_router",
-        "models_loaded": ["User", "Candidate", "MindscanTest"]
-    }
+class TestCreate(BaseModel):
+    name: Optional[str] = Field(default="MindScan Test")
 
-# ============================================================
-# CRIAR NOVA SESSÃO MINDSCAN
-# ============================================================
 
-@router.post("/create", summary="Criar nova sessão MindScan")
-def create_test(
-    user_id: int,
-    candidate_id: int,
-    db: Session = Depends(get_db)
-):
-    user = db.query(User).filter(User.id == user_id).first()
-    if not user:
-        raise HTTPException(status_code=404, detail="Usuário não encontrado.")
-
-    candidate = db.query(Candidate).filter(Candidate.id == candidate_id).first()
-    if not candidate:
-        raise HTTPException(status_code=404, detail="Candidato não encontrado.")
-
-    test = MindscanTest(
-        user_id=user_id,
-        candidate_id=candidate_id,
-        status="pending",
-        started_at=datetime.utcnow()
-    )
-
+@router.post("", summary="Cria um MindscanTest e retorna o id")
+def create_test(payload: TestCreate, db: Session = Depends(get_db)) -> Dict[str, Any]:
+    test = MindscanTest(name=payload.name or "MindScan Test")
     db.add(test)
     db.commit()
     db.refresh(test)
+    return {"test_id": test.id, "name": test.name}
 
-    return {
-        "status": "created",
-        "test_id": test.id,
-        "user_id": test.user_id,
-        "candidate_id": test.candidate_id,
-        "started_at": test.started_at.isoformat() + "Z"
-    }
 
-# ============================================================
-# LISTAR SESSÕES
-# ============================================================
-
-@router.get("/", summary="Listar sessões MindScan")
-def list_tests(db: Session = Depends(get_db)):
-    tests = db.query(MindscanTest).all()
-    return [
-        {
-            "id": t.id,
-            "user_id": t.user_id,
-            "candidate_id": t.candidate_id,
-            "status": t.status,
-            "started_at": t.started_at.isoformat() + "Z",
-            "completed_at": t.completed_at.isoformat() + "Z"
-            if t.completed_at else None
-        }
-        for t in tests
-    ]
-
-# ============================================================
-# OBTER SESSÃO POR ID
-# ============================================================
-
-@router.get("/{test_id}", summary="Obter sessão MindScan por ID")
-def get_test(test_id: int, db: Session = Depends(get_db)):
-    test = (
-        db.query(MindscanTest)
-        .filter(MindscanTest.id == test_id)
-        .first()
-    )
-
+@router.get("/{test_id}", summary="Obtém um MindscanTest por id")
+def get_test(test_id: int, db: Session = Depends(get_db)) -> Dict[str, Any]:
+    test = db.query(MindscanTest).filter(MindscanTest.id == test_id).first()
     if not test:
-        raise HTTPException(status_code=404, detail="Sessão não encontrada.")
-
-    return {
-        "id": test.id,
-        "user_id": test.user_id,
-        "candidate_id": test.candidate_id,
-        "status": test.status,
-        "started_at": test.started_at.isoformat() + "Z",
-        "completed_at": test.completed_at.isoformat() + "Z"
-        if test.completed_at else None
-    }
+        raise HTTPException(status_code=404, detail="Test not found")
+    return {"test_id": test.id, "name": test.name}

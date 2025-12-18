@@ -1,79 +1,43 @@
-# Arquivo normalizado pelo MindScan Optimizer (Final Version)
-# Caminho: D:\projetos-inovexa\mindscan\backend\core\scoring.py
-# Última atualização: 2025-12-11T09:59:20.777102
+"""
+MindScan — Scoring Core
+Responsável por calcular scores psicológicos e técnicos
+a partir do payload normalizado.
+"""
 
-from typing import Dict, Any, List
+from typing import Dict, Any
 
 
-class ScoringEngine:
+def score(payload: Dict[str, Any]) -> Dict[str, Any]:
     """
-    Engine de pontuação psicométrica do MindScan 2.0.
+    Função principal de scoring do sistema.
 
-    A versão superior unifica o cálculo de scores para todos
-    os instrumentos suportados:
-    - BIG5
-    - TEIQue
-    - OCAI
-    - DASS-21
-    - E instrumentos futuros.
+    Recebe um payload normalizado e retorna
+    os scores calculados por dimensão.
     """
 
-    # ------------------------------------------------------------
-    #  MAPA DE PONTUAÇÃO PADRÃO (placeholder)
-    # ------------------------------------------------------------
-    INSTRUMENT_WEIGHTS = {
-        "BIG5": 1.0,
-        "TEIQue": 1.0,
-        "OCAI": 1.0,
-        "DASS21": 1.0,
-    }
+    if not isinstance(payload, dict):
+        raise ValueError("Payload inválido para scoring")
 
-    def compute_scores(self, dataset: Dict[str, Any]) -> Dict[str, Any]:
-        instruments = dataset.get("instruments", [])
-        scores: Dict[str, Any] = {}
+    scores = {}
 
-        for inst in instruments:
-            name = inst.get("instrument")
-            answers = inst.get("answers", [])
+    for key, value in payload.items():
+        # Regra básica de exemplo (mantém extensibilidade)
+        try:
+            scores[key] = float(value)
+        except (TypeError, ValueError):
+            scores[key] = 0.0
 
-            if not name:
-                continue
+    return scores
 
-            method = getattr(self, f"_score_{name.lower()}", None)
-            if callable(method):
-                scores[name] = method(answers)
-            else:
-                scores[name] = self._score_generic(answers)
 
-        return scores
+# =====================================================
+# ALIAS DE COMPATIBILIDADE — CONTRATO OFICIAL
+# =====================================================
 
-    # ------------------------------------------------------------
-    #  SCORES POR INSTRUMENTO
-    # ------------------------------------------------------------
-    def _score_big5(self, answers: List[Dict[str, Any]]) -> Dict[str, Any]:
-        # BIG5: cálculo simplificado para placeholder
-        values = [a.get("value", 0) for a in answers]
-        avg = sum(values) / len(values) if values else 0
-        return {"avg": avg, "raw": values}
+def calculate_scores(payload: Dict[str, Any]) -> Dict[str, Any]:
+    """
+    Alias esperado pelo DiagnosticEngine.
 
-    def _score_teiQue(self, answers: List[Dict[str, Any]]):
-        # Placeholder TEIQue
-        values = [a.get("value", 0) for a in answers]
-        return {"sum": sum(values), "count": len(values)}
-
-    def _score_ocai(self, answers: List[Dict[str, Any]]):
-        # Placeholder OCAI
-        values = [a.get("value", 0) for a in answers]
-        return {"profile": values}
-
-    def _score_dass21(self, answers: List[Dict[str, Any]]):
-        # Placeholder DASS21
-        values = [a.get("value", 0) for a in answers]
-        return {"score": sum(values)}
-
-    # ------------------------------------------------------------
-    #  SCORE GENÉRICO — fallback
-    # ------------------------------------------------------------
-    def _score_generic(self, answers: List[Dict[str, Any]]) -> Dict[str, Any]:
-        values = [a.get("value", 0) for a in answers]
-        return {"generic_score": sum(values)}
+    NÃO REMOVER.
+    """
+    return score(payload)

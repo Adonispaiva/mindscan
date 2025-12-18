@@ -44,3 +44,83 @@
 [2025-12-12 11:39:57] → Gerando governança (GOVERNANCE)…
 [2025-12-12 11:39:57] ✓ Governança concluída.
 
+[2025-12-13 17:05:40] → Gerando governança (GOVERNANCE)…
+[2025-12-13 17:05:40] ✓ Governança concluída.
+
+[2025-12-13 17:05:47] → FULLTREE (modo 9)…
+[2025-12-13 17:05:48] ✓ FULLTREE concluído.
+
+[2025-12-13 17:05:54] → Gerando TREE_LEGACY (modo 10)…
+[2025-12-13 17:05:56] ✓ TREE_LEGACY salvo em:
+[2025-12-13 17:05:56]   - D:\projetos-inovexa\mindscan\tools\tree_legacy_2025-12-13_17h05min56s.txt
+[2025-12-13 17:05:56]   - D:\projetos-inovexa\mindscan\logs\estrutura\tree_legacy_2025-12-13_17h05min56s.txt
+
+[2025-12-13 17:06:00] → Executando auditoria (AUDIT)…
+[2025-12-13 17:06:46] ✓ Auditoria concluída.
+
+[2025-12-15 14:53:49] → Gerando TREE_LEGACY (modo 10)…
+[2025-12-15 14:53:51] ✓ TREE_LEGACY salvo em:
+[2025-12-15 14:53:51]   - D:\projetos-inovexa\mindscan\tools\tree_legacy_2025-12-15_14h53min51s.txt
+[2025-12-15 14:53:51]   - D:\projetos-inovexa\mindscan\logs\estrutura\tree_legacy_2025-12-15_14h53min51s.txt
+
+[2025-12-15 14:54:17] → Executando auditoria (AUDIT)…
+[2025-12-15 14:55:04] ✓ Auditoria concluída.
+
+[2025-12-16 06:03:05] → FULLTREE (modo 9)…
+[2025-12-16 06:03:07] ✓ FULLTREE concluído.
+
+[2025-12-16 06:03:11] → Gerando TREE_LEGACY (modo 10)…
+[2025-12-16 06:03:13] ✓ TREE_LEGACY salvo em:
+[2025-12-16 06:03:13]   - D:\projetos-inovexa\mindscan\tools\tree_legacy_2025-12-16_06h03min13s.txt
+[2025-12-16 06:03:13]   - D:\projetos-inovexa\mindscan\logs\estrutura\tree_legacy_2025-12-16_06h03min13s.txt
+
+[2025-12-16 06:03:30] → Gerando governança (GOVERNANCE)…
+[2025-12-16 06:03:30] ✓ Governança concluída.
+
+[2025-12-16 06:03:45] → Executando auditoria (AUDIT)…
+[2025-12-16 06:04:18] ✓ Auditoria concluída.
+
+[2025-12-17 05:42:04] → FULLTREE (modo 9)…
+[2025-12-17 05:42:06] ✓ FULLTREE concluído.
+
+[2025-12-17 05:42:12] → Gerando TREE_LEGACY (modo 10)…
+[2025-12-17 05:42:14] ✓ TREE_LEGACY salvo em:
+[2025-12-17 05:42:14]   - D:\projetos-inovexa\mindscan\tools\tree_legacy_2025-12-17_05h42min14s.txt
+[2025-12-17 05:42:14]   - D:\projetos-inovexa\mindscan\logs\estrutura\tree_legacy_2025-12-17_05h42min14s.txt
+
+[2025-12-17 05:42:41] → Gerando governança (GOVERNANCE)…
+[2025-12-17 05:42:41] ✓ Governança concluída.
+
+[2025-12-17 05:42:57] → Calculando estatísticas (STATS)…
+[2025-12-17 05:43:06] ✓ Estatísticas concluídas.
+
+[2025-12-17 11:22:36] → Executando auditoria (AUDIT)…
+[2025-12-17 11:23:20] ✓ Auditoria concluída.
+
+[2025-12-17 11:23:41] → Gerando governança (GOVERNANCE)…
+[2025-12-17 11:23:41] ✓ Governança concluída.
+
+[2025-12-17 11:23:47] → FULLTREE (modo 9)…
+[2025-12-17 11:23:48] ✓ FULLTREE concluído.
+
+[2025-12-17 11:23:52] → Gerando TREE_LEGACY (modo 10)…
+[2025-12-17 11:23:54] ✓ TREE_LEGACY salvo em:
+[2025-12-17 11:23:54]   - D:\projetos-inovexa\mindscan\tools\tree_legacy_2025-12-17_11h23min54s.txt
+[2025-12-17 11:23:54]   - D:\projetos-inovexa\mindscan\logs\estrutura\tree_legacy_2025-12-17_11h23min54s.txt
+
+[2025-12-17 17:23:42] → Gerando TREE_LEGACY (modo 10)…
+[2025-12-17 17:23:44] ✓ TREE_LEGACY salvo em:
+[2025-12-17 17:23:44]   - D:\projetos-inovexa\mindscan\tools\tree_legacy_2025-12-17_17h23min44s.txt
+[2025-12-17 17:23:44]   - D:\projetos-inovexa\mindscan\logs\estrutura\tree_legacy_2025-12-17_17h23min44s.txt
+
+[2025-12-18 07:34:54] → FULLTREE (modo 9)…
+[2025-12-18 07:34:55] ✓ FULLTREE concluído.
+
+[2025-12-18 07:35:02] → Gerando TREE_LEGACY (modo 10)…
+[2025-12-18 07:35:04] ✓ TREE_LEGACY salvo em:
+[2025-12-18 07:35:04]   - D:\projetos-inovexa\mindscan\tools\tree_legacy_2025-12-18_07h35min04s.txt
+[2025-12-18 07:35:04]   - D:\projetos-inovexa\mindscan\logs\estrutura\tree_legacy_2025-12-18_07h35min04s.txt
+
+[2025-12-18 07:35:15] → Calculando estatísticas (STATS)…
+[2025-12-18 07:35:33] ✓ Estatísticas concluídas.
+

@@ -1,98 +1,150 @@
-# Arquivo normalizado pelo MindScan Optimizer (Final Version)
-# Caminho: D:\projetos-inovexa\mindscan\backend\core\diagnostic_engine.py
-# Última atualização: 2025-12-11T09:59:20.777102
+"""
+MindScan — Diagnostic Engine (EntryPoint Soberano)
+Versão: Final
+Autor: Leo Vinci — Inovexa Software
+Data: 2025-12-15
 
-from typing import Dict, Any, List
+Este arquivo é o ÚNICO ponto de entrada válido para execução
+completa de um diagnóstico MindScan.
+
+Qualquer execução fora deste fluxo é inválida.
+"""
+
+from typing import Dict, Any
+from datetime import datetime
+import uuid
+
+# =========================
+# IMPORTS — CORE
+# =========================
+from backend.core.normalizer import normalize_payload
+from backend.core.scoring import calculate_scores
+
+# =========================
+# IMPORTS — ALGORITHMS
+# =========================
+from backend.algorithms.big5.big5 import run_big5
+from backend.algorithms.dass21.dass21 import run_dass21
+from backend.algorithms.teique.teique import run_teique
+from backend.algorithms.ocai.ocai import run_ocai
+from backend.algorithms.esquemas.esquemas import run_esquemas
+from backend.algorithms.performance.performance import run_performance
+from backend.algorithms.cruzamentos.cruzamentos import run_cruzamentos
+from backend.algorithms.bussola.bussola import run_bussola
+
+# =========================
+# IMPORTS — SERVICES
+# =========================
+from backend.services.mi_compiler_service import compile_narrative
+from backend.services.report_service import build_html_report
+from backend.services.pdf_service import generate_pdf_report
+from backend.services.export_service import export_report_bundle
 
 
 class DiagnosticEngine:
     """
-    Núcleo consolidado do diagnóstico MindScan 2.0.
-    Responsável por transformar scores psicométricos
-    em perfis, insights e interpretações profissionais.
+    ENTRYPOINT SOBERANO DO MINDSCAN
+
+    Responsável por:
+    - validar entrada
+    - normalizar dados
+    - executar TODOS os algoritmos
+    - realizar cruzamentos
+    - compilar narrativa (MI)
+    - gerar relatório HTML
+    - gerar relatório PDF
+    - retornar bundle final
     """
 
-    def generate_diagnosis(self, scores: Dict[str, Any]) -> Dict[str, Any]:
-        # ------------------------------------------------------------
-        # 1. Gerar perfil consolidado
-        # ------------------------------------------------------------
-        profile = self._build_profile(scores)
+    @staticmethod
+    def run_diagnostic(payload: Dict[str, Any]) -> Dict[str, Any]:
+        """
+        Executa um diagnóstico MindScan completo, determinístico
+        e auditável.
 
-        # ------------------------------------------------------------
-        # 2. Gerar insights automáticos
-        # ------------------------------------------------------------
-        insights = self._generate_insights(profile, scores)
+        Entrada:
+            payload bruto com respostas psicométricas
 
-        # Estrutura final
+        Saída:
+            dicionário com resultados + paths de relatório
+        """
+
+        diagnostic_id = str(uuid.uuid4())
+        started_at = datetime.utcnow().isoformat()
+
+        # -------------------------------------------------
+        # 1. NORMALIZAÇÃO
+        # -------------------------------------------------
+        normalized_data = normalize_payload(payload)
+
+        # -------------------------------------------------
+        # 2. SCORING BASE
+        # -------------------------------------------------
+        base_scores = calculate_scores(normalized_data)
+
+        # -------------------------------------------------
+        # 3. EXECUÇÃO DOS ALGORITMOS
+        # -------------------------------------------------
+        results = {}
+
+        results["big5"] = run_big5(base_scores)
+        results["dass21"] = run_dass21(base_scores)
+        results["teique"] = run_teique(base_scores)
+        results["ocai"] = run_ocai(base_scores)
+        results["esquemas"] = run_esquemas(base_scores)
+        results["performance"] = run_performance(base_scores)
+
+        # -------------------------------------------------
+        # 4. CRUZAMENTOS & BÚSSOLA
+        # -------------------------------------------------
+        results["cruzamentos"] = run_cruzamentos(results)
+        results["bussola"] = run_bussola(results)
+
+        # -------------------------------------------------
+        # 5. NARRATIVA (MI)
+        # -------------------------------------------------
+        narrative = compile_narrative(results)
+
+        # -------------------------------------------------
+        # 6. RELATÓRIO HTML
+        # -------------------------------------------------
+        html_report_path = build_html_report(
+            diagnostic_id=diagnostic_id,
+            results=results,
+            narrative=narrative
+        )
+
+        # -------------------------------------------------
+        # 7. RELATÓRIO PDF
+        # -------------------------------------------------
+        pdf_report_path = generate_pdf_report(
+            diagnostic_id=diagnostic_id,
+            html_path=html_report_path
+        )
+
+        # -------------------------------------------------
+        # 8. EXPORTAÇÃO FINAL
+        # -------------------------------------------------
+        bundle = export_report_bundle(
+            diagnostic_id=diagnostic_id,
+            html_path=html_report_path,
+            pdf_path=pdf_report_path
+        )
+
+        finished_at = datetime.utcnow().isoformat()
+
+        # -------------------------------------------------
+        # 9. RETORNO FINAL
+        # -------------------------------------------------
         return {
-            "profile": profile,
-            "insights": insights,
-            "scores": scores
-        }
-
-    # ------------------------------------------------------------
-    #  PERFIL CONSOLIDADO
-    # ------------------------------------------------------------
-    def _build_profile(self, scores: Dict[str, Any]) -> Dict[str, Any]:
-        profile = {}
-
-        for instrument, data in scores.items():
-            if instrument == "BIG5":
-                profile["personality"] = self._profile_big5(data)
-            elif instrument == "TEIQue":
-                profile["emotional_intelligence"] = self._profile_teiQue(data)
-            elif instrument == "OCAI":
-                profile["organizational_culture"] = self._profile_ocai(data)
-            elif instrument == "DASS21":
-                profile["mental_health"] = self._profile_dass21(data)
-
-        return profile
-
-    # ------------------------------------------------------------
-    #  INSIGHTS AUTOMÁTICOS
-    # ------------------------------------------------------------
-    def _generate_insights(self, profile: Dict[str, Any], scores: Dict[str, Any]) -> List[str]:
-        insights = []
-
-        if "personality" in profile:
-            p = profile["personality"]
-            if p.get("avg", 0) > 3:
-                insights.append("Tendência a estabilidade emocional e autocontrole.")
-            else:
-                insights.append("Possível variação emocional sob pressão.")
-
-        if "mental_health" in profile:
-            mh = profile["mental_health"]
-            if mh.get("score", 0) > 30:
-                insights.append("Indícios de estresse significativo.")
-            else:
-                insights.append("Níveis saudáveis de bem-estar mental.")
-
-        return insights
-
-    # ------------------------------------------------------------
-    #  PROFILES POR INSTRUMENTO (PLACEHOLDERS)
-    # ------------------------------------------------------------
-    def _profile_big5(self, data: Dict[str, Any]) -> Dict[str, Any]:
-        return {
-            "avg": data.get("avg", 0),
-            "interpretation": "Perfil Big Five consolidado (versão simplificada)."
-        }
-
-    def _profile_teiQue(self, data: Dict[str, Any]) -> Dict[str, Any]:
-        return {
-            "emotional_intelligence_raw": data.get("sum", 0),
-            "interpretation": "Indicadores básicos de inteligência emocional."
-        }
-
-    def _profile_ocai(self, data: Dict[str, Any]) -> Dict[str, Any]:
-        return {
-            "culture_profile": data.get("profile", []),
-            "interpretation": "Distribuição de cultura organizacional (OCAI)."
-        }
-
-    def _profile_dass21(self, data: Dict[str, Any]) -> Dict[str, Any]:
-        return {
-            "score": data.get("score", 0),
-            "interpretation": "Nível geral de estresse segundo DASS-21."
+            "diagnostic_id": diagnostic_id,
+            "started_at": started_at,
+            "finished_at": finished_at,
+            "results": results,
+            "narrative": narrative,
+            "reports": {
+                "html": html_report_path,
+                "pdf": pdf_report_path,
+                "bundle": bundle
+            }
         }

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Avaliação Concluída</h2>
+
+<p>Sua avaliação foi processada com sucesso.</p>
+
+<p><strong>ID da Avaliação:</strong> {{ test_id }}</p>
+
+<a href="{{ pdf_url }}" target="_blank">
+    <button>Abrir Relatório PDF</button>
+</a>
+
+<p style="margin-top:20px;">
+    <a href="/app">Voltar ao início</a>
+</p>
+{% endblock %}

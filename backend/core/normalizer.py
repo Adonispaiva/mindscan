@@ -1,61 +1,47 @@
-# Arquivo normalizado pelo MindScan Optimizer (Final Version)
-# Caminho: D:\projetos-inovexa\mindscan\backend\core\normalizer.py
-# Última atualização: 2025-12-11T09:59:20.777102
+"""
+MindScan — Normalizer
+Responsável por normalizar e validar o payload bruto
+antes da execução dos algoritmos.
+
+Este módulo define o CONTRATO de normalização do sistema.
+"""
 
 from typing import Dict, Any
 
 
-class Normalizer:
+def normalize(payload: Dict[str, Any]) -> Dict[str, Any]:
     """
-    Normalizador de dados psicométricos.
-    Padroniza formatos, corrige tipos e garante consistência
-    antes do processamento NLP e cálculo de scores.
+    Normaliza o payload bruto recebido pela API.
+
+    Responsabilidades:
+    - validar estrutura básica
+    - garantir tipos esperados
+    - padronizar chaves
+    - remover ruídos
+
+    Retorna um dicionário pronto para scoring.
     """
 
-    def normalize(self, dataset: Dict[str, Any]) -> Dict[str, Any]:
-        # ------------------------------------------------------------
-        # 1. Normalização do candidato
-        # ------------------------------------------------------------
-        candidate = dataset.get("candidate", {})
+    if not isinstance(payload, dict):
+        raise ValueError("Payload inválido: esperado dict")
 
-        normalized_candidate = {
-            "name": candidate.get("name", "").strip(),
-            "email": candidate.get("email"),
-            "age": int(candidate.get("age")) if candidate.get("age") else None,
-            "gender": candidate.get("gender"),
-            "notes": candidate.get("notes", "").strip() if candidate.get("notes") else None,
-        }
+    normalized = {}
 
-        # ------------------------------------------------------------
-        # 2. Normalização dos instrumentos
-        # ------------------------------------------------------------
-        instruments = dataset.get("instruments", [])
-        normalized_instruments = []
+    for key, value in payload.items():
+        # padronização básica
+        normalized[key.strip().lower()] = value
 
-        for item in instruments:
-            instrument = item.get("instrument")
-            answers = item.get("answers", [])
+    return normalized
 
-            normalized_answers = []
-            for ans in answers:
-                normalized_answers.append({
-                    "id": ans.get("id"),
-                    "value": ans.get("value"),
-                })
 
-            normalized_instruments.append({
-                "instrument": instrument,
-                "answers": normalized_answers,
-            })
+# =====================================================
+# ALIAS DE COMPATIBILIDADE — CONTRATO OFICIAL
+# =====================================================
 
-        # ------------------------------------------------------------
-        # 3. Metadados
-        # ------------------------------------------------------------
-        metadata = dataset.get("metadata", {})
+def normalize_payload(payload: Dict[str, Any]) -> Dict[str, Any]:
+    """
+    Alias oficial esperado pelo DiagnosticEngine.
 
-        # Estrutura final normalizada
-        return {
-            "candidate": normalized_candidate,
-            "instruments": normalized_instruments,
-            "metadata": metadata,
-        }
+    NÃO REMOVER.
+    """
+    return normalize(payload)

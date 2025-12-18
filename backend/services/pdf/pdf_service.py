@@ -1,9 +1,7 @@
-# Arquivo normalizado pelo MindScan Optimizer (Final Version)
-# Caminho: D:\projetos-inovexa\mindscan\backend\services\pdf\pdf_service.py
-# Última atualização: 2025-12-11T09:59:21.184463
-
 # pdf_service.py — Serviço central do MindScan PDF Engine
 # Autor: Leo Vinci — Inovexa Software
+
+from __future__ import annotations
 
 from .premium_renderer import PremiumRenderer
 from .executive_renderer import ExecutiveRenderer

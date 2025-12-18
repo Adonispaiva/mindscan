@@ -1,88 +1,29 @@
-# Arquivo normalizado pelo MindScan Optimizer (Final Version)
-# Caminho: D:\projetos-inovexa\mindscan\backend\routers\users_router.py
-# Última atualização: 2025-12-11T09:59:21.089476
+from __future__ import annotations
 
-# Caminho: backend/routers/users_router.py
-# MindScan Backend — Users Router (Autenticação e Gestão de Usuários)
-# Diretor Técnico: Leo Vinci — Inovexa Software
-# Versão Final — MindScan v2.0
+from typing import Any, Dict, Optional
 
-from fastapi import APIRouter, Depends, HTTPException, status
-from sqlalchemy.orm import Session
-from datetime import datetime
-import hashlib
+from fastapi import APIRouter
+from pydantic import BaseModel, Field
 
-from backend.database import get_db
-from backend.models import User
-
-router = APIRouter()
-
-# ============================================================
-# UTILITÁRIOS
-# ============================================================
-
-def hash_password(password: str) -> str:
-    return hashlib.sha256(password.encode("utf-8")).hexdigest()
+router = APIRouter(prefix="/users", tags=["users"])
 
 
-def verify_password(password: str, hashed: str) -> bool:
-    return hash_password(password) == hashed
+class UserCreate(BaseModel):
+    name: str = Field(..., min_length=1)
+    email: Optional[str] = None
 
 
-# ============================================================
-# ROTAS DE USUÁRIO
-# ============================================================
-
-@router.post("/create", summary="Criar usuário")
-def create_user(full_name: str, email: str, password: str, db: Session = Depends(get_db)):
-    existing = db.query(User).filter(User.email == email).first()
-    if existing:
-        raise HTTPException(status_code=400, detail="E-mail já registrado.")
-
-    user = User(
-        full_name=full_name,
-        email=email,
-        password_hash=hash_password(password),
-        created_at=datetime.utcnow(),
-    )
-
-    db.add(user)
-    db.commit()
-    db.refresh(user)
-
-    return {
-        "status": "created",
-        "user_id": user.id,
-        "email": user.email,
-    }
+@router.get("/ping", summary="Ping users")
+def ping_users() -> Dict[str, Any]:
+    return {"ok": True, "service": "users"}
 
 
-@router.post("/login", summary="Login e validação básica")
-def login(email: str, password: str, db: Session = Depends(get_db)):
-    user = db.query(User).filter(User.email == email).first()
-
-    if not user:
-        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Usuário não encontrado.")
-
-    if not verify_password(password, user.password_hash):
-        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Senha incorreta.")
-
-    return {
-        "status": "authenticated",
-        "user": user.email,
-        "user_id": user.id,
-    }
+@router.post("", summary="Cria usuário (stub)")
+def create_user(payload: UserCreate) -> Dict[str, Any]:
+    # Stub proposital: sem modelo/DB ainda (evita regressão estrutural)
+    return {"user_id": "stub-1", "name": payload.name, "email": payload.email, "status": "created_stub"}
 
 
-@router.get("/", summary="Listar usuários")
-def list_users(db: Session = Depends(get_db)):
-    users = db.query(User).all()
-    return [
-        {
-            "id": u.id,
-            "full_name": u.full_name,
-            "email": u.email,
-            "created_at": u.created_at.isoformat() + "Z",
-        }
-        for u in users
-    ]
+@router.get("/{user_id}", summary="Obtém usuário (stub)")
+def get_user(user_id: str) -> Dict[str, Any]:
+    return {"user_id": user_id, "status": "stub", "message": "User model not wired yet"}

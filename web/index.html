@@ -1,98 +1,12 @@
+<!-- D:\projetos-inovexa\mindscan\web\index.html -->
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <title>MindScan Web</title>
-
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #f4f4f4;
-            padding: 40px;
-        }
-        #box {
-            background: white;
-            padding: 25px;
-            border-radius: 12px;
-            width: 500px;
-            margin: auto;
-            box-shadow: 0 3px 12px rgba(0,0,0,0.15);
-        }
-        h1 { margin-top: 0; }
-        textarea { width: 100%; height: 180px; }
-        select { width: 100%; padding: 5px; margin-top: 10px; }
-        button { width: 100%; padding: 10px; margin-top: 15px; background: black; color: white; border-radius: 8px; cursor: pointer; }
-        #result { margin-top: 20px; background: #efefef; padding: 15px; border-radius: 8px; }
-    </style>
+  <meta charset="UTF-8" />
+  <title>MindScan</title>
+  <meta http-equiv="refresh" content="0; url=/app" />
 </head>
-
 <body>
-
-<div id="box">
-    <h1>MindScan Web</h1>
-
-    <label>Raw Scores (JSON):</label>
-    <textarea id="raw"></textarea>
-
-    <label>Modo MI:</label>
-    <select id="mode">
-        <option value="hybrid">Híbrido</option>
-        <option value="original">Original</option>
-        <option value="advanced">Avançado</option>
-    </select>
-
-    <label>Tipo de relatório:</label>
-    <select id="report">
-        <option value="technical">Técnico</option>
-        <option value="executive">Executivo</option>
-        <option value="psychodynamic">Psicodinâmico</option>
-        <option value="premium">Premium</option>
-    </select>
-
-    <button onclick="runMindScan()">Gerar Relatório</button>
-
-    <div id="result"></div>
-</div>
-
-
-<script>
-async function runMindScan() {
-    const rawScores = document.getElementById("raw").value;
-    const mode = document.getElementById("mode").value;
-    const report = document.getElementById("report").value;
-
-    let payload;
-    try {
-        payload = JSON.parse(rawScores);
-    } catch (e) {
-        document.getElementById("result").innerHTML = "<b>Erro:</b> JSON inválido.";
-        return;
-    }
-
-    const req = {
-        subject_id: "USER123",
-        raw_scores: payload,
-        mi_mode: mode,
-        report_type: report
-    };
-
-    const response = await fetch("http://localhost:8000/mindscan/mi-hybrid", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(req),
-    });
-
-    const data = await response.json();
-
-    if (data?.pdf_url) {
-        document.getElementById("result").innerHTML =
-            `<b>PDF gerado com sucesso!</b><br>
-             <a href="${data.pdf_url}" target="_blank">Clique aqui para abrir o relatório</a>`;
-    } else {
-        document.getElementById("result").innerHTML = "<b>Erro:</b> " + JSON.stringify(data);
-    }
-}
-</script>
-
+  Redirecionando para o MindScan…
 </body>
 </html>

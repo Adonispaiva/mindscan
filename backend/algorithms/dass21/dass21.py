@@ -1,62 +1,68 @@
-# Arquivo normalizado pelo MindScan Optimizer (Final Version)
-# Caminho: D:\projetos-inovexa\mindscan\backend\algorithms\dass21\dass21.py
-# Última atualização: 2025-12-11T09:59:20.652172
-
 """
-DASS21 — Módulo Central
-Versão ULTRA SUPERIOR
--------------------------------------------------------------
+Algoritmo DASS-21
+Depressão, Ansiedade e Estresse.
 
-Processa pontuações do questionário DASS21:
-
-- Depressão
-- Ansiedade
-- Estresse
-
-Inclui:
-- validação de entrada
-- normalização
-- classificação por níveis
-- geração de insights estruturados
+Contrato público obrigatório:
+- run_dass21(payload: dict) -> dict
 """
 
 from typing import Dict, Any
 
 
-class DASS21:
-    def __init__(self):
-        self.version = "2.0-ultra"
+DASS21_DIMENSIONS = ["depression", "anxiety", "stress"]
 
-    def validate(self, scores: Dict[str, float]) -> None:
-        required = ["depressao", "ansiedade", "stress"]
-        for key in required:
-            if key not in scores:
-                raise ValueError(f"Campo ausente: {key}")
-            if not isinstance(scores[key], (int, float)):
-                raise TypeError(f"Valor inválido para {key}")
 
-    def normalize(self, scores: Dict[str, float]) -> Dict[str, float]:
-        return {k: min(max(v, 0), 100) for k, v in scores.items()}
+def _validate_payload(payload: Dict[str, Any]) -> Dict[str, float]:
+    if not isinstance(payload, dict):
+        raise ValueError("Payload do DASS21 deve ser um dicionário")
 
-    def classify(self, scores: Dict[str, float]) -> Dict[str, str]:
-        levels = {}
-        for key, value in scores.items():
-            if value < 30:
-                levels[key] = "baixo"
-            elif value < 60:
-                levels[key] = "moderado"
-            else:
-                levels[key] = "alto"
-        return levels
+    scores = payload.get("scores")
+    if not isinstance(scores, dict):
+        raise ValueError("Payload DASS21 deve conter a chave 'scores'")
 
-    def run(self, scores: Dict[str, float]) -> Dict[str, Any]:
-        self.validate(scores)
-        normalized = self.normalize(scores)
-        classified = self.classify(normalized)
+    normalized = {}
+    for dim in DASS21_DIMENSIONS:
+        value = scores.get(dim)
+        if value is None:
+            raise ValueError(f"Dimensão ausente no DASS21: {dim}")
+        if not isinstance(value, (int, float)):
+            raise ValueError(f"Valor inválido para {dim}: {value}")
+        normalized[dim] = float(value)
 
-        return {
-            "module": "dass21",
-            "version": self.version,
-            "normalized": normalized,
-            "levels": classified,
+    return normalized
+
+
+def _severity(value: float) -> str:
+    if value < 10:
+        return "normal"
+    if value < 20:
+        return "moderado"
+    return "severo"
+
+
+def run_dass21(payload: Dict[str, Any]) -> Dict[str, Any]:
+    """
+    Executa o algoritmo DASS-21.
+
+    Espera:
+    {
+        "scores": {
+            "depression": float,
+            "anxiety": float,
+            "stress": float
         }
+    }
+    """
+
+    scores = _validate_payload(payload)
+
+    severity = {dim: _severity(value) for dim, value in scores.items()}
+
+    return {
+        "module": "DASS21",
+        "scores": scores,
+        "severity": severity,
+        "summary": {
+            "critical": any(v == "severo" for v in severity.values())
+        },
+    }

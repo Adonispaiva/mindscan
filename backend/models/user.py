@@ -1,8 +1,9 @@
-from sqlalchemy import Column, Integer, String, DateTime
-from sqlalchemy.orm import relationship
 from datetime import datetime
 
-from backend.db.base import Base
+from sqlalchemy import Column, Integer, String, DateTime
+from sqlalchemy.orm import relationship
+
+from backend.database.base import Base
 
 
 class User(Base):
@@ -18,7 +19,7 @@ class User(Base):
     mindscan_tests = relationship(
         "MindscanTest",
         back_populates="user",
-        cascade="all, delete-orphan"
+        cascade="all, delete-orphan",
     )
 
     def __repr__(self):

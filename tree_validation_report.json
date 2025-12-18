@@ -1,15 +1,10 @@
 {
-    "validated_at": "2025-12-13T11:32:25.611983",
+    "validated_at": "2025-12-15T14:50:03.798160",
     "status": "OK",
     "missing_paths": [],
     "extra_entries": [],
     "empty_files": [
         "D:\\projetos-inovexa\\mindscan\\LICENSE_INOVEXA",
-        "D:\\projetos-inovexa\\mindscan\\backend\\engine\\integration_engine.py",
-        "D:\\projetos-inovexa\\mindscan\\backend\\engine\\metadata_engine.py",
-        "D:\\projetos-inovexa\\mindscan\\backend\\engine\\parallel_engine.py",
-        "D:\\projetos-inovexa\\mindscan\\backend\\engine\\pdf_engine_advanced.py",
-        "D:\\projetos-inovexa\\mindscan\\backend\\engine\\sequential_engine.py",
         "D:\\projetos-inovexa\\mindscan\\backend\\venv\\Lib\\site-packages\\aiohappyeyeballs\\py.typed",
         "D:\\projetos-inovexa\\mindscan\\backend\\venv\\Lib\\site-packages\\aiohttp_retry\\py.typed",
         "D:\\projetos-inovexa\\mindscan\\backend\\venv\\Lib\\site-packages\\aiosignal\\py.typed",

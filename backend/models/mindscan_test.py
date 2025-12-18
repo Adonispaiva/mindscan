@@ -2,7 +2,7 @@ from sqlalchemy import Column, Integer, String, DateTime, ForeignKey
 from sqlalchemy.orm import relationship
 from datetime import datetime
 
-from backend.db.base import Base
+from backend.database.base import Base
 
 
 class MindscanTest(Base):
@@ -23,7 +23,7 @@ class MindscanTest(Base):
     started_at = Column(DateTime, default=datetime.utcnow, nullable=False)
     completed_at = Column(DateTime, nullable=True)
 
-    # Metadados futuros (engine, tipo de relatório, versão)
+    # Metadados futuros
     engine_version = Column(String(50), nullable=True)
     report_type = Column(String(50), nullable=True)
 

@@ -1,18 +1,15 @@
-# Arquivo normalizado pelo MindScan Optimizer (Final Version)
-# Caminho: D:\projetos-inovexa\mindscan\backend\routers\health_router.py
-# Última atualização: 2025-12-11T09:59:21.089476
+# MindScan Backend — Health Check Router (compatível com probes)
+from __future__ import annotations
 
-# Caminho: backend/routers/health_router.py
-# MindScan Backend — Health Check Router
-# Diretor Técnico: Leo Vinci — Inovexa Software
-# Versão Final — MindScan v2.0
-
-from fastapi import APIRouter
 from datetime import datetime
+from fastapi import APIRouter
 
-router = APIRouter()
+router = APIRouter(tags=["health"])
+
 
 @router.get("/", summary="Health Check")
+@router.get("/health", summary="Health Check")
+@router.get("/healthz", summary="Health Check (probe alias)")
 def health_status():
     return {
         "service": "MindScan Backend API v2.0",
