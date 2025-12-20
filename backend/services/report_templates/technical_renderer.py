@@ -1,49 +1,59 @@
-# Arquivo normalizado pelo MindScan Optimizer (Final Version)
-# Caminho: D:\projetos-inovexa\mindscan\backend\services\report_templates\technical_renderer.py
-# Última atualização: 2025-12-11T09:59:21.292589
-
-# ============================================================
-# MindScan — Technical Renderer
-# ============================================================
-# Gera Relatório Técnico Completo:
-# - 39 dimensões
-# - Metadados
-# - Scores híbridos
-# ============================================================
-
-from reportlab.platypus import Paragraph, Spacer
-from reportlab.lib.styles import getSampleStyleSheet
-
+from reportlab.lib.units import cm
+from reportlab.platypus import Spacer  # Adicionado para corrigir o NameError
 from .base_renderer import BaseRenderer
 
-
 class TechnicalRenderer(BaseRenderer):
+    """
+    Renderizador do Relatório Técnico MindScan.
+    Focado em precisão de dados, métricas de performance e scores psicométricos.
+    """
 
-    def build(self, story):
-        styles = getSampleStyleSheet()
-        title = Paragraph("<b>Relatório Técnico MindScan</b>", styles["Title"])
-        story.append(title)
-        story.append(Spacer(1, 12))
+    def build(self):
+        """
+        Constrói a estrutura do PDF seguindo o fluxo:
+        Capa -> Bússola -> BIG5 (Gráfico) -> DASS-21 (Tabela) -> Metadados.
+        """
+        # 1. Cabeçalho e Título
+        self.add_logo()
+        self.title("Relatório Técnico de Diagnóstico")
+        self.paragraph(f"Candidato: {self.candidate_name}")
+        self.paragraph(f"ID do Teste: {self.test_id}")
+        self.story.append(Spacer(1, 1*cm))
 
-        # Normalized blocks (Big Five, TEIQue, etc.)
-        normalized = self.results.get("normalized", {})
+        # 2. Bússola de Talentos (Destaque Principal)
+        bussula = self.results.get("bussula", {})
+        self.heading("1. Posicionamento na Bússola de Talentos")
+        self.paragraph(f"<b>Quadrante:</b> {bussula.get('quadrante', 'Analisando...')}")
+        self.paragraph(f"<i>{bussula.get('mensagem', '')}</i>")
+        self.story.append(Spacer(1, 0.5*cm))
 
-        for block, values in normalized.items():
-            story.append(Paragraph(f"<b>{block.upper()}</b>", styles["Heading2"]))
+        # 3. Personalidade (BIG5) com Gráfico de Radar
+        big5 = self.results.get("big5", {})
+        if big5:
+            self.heading("2. Perfil de Personalidade (BIG5)")
+            self.draw_radar_chart(big5, title="Distribuição dos 5 Grandes Fatores")
+            self.paragraph("Este gráfico representa a inclinação comportamental natural do indivíduo sob condições normais.")
 
-            if isinstance(values, dict):
-                for k, v in values.items():
-                    if isinstance(v, dict) and "score" in v:
-                        score = v["score"]
-                        story.append(Paragraph(f"{k}: {score}", styles["BodyText"]))
+        # 4. Saúde Emocional (DASS-21) com Tabela
+        dass = self.results.get("dass21", {})
+        if "scores" in dass:
+            self.heading("3. Inventário de Estados Emocionais (DASS-21)")
+            
+            # Prepara dados para a tabela
+            dass_data = [
+                ["Dimensão", "Score Real", "Classificação"],
+                ["Depressão", dass['scores']['depression'], dass['classification']['depression']],
+                ["Ansiedade", dass['scores']['anxiety'], dass['classification']['anxiety']],
+                ["Estresse", dass['scores']['stress'], dass['classification']['stress']]
+            ]
+            self.add_score_table(dass_data, title="Tabela de Gravidade (Lovibond)")
 
-            story.append(Spacer(1, 10))
-
-        # Metadata
+        # 5. Metadados e Auditoria
+        self.page_break()
+        self.heading("4. Informações de Auditoria")
         metadata = self.results.get("metadata", {})
-        story.append(Paragraph("<b>Metadados</b>", styles["Heading2"]))
+        if metadata:
+            for k, v in metadata.items():
+                self.paragraph(f"<b>{k}:</b> {v}")
 
-        for k, v in metadata.items():
-            story.append(Paragraph(f"{k}: {v}", styles["BodyText"]))
-
-        return story
+        return self.story

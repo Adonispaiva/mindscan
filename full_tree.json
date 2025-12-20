@@ -30,6 +30,7 @@
             "modules",
             "pdf_engine",
             "releases",
+            "reports",
             "services",
             "tests",
             "tools",
@@ -43,6 +44,7 @@
             "CLOSING_SUMMARY.md",
             "DEV_GUIDE.md",
             "Dockerfile",
+            "ESTRATEGIA_SALVAMENTO_ORION.md",
             "LICENSE_INOVEXA",
             "LICENSE_INOVEXA.txt",
             "OBSERVABILITY_GUIDE.md",
@@ -51,6 +53,10 @@
             "TREE_MindScan.txt",
             "__init__.py",
             "auditar_mindscan.py",
+            "backend.7z",
+            "create_mindscan_core_zip.bat",
+            "create_mindscan_zip.bat",
+            "create_mindscan_zip.py",
             "docker-compose.yml",
             "executar_revisor_global.bat",
             "fix_logging_imports.py",
@@ -62,9 +68,8 @@
             "governance_metadata.json",
             "init_generation.log",
             "instalador_mindscan.py",
-            "main.py",
             "manutencao_mindscan.bat",
-            "mindscan_demo_2.pdf",
+            "mindscan_core.zip.filelist.txt",
             "mindscan_manifest.json",
             "mindscan_ms.db",
             "mindscan_selfheal_max.py",
@@ -89,12 +94,13 @@
             "tree_validation_report.json"
         ],
         "file_info": {
-            ".env": 3051,
+            ".env": 800,
             ".mindscan_push.log": 2732788,
             "ARCHITECTURE.md": 7905,
             "CLOSING_SUMMARY.md": 3547,
             "DEV_GUIDE.md": 5920,
             "Dockerfile": 201,
+            "ESTRATEGIA_SALVAMENTO_ORION.md": 828,
             "LICENSE_INOVEXA": 0,
             "LICENSE_INOVEXA.txt": 964,
             "OBSERVABILITY_GUIDE.md": 5669,
@@ -103,20 +109,23 @@
             "TREE_MindScan.txt": 2506924,
             "__init__.py": 604,
             "auditar_mindscan.py": 7474,
+            "backend.7z": 42472567,
+            "create_mindscan_core_zip.bat": 1675,
+            "create_mindscan_zip.bat": 1269,
+            "create_mindscan_zip.py": 5605,
             "docker-compose.yml": 455,
             "executar_revisor_global.bat": 1062,
             "fix_logging_imports.py": 1831,
             "forcegit_v3.log": 8724,
-            "full_tree.json": 292211,
-            "full_tree.txt": 142845,
+            "full_tree.json": 300707,
+            "full_tree.txt": 147131,
             "generate_init_files.py": 4440,
             "gerar_tree_referencia.bat": 437,
             "governance_metadata.json": 231,
             "init_generation.log": 68516,
             "instalador_mindscan.py": 2324,
-            "main.py": 481,
             "manutencao_mindscan.bat": 311,
-            "mindscan_demo_2.pdf": 2215,
+            "mindscan_core.zip.filelist.txt": 119897,
             "mindscan_manifest.json": 1931,
             "mindscan_ms.db": 45056,
             "mindscan_selfheal_max.py": 5962,
@@ -124,7 +133,7 @@
             "models.py": 125,
             "pdf.builder.py": 7175,
             "pyproject.toml": 902,
-            "relatorio_auditoria.json": 7371853,
+            "relatorio_auditoria.json": 9348131,
             "relatorio_logging_conflicts.txt": 43304,
             "relatorio_logging_fix_aplicado.txt": 3648,
             "render.yaml": 185,
@@ -135,10 +144,10 @@
             "setup.py": 648,
             "sincronizar_github.py": 6306,
             "start_backend.bat": 796,
-            "stats.json": 112,
+            "stats.json": 113,
             "tree_atual.json": 164812,
-            "tree_referencia.json": 2199646,
-            "tree_validation_report.json": 15298
+            "tree_referencia.json": 2568817,
+            "tree_validation_report.json": 204866
         }
     },
     ".github": {
@@ -192,10 +201,46 @@
     "audios": {
         "dirs": [],
         "files": [
+            "WhatsApp Ptt 2025-12-05 at 12.58.56.ogg",
+            "WhatsApp Ptt 2025-12-05 at 12.58.56_transcricao.txt",
+            "WhatsApp Ptt 2025-12-05 at 13.00.27.ogg",
+            "WhatsApp Ptt 2025-12-05 at 13.00.27_transcricao.txt",
+            "WhatsApp Ptt 2025-12-05 at 13.15.44.ogg",
+            "WhatsApp Ptt 2025-12-05 at 13.15.44_transcricao.txt",
+            "WhatsApp Ptt 2025-12-05 at 13.24.26.ogg",
+            "WhatsApp Ptt 2025-12-05 at 13.24.26_transcricao.txt",
+            "WhatsApp Ptt 2025-12-05 at 13.25.36.ogg",
+            "WhatsApp Ptt 2025-12-05 at 13.25.36_transcricao.txt",
+            "WhatsApp Ptt 2025-12-08 at 09.07.39 (1).ogg",
+            "WhatsApp Ptt 2025-12-08 at 09.07.39 (1)_transcricao.txt",
+            "WhatsApp Ptt 2025-12-08 at 09.08.44 (1).ogg",
+            "WhatsApp Ptt 2025-12-08 at 09.08.44 (1)_transcricao.txt",
+            "WhatsApp Ptt 2025-12-08 at 09.09.54 (1).ogg",
+            "WhatsApp Ptt 2025-12-08 at 09.09.54 (1)_transcricao.txt",
+            "WhatsApp Ptt 2025-12-16 at 11.02.27.ogg",
+            "WhatsApp Ptt 2025-12-16 at 11.02.27_transcricao.txt",
             "__init__.py",
             "transcrever_audios.py"
         ],
         "file_info": {
+            "WhatsApp Ptt 2025-12-05 at 12.58.56.ogg": 386095,
+            "WhatsApp Ptt 2025-12-05 at 12.58.56_transcricao.txt": 2322,
+            "WhatsApp Ptt 2025-12-05 at 13.00.27.ogg": 116451,
+            "WhatsApp Ptt 2025-12-05 at 13.00.27_transcricao.txt": 737,
+            "WhatsApp Ptt 2025-12-05 at 13.15.44.ogg": 160700,
+            "WhatsApp Ptt 2025-12-05 at 13.15.44_transcricao.txt": 1032,
+            "WhatsApp Ptt 2025-12-05 at 13.24.26.ogg": 49285,
+            "WhatsApp Ptt 2025-12-05 at 13.24.26_transcricao.txt": 288,
+            "WhatsApp Ptt 2025-12-05 at 13.25.36.ogg": 150283,
+            "WhatsApp Ptt 2025-12-05 at 13.25.36_transcricao.txt": 1007,
+            "WhatsApp Ptt 2025-12-08 at 09.07.39 (1).ogg": 21096,
+            "WhatsApp Ptt 2025-12-08 at 09.07.39 (1)_transcricao.txt": 115,
+            "WhatsApp Ptt 2025-12-08 at 09.08.44 (1).ogg": 145578,
+            "WhatsApp Ptt 2025-12-08 at 09.08.44 (1)_transcricao.txt": 947,
+            "WhatsApp Ptt 2025-12-08 at 09.09.54 (1).ogg": 161104,
+            "WhatsApp Ptt 2025-12-08 at 09.09.54 (1)_transcricao.txt": 1170,
+            "WhatsApp Ptt 2025-12-16 at 11.02.27.ogg": 338176,
+            "WhatsApp Ptt 2025-12-16 at 11.02.27_transcricao.txt": 2447,
             "__init__.py": 243,
             "transcrever_audios.py": 967
         }
@@ -222,6 +267,7 @@
             "analytics",
             "api",
             "core",
+            "data",
             "db",
             "engine",
             "generated_reports",
@@ -245,33 +291,51 @@
             "workers"
         ],
         "files": [
+            "FIX.py",
+            "FORCA_BRUTA_SETUP.py",
+            "ReportService.py",
             "__init__.py",
             "alembic.ini",
             "app.py",
+            "auto_fixer.py",
+            "check_system.py",
             "config.py",
             "database.py",
+            "diagnostico_sistema.py",
+            "ingest_emilia.py",
             "main.py",
             "main_demo.py",
             "mindscan_store.py",
             "models.py",
+            "preflight_check.py",
             "pysettings.py",
             "requirements.txt",
             "run_e2e.py",
+            "setup_db.py",
             "start_demo.py"
         ],
         "file_info": {
+            "FIX.py": 960,
+            "FORCA_BRUTA_SETUP.py": 3215,
+            "ReportService.py": 2257,
             "__init__.py": 30,
             "alembic.ini": 693,
-            "app.py": 4762,
-            "config.py": 1405,
-            "database.py": 4228,
-            "main.py": 1746,
+            "app.py": 5279,
+            "auto_fixer.py": 2708,
+            "check_system.py": 1635,
+            "config.py": 579,
+            "database.py": 1239,
+            "diagnostico_sistema.py": 3400,
+            "ingest_emilia.py": 4830,
+            "main.py": 1229,
             "main_demo.py": 6443,
             "mindscan_store.py": 2378,
-            "models.py": 1811,
+            "models.py": 1517,
+            "preflight_check.py": 2132,
             "pysettings.py": 4334,
             "requirements.txt": 614,
             "run_e2e.py": 2478,
+            "setup_db.py": 1082,
             "start_demo.py": 82
         }
     },
@@ -280,19 +344,23 @@
             "versions"
         ],
         "files": [
+            "__init__.py",
             "env.py"
         ],
         "file_info": {
+            "__init__.py": 0,
             "env.py": 2210
         }
     },
     "backend\\alembic\\versions": {
         "dirs": [],
         "files": [
-            "2025_12_13_0001_create_mindscan_tests_table.py"
+            "2025_12_13_0001_create_mindscan_tests_table.py",
+            "__init__.py"
         ],
         "file_info": {
-            "2025_12_13_0001_create_mindscan_tests_table.py": 633
+            "2025_12_13_0001_create_mindscan_tests_table.py": 633,
+            "__init__.py": 0
         }
     },
     "backend\\algorithms": {
@@ -328,6 +396,7 @@
             "matcher.py",
             "ocai.py",
             "performance.py",
+            "psychometrics.py",
             "teique.py"
         ],
         "file_info": {
@@ -349,6 +418,7 @@
             "matcher.py": 318,
             "ocai.py": 260,
             "performance.py": 276,
+            "psychometrics.py": 3036,
             "teique.py": 222
         }
     },
@@ -755,8 +825,12 @@
             "metrics",
             "monitoring"
         ],
-        "files": [],
-        "file_info": {}
+        "files": [
+            "__init__.py"
+        ],
+        "file_info": {
+            "__init__.py": 0
+        }
     },
     "backend\\analytics\\audit": {
         "dirs": [],
@@ -849,9 +923,11 @@
     "backend\\api\\docs": {
         "dirs": [],
         "files": [
+            "__init__.py",
             "openapi_mindscan.md"
         ],
         "file_info": {
+            "__init__.py": 0,
             "openapi_mindscan.md": 1551
         }
     },
@@ -1033,13 +1109,26 @@
             "mindscan_orchestrator.py": 3617
         }
     },
+    "backend\\data": {
+        "dirs": [],
+        "files": [
+            "MINDSCAN_EMILIA.csv"
+        ],
+        "file_info": {
+            "MINDSCAN_EMILIA.csv": 1832875
+        }
+    },
     "backend\\db": {
         "dirs": [],
         "files": [
-            "base.py"
+            "__init__.py",
+            "base.py",
+            "session.py"
         ],
         "file_info": {
-            "base.py": 536
+            "__init__.py": 0,
+            "base.py": 785,
+            "session.py": 785
         }
     },
     "backend\\engine": {
@@ -1158,12 +1247,14 @@
     "backend\\generated_reports": {
         "dirs": [],
         "files": [
+            "__init__.py",
             "mindscan_1.html",
             "mindscan_1.pdf",
             "mindscan_2.html",
             "mindscan_2.pdf"
         ],
         "file_info": {
+            "__init__.py": 0,
             "mindscan_1.html": 3113,
             "mindscan_1.pdf": 2215,
             "mindscan_2.html": 3113,
@@ -1434,11 +1525,13 @@
     "backend\\mi\\prompts": {
         "dirs": [],
         "files": [
+            "__init__.py",
             "prompt_engine.py",
             "prompt_mi_synmind.md",
             "prompt_service.py"
         ],
         "file_info": {
+            "__init__.py": 0,
             "prompt_engine.py": 553,
             "prompt_mi_synmind.md": 4639,
             "prompt_service.py": 373
@@ -1481,7 +1574,9 @@
             "metadata_block.py",
             "mi_document.py",
             "mi_document_package.py",
+            "mindscan_answers.py",
             "mindscan_full_document.py",
+            "mindscan_report.py",
             "mindscan_result.py",
             "mindscan_test.py",
             "narrative_block.py",
@@ -1501,17 +1596,17 @@
             "user.py"
         ],
         "file_info": {
-            "__init__.py": 178,
+            "__init__.py": 460,
             "algorithm_output.py": 3492,
             "audit_log.py": 4191,
             "bussola_profile.py": 2957,
-            "candidate.py": 684,
+            "candidate.py": 693,
             "cross_insights_model.py": 3204,
             "culture_profile.py": 1387,
             "diagnostic_flags.py": 1029,
             "diagnostic_matrix.py": 1185,
             "diagnostic_payload.py": 4575,
-            "diagnostic_profile_builder.py": 1279,
+            "diagnostic_profile_builder.py": 1683,
             "diagnostic_request.py": 1189,
             "diagnostic_response.py": 890,
             "emotional_profile.py": 1303,
@@ -1520,9 +1615,11 @@
             "metadata_block.py": 3572,
             "mi_document.py": 945,
             "mi_document_package.py": 4846,
+            "mindscan_answers.py": 774,
             "mindscan_full_document.py": 7017,
-            "mindscan_result.py": 6141,
-            "mindscan_test.py": 1248,
+            "mindscan_report.py": 795,
+            "mindscan_result.py": 771,
+            "mindscan_test.py": 1216,
             "narrative_block.py": 781,
             "nlp_enrichment.py": 3002,
             "ocai_profile.py": 3047,
@@ -1537,7 +1634,7 @@
             "report_summary.py": 3647,
             "roadmap_item.py": 190,
             "schema_profile.py": 4410,
-            "user.py": 740
+            "user.py": 736
         }
     },
     "backend\\models\\inputs": {
@@ -1806,11 +1903,11 @@
         "file_info": {
             "__init__.py": 80,
             "analytics_router.py": 195,
-            "api_router.py": 2104,
+            "api_router.py": 425,
             "candidates_router.py": 1047,
             "dashboard_router.py": 670,
             "demo_router.py": 2602,
-            "diagnostic_router.py": 4248,
+            "diagnostic_router.py": 1838,
             "diagnostics_router.py": 197,
             "export_router.py": 1228,
             "health_router.py": 546,
@@ -1834,10 +1931,12 @@
     "backend\\runtime": {
         "dirs": [],
         "files": [
+            "__init__.py",
             "backend_config.log",
             "backend_runtime.log"
         ],
         "file_info": {
+            "__init__.py": 0,
             "backend_config.log": 3840,
             "backend_runtime.log": 34072
         }
@@ -1845,10 +1944,12 @@
     "backend\\schemas": {
         "dirs": [],
         "files": [
+            "__init__.py",
             "mindscan_input.py",
             "mindscan_output.py"
         ],
         "file_info": {
+            "__init__.py": 0,
             "mindscan_input.py": 128,
             "mindscan_output.py": 151
         }
@@ -1856,9 +1957,17 @@
     "backend\\scripts": {
         "dirs": [],
         "files": [
+            "__init__.py",
+            "ingest_emilia.py",
+            "ingest_emilia_v1.py",
+            "process_emilia.py",
             "run_demo.py"
         ],
         "file_info": {
+            "__init__.py": 0,
+            "ingest_emilia.py": 1674,
+            "ingest_emilia_v1.py": 2442,
+            "process_emilia.py": 2058,
             "run_demo.py": 247
         }
     },
@@ -1891,6 +2000,7 @@
             "culture_service.py",
             "data_service.py",
             "diagnostic_matrix_service.py",
+            "diagnostic_service.py",
             "engine_service.py",
             "export_service.py",
             "flags_service.py",
@@ -1898,6 +2008,7 @@
             "leadership_service.py",
             "metadata_service.py",
             "mi_compiler_service.py",
+            "narrative_engine.py",
             "narrative_service.py",
             "pdf__init__.py",
             "pdf_engine.py",
@@ -1921,15 +2032,17 @@
             "auth_service.py": 2594,
             "base_service.py": 2561,
             "culture_service.py": 1752,
-            "data_service.py": 2413,
+            "data_service.py": 579,
             "diagnostic_matrix_service.py": 2246,
-            "engine_service.py": 8973,
+            "diagnostic_service.py": 2823,
+            "engine_service.py": 4795,
             "export_service.py": 2651,
             "flags_service.py": 2010,
             "insight_service.py": 4230,
             "leadership_service.py": 1814,
             "metadata_service.py": 1373,
             "mi_compiler_service.py": 1541,
+            "narrative_engine.py": 2107,
             "narrative_service.py": 2848,
             "pdf__init__.py": 576,
             "pdf_engine.py": 1251,
@@ -1943,7 +2056,7 @@
             "report_branding.py": 1253,
             "report_export_manager.py": 1489,
             "report_pipeline_helper.py": 1060,
-            "report_service.py": 8126,
+            "report_service.py": 3317,
             "roadmap_service.py": 1723,
             "runtime_interface.py": 1759
         }
@@ -1963,8 +2076,12 @@
     },
     "backend\\services\\algorithms": {
         "dirs": [],
-        "files": [],
-        "file_info": {}
+        "files": [
+            "__init__.py"
+        ],
+        "file_info": {
+            "__init__.py": 0
+        }
     },
     "backend\\services\\builders": {
         "dirs": [],
@@ -2039,10 +2156,12 @@
     "backend\\services\\export": {
         "dirs": [],
         "files": [
+            "__init__.py",
             "mindscan_results.json",
             "vazio.md"
         ],
         "file_info": {
+            "__init__.py": 0,
             "mindscan_results.json": 1435,
             "vazio.md": 5
         }
@@ -2069,9 +2188,11 @@
     "backend\\services\\html": {
         "dirs": [],
         "files": [
+            "__init__.py",
             "vazio.md"
         ],
         "file_info": {
+            "__init__.py": 0,
             "vazio.md": 5
         }
     },
@@ -2210,8 +2331,12 @@
     },
     "backend\\services\\pdf\\assets": {
         "dirs": [],
-        "files": [],
-        "file_info": {}
+        "files": [
+            "__init__.py"
+        ],
+        "file_info": {
+            "__init__.py": 0
+        }
     },
     "backend\\services\\pdf\\engine": {
         "dirs": [],
@@ -2475,8 +2600,12 @@
             "pdf",
             "renderers"
         ],
-        "files": [],
-        "file_info": {}
+        "files": [
+            "__init__.py"
+        ],
+        "file_info": {
+            "__init__.py": 0
+        }
     },
     "backend\\services\\report\\assembler": {
         "dirs": [],
@@ -2495,8 +2624,12 @@
             "covers",
             "styles"
         ],
-        "files": [],
-        "file_info": {}
+        "files": [
+            "__init__.py"
+        ],
+        "file_info": {
+            "__init__.py": 0
+        }
     },
     "backend\\services\\report\\assets\\charts": {
         "dirs": [],
@@ -2611,27 +2744,39 @@
     "backend\\services\\report_templates\\assets": {
         "dirs": [],
         "files": [
+            "__init__.py",
             "footer.html",
             "header.html",
-            "style.css"
+            "mindscan_logo.jpg",
+            "style.css",
+            "synmind_logo.jpg"
         ],
         "file_info": {
+            "__init__.py": 0,
             "footer.html": 114,
             "header.html": 53,
-            "style.css": 339
+            "mindscan_logo.jpg": 8396,
+            "style.css": 339,
+            "synmind_logo.jpg": 93684
         }
     },
     "backend\\services\\runtime": {
         "dirs": [],
-        "files": [],
-        "file_info": {}
+        "files": [
+            "__init__.py"
+        ],
+        "file_info": {
+            "__init__.py": 0
+        }
     },
     "backend\\static": {
         "dirs": [],
         "files": [
+            "__init__.py",
             "mindscan_corporate.css"
         ],
         "file_info": {
+            "__init__.py": 0,
             "mindscan_corporate.css": 905
         }
     },
@@ -2649,9 +2794,11 @@
     "backend\\templates": {
         "dirs": [],
         "files": [
+            "__init__.py",
             "mindscan_corporate_template.html"
         ],
         "file_info": {
+            "__init__.py": 0,
             "mindscan_corporate_template.html": 2612
         }
     },
@@ -3655,6 +3802,7 @@
             "audit_push_2025-11-28_15h54m49s.txt",
             "audit_push_2025-11-28_16h59m12s.txt",
             "audit_push_2025-11-30_12h03m31s.txt",
+            "audit_push_2025-12-18_ 7h51m02s.txt",
             "selfheal_2025-11-26_17-20-58.log",
             "selfheal_2025-11-26_17-24-14.log",
             "selfheal_max_2025-11-26_15-28-53.log"
@@ -3665,6 +3813,7 @@
             "audit_push_2025-11-28_15h54m49s.txt": 1384,
             "audit_push_2025-11-28_16h59m12s.txt": 1655,
             "audit_push_2025-11-30_12h03m31s.txt": 1263,
+            "audit_push_2025-12-18_ 7h51m02s.txt": 991,
             "selfheal_2025-11-26_17-20-58.log": 124951,
             "selfheal_2025-11-26_17-24-14.log": 124744,
             "selfheal_max_2025-11-26_15-28-53.log": 178
@@ -3756,6 +3905,10 @@
             "tree_2025-12-16_06h03min07s.txt",
             "tree_2025-12-17_05h42min06s.txt",
             "tree_2025-12-17_11h23min48s.txt",
+            "tree_2025-12-18_07h34min55s.txt",
+            "tree_2025-12-18_14h20min19s.txt",
+            "tree_2025-12-19_07h32min38s.txt",
+            "tree_2025-12-20_06h09min50s.txt",
             "tree_legacy_2025-12-11_15h00min31s.txt",
             "tree_legacy_2025-12-12_11h39min49s.txt",
             "tree_legacy_2025-12-13_17h05min56s.txt",
@@ -3763,7 +3916,11 @@
             "tree_legacy_2025-12-16_06h03min13s.txt",
             "tree_legacy_2025-12-17_05h42min14s.txt",
             "tree_legacy_2025-12-17_11h23min54s.txt",
-            "tree_legacy_2025-12-17_17h23min44s.txt"
+            "tree_legacy_2025-12-17_17h23min44s.txt",
+            "tree_legacy_2025-12-18_07h35min04s.txt",
+            "tree_legacy_2025-12-18_14h20min27s.txt",
+            "tree_legacy_2025-12-18_14h22min13s.txt",
+            "tree_legacy_2025-12-19_07h32min43s.txt"
         ],
         "file_info": {
             "tree_2025-12-08_09h01min19s.txt": 46201,
@@ -3795,6 +3952,10 @@
             "tree_2025-12-16_06h03min07s.txt": 142098,
             "tree_2025-12-17_05h42min06s.txt": 142365,
             "tree_2025-12-17_11h23min48s.txt": 142845,
+            "tree_2025-12-18_07h34min55s.txt": 143434,
+            "tree_2025-12-18_14h20min19s.txt": 144452,
+            "tree_2025-12-19_07h32min38s.txt": 147131,
+            "tree_2025-12-20_06h09min50s.txt": 649537,
             "tree_legacy_2025-12-11_15h00min31s.txt": 75942,
             "tree_legacy_2025-12-12_11h39min49s.txt": 179346,
             "tree_legacy_2025-12-13_17h05min56s.txt": 180648,
@@ -3802,7 +3963,11 @@
             "tree_legacy_2025-12-16_06h03min13s.txt": 184614,
             "tree_legacy_2025-12-17_05h42min14s.txt": 184916,
             "tree_legacy_2025-12-17_11h23min54s.txt": 185530,
-            "tree_legacy_2025-12-17_17h23min44s.txt": 185928
+            "tree_legacy_2025-12-17_17h23min44s.txt": 185928,
+            "tree_legacy_2025-12-18_07h35min04s.txt": 186147,
+            "tree_legacy_2025-12-18_14h20min27s.txt": 187394,
+            "tree_legacy_2025-12-18_14h22min13s.txt": 187542,
+            "tree_legacy_2025-12-19_07h32min43s.txt": 190844
         }
     },
     "logs\\reports": {
@@ -4117,6 +4282,7 @@
             "relatorio_auditoria.json",
             "render.yaml",
             "requirements.txt",
+            "router.py",
             "setup.cfg",
             "setup.py",
             "sincronizar_github.py",
@@ -4147,7 +4313,7 @@
             "gerar_tree_referencia.bat": 437,
             "governance_metadata.json": 95,
             "instalador_mindscan.py": 2324,
-            "main.py": 5569,
+            "main.py": 2391,
             "manutencao_mindscan.bat": 311,
             "mindscan_manifest.json": 1931,
             "mindscan_selfheal_max.py": 5962,
@@ -4157,6 +4323,7 @@
             "relatorio_auditoria.json": 3549152,
             "render.yaml": 185,
             "requirements.txt": 95,
+            "router.py": 1391,
             "setup.cfg": 743,
             "setup.py": 648,
             "sincronizar_github.py": 6306,
@@ -4269,6 +4436,7 @@
             "reports",
             "routers",
             "runtime",
+            "schemas",
             "services",
             "static",
             "storage",
@@ -5461,7 +5629,8 @@
             "report_section.py",
             "report_summary.py",
             "roadmap_item.py",
-            "schema_profile.py"
+            "schema_profile.py",
+            "user.py"
         ],
         "file_info": {
             "__init__.py": 243,
@@ -5497,7 +5666,8 @@
             "report_section.py": 3538,
             "report_summary.py": 3647,
             "roadmap_item.py": 190,
-            "schema_profile.py": 4410
+            "schema_profile.py": 4410,
+            "user.py": 814
         }
     },
     "mindscan\\backend\\models\\inputs": {
@@ -5771,7 +5941,7 @@
             "report_router.py": 192,
             "tests_router.py": 3184,
             "user_profile_router.py": 198,
-            "users_router.py": 2756,
+            "users_router.py": 490,
             "whatsapp_router.py": 2049
         }
     },
@@ -5784,6 +5954,17 @@
         "file_info": {
             "backend_config.log": 3840,
             "backend_runtime.log": 34072
+        }
+    },
+    "mindscan\\backend\\schemas": {
+        "dirs": [],
+        "files": [
+            "__init__.py",
+            "user.py"
+        ],
+        "file_info": {
+            "__init__.py": 19,
+            "user.py": 426
         }
     },
     "mindscan\\backend\\services": {
@@ -8695,6 +8876,11 @@
             "synmind_integration.md": 1827
         }
     },
+    "reports": {
+        "dirs": [],
+        "files": [],
+        "file_info": {}
+    },
     "services": {
         "dirs": [],
         "files": [
@@ -8781,7 +8967,11 @@
             "tree_legacy_2025-12-16_06h03min13s.txt",
             "tree_legacy_2025-12-17_05h42min14s.txt",
             "tree_legacy_2025-12-17_11h23min54s.txt",
-            "tree_legacy_2025-12-17_17h23min44s.txt"
+            "tree_legacy_2025-12-17_17h23min44s.txt",
+            "tree_legacy_2025-12-18_07h35min04s.txt",
+            "tree_legacy_2025-12-18_14h20min27s.txt",
+            "tree_legacy_2025-12-18_14h22min13s.txt",
+            "tree_legacy_2025-12-19_07h32min43s.txt"
         ],
         "file_info": {
             "__init__.py": 243,
@@ -8815,7 +9005,11 @@
             "tree_legacy_2025-12-16_06h03min13s.txt": 184614,
             "tree_legacy_2025-12-17_05h42min14s.txt": 184916,
             "tree_legacy_2025-12-17_11h23min54s.txt": 185530,
-            "tree_legacy_2025-12-17_17h23min44s.txt": 185928
+            "tree_legacy_2025-12-17_17h23min44s.txt": 185928,
+            "tree_legacy_2025-12-18_07h35min04s.txt": 186147,
+            "tree_legacy_2025-12-18_14h20min27s.txt": 187394,
+            "tree_legacy_2025-12-18_14h22min13s.txt": 187542,
+            "tree_legacy_2025-12-19_07h32min43s.txt": 190844
         }
     },
     "tools\\automator": {
@@ -8934,12 +9128,14 @@
         "files": [
             "__init__.py",
             "index.html",
+            "router.py",
             "web_app.py"
         ],
         "file_info": {
             "__init__.py": 243,
-            "index.html": 2854,
-            "web_app.py": 426
+            "index.html": 282,
+            "router.py": 228,
+            "web_app.py": 1519
         }
     },
     "web\\assets": {
@@ -9068,6 +9264,8 @@
             "charts_service.py",
             "dashboard_data_aggregator.py",
             "dashboard_service.py",
+            "demo_payload.py",
+            "demo_service.py",
             "insight_feed_service.py",
             "org_kpi_service.py",
             "realtime_update_service.py",
@@ -9077,11 +9275,13 @@
             "web_log_service.py"
         ],
         "file_info": {
-            "__init__.py": 243,
+            "__init__.py": 32,
             "analytics_service.py": 469,
             "charts_service.py": 438,
             "dashboard_data_aggregator.py": 700,
             "dashboard_service.py": 495,
+            "demo_payload.py": 352,
+            "demo_service.py": 1009,
             "insight_feed_service.py": 529,
             "org_kpi_service.py": 475,
             "realtime_update_service.py": 537,
@@ -9128,15 +9328,23 @@
         ],
         "files": [
             "__init__.py",
+            "base.html",
             "dashboard_layout_manager.py",
             "dashboard_widget_binder.py",
+            "home.html",
+            "questionario.html",
+            "resultado.html",
             "ui_dynamic_loader.py",
             "ui_renderer.py"
         ],
         "file_info": {
             "__init__.py": 243,
+            "base.html": 1131,
             "dashboard_layout_manager.py": 550,
             "dashboard_widget_binder.py": 470,
+            "home.html": 387,
+            "questionario.html": 345,
+            "resultado.html": 384,
             "ui_dynamic_loader.py": 411,
             "ui_renderer.py": 377
         }
