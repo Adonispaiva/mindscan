@@ -1,76 +1,82 @@
 import os
 import sys
-import logging
+from pydantic import BaseModel
+from typing import List
 
-# =================================================================
-# ORION: CONFIGURAÇÃO DE RAIZ E RESOLUÇÃO DE NAMESPACE
-# =================================================================
-backend_dir = os.path.dirname(os.path.abspath(__file__))
-project_root = os.path.dirname(backend_dir)
+# --- AJUSTE DE CAMINHOS PARA EVITAR ERROS DE MÓDULO ---
+atual = os.path.dirname(os.path.abspath(__file__))
+raiz = os.path.dirname(atual)
+sys.path.insert(0, raiz)
+sys.path.insert(0, atual)
 
-if project_root not in sys.path:
-    sys.path.insert(0, project_root)
+import uvicorn
+from fastapi import FastAPI, Request, Depends, Body
+from fastapi.responses import HTMLResponse, JSONResponse
+from fastapi.templating import Jinja2Templates
+from fastapi.staticfiles import StaticFiles
+from sqlalchemy.orm import Session
 
-if backend_dir in sys.path:
-    sys.path.remove(backend_dir)
+# Importações seguras do Banco de Dados
+try:
+    from db.session import SessionLocal
+except ImportError:
+    from backend.db.session import SessionLocal
 
 try:
-    from backend.database import engine, Base, get_db
-    from backend.models.user import User
-    
-    # Sincroniza tabelas com o PostgreSQL
-    Base.metadata.create_all(bind=engine, checkfirst=True)
-    print("✅ MindScan: Arquitetura Validada. Conexão PostgreSQL Ativa.")
-except Exception as e:
-    print(f"❌ Erro de Inicialização Orion: {e}")
-    sys.exit(1)
-
-from fastapi import FastAPI, Depends, HTTPException
-from fastapi.middleware.cors import CORSMiddleware
-from sqlalchemy.orm import Session
-from datetime import datetime
-
-# Importação dos novos routers
-from backend.routers import sessions
-
-app = FastAPI(
-    title="MindScan API Gateway", 
-    version="4.0.0",
-    description="Portal de diagnósticos e processos de seleção Inovexa"
-)
-
-# Configuração de CORS
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
-
-# Inclusão de rotas do sistema
-app.include_router(sessions.router)
-
-@app.get("/health")
-def health_check(db: Session = Depends(get_db)):
-    return {
-        "status": "online",
-        "timestamp": datetime.now().isoformat(),
-        "database": "PostgreSQL Connected"
-    }
-
-@app.get("/test-db")
-def test_database_persistence(db: Session = Depends(get_db)):
-    """Cria um registro temporário para validar a escrita no banco."""
+    from models import Usuario
+except ImportError:
     try:
-        new_user = User(name="Teste Orion", email=f"teste_{datetime.now().timestamp()}@inovexa.com")
-        db.add(new_user)
+        from models.models import Usuario
+    except ImportError:
+        from backend.models.models import Usuario
+
+app = FastAPI(title="MindScan V4")
+
+# Montagem de arquivos estáticos (Logo) e Templates
+app.mount("/static", StaticFiles(directory=os.path.join(raiz, "static")), name="static")
+templates = Jinja2Templates(directory=os.path.join(atual, "templates"))
+
+# Modelo de dados para o questionário
+class AssessmentData(BaseModel):
+    user_id: str
+    name: str
+    big5_responses: List[int]
+    dass21_responses: List[int]
+
+def get_db():
+    db = SessionLocal()
+    try:
+        yield db
+    finally:
+        db.close()
+
+# ROTA 1: Home (Portal)
+@app.get("/", response_class=HTMLResponse)
+async def home(request: Request):
+    return templates.TemplateResponse("index.html", {"request": request})
+
+# ROTA 2: Formulário (Questionário)
+@app.get("/form", response_class=HTMLResponse)
+async def form(request: Request):
+    return templates.TemplateResponse("form_mindscan.html", {"request": request})
+
+# ROTA 3: Receber Dados do Questionário (API)
+@app.post("/api/v1/submit-assessment")
+async def handle_submit(data: AssessmentData, db: Session = Depends(get_db)):
+    try:
+        novo = Usuario(nome=data.name, email=data.user_id)
+        db.add(novo)
         db.commit()
-        db.refresh(new_user)
-        return {"message": "Sucesso! Usuário persistido", "user": new_user.name, "id": new_user.id}
+        return JSONResponse(content={"status": "success"}, status_code=200)
     except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Erro na persistência: {str(e)}")
+        print(f"Erro ao salvar no banco: {e}")
+        return JSONResponse(content={"detail": str(e)}, status_code=500)
+
+# ROTA 4: Painel Admin
+@app.get("/admin", response_class=HTMLResponse)
+async def admin(request: Request, db: Session = Depends(get_db)):
+    usuarios = db.query(Usuario).all()
+    return templates.TemplateResponse("dashboard_milena.html", {"request": request, "avaliacoes": usuarios})
 
 if __name__ == "__main__":
-    import uvicorn
-    # Execução via módulo para preservar o namespace no Windows
-    uvicorn.run("backend.main:app", host="127.0.0.1", port=8000, reload=True)
+    uvicorn.run("main:app", host="127.0.0.1", port=8000, reload=True)

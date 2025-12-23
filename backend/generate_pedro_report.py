@@ -14,7 +14,6 @@ logger = logging.getLogger("MindScan.Test")
 
 def executar_fluxo_pedro():
     # 1. Dados do Pedro (Simulando extração do CSV principal)
-    # Estes índices correspondem às respostas do Pedro no formulário oficial
     dados_brutos_pedro = {
         "name": "Pedro Borges Duarte",
         "big5_responses": [5, 4, 3, 5, 6, 2, 4, 3, 2, 1, 2, 5, 4, 6, 5, 4, 3, 5, 6, 2],
@@ -39,13 +38,14 @@ def executar_fluxo_pedro():
     logger.info("🎨 Gerando PDF Profissional via ReportService...")
     service = ReportService(output_dir="backend/generated_reports")
     
+    # AQUI ESTÁ A MUDANÇA PARA O RELATÓRIO EXECUTIVO
     path_final = service.generate_report(
         candidate_data={"name": dados_brutos_pedro["name"]},
         results=resultados,
-        report_type="technical"
+        report_type="executive"  # <--- Alterado para Executive
     )
 
-    print(f"\n✅ SUCESSO! O relatório foi gerado em:\n{os.path.abspath(path_final)}")
+    print(f"\n✅ SUCESSO! O relatório EXECUTIVO foi gerado em:\n{os.path.abspath(path_final)}")
 
 if __name__ == "__main__":
     executar_fluxo_pedro()

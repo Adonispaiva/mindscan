@@ -1,26 +1,24 @@
-# MindScan (SynMind) — requirements mínimos para P0/P1 (subir backend + /health + relatório)
-# Foco: destravar boot e garantir dependências de routers/services atuais.
-
+# --- Core API ---
 fastapi>=0.110,<1.0
 uvicorn[standard]>=0.27
+python-multipart>=0.0.9,<1.0
 
-# ORM / DB
+# --- Dados e Cálculo ---
+pydantic>=2.7,<3.0
+pydantic-settings>=2.2,<3.0
+numpy>=1.26,<3.0
+pandas>=2.2,<3.0
+openpyxl>=3.1.2
+
+# --- Relatórios e Templates ---
+Jinja2>=3.1,<4.0
+reportlab>=4.0,<5.0
+
+# --- Banco de Dados (Futuro) ---
 SQLAlchemy>=2.0,<3.0
 psycopg[binary]>=3.1,<4.0
 alembic>=1.13,<2.0
 
-# Config / env
+# --- Utilitários ---
 python-dotenv>=1.0,<2.0
-pydantic>=2.7,<3.0
-pydantic-settings>=2.2,<3.0
-
-# Uploads / forms
-python-multipart>=0.0.9,<1.0
-
-# Templates / relatórios
-Jinja2>=3.1,<4.0
-reportlab>=4.0,<5.0
-
-# Utilitários (evita falhas em módulos analíticos)
-numpy>=1.26,<3.0
-pandas>=2.2,<3.0
+requests>=2.31.0

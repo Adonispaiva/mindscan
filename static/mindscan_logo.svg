@@ -1,0 +1,6 @@
+<svg width="500" height="120" viewBox="0 0 500 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="70" cy="60" r="30" stroke="#C5A065" stroke-width="4"/>
+  <path d="M55 60H85M70 45V75" stroke="#C5A065" stroke-width="2" stroke-linecap="round"/>
+  <text x="120" y="75" fill="#1A3A5A" style="font-family: Arial; font-weight: bold; font-size: 45px;">MIND</text>
+  <text x="255" y="75" fill="#C5A065" style="font-family: Arial; font-weight: bold; font-size: 45px;">SCAN</text>
+</svg>

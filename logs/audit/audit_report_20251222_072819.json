@@ -1,0 +1,38 @@
+{
+    "timestamp": "20251222_072819",
+    "empty_files": [
+        "LICENSE_INOVEXA",
+        "mindscan\\LICENSE_INOVEXA",
+        "tools\\mindscan_tree_validator.py",
+        "backend\\alembic\\__init__.py",
+        "backend\\analytics\\__init__.py",
+        "backend\\db\\__init__.py",
+        "backend\\generated_reports\\__init__.py",
+        "backend\\runtime\\__init__.py",
+        "backend\\schemas\\__init__.py",
+        "backend\\scripts\\__init__.py",
+        "backend\\alembic\\versions\\__init__.py",
+        "backend\\api\\docs\\__init__.py",
+        "backend\\mi\\prompts\\__init__.py",
+        "backend\\services\\algorithms\\__init__.py",
+        "backend\\services\\export\\__init__.py",
+        "backend\\services\\html\\__init__.py",
+        "backend\\services\\report\\__init__.py",
+        "backend\\services\\runtime\\__init__.py",
+        "backend\\services\\pdf\\assets\\__init__.py",
+        "backend\\services\\report\\assets\\__init__.py",
+        "backend\\services\\report_templates\\assets\\__init__.py",
+        "export_v4\\pdf\\pdf_renderer_engine_v4.py.txt",
+        "mindscan\\tools\\mindscan_tree_validator.py",
+        "mindscan\\backend\\engine\\integration_engine.py",
+        "mindscan\\backend\\engine\\metadata_engine.py",
+        "mindscan\\backend\\engine\\parallel_engine.py",
+        "mindscan\\backend\\engine\\pdf_engine_advanced.py",
+        "mindscan\\backend\\engine\\sequential_engine.py",
+        "mindscan\\export_v4\\pdf\\pdf_renderer_engine_v4.py.txt"
+    ],
+    "temporary_files": [],
+    "stats": {
+        "total_files": 2798
+    }
+}
