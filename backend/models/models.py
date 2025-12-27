@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, DateTime
+from sqlalchemy import Column, Integer, String, DateTime, Text
 from datetime import datetime
 from db.session import Base
 
@@ -8,4 +8,6 @@ class Usuario(Base):
     id = Column(Integer, primary_key=True, index=True)
     nome = Column(String, nullable=False)
     email = Column(String, unique=True, index=True, nullable=False)
-    data = Column(DateTime, default=datetime.utcnow) # Nomeado como 'data' para bater com o dashboard
+    # Campo para armazenar o resultado da análise gerada pela IA
+    relatorio = Column(Text, nullable=True) 
+    data = Column(DateTime, default=datetime.utcnow)
