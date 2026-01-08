@@ -1,17 +1,27 @@
+:: Arquivo: D:\projetos-inovexa\mindscan\iniciar_mindscan.bat
+:: Status: Atualizado com Pipeline de Saneamento
 @echo off
-cls
-echo ==================================================
-echo      MINDSCAN V4 - DIAGNOSTICO DE INICIALIZACAO
-echo ==================================================
-echo.
-echo [1/2] Verificando Bibliotecas...
-pip install fastapi uvicorn jinja2 python-multipart pydantic
-echo.
-echo [2/2] A iniciar o Servidor...
-echo Se a janela fechar, o erro estara escrito abaixo:
-echo.
-python backend/main.py
-echo.
-echo ==================================================
-echo O Servidor foi interrompido.
+title MINDSCAN - Full Orchestrator
+color 0B
+
+:: Forçar o terminal a usar UTF-8 para evitar erros de charmap
+chcp 65001 > nul
+
+echo ===========================================
+echo       INICIANDO PIPELINE MINDSCAN
+echo ===========================================
+
+:: Passo 1: Garantir que o ambiente Python está correto
+set PYTHONPATH=.
+
+:: Passo 2: Saneamento preventivo de caracteres especiais
+echo [1/3] Sanear Encoding...
+python revisor_encoding_global.py
+
+:: Passo 3: Executar Auditoria e Sincronização
+echo [2/3] Executar Auditoria e Push...
+python sincronizar_github.py
+
+echo [3/3] Processo Concluido.
+echo ===========================================
 pause
